@@ -8,10 +8,12 @@ human resistance.
 
 ## Results
 
-![]()
+![](images/terminator.jpg)
 
 Although the terminator was superior in all physical aspects and had advanced
 knowledge of the future ... ultimately it was a failure.
+
+![](images/videoplayback.mp4)
 
 ## Questions
 
