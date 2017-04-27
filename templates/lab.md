@@ -17,4 +17,5 @@ knowledge of the future ... ultimately it was a failure.
 
 1. What is a terminator?
 
-A terminator is ...
+A terminator is as a cybernetic organism consisting of living tissue over a robotic endoskeleton.
+It's primary mission is infiltration.
