@@ -78,3 +78,8 @@ of functional and realistic humanoid robots.
 - Darpa Robot Challenge - disaster zone
 - Google (and everyone else) car
 
+# Lesson 2 Forward Kinematics
+
+ **Planar manipulator:** A manipulator is called a planar manipulator if all the moving links move in planes parallel to one another.
+ 
+ 
