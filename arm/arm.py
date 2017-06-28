@@ -7,86 +7,58 @@ from math import pi
 import time
 
 
-class Servo(object):
-	"""
-	Holds the info for one servo. Different servos might have different ranges
-	or whatever.
+class Arm(object):
+	range = [0, 180]   # x
+	pwm = [900, 2100]  # y
 
-	range:= the angular space a servo moves
-	pwm:= the frequency space a servo moves
-	angle:= current servo angle in degrees
-	"""
-	def __init__(self):
-		self.range = [0, 180]   # x
-		self.pwm = [500, 1500]  # y
-		self._angle = 0
+	def __init__(self, port):
 		self.slope = (self.pwm[1] - self.pwm[0])/(self.range[1] - self.range[0])
 		self.intercept = self.pwm[0] - self.slope * self.range[0]
 
-	@property
-	def angle(self):
-		return self._angle
-
-	@angle.setter
-	def angle(self, a):
-		if self.min <= a <= self.max:
-			self._angle = a
-		else:
-			raise Exception("Servo::angle({}) out of range".format(a))
-
-	@property
-	def anglePi(self):
-		return self._angle*pi/180
-
-	def serialCmd(self):
-		pwm = self.slope * self.angle() + self.intercept
-		return '#P {}'.format(pwm)
-
-
-class Arm(object):
-	def __init__(self, port):
-		self.servos = [
-			Servo(),  # base
-			Servo()   # link 1
-		]
-
-		self.serial = serial.Serial(port, 115200)
-		if not self.serial.isOpen():
+		self.ser = serial.Serial(port, 115200)
+		if not self.ser.isOpen():
 			raise Exception('Arm::init() could not open', port)
+		else:
+			print('Arm opened {} @ 115200'.format(port))
 
 	def __del__(self):
 		# could also move it to a neutral position
-		self.serial.close()
+		rest = [[90, 90, 90, 90, 90]]
+		self.set(rest)
+		time.sleep(3)
+		self.ser.close()
 		time.sleep(0.01)
 
-	def commit(self, angles):
-		# for i, a in enumerate(angles):
-			# self.serv
-		msg = []
-		if len(angles) == len(self.servos):
-			for s, a in zip(angles, self.servos):
-				s.angle = a
-				msg.append(s.serialCmd())
-		else:
-			raise Exception('Arm::commit() angles and servos different lengths')
-
-		msg.append('\r')
-		cmd = ''.join(msg)
-		self.serial.write(cmd)
-		time.sleep(0.01)
+	def set(self, angles):
+		# cmd = '#0 P1500 #1 P1500 #2 P1500 #3 P1500 #4 P1500 T4000\r'
+		cmd = []
+		for channel, a in enumerate(angles):
+			pwm = self.slope * a + self.intercept
+			cmd.append('#{} P{}'.format(channel, pwm))
+		cmd.append('T2000\r')
+		return ''.join(cmd)
 
 	def inverse(self, pt):
-		return [1, 2, 3, 4, 5, 6]
+		return pt
 
-	def run(self, points):
-		for pt in points:
-			angles = self.inverse(pt)
-			self.commit(angles)  # send to robot arm
-			time.sleep(2)
+	def run(self):
+		points = [
+			[90, 90, 90, 90, 0],
+			[10, 90, 10, 10, 90],
+			[170, 170, 170, 170, 90],
+			[90, 90, 90, 90, 170]
+		]
+
+		for angles in points:
+			# angles = self.inverse(pt)
+			cmd = self.set(angles)  # send to robot arm
+			print(cmd)
+			self.ser.write(cmd)
+			time.sleep(3)
 
 
-if "__name__" == "__main__":
-	arm = Arm('/dev/ttySerial')
+if __name__ == "__main__":
+	arm = Arm('COM3')
 	arm.run()
 
 	print('Done ... ')
