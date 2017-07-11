@@ -35,7 +35,7 @@
 
 1. Go to the software folder and install `VCForPython27.msi`. This will install the
    microsoft compiler so you can build python libraries in wheel format
-1. Run `pip install numpy jupyter opencvutils`
+1. Run `pip install numpy jupyter opencvutils matplotlib`
 1. Open a bash window
 1. Run `jupyter notebook` and a webpage should open up. From there you can create or
    navigate to jupyter notebooks and open them
