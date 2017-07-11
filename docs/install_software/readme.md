@@ -3,7 +3,7 @@
 ## Git-Bash
 
 1. Grab the git-bash package from [git-scm.com](https://git-scm.com/download/win) and install it
-1. In the software folder, grab .bash_profile (note it has "." on the front so it is a hidden file)
+1. From this folder, grab .bash_profile (note it has "." on the front so it is a hidden file)
    and drop it in your home folder
     1. My home folder, for example, is: C:/Users/Kevin.Walchko
 1. Now to open a bash window, you can double click on the git-bash icon on your desktop or 
