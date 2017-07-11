@@ -21,6 +21,7 @@
 
 1. Download OpenCV 3.2 from [Sourceforge](https://sourceforge.net/projects/opencvlibrary/). Your browser 
    should put it in your `Downloads` folder. If it goes else where, then adjust the instructions below.
+    1. Alternatively you can get it from the `software` folder, grab `cv2.pyd`
 1. Grab the opencv library (`cv2.pyd`) and put it into your python library
     1. from: `C:\Users\<your username>\Downloads\opencv\build\python\2.7\x64\cv2.pyd`
     1. to: `C:\Python27\Lib\site-packages`
