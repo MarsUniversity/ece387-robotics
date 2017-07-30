@@ -1,5 +1,8 @@
 # Roomba
 
+Use [mote](https://github.com/MomsFriendlyRobotCompany/mote) for the initial setup. Then follow the instructions
+here for more.
+
 # Wifi and Access Point Setup
 
 Setting up the RPi as an [access point](https://www.raspberrypi.org/documentation/configuration/wireless/access-point.md#internet-sharing) so you can log directly into it without needing an access
@@ -82,3 +85,7 @@ The create has been augmented with an inertial measurement unit.
 	50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
 	60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
 	70: -- -- -- -- -- -- -- -- 
+
+# Test
+
+TBD
