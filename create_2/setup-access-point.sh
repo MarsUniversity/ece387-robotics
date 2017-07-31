@@ -37,7 +37,6 @@ echo "<<< Setting up interfaces, moving current config file to *.orig >>>"
 mv /etc/network/interfaces /etc/network/interfaces.orig
 
 INTERFACE_CONFIG="                                     \n\
-# Include files from /etc/network/interfaces.d:        \n\
 source-directory /etc/network/interfaces.d             \n\
                                                        \n\
 auto lo                                                \n\
@@ -55,7 +54,7 @@ iface wlan1 inet static                                \n\
   netmask 255.255.255.0                                \n\
   network 10.10.10.0                                   \n"
   
-echo -e > /etc/network/interfaces
+echo -e "${INTERFACE_CONFIG}" > /etc/network/interfaces
 
 echo "<<< Setting up DNSMASQ >>>"
 
@@ -68,6 +67,9 @@ dhcp-range=10.10.10.5,10.10.10.100,255.255.255.0,24h     \n"
 # backup the default one and write a new one
 mv /etc/dnsmasq.conf /etc/dnsmasq.conf.orig 
 echo -e "${DNSMASQ}" > /etc/dnsmasq.conf
+
+# changing dhcp, don't assign something to wlan1 ... leave out wlan0
+echo -e "denyinterfaces wlan1" >> /etc/dhcpcd.conf
 
 echo "<<< Setting up HOSTAPD >>>"
 
@@ -97,3 +99,7 @@ echo -e "${HOSTAPD}" > /etc/hostapd/hostapd.conf
 
 # tell hostapd where the config file is, append (>>) this line to the end
 echo -e "DAEMON_CONF=\"/etc/hostapd/hostapd.conf\" \n" >> /etc/default/hostapd
+
+
+systemctl start dnsmasq
+systemctl start hostapd
