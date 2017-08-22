@@ -2,7 +2,7 @@
 
 ## Connect to Samba Share
 
-Just like the network other drives, `K drive` for example, we can connet to
+Just like the network other drives, `K drive` for example, we can connect to
 linux and bring up its hard drive. This will allow us to drag/drop code on
 the linux system and edit it.
 
