@@ -7,16 +7,22 @@ the linux system and edit it.
 ## Connect to Samba Share
 
 1. Click the **Start** button and select **Computer**
-1. Click **Map a network drive** on the top toolbar
+2. Click **Map a network drive** on the top toolbar
+
 ![](pics/mapDrive.png)
-1. Enter the share name: \\create*<robot number>*
+
+3. Enter the share name: \\create*<robot number>*
     1. Make sure to check the box **Connect using different credentials**
-![](pics/logOn.phg)
-1. Click **Finish**
-1. Input *username* and *password*
+    
+![](pics/logOn.png)
+
+4. Click **Finish**
+5. Input *username* and *password*
 
 ## Disconnect from Samba Share
 
+![](pics/disconnect.png)
+
 1. Click the **Start** button and select **Computer**
-1. Right click on share
-1. Select **Disconnect** from menu
+2. Right click on share
+3. Select **Disconnect** from menu
