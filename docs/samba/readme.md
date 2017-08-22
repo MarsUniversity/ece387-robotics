@@ -14,7 +14,7 @@ linux uses. The **only** way I know how to do this is to install *iTunes*.
 
 ![](pics/mapDrive.png)
 
-3. Enter the share name: \\*robot_name*.local\pi
+3. Enter the share name: `\\robot_name.local\pi`
     1. Make sure to check the box **Connect using different credentials**
     
 ![](pics/logOn.png)
