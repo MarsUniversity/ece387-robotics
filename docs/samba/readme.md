@@ -4,6 +4,9 @@ Just like the network other drives, K drive for example, we can connet to
 linux and bring up its hard drive. This will allow us to drag/drop code on
 the linux system and edit it.
 
+Using this method requires Windows to understand the zeroconfig protocol
+linux uses. The **only** way I know how to do this is to install *iTunes*.
+
 ## Connect to Samba Share
 
 1. Click the **Start** button and select **Computer**
@@ -11,7 +14,7 @@ the linux system and edit it.
 
 ![](pics/mapDrive.png)
 
-3. Enter the share name: \\create*<robot number>*
+3. Enter the share name: \\create*robot number*.local\pi
     1. Make sure to check the box **Connect using different credentials**
     
 ![](pics/logOn.png)
