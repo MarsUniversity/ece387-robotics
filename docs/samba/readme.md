@@ -1,4 +1,4 @@
-# Connecting to a Samba Share on Linux
+# Connecting Windows to a Samba Share on Linux
 
 Just like the network other drives, `K drive` for example, we can connet to
 linux and bring up its hard drive. This will allow us to drag/drop code on
