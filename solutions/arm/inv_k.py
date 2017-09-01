@@ -16,8 +16,16 @@ def cosine_law(a, b, c, phase=False):
 	return angle
 
 
+def line(x1, y1, x2, y2):
+	return sqrt((x2-x1)**2 + (y2-y1)**2)
+
+
 def mag(a, b):
 	return sqrt(a**2 + b**2)
+
+
+def mag3(a, b, c):
+	return sqrt(a**2 + b**2 + c**2)
 
 
 def inverse(x, y, z):
@@ -26,25 +34,33 @@ def inverse(x, y, z):
 	l3 = 3.375
 
 	# check workspace constraints
-	t1 = atan2(x, y)
+	if z < 0:
+		raise Exception('z in ground')
+	elif mag3(x,y,z) > (l1 + l2 + l3):
+		raise Exception('out of reach')
 
-	w = mag(x, y)
+	# get x-y plane azimuth
+	t1 = atan2(y, x)
+
+	# Now, most of the arm operates in the w-z frame
+	w = mag(x, y)         # new frame axis
+	gamma = atan2(z, w)
 	r = mag(z, w)
-	c = mag(l1, l2)
 
-	t3 = cosine_law(l1, l2, c, True)  # theta 3
+	c = mag(w-l3*cos(orient), z-l3*sin(orient))
 
-	m = mag(l2, l3)
-	t4 = cosine_law(l2, l3, m, True)
+	t3 = cosine_law(l1, l2, c, True)
 
-	t2 = cosine_law(l1, r, m) + atan2(z, w)
+	d = cosine_law(l2, c, l1)
+	e = cosine_law(c, l3, r)
+	t4 = pi - d - e
 
-	ans = []
-	tmp = (t1, t2, t3, t4)
-	for a in tmp:
-		ans.append(a*180/pi)
+	alpha = cosine_law(l1, c, l2)
+	beta = cosine_law(c,r,l3)
 
-	return ans
+	t2 = alpha + beta + gamma
+
+	return (t1, t2, t3, t4)
 
 
 if __name__ == '__main__':
