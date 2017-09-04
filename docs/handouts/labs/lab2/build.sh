@@ -1,3 +1,3 @@
 #!/bin/bash
 
-pandoc readme.md -V geometry:margin=1in -N -s  -o windows_linux.pdf
+pandoc lab2.md -V geometry:margin=1in -s  -o lab2.pdf
