@@ -9,7 +9,7 @@ echo ""
 echo "Building PDFs"
 echo "==================="
 
-for DIR in 'labs/lab1' 'labs/lab2' 'labs/lab3' 'labs/lab4' 'labs/lab5' 'samba' 'software_install' 'syllabus' 'roomba_setup'
+for DIR in 'labs/lab1' 'labs/lab2' 'labs/lab3' 'labs/lab4' 'labs/lab5' 'samba' 'software_install' 'syllabus' 'roomba_setup' 'pandoc_setup'
 do
 	echo ">" ${DIR}
 	cd ${DIR}

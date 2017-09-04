@@ -27,7 +27,7 @@ software install instructions. This could take some time!!!
 
 ## Task 2: Command Line
 
-**For this, do not use the GUI, you will need to use the command line when we work on the roomba**
+**For this, do not use the GUI, you will need to use the command line when we work on the Roomba**
 
 1. Open a terminal window and in your home directory, create a folder called `lab_1`
 (note the underscore between lab and 1)
