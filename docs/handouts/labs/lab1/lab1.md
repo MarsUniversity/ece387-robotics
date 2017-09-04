@@ -12,6 +12,12 @@ header-includes:
 
 This lab will test your understanding of both linux command line and python.
 
+You should learn or gain experience with:
+
+- Learn how to use the command line for when we work on the Roomba
+- Basic testing of your understanding of Python and some of the data types and
+flow controls we will use on the robots
+
 **For this coding, let the EE's do most of the work, CompE's help out, but you have more experience already with python than they do, so help but don't do it unless time is running out in the lab**
 
 ## Task 1 Prelab: Install

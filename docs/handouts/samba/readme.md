@@ -8,7 +8,6 @@ header-includes:
     - \fancyfoot[CO,CE]{\thepage}
     - \fancyfoot[LE,RO]{Robots are cool!}
 abstract: This will show you how to connect your Windoze machine to a Linux/Unix system. You will need both file system access to edit files and command line access to run your python programs.
- 
 ---
 
 # File System Access
@@ -20,11 +19,11 @@ linux and bring up its hard drive. This will allow us to drag/drop code on
 the linux system and edit it.
 
 Using this method requires Windows to understand the zeroconfig protocol
-linux uses. The **only** way I know how to do this is to install 
+linux uses. The **only** way I know how to do this is to install
 [*iTunes*](https://www.apple.com/itunes/download/). If
-you don't do this, then you will not be able to connect to the robot, since the IP 
+you don't do this, then you will not be able to connect to the robot, since the IP
 addresses are served up via
-[DHCP](https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol), 
+[DHCP](https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol),
 and they will change from time to time.
 
 1. Click the **Start** button and select **Computer**
@@ -34,7 +33,7 @@ and they will change from time to time.
 
 3. Enter the share name: `\\robot_name.local\pi`
     1. Make sure to check the box **Connect using different credentials**
-    
+
 ![](pics/logOn.png)
 
 4. Click **Finish**
@@ -52,7 +51,7 @@ and they will change from time to time.
 # Command Line
 
 To navigate linux, you need access to the command line. The only way to do that
-is to use [secure shell](https://en.wikipedia.org/wiki/Secure_Shell) (ssh). This 
+is to use [secure shell](https://en.wikipedia.org/wiki/Secure_Shell) (ssh). This
 process is going to allow you to login without
 having to always supply a *username* and *password*. We will first create an
 [RSA digital certificate](https://en.wikipedia.org/wiki/Public-key_cryptography)

@@ -1,8 +1,20 @@
+---
+title: Setup Roomba's Software
+author: Kevin J. Walchko
+header-includes:
+    - \usepackage{fancyhdr}
+    - \pagestyle{fancy}
+    - \fancyhead[CO,CE]{ECE 387}
+    - \fancyfoot[CO,CE]{\thepage}
+    - \fancyfoot[LE,RO]{Robots are cool!}
+abstract: This will show you how to setup the Roomba.
+---
+
 # Software Setup
 
 ## Mote
 
-These scripts are to help setup a new raspbian system. Once you `ssh` in, update the system:
+These scripts are to help setup a new Raspbian system. Once you `ssh` in, update the system:
 
     sudo apt-get update
     sudo apt-get -y upgrade
@@ -25,19 +37,19 @@ Now go into the software directory and install/setup everything:
 
 
 ## Roomba Software
-    
+
 Now use the software here to install stuff:
 
     pip install -U -r roomba.txt
     sudo ./setup-access-point.sh
-    
+
 ## OpenCV
 
     git clone https://github.com/MomsFriendlyRobotCompany/raspbian_pkgs.git
     cd raspbian_pkgs/opencv
     sudo ./update-opencv.sh
     dpkg -i libopencv3-kevin.deb
-    
+
 
 # Issues
 
@@ -45,7 +57,7 @@ Now use the software here to install stuff:
 
 ### Python 2.7
 
-    pi@mario software $ cat /etc/python2.7/sitecustomize.py 
+    pi@mario software $ cat /etc/python2.7/sitecustomize.py
 	# install the apport exception handler if available
 	import sys, os
 	my_site = os.path.join(
@@ -63,7 +75,7 @@ Now use the software here to install stuff:
 
 ### Python3.5
 
-    pi@mario software $ cat /etc/python3.5/sitecustomize.py 
+    pi@mario software $ cat /etc/python3.5/sitecustomize.py
 	# install the apport exception handler if available
 	import sys, os
 	my_site = os.path.join(
@@ -87,4 +99,3 @@ to a new one and you get the man-in-the-middle attack warning.
 You can disable the check with:
 
     ssh -o UserKnownHostsFile=/dev/null pi@raspberrypi.local
-

@@ -10,8 +10,16 @@ header-includes:
 
 # Robot Arm
 
-In this lab we will make the robot arm move through a predefined sequence of movements.
-Utilizing the work you already did in homework, you will make the arm move.
+In this lab we will make the robot arm move through a predefined sequence of
+movements. Utilizing the work you already did in homework, you will make the
+arm move.
+
+You should learn or gain experience with:
+
+- Taking to an actuator via a common serial port
+- Translate forward/inverse kinematics theory into reality with a real robot arm
+- Understand how to translate angles to PWM servo commands
+- Gain more experience with Python
 
 ## Task 1: Calibrate
 
@@ -43,7 +51,7 @@ The nominal PWM signals are shown below:
 
 	def angle2pwm(angle):
 		# your code here
-	
+
 	def move_servo(servo, angle):
 		# send a command to a single servo
 		# example:
@@ -57,10 +65,26 @@ The nominal PWM signals are shown below:
 		# your code here
 ```
 
-## Task 2: Arm Movement
+## Task 2: Forward Kinematics
 
-Once you have figured out the best pwm settings for your robot arm, now use your code
-to move the arm through a sequence of positions.
+Once you have figured out the best PWM settings for your robot arm, now use your code
+to move the arm through a sequence of orientations.
+
+| Step | Position                     | Gripper |
+|------|------------------------------|---------|
+| 1    | (0, 90, 90, 0)               | open    |
+| 1    | (-23.2, 83.8, 102.3, 71.5)   | closed  |
+| 1    | (0.0, 111.5, 127.0, 74.5)    | closed  |
+| 1    | (0, 90, 90, 0)               | open    |
+
+After each step, pause for 2 seconds. When you have it working, show your
+instructor.
+
+## Task 3: Inverse Kinematics
+
+Now use your code to move the arm through a sequence of positions. Since we are
+grabbing an object, when the step below says *closed* it really means half way
+closed or $\frac{PWM_{closed}}{2}$
 
 | Step | Position           | Orientation | Gripper |
 |------|--------------------|-------------|---------|
@@ -89,7 +113,7 @@ to move the arm through a sequence of positions.
 
 	def angle2pwm(angle):
 		# code
-		
+
 	def move_arm(joint_angles):
 		# your code here
 
@@ -99,9 +123,9 @@ to move the arm through a sequence of positions.
 			[...],
 			...
 		]
-	
+
 		for angles in sequence:
 			move_arm(angles)
 			time.sleep(5)
-	
+
 ```

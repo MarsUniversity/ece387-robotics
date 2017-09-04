@@ -32,7 +32,12 @@ on your roomba. We are using Adafruit's NXP IMU. The board consists of two separ
 - 16-bit digital output resolution
 - 192 bytes FIFO buffer (32 X/Y/Z samples)
 
-First we will collect 2 data sets: calibration data and test data.
+You should learn or gain experience with:
+
+- Collect raw data from a robotic sensor
+- Understand that most sensors are inaccurate or useless without proper
+calibration
+- Learn a very simple technique to calibrate an IMU
 
 ## Task 1: Get Data
 
@@ -42,7 +47,7 @@ file.
 
 ```python
 	#!/usr/bin/env python
-	
+
 	from __future__ import print_function, division
 	import nxp_imu
 	import time
@@ -55,7 +60,7 @@ file.
 			a,m,g = imu.get()         # grab data
 			bag.push('imu', (a,m,g))  # save data
 			time.sleep(1/20)          # grab data at 20 Hz
-			
+
 		bag.close()
 		print('Done ...')
 ```
@@ -79,16 +84,20 @@ You will notice that the data is all text. Since text is generally not efficient
 way to store lots of data would be to use a binary form of json (bson^[https://en.wikipedia.org/wiki/BSON])
 with some method of compress to reduce the data file size.
 
-## Task 2: Calibrate
+**Note:** We will use `bagit` again later when working with the Roomba to record
+sensor and camera data.
 
-Now open a new `jupyter notebook` and input the first set of data. Use the template provided
-and determine the biases of the IMU.
+## Task 2: Determine Calibration
 
-## Task 3: Test
+Now open a new `jupyter notebook` and input the first set of data. Use the template provided and determine the biases of the IMU.
+
+## Task 3: Correct for Biases
 
 Once you have the biases, apply them to the second set of data and see if you get what
 you expect. Also plot the second set of data without the calibration data so see what
 an uncalibrated IMU gives you ... are the results noticeably bad?
 
-When you are done, print out and turn in your `jupyter notebook`.
+## Turn In
 
+When you are done, print out and turn in your `jupyter notebook` showing *Task 2*
+and *Task 3*.
