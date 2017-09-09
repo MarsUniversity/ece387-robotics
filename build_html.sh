@@ -23,5 +23,5 @@ cat <<EOF > template.header
 <script src='//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js'></script>
 EOF
 
-pandoc syllabus.md -H tempate.header -o index.html
+pandoc syllabus.md -H template.header -o index.html
 mv index.html ${WWW_PATH}
