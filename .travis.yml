@@ -1,0 +1,32 @@
+language: python
+
+git:
+    submodules: false
+
+# before_install:
+#     - git submodule update --init --recursive
+
+addons:
+  apt:
+    packages:
+    - pandoc
+
+install:
+    - pip install -U pip setuptools wheel
+    # - pip install -U typogrify Markdown
+    # - pip install -U pelican
+
+script:
+    - build_html.sh
+
+
+deploy:
+    provider: pages
+    skip_cleanup: true
+    github_token: $GITHUB_TOKEN  # Set in travis-ci.org dashboard
+    local_dir: www
+    project_name:  marsuniversity.github.io
+    repo: MarsUniversity/ece387
+    target_branch: master
+    on:
+        branch: master
