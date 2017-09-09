@@ -17,7 +17,7 @@ install:
     # - pip install -U pelican
 
 script:
-    - build_html.sh
+    - ./build_html.sh
 
 
 deploy:
