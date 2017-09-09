@@ -27,6 +27,6 @@ deploy:
     local_dir: www
     project_name:  marsuniversity.github.io
     repo: MarsUniversity/ece387
-    target_branch: master
+    target_branch: gh-pages
     on:
         branch: master
