@@ -17,5 +17,11 @@ mkdir -p www
 WWW_PATH=../../../www
 
 cd docs/handouts/syllabus
-pandoc syllabus.md -o index.html
+
+cat <<EOF > template.header
+<link rel='stylesheet' type='text/css' href='//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css'>
+<script src='//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js'></script>
+EOF
+
+pandoc syllabus.md -H tempate.header -o index.html
 mv index.html ${WWW_PATH}
