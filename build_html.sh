@@ -15,8 +15,9 @@ mkdir -p www
 # EOF
 
 WWW_PATH=../../../www
+SRC=docs/handouts/syllabus
 
-cd docs/handouts/syllabus
+cd ${SRC}
 
 cat <<EOF > template.header
 <link rel='stylesheet' type='text/css' href='//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css'>

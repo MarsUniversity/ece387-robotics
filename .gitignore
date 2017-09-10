@@ -1,6 +1,10 @@
 *.pyc
 .DS_Store
 ._*
-www/*
+template.*
 *.html
 .ipynb_checkpoints
+
+*.html
+
+www/index.html
