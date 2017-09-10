@@ -25,7 +25,7 @@ Cadets shall:
 - Understand the principles of operation and characteristics of various robot sensors
 - Understand image capture with a CCD camera
 
-## Prerequisite Course:
+## Prerequisite Course
 
 Familiarity with any programming language, such as Matlab or C/C++, is all that
 is required.
@@ -40,8 +40,6 @@ is required.
 
 ## Grades
 
-The letter grades for this class follow the standard ECE cutoffs.
-
 | Grade        | Grade        |
 |--------------|--------------|
 | 90 < A < 100 | 74 < C+ < 77 |
@@ -49,8 +47,6 @@ The letter grades for this class follow the standard ECE cutoffs.
 | 84 < B+ < 87 | 67 < C- < 70 |
 | 80 < B < 84  | 60 < D  < 67 |
 | 77 < B- < 80 |  0 < F  < 60 |
-
-This class is based on points with a majority of points available after prog.
 
 |               | Prog Pts | Final Pts |
 |---------------|----------|-----------|
@@ -61,7 +57,7 @@ This class is based on points with a majority of points available after prog.
 | Final Project |          | 100       |
 | TOTAL         | 185      | 310       |
 
-## Missing Class and the Late Policy:
+## Missing Class and the Late Policy
 
 Inform your instructor of absences in advance via email. Please include the reason for the absence and any relevant SCA. Check the SCA to see if instructor permission is required and if it is, make the request prior to the absence. You will be given an Unexcused Absence in CAS if you fail to get permission.
 
@@ -76,15 +72,15 @@ If you are expecting to miss class on the day an assignment is due, you shall tu
 |   3 day   | 75%         | 25%       |
 | > 3 day   | 100%        | 0%        |
 
-## Collaboration and Documentation Policy:
+## Collaboration and Documentation Policy
 
 You may receive help from any DFEC faculty member or any student currently enrolled in ECE387. Document all help received on work submitted for grading IAW DF policies, or none if your work was completely individual effort.
 
-## Quizzes:
+## Quizzes
 
 Short graded quizzes will be given periodically throughout the semester and are listed in the schedule. The quizzes are based on the previous lessons.
 
-## Labs and Final Project:
+## Labs and Final Project
 
 The labs are performed in groups of no more than 3 students. Each lab will build
 on the homework, in class lectures and readings. The purpose of the labs is to
@@ -100,13 +96,13 @@ provide hands on experience with the topics discussed in the lectures. The final
 | 3   | Python                        |      | 1  | |
 | 4   | Python                        |      | 2  | |
 | 5   | Python                        |      | 3  | |
-| 6   | Lab 1: linux, git, and python |      |    | Lab1: EOC |
+| 6   | Lab 1: linux, git, and python |      |    | [Lab1]() EOC |
 | 7   | Kinematics: Introduction      | Y    |    | |
 | 8   | Forward Kinematics            |      |    | |
 | 9   | Inverse Kinematics            |      |    | |
 | 10  | Robot Arm Control             |      | 4  | |
 | 11  | Lab 2: Robot Arm              |      | 5  | |
-| 12  | Lab 2: Robot Arm              | Y    |    | Lab2 EOC |
+| 12  | Lab 2: Robot Arm              | Y    |    | [Lab2]() EOC |
 | 13  | Roomba Overview               |      |    | |
 | 14  | Roomba Sensors                |      |    | |
 | 15  | Roomba Sensors                |      |    | |
@@ -114,7 +110,7 @@ provide hands on experience with the topics discussed in the lectures. The final
 | 17  | Lab 3: Sensor Calibration     |      |    | |
 | 18  | GR 1                          |      |    | |
 | 19  | Image Processing              |      |    | |
-| 20  | Image Processing              |      | 6  | Lab3: BOC |
+| 20  | Image Processing              |      | 6  | [Lab3]() BOC |
 | 21  | Image Processing              |      |    | |
 | 22  | Computer Vision               |      |    | |
 | 23  | Computer Vision               |      | 7  | |
@@ -122,7 +118,7 @@ provide hands on experience with the topics discussed in the lectures. The final
 | 25  | Computer Vision               |      | 8  | |
 | 26  | Kalman Filter                 | Y    |    | |
 | 27  | Detection and Tracking        |      |    | |
-| 28  | Lab 4: Detection and Tracking |      | 9  | Lab4: EOC |
+| 28  | Lab 4: Detection and Tracking |      | 9  | [Lab4]() EOC |
 | 29  | Mobile Robots                 |      |    | |
 | 30  | Controls                      |      |    | |
 | 31  | Path Planning                 |      | 10 | |
@@ -130,7 +126,7 @@ provide hands on experience with the topics discussed in the lectures. The final
 | 33  | INS                           |      | 11 | |
 | 34  | INS                           |      |    | |
 | 35  | Lab 5: Roomba                 | Y    |    | |
-| 36  | Lab 5: Roomba                 |      |    | Lab5: EOC |
+| 36  | Lab 5: Roomba                 |      |    | [Lab5]() EOC |
 | 37  | GR2                           |      |    | |
 | 38  | Final Project                 |      |    | |
 | 39  | Final Project                 |      |    | |
