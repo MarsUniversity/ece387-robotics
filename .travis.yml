@@ -17,7 +17,7 @@ addons:
 
 install:
     - ls -al website
-    - chmod a+x website/build_html.sh
+    - chmod -R a+x website
     - pip install -U pip setuptools wheel
     # - pip install -U typogrify Markdown
     # - pip install -U pelican

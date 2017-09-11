@@ -2,9 +2,8 @@
 
 set -e
 
-ls
+ls -alR website
 pwd
-env
 
 WWW_PATH=www
 
