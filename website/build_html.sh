@@ -18,7 +18,8 @@ mkdir -p ${WWW_PATH}
 # hi
 # EOF
 
-for DIR in 'labs' 'pandoc_setup' 'roomba_setup' 'samba' 'software_install' 'syllabus'
+# for DIR in 'labs' 'pandoc_setup' 'roomba_setup' 'samba' 'software_install' 'syllabus'
+for DIR in 'syllabus'
 do
 	echo ">" ${DIR}
 	cd ${DIR}
