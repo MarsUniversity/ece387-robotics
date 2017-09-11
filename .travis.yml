@@ -12,9 +12,12 @@ addons:
   apt:
     packages:
     - pandoc
-    - texlive-full
+    # - texlive-full
     # - texlive-latex-base
     # - texlive-latex-recommended
+    - texlive-common
+    - texlive-base
+    - texlive-fonts-recommended
 
 # install:
 #     - ls -alR website
@@ -24,20 +27,25 @@ addons:
 #     - pip install -U pelican
 
 script:
+    # OMG windows seems to be removing the executable bit of my scripts!!!
     - chmod -R a+x website
     - ls -alR website
     # - ./website/build_html.sh
     - cd website && ./build_html.sh
+    - ls -alR website/www
 
 # WARNING: deploy will wipe out everything, so setup your deployment
 # to gh-pages branch in the github settings drop down ... NOT master!
+#
+# fix: git push origin master --force
+#      where master is the branch name
 deploy:
     provider: pages
     skip_cleanup: true
     github_token: $GITHUB_TOKEN  # Set in travis-ci.org dashboard
-    local_dir: website/www  # grab the contents of this for webpage
+    local_dir: website/www       # grab the contents of this for webpage
     project_name:  marsuniversity.github.io
     repo: MarsUniversity/ece387
-    target_branch: gh-pages
+    target_branch: gh-pages      # branch to push website too
     on:
         branch: master
