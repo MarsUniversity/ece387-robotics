@@ -15,9 +15,9 @@ addons:
     # - texlive-full
     # - texlive-latex-base
     # - texlive-latex-recommended
-    - texlive-common
-    - texlive-base
-    - texlive-fonts-recommended
+    # - texlive-common
+    - texlive
+    # - texlive-fonts-recommended
 
 # install:
 #     - ls -alR website
