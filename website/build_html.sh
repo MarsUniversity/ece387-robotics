@@ -3,9 +3,9 @@
 WWW_PATH=www
 
 # clean house on website
-if [[ -d "${WWW_PATH}" ]]; then
-	rm -fr ${WWW_PATH}
-fi
+# if [[ -d "${WWW_PATH}" ]]; then
+# 	rm -fr ${WWW_PATH}
+# fi
 
 # re-create empty directory
 mkdir -p ${WWW_PATH}
