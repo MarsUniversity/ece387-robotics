@@ -18,11 +18,14 @@ mkdir -p ${WWW_PATH}
 # hi
 # EOF
 
+chmod a+x build_html.sh
+
 # for DIR in 'labs' 'pandoc_setup' 'roomba_setup' 'samba' 'software_install' 'syllabus'
-for DIR in 'syllabus'
+for DIR in 'syllabus' 'labs'
 do
 	echo ">" ${DIR}
 	cd ${DIR}
+	chmod a+x build.sh
 	./build.sh
 	mv *.pdf ../${WWW_PATH}
 
