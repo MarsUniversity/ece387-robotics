@@ -26,10 +26,10 @@ install:
 #     - pip install -U typogrify Markdown
 #     - pip install -U pelican
 
-# script:
+script:
 #     # OMG windows seems to be removing the executable bit of my scripts!!!
 #     - chmod -R a+x website
-#     - ls -alR website
+    - ls -al website
 #     # - ./website/build_html.sh
 #     - cd website && ./build_html.sh
 #     - ls -alR website/www
