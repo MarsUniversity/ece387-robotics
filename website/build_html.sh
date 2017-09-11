@@ -2,9 +2,6 @@
 
 set -e
 
-ls -alR website
-pwd
-
 WWW_PATH=www
 
 # clean house on website
