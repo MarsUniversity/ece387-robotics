@@ -2,8 +2,11 @@
 
 set -e
 
+WWW_PATH=../../www
 # START=/Users/kevin/github/ece387/docs/handouts
 START=`pwd`
+
+mkdir -p www
 
 echo ""
 echo "Building PDFs"

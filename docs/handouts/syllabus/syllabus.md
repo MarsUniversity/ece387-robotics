@@ -96,7 +96,7 @@ provide hands on experience with the topics discussed in the lectures. The final
 | 3   | Python                        |      | 1  | |
 | 4   | Python                        |      | 2  | |
 | 5   | Python                        |      | 3  | |
-| 6   | Lab 1: linux, git, and python |      |    | [Lab1]() EOC |
+| 6   | Lab 1: linux, git, and python |      |    | [Lab1](lab1.pdf) EOC |
 | 7   | Kinematics: Introduction      | Y    |    | |
 | 8   | Forward Kinematics            |      |    | |
 | 9   | Inverse Kinematics            |      |    | |
