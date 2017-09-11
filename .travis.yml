@@ -12,8 +12,9 @@ addons:
   apt:
     packages:
     - pandoc
-    - texlive-latex-base
-    - texlive-latex-recommended
+    - texlive-full
+    # - texlive-latex-base
+    # - texlive-latex-recommended
 
 # install:
 #     - ls -alR website
@@ -23,8 +24,8 @@ addons:
 #     - pip install -U pelican
 
 script:
-    - ls -alR website
     - chmod -R a+x website
+    - ls -alR website
     # - ./website/build_html.sh
     - cd website && ./build_html.sh
 
