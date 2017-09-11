@@ -16,12 +16,14 @@ addons:
     - texlive-latex-recommended
 
 install:
+    - ls -al website
     - pip install -U pip setuptools wheel
     # - pip install -U typogrify Markdown
     # - pip install -U pelican
 
 script:
-    - ls
+    - ls -al website
+    - ./website/build_html.sh
     - cd website && ./build_html.sh
 
 # WARNING: deploy will wipe out everything, so setup your deployment
