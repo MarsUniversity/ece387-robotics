@@ -15,15 +15,16 @@ addons:
     - texlive-latex-base
     - texlive-latex-recommended
 
-install:
-    - ls -al website
-    - chmod -R a+x website
-    - pip install -U pip setuptools wheel
-    # - pip install -U typogrify Markdown
-    # - pip install -U pelican
+# install:
+#     - ls -alR website
+#     - chmod -R a+x website
+#     - pip install -U pip setuptools wheel
+#     - pip install -U typogrify Markdown
+#     - pip install -U pelican
 
 script:
-    - ls -al website
+    - ls -alR website
+    - chmod -R a+x website
     # - ./website/build_html.sh
     - cd website && ./build_html.sh
 
