@@ -22,7 +22,7 @@ install:
 
 script:
     - ls
-    - cd website && build_html.sh
+    - cd website && ./build_html.sh
 
 # WARNING: deploy will wipe out everything, so setup your deployment
 # to gh-pages branch in the github settings drop down ... NOT master!
