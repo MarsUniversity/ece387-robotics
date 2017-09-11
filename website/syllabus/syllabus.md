@@ -102,7 +102,7 @@ provide hands on experience with the topics discussed in the lectures. The final
 | 9   | Inverse Kinematics            |      |    | |
 | 10  | Robot Arm Control             |      | 4  | |
 | 11  | Lab 2: Robot Arm              |      | 5  | |
-| 12  | Lab 2: Robot Arm              | Y    |    | [Lab2]() EOC |
+| 12  | Lab 2: Robot Arm              | Y    |    | [Lab2](lab2.pdf) EOC |
 | 13  | Roomba Overview               |      |    | |
 | 14  | Roomba Sensors                |      |    | |
 | 15  | Roomba Sensors                |      |    | |
@@ -110,7 +110,7 @@ provide hands on experience with the topics discussed in the lectures. The final
 | 17  | Lab 3: Sensor Calibration     |      |    | |
 | 18  | GR 1                          |      |    | |
 | 19  | Image Processing              |      |    | |
-| 20  | Image Processing              |      | 6  | [Lab3]() BOC |
+| 20  | Image Processing              |      | 6  | [Lab3](lab3.pdf) BOC |
 | 21  | Image Processing              |      |    | |
 | 22  | Computer Vision               |      |    | |
 | 23  | Computer Vision               |      | 7  | |
@@ -118,7 +118,7 @@ provide hands on experience with the topics discussed in the lectures. The final
 | 25  | Computer Vision               |      | 8  | |
 | 26  | Kalman Filter                 | Y    |    | |
 | 27  | Detection and Tracking        |      |    | |
-| 28  | Lab 4: Detection and Tracking |      | 9  | [Lab4]() EOC |
+| 28  | Lab 4: Detection and Tracking |      | 9  | [Lab4](lab4.pdf) EOC |
 | 29  | Mobile Robots                 |      |    | |
 | 30  | Controls                      |      |    | |
 | 31  | Path Planning                 |      | 10 | |
@@ -126,8 +126,8 @@ provide hands on experience with the topics discussed in the lectures. The final
 | 33  | INS                           |      | 11 | |
 | 34  | INS                           |      |    | |
 | 35  | Lab 5: Roomba                 | Y    |    | |
-| 36  | Lab 5: Roomba                 |      |    | [Lab5]() EOC |
+| 36  | Lab 5: Roomba                 |      |    | [Lab5](lab5.pdf) EOC |
 | 37  | GR2                           |      |    | |
 | 38  | Final Project                 |      |    | |
 | 39  | Final Project                 |      |    | |
-| 40  | Final Project                 |      |    | |
+| 40  | Final Project                 |      |    | [Final Project](final_project.pdf)|
