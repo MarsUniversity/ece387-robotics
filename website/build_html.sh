@@ -1,5 +1,11 @@
 #!/bin/bash
 
+set -e
+
+ls
+pwd
+env
+
 WWW_PATH=www
 
 # clean house on website
