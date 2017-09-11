@@ -21,7 +21,7 @@ install:
     # - pip install -U pelican
 
 script:
-    - ./build_html.sh
+    - ./website/build_html.sh
 
 # WARNING: deploy will wipe out everything, so setup your deployment
 # to gh-pages branch in the github settings drop down ... NOT master!
@@ -29,7 +29,7 @@ deploy:
     provider: pages
     skip_cleanup: true
     github_token: $GITHUB_TOKEN  # Set in travis-ci.org dashboard
-    local_dir: www  # grab the contents of this for webpage
+    local_dir: website/www  # grab the contents of this for webpage
     project_name:  marsuniversity.github.io
     repo: MarsUniversity/ece387
     target_branch: gh-pages

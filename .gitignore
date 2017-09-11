@@ -2,9 +2,4 @@
 .DS_Store
 ._*
 template.*
-*.html
 .ipynb_checkpoints
-
-*.html
-
-www/index.html
