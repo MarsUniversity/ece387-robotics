@@ -19,10 +19,10 @@ git:
 #     - texlive
     # - texlive-fonts-recommended
 
-# install:
+install:
 #     - ls -alR website
 #     - chmod -R a+x website
-#     - pip install -U pip setuptools wheel
+    - pip install -U pip setuptools wheel
 #     - pip install -U typogrify Markdown
 #     - pip install -U pelican
 
