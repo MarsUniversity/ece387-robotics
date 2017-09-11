@@ -17,6 +17,7 @@ addons:
 
 install:
     - ls -al website
+    - chmod a+x website/build_html.sh
     - pip install -U pip setuptools wheel
     # - pip install -U typogrify Markdown
     # - pip install -U pelican
@@ -24,7 +25,7 @@ install:
 script:
     - ls -al website
     - ./website/build_html.sh
-    - cd website && ./build_html.sh
+    # - cd website && ./build_html.sh
 
 # WARNING: deploy will wipe out everything, so setup your deployment
 # to gh-pages branch in the github settings drop down ... NOT master!
