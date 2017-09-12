@@ -13,13 +13,13 @@ addons:
     packages:
     - pandoc
 #     # - texlive-full
-    - texlive-latex-base
-    - texlive-latex-recommended
+    # - texlive-latex-base
+    # - texlive-latex-recommended
 #     # - texlive-common
     - texlive
-    - texlive-fonts-recommended
-    - texlive-publishers
-    - texlive-science
+    # - texlive-fonts-recommended
+    # - texlive-publishers
+    # - texlive-science
     - lmodern
 
 install:
