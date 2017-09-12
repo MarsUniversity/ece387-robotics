@@ -8,16 +8,18 @@ git:
 
 # need packages for converting md to pdf/html and latex
 # for equations
-# addons:
-#   apt:
-#     packages:
-#     - pandoc
+addons:
+  apt:
+    packages:
+    - pandoc
 #     # - texlive-full
-#     # - texlive-latex-base
-#     # - texlive-latex-recommended
+    - texlive-latex-base
+    - texlive-latex-recommended
 #     # - texlive-common
-#     - texlive
-    # - texlive-fonts-recommended
+    - texlive
+    - texlive-fonts-recommended
+    - texlive-publishers
+    - texlive-science
 
 install:
 #     - ls -alR website
@@ -31,7 +33,7 @@ script:
 #     - chmod -R a+x website
     - ls -al website
 #     # - ./website/build_html.sh
-#     - cd website && ./build_html.sh
+    - cd website && ./build_html.sh
 #     - ls -alR website/www
 
 # WARNING: deploy will wipe out everything, so setup your deployment
