@@ -20,6 +20,7 @@ addons:
     - texlive-fonts-recommended
     - texlive-publishers
     - texlive-science
+    - lmodern
 
 install:
 #     - ls -alR website
@@ -32,6 +33,8 @@ script:
 #     # OMG windows seems to be removing the executable bit of my scripts!!!
 #     - chmod -R a+x website
     - ls -al website
+    - which pdflatex
+    - which pandoc
 #     # - ./website/build_html.sh
     - cd website && ./build_html.sh
 #     - ls -alR website/www
