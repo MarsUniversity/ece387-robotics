@@ -1,5 +1,5 @@
 ---
-title: ECE 387 Intro to Robotic Systems
+title: ECE 387 Introduction to Robotic Systems
 header-includes:
     - \usepackage{fancyhdr}
     - \pagestyle{fancy}
@@ -8,7 +8,7 @@ header-includes:
     - \fancyfoot[LE,RO]{Robots are cool!}
 ---
 
-# [Sprint 2018 Syllabus](syllabus.pdf)
+# [Syllabus](syllabus.pdf)
 
 ## Instructor
 
@@ -89,48 +89,48 @@ provide hands on experience with the topics discussed in the lectures. The final
 
 # Schedule
 
-| Lsn | Topic                         | Quiz | Reading | Due       |
-|-----|-------------------------------|------|---------|-----------|
-| 1   | Intro & Overview              |      |         |           |
-| 2   | Linux                         |      |         |           |
-| 3   | Python                        |      |         | [HW1](homework123.pdf) |
-| 4   | Python                        |      |         | [HW2](homework123.pdf) |
-| 5   | Python                        |      |         | [HW3](homework123.pdf) |
-| 6   | Lab 1: linux, git, and python |      |         | [Lab1](lab1.pdf) EOC |
-| 7   | Kinematics: Introduction      | Y    |         | |
-| 8   | Forward Kinematics            |      |         | |
-| 9   | Inverse Kinematics            |      |         | HW4 |
-| 10  | Robot Arm Control             |      |         | |
-| 11  | Lab 2: Robot Arm              |      |         | HW5 |
-| 12  | Lab 2: Robot Arm              | Y    |         | [Lab2](lab2.pdf) EOC |
-| 13  | Roomba Overview               |      |         | |
-| 14  | Roomba Sensors                |      |         | |
-| 15  | Roomba Sensors                |      |         | |
-| 16  | Roomba Sensors                |      |         | |
-| 17  | Lab 3: Sensor Calibration     |      |         | |
-| 18  | GR 1                          |      |         | |
-| 19  | Image Processing              |      |         | |
-| 20  | Image Processing              |      |         | [Lab3](lab3.pdf) BOC |
-| 21  | Image Processing              |      |         | |
-| 22  | Computer Vision               |      |         | |
-| 23  | Computer Vision               |      |         | HW7 |
-| 24  | Computer Vision               |      |         | |
-| 25  | Computer Vision               |      |         | HW8 |
-| 26  | Kalman Filter                 | Y    |         | |
-| 27  | Detection and Tracking        |      |         | HW9 |
-| 28  | Lab 4: Detection and Tracking |      |         | [Lab4](lab4.pdf) EOC |
-| 29  | Mobile Robots                 |      |         | |
-| 30  | Controls                      |      |         | |
-| 31  | Path Planning                 |      |         | HW10 |
-| 32  | Path Planning                 |      |         | |
-| 33  | INS                           |      |         | HW11 |
-| 34  | INS                           |      |         | |
-| 35  | Lab 5: Roomba                 | Y    |         | |
-| 36  | Lab 5: Roomba                 |      |         | [Lab5](lab5.pdf) EOC |
-| 37  | GR2                           |      |         | |
-| 38  | Final Project                 |      |         | |
-| 39  | Final Project                 |      |         | |
-| 40  | Final Project                 |      |         | [Final Project](final_project.pdf)|
+| Lsn | Topic                         | Quiz | HW | Due       |
+|-----|-------------------------------|------|----|-----------|
+| 1   | Intro & Overview              |      |    | |
+| 2   | Linux                         |      |    | |
+| 3   | Python                        |      | 1  | |
+| 4   | Python                        |      | 2  | |
+| 5   | Python                        |      | 3  | |
+| 6   | Lab 1: linux, git, and python |      |    | [Lab1](lab1.pdf) EOC |
+| 7   | Kinematics: Introduction      | Y    |    | |
+| 8   | Forward Kinematics            |      |    | |
+| 9   | Inverse Kinematics            |      |    | |
+| 10  | Robot Arm Control             |      | 4  | |
+| 11  | Lab 2: Robot Arm              |      | 5  | |
+| 12  | Lab 2: Robot Arm              | Y    |    | [Lab2](lab2.pdf) EOC |
+| 13  | Roomba Overview               |      |    | |
+| 14  | Roomba Sensors                |      |    | |
+| 15  | Roomba Sensors                |      |    | |
+| 16  | Roomba Sensors                |      |    | |
+| 17  | Lab 3: Sensor Calibration     |      |    | |
+| 18  | GR 1                          |      |    | |
+| 19  | Image Processing              |      |    | |
+| 20  | Image Processing              |      | 6  | [Lab3](lab3.pdf) BOC |
+| 21  | Image Processing              |      |    | |
+| 22  | Computer Vision               |      |    | |
+| 23  | Computer Vision               |      | 7  | |
+| 24  | Computer Vision               |      |    | |
+| 25  | Computer Vision               |      | 8  | |
+| 26  | Kalman Filter                 | Y    |    | |
+| 27  | Detection and Tracking        |      |    | |
+| 28  | Lab 4: Detection and Tracking |      | 9  | [Lab4](lab4.pdf) EOC |
+| 29  | Mobile Robots                 |      |    | |
+| 30  | Controls                      |      |    | |
+| 31  | Path Planning                 |      | 10 | |
+| 32  | Path Planning                 |      |    | |
+| 33  | INS                           |      | 11 | |
+| 34  | INS                           |      |    | |
+| 35  | Lab 5: Roomba                 | Y    |    | |
+| 36  | Lab 5: Roomba                 |      |    | [Lab5](lab5.pdf) EOC |
+| 37  | GR2                           |      |    | |
+| 38  | Final Project                 |      |    | |
+| 39  | Final Project                 |      |    | |
+| 40  | Final Project                 |      |    | [Final Project](final_project.pdf)|
 
 # References
 

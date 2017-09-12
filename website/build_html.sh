@@ -5,9 +5,9 @@ set -e
 WWW_PATH=www
 
 # clean house on website
-# if [[ -d "${WWW_PATH}" ]]; then
-# 	rm -fr ${WWW_PATH}
-# fi
+if [[ -d "${WWW_PATH}" ]]; then
+	rm -fr ${WWW_PATH}
+fi
 
 # re-create empty directory
 mkdir -p ${WWW_PATH}
@@ -20,7 +20,7 @@ mkdir -p ${WWW_PATH}
 
 chmod a+x build_html.sh
 
-for DIR in 'labs' 'pandoc_setup' 'roomba_setup' 'samba' 'software_install' 'syllabus'
+for DIR in 'labs' 'pandoc_setup' 'roomba_setup' 'samba' 'software_install' 'syllabus' 'homeworks'
 # for DIR in 'syllabus' 'labs'
 do
 	echo ">" ${DIR}
