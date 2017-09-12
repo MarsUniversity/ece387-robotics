@@ -8,7 +8,7 @@ header-includes:
     - \fancyfoot[LE,RO]{Robots are cool!}
 ---
 
-# Syllabus
+# [Syllabus](syllabus.pdf)
 
 ## Instructor
 
@@ -74,7 +74,7 @@ If you are expecting to miss class on the day an assignment is due, you shall tu
 
 ## Collaboration and Documentation Policy
 
-You may receive help from any DFEC faculty member or any student currently enrolled in ECE387. Document all help received on work submitted for grading IAW DF policies, or none if your work was completely individual effort.
+You may receive help from any DFEC faculty member on the homework. Do not work with other students in the class or who have taken the class previously. Document all help received on work submitted for grading IAW DF policies, or *none* if your work was completely individual effort.
 
 ## Quizzes
 
@@ -131,3 +131,11 @@ provide hands on experience with the topics discussed in the lectures. The final
 | 38  | Final Project                 |      |    | |
 | 39  | Final Project                 |      |    | |
 | 40  | Final Project                 |      |    | [Final Project](final_project.pdf)|
+
+# References
+
+- [Roomba Setup](roomba_setup.pdf)
+- [Interfacing Windoze and Linux file systems](windows_linux.pdf)
+- [Connecting to the Roomba via wifi](access_point.pdf)
+- [Laptop software install for python, OpenCV, and MS Compiler](software_install.pdf)
+- [Pandoc setup for automating website/documentation generation](pandoc_setup.pdf)
