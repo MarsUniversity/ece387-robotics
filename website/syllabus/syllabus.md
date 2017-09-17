@@ -93,15 +93,15 @@ provide hands on experience with the topics discussed in the lectures. The final
 |-----|-----------------------------------|------|---------|-----------|
 | 1   | [Intro & Overview]()              |      |         |           |
 | 2   | [Linux Command Line]()            |      |         |           |
-| 3   | [Python Intro]()                  |      |         | [HW1 Command Line](homework123.pdf) |
-| 4   | [Python]()                        |      |         | [HW2 Python](homework123.pdf) |
-| 5   | [Python]()                        |      |         | [HW3 Python](homework123.pdf) |
+| 3   | [Python Intro]()                  |      |         | [HW1 Command Line](hw123.pdf) |
+| 4   | [Python]()                        |      |         | [HW2 Python](hw123.pdf) |
+| 5   | [Python]()                        |      |         | [HW3 Python](hw123.pdf) |
 | 6   | [Lab 1: linux and python](lab1.pdf) |      |         | [Lab1](lab1.pdf) EOC |
 | 7   | [Kinematics: Intro]()             | Y    |         | |
 | 8   | [Forward Kinematics]()            |      |         | |
-| 9   | [Inverse Kinematics]()            |      |         | [HW4 Forward Kinematics](homework4.pdf)|
+| 9   | [Inverse Kinematics]()            |      |         | [HW4 Forward Kinematics](hw4.pdf)|
 | 10  | [Robot Arm Control]()             |      |         | |
-| 11  | [Image Processing]()              |      |         | [HW5 Inverse Kinematics](homework5.pdf)|
+| 11  | [Image Processing]()              |      |         | [HW5 Inverse Kinematics](hw5.pdf)|
 | 12  | [Lab 2: Robot Arm](lab2.pdf)      |      |         | [Pre-Lab2](lab2.pdf) |
 | 13  | [Lab 2: Robot Arm](lab2.pdf)      | Y    |         | [Lab2](lab2.pdf) EOC |
 | 14  | [Image Processing]()              |      |         | |
@@ -112,12 +112,12 @@ provide hands on experience with the topics discussed in the lectures. The final
 | 19  | [CV: Marker Detection]()          |      |         | [HW7 Face Detection]() |
 | 20  | [CV: ??]()                        |      |         | [HW8 Marker Detection]() |
 | 21  | [CV: Kalman Filter]()                     | Y    |         | |
-| 22  | [CV: Detection and Tracking]()            |      |         | [HW9 Kalman Filtering] |
+| 22  | [CV: Detection and Tracking]()            |      |         | [HW9 Kalman Filtering](hw9.pdf) |
 | 23  | [Lab 3: Detection and Tracking](lab3.pdf) |      |         | [Lab3](lab3.pdf) EOC |
 | 24  | [Mobile Robots]()                 |      |         | |
 | 25  | [Roomba Overview]()               |      |         | |
 | 26  | Roomba Sensors (HW10 in class)    |      |         | |
-| 27  | [Roomba Sensors]()                |      |         | [HW10 Roomba Sensors](homework10.pdf) |
+| 27  | [Roomba Sensors]()                |      |         | [HW10 Roomba Sensors](hw10.pdf) |
 | 28  | [Roomba Sensors]()                |      |         | |
 | 29  | [Lab 3: Sensor Calibration]()     |      |         | |
 | 30  | [Controls]()                      |      |         | |
@@ -132,7 +132,12 @@ provide hands on experience with the topics discussed in the lectures. The final
 | 39  | Final Project                 |      |         | |
 | 40  | Final Project                 |      |         | [Final Project](final_project.pdf)|
 
-# References
+# Templates
+
+- [Homework: Jupyter Notebook](template.ipynb)
+- [Lab: Python](template.py)
+
+# Course References
 
 - [Roomba Setup](roomba_setup.pdf)
 - [Interfacing Windoze and Linux file systems](windows_linux.pdf)

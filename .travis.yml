@@ -32,11 +32,11 @@ install:
 script:
 #     # OMG windows seems to be removing the executable bit of my scripts!!!
 #     - chmod -R a+x website
-    - ls -al website
+    # - ls -al website
     - which pdflatex
-    - which pandoc
+    # - which pandoc
 #     # - ./website/build_html.sh
-    - cd website && ./build_html.sh
+    # - cd website && ./build_html.sh
 #     - ls -alR website/www
 
 # WARNING: deploy will wipe out everything, so setup your deployment

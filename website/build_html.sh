@@ -38,3 +38,18 @@ do
 
 	echo "-------------------"
 done
+
+cd "lessons"
+echo "> lessons"
+echo "-------------------"
+chmod a+x build.sh
+./build.sh
+mv *.tgz ../${WWW_PATH}
+cd ../
+
+cd "templates"
+echo "> templates"
+cp *.py ../${WWW_PATH}
+cp *.ipynb ../${WWW_PATH}
+cd ../
+echo "-------------------"

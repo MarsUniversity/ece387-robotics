@@ -1,3 +1,8 @@
 #!/bin/bash
 
-pandoc homework123.md -V geometry:margin=1in -s -o homework123.pdf
+set -e
+
+for HW in 'hw123' 'hw4' 'hw5'
+do 
+    pandoc ${HW}.md -V geometry:margin=1in -s -o ${HW}.pdf
+done
