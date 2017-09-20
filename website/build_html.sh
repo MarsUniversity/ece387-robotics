@@ -6,7 +6,8 @@ WWW_PATH=www
 
 # clean house on website
 if [[ -d "${WWW_PATH}" ]]; then
-	rm -fr ${WWW_PATH}
+	echo "Revmoving main website directory ${WWW_PATH}"
+	# rm -fr ${WWW_PATH}
 fi
 
 # re-create empty directory
@@ -20,8 +21,7 @@ mkdir -p ${WWW_PATH}
 
 chmod a+x build_html.sh
 
-# for DIR in 'labs' 'pandoc_setup' 'roomba_setup' 'samba' 'software_install' 'syllabus' 'homeworks' 'ps4_controller'
-for DIR in 'block_1_basics' 'block_2_kinematics' 'block_3_vision' 'block_4_mobile_robotics'
+for DIR in 'syllabus' 'block_1_basics' 'block_2_kinematics' 'block_3_vision' 'block_4_mobile_robotics' 'guides' 'templates'
 do
 	echo ">" ${DIR}
 	cd ${DIR}
@@ -29,7 +29,7 @@ do
 	./build.sh
 
 	cd www
-	mv * ../../${WW_PATH}
+	mv * ../../${WWW_PATH}
 	cd ..
 	# rm -fr www
 
@@ -38,14 +38,15 @@ do
 	echo "-------------------"
 done
 
-cd "syllabus"
-echo "> syllabus"
-echo "-------------------"
-chmod a+x build.sh
-./build.sh
-mv syllabus.pdf ../${WWW_PATH}
-mv index.html ../${WWW_PATH}
-cd ../
+# cd syllabus
+# echo "> syllabus"
+# echo "-------------------"
+# chmod a+x build.sh
+# ./build.sh
+# mv syllabus.pdf ../${WWW_PATH}
+# mv index.html ../${WWW_PATH}
+# cp pandoc.css ../${WWW_PATH}
+# cd ../
 
 # guides
 

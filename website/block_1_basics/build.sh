@@ -4,9 +4,9 @@ set -e
 
 WWW=www
 
-if [[ -d ${WWW} ]]; then
-  rm -fr ${WWW}
-fi
+# if [[ -d ${WWW} ]]; then
+#   rm -fr ${WWW}
+# fi
 
 mkdir -p ${WWW}
 

@@ -2,13 +2,16 @@
 
 ### Lessons
 
-- [a](lsn11.tar.gz)
-- [a](lsn14.tar.gz)
-- [a](lsn15.tar.gz)
-- [a](lsn19.tar.gz)
-- [Detection](lsn20.tar.gz)
-- [Kalman Filtering](lsn21-kf.pptx)
-- [Tracking](lsn22.tar.gz)
+- [24. Mobile Robots](lsn11.tar.gz)
+- [25. iRobot Create Overview](lsn14.tar.gz)
+- [26. iRobot Create Sensors](lsn15.tar.gz)
+- [27. Navigation Particle Filter](lsn19.tar.gz)
+- [28. Navigation Motion Modelling](lsn20.tar.gz)
+- [30. Robot Controls](lsn21-kf.pptx)
+- [31. Path Planning](lsn22.tar.gz)
+- [32. Path Planning](index.html)
+- [33. Inertial Navigation System (INS)](index.html)
+- [34. INS](index.html)
 
 You can unzip the tar files on the command line with `tar zxvf filename.tar.gz`.
 Unfortunatly, it is not simple to compress folders on linux and have them easily

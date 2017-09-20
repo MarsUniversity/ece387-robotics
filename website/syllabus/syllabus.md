@@ -89,42 +89,42 @@ provide hands on experience with the topics discussed in the lectures. The final
 
 # Schedule
 
-| Lsn | Topic                         | Quiz | Reading | Due       |
-|-----|-------------------------------|------|---------|-----------|
-| 1   | Intro & Overview              |      |         |           |
-| 2   | Linux Command Line            |      |         |           |
-| 3   | Python Intro                  |      |         | [HW1 Command Line](hw123.pdf) |
-| 4   | Python                        |      |         | [HW2 Python](hw123.pdf) |
-| 5   | Python                        |      |         | [HW3 Python](hw123.pdf) |
-| 6   | Lab 1: linux and python       |      |         | [Lab1](lab1.pdf) EOC |
-| 7   | Kinematics: Intro             | Y    |         | |
-| 8   | Forward Kinematics            |      |         | |
-| 9   | Inverse Kinematics            |      |         | [HW4 Forward Kinematics](hw4.pdf)|
-| 10  | Robot Arm Control             |      |         | |
-| 11  | Image Processing              |      |         | [HW5 Inverse Kinematics](hw5.pdf)|
-| 12  | Lab 2: Robot Arm              |      |         | [Pre-Lab2](lab2.pdf) |
-| 13  | Lab 2: Robot Arm              | Y    |         | [Lab2](lab2.pdf) EOC |
-| 14  | Image Processing              |      |         | |
-| 15  | Image Processing              |      |         | [HW6 Image Sources](hw6.pdf) |
-| 16  | GR 1  (move to 18?)           |      |         | |
-| 17  | Computer Vision Intro         |      |         | |
-| 18  | CV: Face Detection            |      |         | |
-| 19  | CV: Marker Detection          |      |         | [HW7 Face Detection](hw7.pdf) |
-| 20  | CV: ??                        |      |         | [HW8 Marker Detection](hw8.pdf) |
-| 21  | CV: Kalman Filter             | Y    |         | |
-| 22  | CV: Detection and Tracking    |      |         | [HW9 Kalman Filtering](hw9.pdf) |
-| 23  | Lab 3: Detection and Tracking |      |         | [Lab3](lab3.pdf) EOC |
-| 24  | Mobile Robots                 |      |         | |
-| 25  | Roomba Overview               |      |         | |
-| 26  | Roomba Sensors (HW10 in class)|      |         | |
-| 27  | Nav Particle Filter           |      |         | [HW10 Roomba Sensors](hw10.pdf) |
-| 28  | Nav Motion Model              |      |         | |
-| 29  | Lab 3: Sensor Calibration     |      |         | |
-| 30  | Controls                      |      |         | |
-| 31  | Path Planning                 |      |         | [Lab4](lab4.pdf) BOC |
-| 32  | Path Planning (HW11 in class) |      |         | |
-| 33  | INS                           |      |         | [HW11](hw11.pdf) |
-| 34  | INS                           |      |         | |
+| Lsn                 | Topic                         | Quiz | Reading | Due       |
+|---------------------|-------------------------------|------|---------|-----------|
+| [1](block-1.html)   | Intro & Overview              |      |         |           |
+| [2](block-1.html)   | Linux Command Line            |      |         |           |
+| [3](block-1.html)   | Python Intro                  |      |         | [HW1 Command Line](hw123.pdf) |
+| [4](block-1.html)   | Python                        |      |         | [HW2 Python](hw123.pdf) |
+| [5](block-1.html)   | Python                        |      |         | [HW3 Python](hw123.pdf) |
+| [6](block-1.html)   | Lab 1: linux and python       |      |         | [Lab1](lab1.pdf) EOC |
+| [7](block-2.html)   | Kinematics: Intro             | Y    |         | |
+| [8](block-2.html)   | Forward Kinematics            |      |         | |
+| [9](block-2.html)   | Inverse Kinematics            |      |         | [HW4 Forward Kinematics](hw4.pdf)|
+| [10](block-2.html)  | Robot Arm Control             |      |         | |
+| [11](block-3.html)  | Image Processing              |      |         | [HW5 Inverse Kinematics](hw5.pdf)|
+| [12](block-2.html)  | Lab 2: Robot Arm              |      |         | [Pre-Lab2](lab2.pdf) |
+| [13](block-2.html)  | Lab 2: Robot Arm              | Y    |         | [Lab2](lab2.pdf) EOC |
+| [14](block-3.html)  | Image Processing              |      |         | |
+| [15](block-3.html)  | Image Processing              |      |         | [HW6 Image Sources](hw6.pdf) |
+| 16                  | GR 1  (move to 18?)           |      |         | |
+| [17](block-3.html)  | Computer Vision Intro         |      |         | |
+| [18](block-3.html)  | CV: Face Detection            |      |         | |
+| [19](block-3.html)  | CV: Marker Detection          |      |         | [HW7 Face Detection](hw7.pdf) |
+| [20](block-3.html)  | CV: Target Detection          |      |         | [HW8 Marker Detection](hw8.pdf) |
+| [21](block-3.html)  | CV: Kalman Filter             | Y    |         | |
+| [22](block-3.html)  | CV: Target Tracking           |      |         | [HW9 Kalman Filtering](hw9.pdf) |
+| [23](block-3.html)  | Lab 3: Detection and Tracking |      |         | [Lab3](lab3.pdf) EOC |
+| [24](block-4.html)  | Mobile Robots                 |      |         | |
+| [25](block-4.html)  | Roomba Overview               |      |         | |
+| [26](block-4.html)  | Roomba Sensors (HW10 in class)|      |         | |
+| [27](block-4.html)  | Nav Particle Filter           |      |         | [HW10 Roomba Sensors](hw10.pdf) |
+| [28](block-4.html)  | Nav Motion Model              |      |         | |
+| [29](block-4.html)  | Lab 3: Sensor Calibration     |      |         | |
+| [30](block-4.html)  | Controls                      |      |         | |
+| [31](block-4.html)  | Path Planning                 |      |         | [Lab4](lab4.pdf) BOC |
+| [32](block-4.html)  | Path Planning (HW11 in class) |      |         | |
+| [33](block-4.html)  | INS                           |      |         | [HW11](hw11.pdf) |
+| [34](block-4.html)  | INS                           |      |         | |
 | 35  | Lab 5: Roomba                 | Y    |         | |
 | 36  | Lab 5: Roomba                 |      |         | [Lab5](lab5.pdf) EOC |
 | 37  | GR2                           |      |         | |
@@ -135,16 +135,4 @@ provide hands on experience with the topics discussed in the lectures. The final
 # Templates
 
 - [Homework: Jupyter Notebook](template.ipynb)
-- [Lab: Python](template.py)
-
-# Lesson Material
-
-- 
-
-# Course References
-
-- [Roomba Setup](roomba_setup.pdf)
-- [Interfacing Windoze and Linux file systems](windows_linux.pdf)
-- [Connecting to the Roomba via wifi](access_point.pdf)
-- [Laptop software install for python, OpenCV, and MS Compiler](software_install.pdf)
-- [Pandoc setup for automating website/documentation generation](pandoc_setup.pdf)
+- [Lab: Python](python.py)

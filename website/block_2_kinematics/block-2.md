@@ -2,9 +2,9 @@
 
 ### Lessons
 
-- [Kinematics Intro](tmp.pptx)
-- [2D Forward/Inverse Kinematics](lsn8.tar.gz)
-- [Robot Arm Control](lsn9.tar.gz)
+- [7. Kinematics Intro](tmp.pptx)
+- [8. 2D Forward/Inverse Kinematics](lsn8.tar.gz)
+- [9. Robot Arm Control](lsn9.tar.gz)
 
 You can unzip the tar files on the command line with `tar zxvf filename.tar.gz`.
 Unfortunatly, it is not simple to compress folders on linux and have them easily

@@ -6,3 +6,4 @@ template.*
 old/
 software/
 *.bak
+tex2pdf.*/
