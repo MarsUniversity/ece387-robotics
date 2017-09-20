@@ -3,3 +3,6 @@
 ._*
 template.*
 .ipynb_checkpoints
+old/
+software/
+*.bak

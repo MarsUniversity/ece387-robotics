@@ -20,36 +20,38 @@ mkdir -p ${WWW_PATH}
 
 chmod a+x build_html.sh
 
-for DIR in 'labs' 'pandoc_setup' 'roomba_setup' 'samba' 'software_install' 'syllabus' 'homeworks' 'ps4_controller'
-# for DIR in 'syllabus' 'labs'
+# for DIR in 'labs' 'pandoc_setup' 'roomba_setup' 'samba' 'software_install' 'syllabus' 'homeworks' 'ps4_controller'
+for DIR in 'block_1_basics' 'block_2_kinematics' 'block_3_vision' 'block_4_mobile_robotics'
 do
 	echo ">" ${DIR}
 	cd ${DIR}
 	chmod a+x build.sh
 	./build.sh
-	mv *.pdf ../${WWW_PATH}
 
-	if [[ -f "index.html" ]]; then
-		mv index.html ../${WWW_PATH}
-		cp pandoc.css ../${WWW_PATH}
-	fi
+	cd www
+	mv * ../../${WW_PATH}
+	cd ..
+	# rm -fr www
 
-	cd ../
+	cd ..
 
 	echo "-------------------"
 done
 
-cd "lessons"
-echo "> lessons"
+cd "syllabus"
+echo "> syllabus"
 echo "-------------------"
 chmod a+x build.sh
 ./build.sh
-mv *.tgz ../${WWW_PATH}
+mv syllabus.pdf ../${WWW_PATH}
+mv index.html ../${WWW_PATH}
 cd ../
 
-cd "templates"
-echo "> templates"
-cp *.py ../${WWW_PATH}
-cp *.ipynb ../${WWW_PATH}
-cd ../
-echo "-------------------"
+# guides
+
+# cd "templates"
+# echo "> templates"
+# cp *.py ../${WWW_PATH}
+# cp *.ipynb ../${WWW_PATH}
+# cd ../
+# echo "-------------------"
