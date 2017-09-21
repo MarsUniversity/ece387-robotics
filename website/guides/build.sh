@@ -5,7 +5,7 @@ set -e
 WWW=www
 
 if [[ -d ${WWW} ]]; then
-  rm -fr ${WWW}
+	rm -fr ${WWW}
 fi
 
 mkdir -p ${WWW}
@@ -14,14 +14,14 @@ echo "============================"
 echo " Guides"
 echo "============================"
 
-for DIR in 'samba' 'software_install' 'roomba_setup' 'pandoc_setup'
+for DIR in 'samba' 'software_install' 'roomba_setup' 'pandoc_setup' 'cheatsheet'
 do
 	echo ">" ${DIR}
 	cd ${DIR}
 	chmod a+x build.sh
 	./build.sh
-  mv *.pdf ../${WWW}
-  cd ..
+	cp *.pdf ../${WWW}
+	cd ..
 done
 
 echo "Building guides webpage"

@@ -125,14 +125,18 @@ provide hands on experience with the topics discussed in the lectures. The final
 | [32](block-4.html)  | Path Planning (HW11 in class) |      |         | |
 | [33](block-4.html)  | INS                           |      |         | [HW11](hw11.pdf) |
 | [34](block-4.html)  | INS                           |      |         | |
-| 35  | Lab 5: Roomba                 | Y    |         | |
-| 36  | Lab 5: Roomba                 |      |         | [Lab5](lab5.pdf) EOC |
-| 37  | GR2                           |      |         | |
-| 38  | Final Project                 |      |         | |
-| 39  | Final Project                 |      |         | |
-| 40  | Final Project                 |      |         | [Final Project](final_project.pdf)|
+| [35](block-4.html)  | Lab 5: Roomba                 | Y    |         | |
+| [36](block-4.html)  | Lab 5: Roomba                 |      |         | [Lab5](lab5.pdf) EOC |
+| 37                  | GR2                           |      |         | |
+| 38                  | Final Project                 |      |         | |
+| 39                  | Final Project                 |      |         | |
+| 40                  | Final Project                 |      |         | [Final Project](final_project.pdf)|
 
 # Templates
 
-- [Homework: Jupyter Notebook](template.ipynb)
+- [Homework: Jupyter Notebook](jupyter.ipynb)
 - [Lab: Python](python.py)
+
+# References
+
+- [guides and quick references](guides.html)
