@@ -1,0 +1,10 @@
+*.pyc
+.DS_Store
+._*
+template.*
+.ipynb_checkpoints
+old/
+software/
+tex2pdf.*/
+*.log
+www

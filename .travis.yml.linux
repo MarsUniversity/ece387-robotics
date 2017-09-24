@@ -1,0 +1,28 @@
+language: python
+
+sudo: false
+
+# git:
+#     depth: 1
+
+# need packages for converting md to pdf/html and latex
+# for equations
+addons:
+  apt:
+    packages:
+    - pandoc
+    - texlive
+    - lmodern
+
+before_install:
+    - sudo apt-get update -qq
+
+install: true
+
+script:
+    # OMG windows seems to be removing the executable bit of my scripts!!!
+    - cd website
+    - chmod a+x build_html.sh
+    - chmod a+x deploy.sh
+    - ./build_html.sh
+    - ./deploy.sh
