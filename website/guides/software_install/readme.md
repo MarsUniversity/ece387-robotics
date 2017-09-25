@@ -15,17 +15,16 @@ abstract: This will show you how to install the software for the class. We will 
 ## Git-Bash
 
 1. Grab the git-bash package from [git-scm.com](https://git-scm.com/download/win) and install it
-1. From this folder, grab .bash_profile (note it has "." on the front so it is a hidden file) and drop it in your home folder
-    1. My home folder, for example, is: C:/Users/Kevin.Walchko
+1. From this folder, grab `.bash_profile` (note it has "." on the front so it is a hidden file) and drop it in your home folder
+    1. My home folder, for example, is: `C:/Users/Kevin.Walchko`
 1. Now to open a bash window, you can double click on the git-bash icon on your desktop or from the start menu: All Programs -> Git -> Git Bash
 
 ## Python
 
 1. Grab the python package from [www.python.org](https://www.python.org/downloads/windows/)
 1. You should have something like `python-2.7.14.amd64.msi`, run that and install the software to your C: drive
-1. Now install
 1. Open a bash window
-1. Run: `pip install -U pip setuptools wheel` to update your software
+1. Update your software with: `pip install -U pip setuptools wheel`
 
 ### Microsoft Compiler for Python 2.7
 
@@ -45,7 +44,7 @@ install one.
     1. to: `C:\Python27\Lib\site-packages`
 1. Now test:
     1. open a bash window
-    1. run `python`
+    1. run: `python`
     1. type: `import cv2`
     1. if there are no errors ... you are good!
 
@@ -54,9 +53,10 @@ install one.
 You have to have Python and GitBash installed already before you do this.
 
 1. Open a bash window
-1. Run `pip install -U numpy jupyter opencvutils matplotlib jupyter_tools`
-1. Run `jupyter notebook` and a webpage should open up. From there you can create or
-   navigate to jupyter notebooks and open them
+1. Run: `pip install -U numpy jupyter opencvutils matplotlib jupyter_tools`
+1. Once that finishes installing, run: `jupyter notebook`
+1. A webpage should open up. From there you can create or
+   navigate to jupyter notebooks and open them.
 
 ## Other Python Libraries
 
