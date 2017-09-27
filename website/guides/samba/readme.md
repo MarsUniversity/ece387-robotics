@@ -71,3 +71,18 @@ The process will look similar to the screenshot below.
 5. Now test it out: `ssh pi@robot_name.local`. It should log you directly into
    the robot, your authentication is handled via [Diffie–Hellman](https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange)
    protocol and the certificate we just created.
+   
+# Accessing Windows (or a Samba Share) from Linux
+   
+Sometimes you need to access a Windoze hard drive or another Linux system with a  Samba share from a Linux system.
+      
+1. Edit `/etc/fstab` with the following line: //*server*/*share* *mountpoint* cifs username=pi,password=raspberry,defaults,users,auto 0 0
+    1. *server*: server name like robot.local or an IP address like 10.10.10.2
+    1. *share*: folder to give access too, like `pi` (the default user's home folder)
+    1. *mountpoint*: where to mount the remote system to your local system. Typically I put it in /mnt, so something like:
+        ```bash
+        sudo mkdir /mnt/samba
+        sudo chown pi:pi /mnt/samba      
+        ```
+    1. Yes, I am using the default user and password ... change however you see fit.
+1. Now this should mount automatically after boot, but if not: `sudo mount -a`
