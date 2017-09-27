@@ -15,18 +15,25 @@ echo " Block 4"
 echo "============================"
 
 # PPT
-for PPT in 'lsn24' 'lsn25' 'lsn27' 'lsn28'
+for PPT in 'lsn24'
 do
   echo "Copying ${PPT} to ${WWW}"
   cp ${PPT}/*.pptx ${WWW}
 done
 
 # jupyter notebooks
-for JUPYTER in 'lsn33'
+# for JUPYTER in 'lsn25' 'lsn31' 'lsn33'
+# do
+#   echo "Moving ${JUPYTER}.tar.gz to ${WWW}"
+#   tar zcf ${JUPYTER}.tar.gz ${JUPYTER}
+#   mv *.gz ${WWW}
+# done
+
+for JUPYTER in 'lsn25' 'lsn31' 'lsn33'
 do
   echo "Moving ${JUPYTER}.tar.gz to ${WWW}"
-  tar zcf ${JUPYTER}.tar.gz ${JUPYTER}
-  mv *.gz ${WWW}
+  zip -r -X ${JUPYTER}.zip ${JUPYTER}
+  mv *.zip ${WWW}
 done
 
 # do labs
@@ -45,11 +52,6 @@ do
   pandoc ${HW}.md -V geometry:margin=1in -s -o ${HW}.pdf
   mv *.pdf ../${WWW}
 done
-cd ..
-
-# do references
-cd references
-cp *.pdf ../${WWW}
 cd ..
 
 echo "Building block webpage"
