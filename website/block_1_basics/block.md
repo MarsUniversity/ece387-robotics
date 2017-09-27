@@ -21,3 +21,7 @@ extractable in windoze.
 ### Labs
 
 - [lab 1: Linux Command Line and Python](lab1.pdf)
+
+### References
+
+- [Fast Lane to Python](Fast_Lane_to_Python.pdf)

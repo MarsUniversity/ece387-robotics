@@ -46,6 +46,11 @@ do
 done
 cd ..
 
+# do references
+cd references
+cp *.pdf ../${WWW}
+cd ..
+
 echo "Building block webpage"
 pandoc -s -S -c pandoc.css -t html5 -o block-1.html block.md
 cp pandoc.css ${WWW}
