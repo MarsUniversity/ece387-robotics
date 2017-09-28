@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 set -e
 
@@ -19,20 +19,25 @@ for PPT in 'lsn24'
 do
   echo "Copying ${PPT} to ${WWW}"
   cp ${PPT}/*.pptx ${WWW}
+  echo "done"
 done
 
 # jupyter notebooks
-# for JUPYTER in 'lsn25' 'lsn31' 'lsn33'
-# do
-#   echo "Moving ${JUPYTER}.tar.gz to ${WWW}"
-#   tar zcf ${JUPYTER}.tar.gz ${JUPYTER}
-#   mv *.gz ${WWW}
-# done
+echo "jupyter"
+CMD=$(type -P "zip")
+echo ${CMD}
+if [[ -z "${CMD}" ]]; then
+    echo "empty"
+    CMD="/c/Program\ Files/7-Zip/7z.exe a"
+else
+    echo "good"
+    CMD=`/usr/bin/env zip`
+fi
 
 for JUPYTER in 'lsn25' 'lsn31' 'lsn33'
 do
   echo "Moving ${JUPYTER}.tar.gz to ${WWW}"
-  zip -r -X ${JUPYTER}.zip ${JUPYTER}
+  ${CMD} -r ${JUPYTER}.zip ${JUPYTER}
   mv *.zip ${WWW}
 done
 
