@@ -19,6 +19,30 @@ abstract: This will show you how to install the software for the class. We will 
     1. My home folder, for example, is: `C:/Users/Kevin.Walchko`
 1. Now to open a bash window, you can double click on the git-bash icon on your desktop or from the start menu: All Programs -> Git -> Git Bash
 
+Also to make your life a little easier, use this `.bash_profile`. Just place this
+in a simple text file and leave it in your home directory `C:/Users/<your name>`:
+
+```bash
+export PATH=/c/Python27:/c/Python27/Scripts:$PATH
+alias python='winpty /c/Python27/python.exe'
+alias pip='python -m pip'
+alias ll='ls -lh'
+alias ls='ls -Fh --color=auto --show-control-chars'
+
+USR="\[\033[01;32m\]"
+HOST="\[\033[01;35m\]"
+DIR="\[\033[01;34m\]"
+END="\[\033[0m\]"
+
+export PS1="$USR\u@$HOST\h $DIR\W$END \$ "
+
+# for some stupid reason, bash starts at root level
+cd ~
+
+```
+
+If there is already a `.bash_profile` there, then overwrite it with this one.
+
 ## Python
 
 1. Grab the python package from [www.python.org](https://www.python.org/downloads/windows/)

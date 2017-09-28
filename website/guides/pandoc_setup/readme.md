@@ -66,5 +66,26 @@ where:
 
 ## Windoze Setup
 
-You should be able to do this on Windoze too by installing both `pandoc` and
-`texlive`. I will leave that exercise up to the reader.
+![](pics/windows.jpg){width=1in}
+
+
+
+### Zip
+
+Install [7-Zip](http://www.7-zip.org/) from the website. This has a command line
+ability. Now setup your bash environment with:
+
+    alias zip="/c/Program\ Files/7-Zip/7z.exe a"
+    export PATH=$PATH:"/c/Program Files/7-Zip"
+
+So the nice thing here is, when you call `zip -r files.zip folder` in your linux/unix
+bash script, here on Windoze, the command will call `7z` and have it act just like
+`zip` on linux/unix.
+
+### Pandoc
+
+Install from [pandoc website](http://pandoc.org/installing.html). You will also
+have to install MiKTeX, but the directions are on the pandoc install website too.
+MiKTeX installs the software necessary to To set up the environment do:
+
+    export PATH=$PATH:"/c/Users/Kevin.Walchko/AppData/Local/Programs/MiKTeX 2.9/miktex/bin/x64"
