@@ -110,6 +110,7 @@ avoid obstacles while doing this, however, if something gets in your way, you
 do not have to worry about ending in the same location you started in. Just complete the cube (best effort) after avoiding the obstacle.
 
 Explain to your instructor the following questions:
+
 - Did it work?
 - How close were you?
 - Why did this or why not did this work?

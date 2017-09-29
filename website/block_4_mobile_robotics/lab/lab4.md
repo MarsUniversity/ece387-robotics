@@ -76,16 +76,13 @@ every 90 degrees. This second data set is to check our biases are correct. Remem
 biases you calculate are only good the robot you develop them for, they are not transferable
 to another robot.
 
-After you have save the data successfully, open the file and take a look at the data.
+After you have save the data successfully, take a look at the data.
 
     cat imu_1.json
 
 You will notice that the data is all text. Since text is generally not efficient, a better
 way to store lots of data would be to use a binary form of json (bson^[https://en.wikipedia.org/wiki/BSON])
 with some method of compress to reduce the data file size.
-
-**Note:** We will use `bagit` again later when working with the Roomba to record
-sensor and camera data.
 
 ## Task 2: Determine Calibration
 

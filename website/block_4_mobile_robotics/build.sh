@@ -23,20 +23,15 @@ do
 done
 
 # jupyter notebooks
-echo "jupyter"
-CMD=$(type -P "zip")
+CMD=$(command -v "zip")
 echo ${CMD}
 if [[ -z "${CMD}" ]]; then
-    echo "empty"
     CMD="/c/Program\ Files/7-Zip/7z.exe a"
-else
-    echo "good"
-    CMD=`/usr/bin/env zip`
 fi
 
 for JUPYTER in 'lsn25' 'lsn31' 'lsn33'
 do
-  echo "Moving ${JUPYTER}.tar.gz to ${WWW}"
+  echo "Moving ${JUPYTER}.zip to ${WWW}"
   ${CMD} -r ${JUPYTER}.zip ${JUPYTER}
   mv *.zip ${WWW}
 done
