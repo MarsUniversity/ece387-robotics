@@ -89,3 +89,11 @@ have to install MiKTeX, but the directions are on the pandoc install website too
 MiKTeX installs the software necessary to To set up the environment do:
 
     export PATH=$PATH:"/c/Users/Kevin.Walchko/AppData/Local/Programs/MiKTeX 2.9/miktex/bin/x64"
+
+
+# Github
+
+## Access
+
+- Generate a [Personal Access Token](https://docs.travis-ci.com/user/deployment/pages/) on github
+- Add it to your travis account settings by setting [environment variable](https://docs.travis-ci.com/user/environment-variables#Defining-Variables-in-Repository-Settings) called GITHUB_TOKEN with a value of the personal access token (lots of numbers)
