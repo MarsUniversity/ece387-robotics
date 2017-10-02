@@ -93,6 +93,11 @@ Now use the software here to install stuff:
 
 ## Static IP Address
 
+I don't think you need to do this ... students connect to RPI access point SSID and 
+connect to pi@10.10.10.1. They don't need anything else.
+
+https://raspberrypi.stackexchange.com/questions/37920/how-do-i-set-up-networking-wifi-static-ip-address
+
 https://medium.com/@cpt_midnight/static-ip-in-debian-9-stretch-acb4e5cb7dc1
 
 `/etc/network/interfaces`
@@ -120,6 +125,18 @@ run:
 
   service networking restart
   ifup eth0
+
+### Debian Stupidity
+
+For whatever retarded reason, the interface names have changed such that you can no
+longer predict what they are going to be. They are dynamic and it makes it difficult
+to write (maybe impossible) scripts that need access to standard interfaces.
+
+To fix this mess and go back to the normal way the previous names eth0 and wlan0, 
+just pass net.ifnames=0 on the kernel command line in /boot/cmdline.txt. So now
+it looks something like this:
+
+	dwc_otg.lpm_enable=0 console=serial0,115200 console=tty1 root=PARTUUID=c3f225c6-02 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait net.ifnames=0
 
 ## Bypass known_hosts
 
