@@ -91,10 +91,40 @@ Now use the software here to install stuff:
 	else:
 		apport_python_hook.install()
 
+## Static IP Address
+
+https://medium.com/@cpt_midnight/static-ip-in-debian-9-stretch-acb4e5cb7dc1
+
+`/etc/network/interfaces`
+
+from:
+
+```bash
+# The primary network interface
+allow-hotplug eth0
+iface eth0 inet dhcp
+```
+
+To:
+
+```bash
+# The primary network interface
+allow-hotplug eth0
+iface eth0 inet static
+        address 192.168.1.202
+        netmask 255.255.255.0
+        gateway 192.0.1.1
+```
+
+run:
+
+  service networking restart
+  ifup eth0
+
 ## Bypass known_hosts
 
-Since all RPi's hostname are raspberrypi.local, it **sucks** when you try to connect
-to a new one and you get the man-in-the-middle attack warning.
+Since all RPi's hostname are raspberrypi.local, it **sucks** when you try to
+connect to a new one and you get the man-in-the-middle attack warning.
 
 You can disable the check with:
 

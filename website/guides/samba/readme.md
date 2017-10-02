@@ -7,10 +7,13 @@ header-includes:
     - \fancyhead[CO,CE]{ECE 387}
     - \fancyfoot[CO,CE]{\thepage}
     - \fancyfoot[LE,RO]{Robots are cool!}
-abstract: This will show you how to connect your Windoze machine to a Linux/Unix system. You will need both file system access to edit files and command line access to run your python programs.
+abstract: This will show you how to connect your Windoze machine to a Linux/Unix system. You will need both file system access to edit files and command line access to run your python programs. In order to do this we will talk about 2 main programs: Samba (with SCP as a backup) and SSH.
 ---
 
-# File System Access
+![Different ways to connect to linux on the Roomba](pics/roomba_access.png){width=75%}
+
+
+# Samba: Windoze File System Access
 
 ## Connect to Samba Share
 
@@ -47,8 +50,29 @@ and they will change from time to time.
 2. Right click on share
 3. Select **Disconnect** from menu
 
+# Secure Copy (SCP): Command Line
 
-# Command Line
+Just in case you cannot connect up your laptop to linux using Samba, you can use
+SCP to send/retrieve files between Windoze and Linux. The basic commands are:
+
+    scp *my_file.py* pi@*roomba_ip_address*:~     # from laptop to roomba
+    scp pi@*roomba_ip_address*:*my_file.py* .     # from roomba to your laptop
+    scp -r *my_directory* pi@*roomba_ip_address*  # send an entire folder
+
+Now when you are doing this, you might have to give a better location for the
+file like:
+
+    scp *~/ece387_work/test.py* pi@*192.168.2.100*:*/home/pi/my_stuff*
+
+This would transfer the file `test.py` located in your home directory on your
+laptop and transfer it to the roomba. It would place it in the folder `my_stuff`
+in pi's home directory.
+
+If you have setup your public/private key (as described below in the SSH section)
+you will not have to input any passwords. Otherwise, you will be prompted for
+pi's password, which is the default: `raspberry` (yes I know that is a bad thing).
+
+# Secure Shell (SSH): Command Line
 
 To navigate linux, you need access to the command line. The only way to do that
 is to use [secure shell](https://en.wikipedia.org/wiki/Secure_Shell) (ssh). This
@@ -71,11 +95,11 @@ The process will look similar to the screenshot below.
 5. Now test it out: `ssh pi@robot_name.local`. It should log you directly into
    the robot, your authentication is handled via [Diffie–Hellman](https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange)
    protocol and the certificate we just created.
-   
+
 # Accessing Windows (or a Samba Share) from Linux
-   
+
 Sometimes you need to access a Windoze hard drive or another Linux system with a  Samba share from a Linux system.
-      
+
 1. Edit `/etc/fstab` with the following line: //*server*/*share* *mountpoint* cifs username=pi,password=raspberry,defaults,users,auto 0 0
     1. *server*: server name like robot.local or an IP address like 10.10.10.2
     1. *share*: folder to give access too, like `pi` (the default user's home folder)
