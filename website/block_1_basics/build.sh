@@ -21,24 +21,6 @@ do
   cp ${PPT}/*.pptx ${WWW}
 done
 
-# jupyter notebooks
-CMD=$(command -v "zip")
-echo ${CMD}
-if [[ -z "${CMD}" ]]; then
-    CMD="/c/Program\ Files/7-Zip/7z.exe a"
-fi
-
-# jupyter notebooks
-for JUPYTER in 'lsn4' 'lsn5'
-do
-  # echo "Moving ${JUPYTER}.tar.gz to ${WWW}"
-  # tar zcf ${JUPYTER}.tar.gz ${JUPYTER}
-  # mv *.gz ${WWW}
-    echo "Moving ${JUPYTER}.zip to ${WWW}"
-    ${CMD} -r ${JUPYTER}.zip ${JUPYTER}
-    mv *.zip ${WWW}
-done
-
 # do labs
 cd lab
 echo "Moving lab1.pdf to ${WWW}"
@@ -66,3 +48,27 @@ echo "Building block webpage"
 pandoc -s -S -c pandoc.css -t html5 -o block-1.html block.md
 cp pandoc.css ${WWW}
 mv *.html ${WWW}
+
+# jupyter notebooks
+CMD=$(command -v "zip")
+# ls /c/
+# ZZIP=/c/Program\ Files/7-Zip/7z.exe
+# CMD=$ZZIP
+# echo ${CMD}
+# if [[ -z "${CMD}" ]]; then
+#     echo "No zip found ... setting up path"
+#     CMD="/c/Program Files/7-Zip/7z.exe a"
+# fi
+
+# CMD="/c/Program Files/7-Zip/7z.exe a"
+
+# jupyter notebooks
+for JUPYTER in 'lsn4' 'lsn5'
+do
+  # echo "Moving ${JUPYTER}.tar.gz to ${WWW}"
+  # tar zcf ${JUPYTER}.tar.gz ${JUPYTER}
+  # mv *.gz ${WWW}
+    echo "Moving ${JUPYTER}.zip to ${WWW}"
+    "${CMD} -r ${JUPYTER}.zip ${JUPYTER}"
+    mv *.zip ${WWW}
+done

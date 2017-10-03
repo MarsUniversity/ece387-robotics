@@ -2,13 +2,10 @@
 
 ### Lessons
 
-- [7. Kinematics Intro](tmp.pptx)
-- [8. 2D Forward/Inverse Kinematics](lsn8.tar.gz)
-- [9. Robot Arm Control](lsn9.tar.gz)
-
-You can unzip the tar files on the command line with `tar zxvf filename.tar.gz`.
-Unfortunatly, it is not simple to compress folders on linux and have them easily
-extractable in windoze.
+- [7. Kinematics Intro](lsn7.pdf)
+- [8. 2D Forward/Inverse Kinematics](lsn8.pdf)
+- [9. AL5D Robot arm forward/inverse kinematics](lsn9.pdf)
+- [10. Robot arm control](lsn10.pdf)
 
 ### Homework
 
@@ -23,3 +20,5 @@ extractable in windoze.
 
 - [Chapter 3, FORWARD KINEMATICS: THE DENAVIT-HARTENBERG CONVENTION, Craig](craig.pdf)
 - [Hobby servos](hobby_servos.pdf)
+- [Denavit–Hartenberg parameters movie](dh.mp4)
+- [Wikipedia modified DH parameters](https://en.wikipedia.org/wiki/Denavit%E2%80%93Hartenberg_parameters#Modified_DH_parameters)

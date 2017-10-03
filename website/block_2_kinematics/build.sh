@@ -14,29 +14,16 @@ echo "============================"
 echo " Block 2"
 echo "============================"
 
-# PPT
-for PPT in 'lsn7'
-do
-  echo "Copying ${PPT} to ${WWW}"
-  cp ${PPT}/*.pptx ${WWW}
-done
-
 # jupyter notebooks
-CMD=$(command -v "zip")
-echo ${CMD}
-if [[ -z "${CMD}" ]]; then
-    CMD="/c/Program\ Files/7-Zip/7z.exe a"
-fi
-
-# jupyter notebooks
-for JUPYTER in 'lsn8' 'lsn9'
+for NOTES in 'lsn7' 'lsn8' 'lsn9' 'lsn10'
 do
-  # echo "Moving ${JUPYTER}.tar.gz to ${WWW}"
-  # tar zcf ${JUPYTER}.tar.gz ${JUPYTER}
-  # mv *.gz ${WWW}
-	echo "Moving ${JUPYTER}.zip to ${WWW}"
-	${CMD} -r ${JUPYTER}.zip ${JUPYTER}
-	mv *.zip ${WWW}
+  cd ${NOTES}
+	echo "Copying ${NOTES} to ${WWW}"
+	cp *.pdf ../${WWW}
+  if [[ -f "dh.mp4 "]]; then
+    cp *.mp4 ../${WWW}
+  fi
+  cd ..
 done
 
 # do labs
