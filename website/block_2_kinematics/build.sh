@@ -20,7 +20,8 @@ do
   cd ${NOTES}
 	echo "Copying ${NOTES} to ${WWW}"
 	cp *.pdf ../${WWW}
-  if [[ -f "dh.mp4 "]]; then
+  if [[ -f "dh.mp4" ]]; then
+    echo "Found movie"
     cp *.mp4 ../${WWW}
   fi
   cd ..
