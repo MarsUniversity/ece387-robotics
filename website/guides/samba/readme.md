@@ -32,19 +32,19 @@ and they will change from time to time.
 1. Click the **Start** button and select **Computer**
 2. Click **Map a network drive** on the top toolbar
 
-![](pics/mapDrive.png)
+![Map the Drive](pics/mapDrive.png){width=50%}
 
 3. Enter the share name: `\\robot_name.local\pi`
     1. Make sure to check the box **Connect using different credentials**
 
-![](pics/logOn.png)
+![Login](pics/logOn.png){width=50%}
 
 4. Click **Finish**
 5. Input *username* and *password*
 
 ## Disconnect from Samba Share
 
-![](pics/disconnect.png)
+![Disconnect the samba share](pics/disconnect.png)
 
 1. Click the **Start** button and select **Computer**
 2. Right click on share
@@ -83,7 +83,7 @@ having to always supply a *username* and *password*. We will first create an
 
 The process will look similar to the screenshot below.
 
-![](pics/keygen.png)
+![Generate a public/private crypto key](pics/keygen.png){width=50%}
 
 1. Download and install [GitBash](https://git-scm.com/downloads) (this gives you everything you need)
 2. Open a terminal window and navigate to your home directory, `cd ~`

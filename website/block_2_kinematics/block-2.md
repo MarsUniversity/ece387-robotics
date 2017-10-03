@@ -18,3 +18,8 @@ extractable in windoze.
 ### Labs
 
 - [lab 2: Robot Arm Kinematics](lab2.pdf)
+
+### References
+
+- [Chapter 3, FORWARD KINEMATICS: THE DENAVIT-HARTENBERG CONVENTION, Craig](craig.pdf)
+- [Hobby servos](hobby_servos.pdf)

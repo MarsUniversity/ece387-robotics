@@ -10,7 +10,7 @@ These are to help document some of the setup and other useful things for the cla
 - [Connecting to the Roomba via wifi](access_point.pdf)
 - [Pandoc setup for automating website/documentation generation](pandoc_setup.pdf)
 
-### Cheatsheets
+### Cheat Sheets
 
 - [Linux command line reference](command-line.pdf)
 - [Markdown](markdown.pdf)

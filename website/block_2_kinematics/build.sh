@@ -22,11 +22,21 @@ do
 done
 
 # jupyter notebooks
+CMD=$(command -v "zip")
+echo ${CMD}
+if [[ -z "${CMD}" ]]; then
+    CMD="/c/Program\ Files/7-Zip/7z.exe a"
+fi
+
+# jupyter notebooks
 for JUPYTER in 'lsn8' 'lsn9'
 do
-  echo "Moving ${JUPYTER}.tar.gz to ${WWW}"
-  tar zcf ${JUPYTER}.tar.gz ${JUPYTER}
-  mv *.gz ${WWW}
+  # echo "Moving ${JUPYTER}.tar.gz to ${WWW}"
+  # tar zcf ${JUPYTER}.tar.gz ${JUPYTER}
+  # mv *.gz ${WWW}
+	echo "Moving ${JUPYTER}.zip to ${WWW}"
+	${CMD} -r ${JUPYTER}.zip ${JUPYTER}
+	mv *.zip ${WWW}
 done
 
 # do labs
@@ -48,6 +58,7 @@ cd ..
 
 # do references
 cd references
+echo "Copying references"
 cp *.pdf ../${WWW}
 cd ..
 
