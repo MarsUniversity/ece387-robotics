@@ -62,6 +62,9 @@ CMD=$(command -v "zip")
 
 # CMD="/c/Program Files/7-Zip/7z.exe a"
 
+pwd
+ls
+
 # jupyter notebooks
 for JUPYTER in 'lsn4' 'lsn5'
 do
@@ -69,6 +72,6 @@ do
   # tar zcf ${JUPYTER}.tar.gz ${JUPYTER}
   # mv *.gz ${WWW}
     echo "Moving ${JUPYTER}.zip to ${WWW}"
-    "${CMD} -r ${JUPYTER}.zip ${JUPYTER}"
+    ${CMD} -r ${JUPYTER}.zip ${JUPYTER}
     mv *.zip ${WWW}
 done
