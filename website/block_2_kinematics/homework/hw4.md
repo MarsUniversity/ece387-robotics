@@ -8,10 +8,10 @@ header-includes:
     - \fancyfoot[LE,RO]{Robots are cool!}
 ---
 
-**Honor Code:** ...
+**Integrity:** Your honor is extremely important.  This academic security policy is designed to help you succeed in meeting academic requirements while practicing the honorable behavior our country rightfully demands of its military.  Do not compromise your integrity by violating academic security or by taking unfair advantage of your classmates.
 
-All homework is to be done individually. You are only authorized to receive help from an
-instructor.
+**Authorized Resources:** You can **ONLY** seek help from the instructor. Homework
+is an individual exercise.
 
 # Forward Kinematics
 
@@ -24,23 +24,23 @@ Create a `Jupyter notebook` and this at the top.
 	from matplotlib import pylab
 ```
 
-1. Write a function that takes in the DH parameters ($\theta$, $\alpha$, d, a) and returns 
+1. Write a function that takes in the DH parameters ($\theta$, $\alpha$, d, a) and returns
    the homogenious matrix for it.
 ```python
-def homogeniousMatrix(theta, alpha, d, a):
+def homogeneousMatrix(theta, alpha, d, a):
    """
-   This calculates a homogenious matrix for the given parameters
+   This calculates a homogeneous matrix for the given parameters
    """
    ...
    return matrix
 ```
-1. Using this function, find the homogenious matrix if:
+1. Using this function, find the homogeneous matrix if:
     1. $\alpha$ is x
     1. $\theta$ is x
     1. d is x
     1. a is x
-1. Given an array of DH parameters for a robot arm, write a function which takes this and 
-   returns a homogenious matrix for the robot arm. Where the array would look like
+1. Given an array of DH parameters for a robot arm, write a function which takes this and
+   returns a homogeneous matrix for the robot arm. Where the array would look like
 ```python
 	arm = [
 		[theta, alpha, d, a],
@@ -58,10 +58,11 @@ def homogeniousMatrix(theta, alpha, d, a):
 ```
 1. Using the previous function, determine the equation for the robot arm with the following
    DH parameters. *Hint:* your answer should be ....
-   
+
    | i |$\theta_i$|$\alpha_i$| $d_i$ | $a_i$ |
    |---|----------|----------|-------|-------|
-   | 1 |1         |2         |3      |4      |
-   | 2 |1         |2         |3      |4      |
-   | 3 |1         |2         |3      |4      |
-   | 4 |1         |2         |3      |4      |
+   | 1 |          |          |       |       |
+   | 2 |          |          |       |       |
+   | 3 |          |          |       |       |
+   | 4 |          |          |       |       |
+   | 5 |          |          |       |       |

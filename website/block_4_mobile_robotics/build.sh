@@ -29,7 +29,7 @@ if [[ -z "${CMD}" ]]; then
     CMD="/c/Program\ Files/7-Zip/7z.exe a"
 fi
 
-for JUPYTER in 'lsn25' 'lsn31' 'lsn33'
+for JUPYTER in 'lsn25' 'lsn26' 'lsn27' 'lsn28' 'lsn30' 'lsn31' 'lsn33' 'lsn34'
 do
   echo "Moving ${JUPYTER}.zip to ${WWW}"
   ${CMD} -r ${JUPYTER}.zip ${JUPYTER}

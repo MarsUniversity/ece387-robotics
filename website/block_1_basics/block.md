@@ -20,10 +20,10 @@
 
 ### References
 
-- [Linux command line](command-line.pdf)
-- [Jupyter](jupyter-1.pdf)
-- [Jupyter](jupyter-2.pdf)
+- [Linux command line ref](command-line.pdf)
+- [Jupyter ref](jupyter-1.pdf)
+- [Jupyter ref](jupyter-2.pdf)
 - [Markdown](markdown.pdf)
-- [Python cheat sheet long](python.pdf)
-- [Python cheat sheet short](python-qr.pdf)
+- [Python ref long](python.pdf)
+- [Python ref short](python-qr.pdf)
 - [Fast Lane to Python](Fast_Lane_to_Python.pdf)

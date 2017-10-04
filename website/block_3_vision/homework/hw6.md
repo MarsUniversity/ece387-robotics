@@ -8,7 +8,10 @@ header-includes:
     - \fancyfoot[LE,RO]{Robots are cool!}
 ---
 
-**Honor Code:** ...
+**Integrity:** Your honor is extremely important.  This academic security policy is designed to help you succeed in meeting academic requirements while practicing the honorable behavior our country rightfully demands of its military.  Do not compromise your integrity by violating academic security or by taking unfair advantage of your classmates.
+
+**Authorized Resources:** You can **ONLY** seek help from the instructor. Homework
+is an individual exercise.
 
 # Image Processing
 

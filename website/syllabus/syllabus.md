@@ -20,10 +20,10 @@ header-includes:
 
 Cadets shall:
 
-- Apply forward and inverse kinematic analysis and dynamic analysis to planar manipulators and mobile robots
-- Understand mobile robot odometry challenges and the purpose of Kalman Filters
-- Understand the principles of operation and characteristics of various robot sensors
-- Understand image capture with a CCD camera
+- Apply common robotic skills using python and the linux command line
+- Apply forward and inverse kinematic analysis manipulators and mobile robots
+- Apply control methods to mobile robots so they can avoid obstacles and navigate
+- Apply common techniques in modern image processing and computer vision
 
 ## Prerequisite Course
 
@@ -35,7 +35,7 @@ is required.
 | | |
 |-------------|-----------------------------------------------------|
 | Course Text | None, various PDFs are provided for reading         |
-| Web Page    | https://marsuniversity.github.io/ece387/            |
+| Web Page    | [https://marsuniversity.github.io/ece387/](https://marsuniversity.github.io/ece387/) |
 | Software    | Python 2.7 will need to be installed on your laptop |
 
 ## Grades
@@ -60,6 +60,8 @@ is required.
 ## Missing Class and the Late Policy
 
 Inform your instructor of absences in advance via email. Please include the reason for the absence and any relevant SCA. Check the SCA to see if instructor permission is required and if it is, make the request prior to the absence. You will be given an Unexcused Absence in CAS if you fail to get permission.
+
+If you plan to miss a class, you *must* take any quiz or GR prior to your departure.
 
 Due to the limited time to conduct labs and the fact they are executed in groups, you can not miss a labs unless you have a medical excuse due to unplanned illness.
 
@@ -98,8 +100,8 @@ provide hands on experience with the topics discussed in the lectures. The final
 | [5](block-1.html)   | Python                        |      |         | [HW3 Python](hw123.pdf) |
 | [6](block-1.html)   | Lab 1: linux and python       |      |         | [Lab1](lab1.pdf) EOC |
 | [7](block-2.html)   | Kinematics: Intro             | Y    |         | |
-| [8](block-2.html)   | Forward Kinematics            |      |         | |
-| [9](block-2.html)   | Inverse Kinematics            |      |         | [HW4 Forward Kinematics](hw4.pdf)|
+| [8](block-2.html)   | 2D Forward\Inv Kinematics     |      |         | |
+| [9](block-2.html)   | 3D Inverse\Inv Kinematics     |      |         | [HW4 Forward Kinematics](hw4.pdf)|
 | [10](block-2.html)  | Robot Arm Control             |      |         | |
 | [11](block-3.html)  | Image Processing              |      |         | [HW5 Inverse Kinematics](hw5.pdf)|
 | [12](block-2.html)  | Lab 2: Robot Arm              |      |         | [Pre-Lab2](lab2.pdf) |
@@ -123,8 +125,8 @@ provide hands on experience with the topics discussed in the lectures. The final
 | [30](block-4.html)  | Controls                      |      |         | |
 | [31](block-4.html)  | Path Planning                 |      |         | [Lab4](lab4.pdf) BOC |
 | [32](block-4.html)  | Path Planning (HW11 in class) |      |         | |
-| [33](block-4.html)  | INS                           |      |         | [HW11](hw11.pdf) |
-| [34](block-4.html)  | INS                           |      |         | |
+| [33](block-4.html)  | TBD                           |      |         | [HW11](hw11.pdf) |
+| [34](block-4.html)  | TBD                           |      |         | |
 | [35](block-4.html)  | Lab 5: Roomba                 | Y    |         | |
 | [36](block-4.html)  | Lab 5: Roomba                 |      |         | [Lab5](lab5.pdf) EOC |
 | 37                  | GR2                           |      |         | |
