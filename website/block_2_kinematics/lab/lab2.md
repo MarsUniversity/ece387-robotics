@@ -92,9 +92,9 @@ to move the arm through a sequence of orientations.
 | Step | Position                     | Gripper |
 |------|------------------------------|---------|
 | 1    | (0, 90, 90, 0)               | open    |
-| 1    | (-23.2, 83.8, 102.3, 71.5)   | closed  |
-| 1    | (0.0, 111.5, 127.0, 74.5)    | closed  |
-| 1    | (0, 90, 90, 0)               | open    |
+| 2    | (-23.2, 83.8, 102.3, 71.5)   | closed  |
+| 3    | (0.0, 111.5, 127.0, 74.5)    | closed  |
+| 4    | (0, 90, 90, 0)               | open    |
 
 After each step, pause for 2 seconds. When you have it working, show your
 instructor.
@@ -148,3 +148,5 @@ closed or $\frac{PWM_{closed}}{2}$
 			time.sleep(5)
 
 ```
+
+When you have it working, show your instructor.

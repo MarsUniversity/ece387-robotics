@@ -15,7 +15,8 @@ is an individual exercise.
 
 # Forward Kinematics
 
-Create a `Jupyter notebook` and this at the top.
+Using the template from the website, create a `Jupyter notebook` for this
+assignment.
 
 ```python
 	%matplotlib inline
@@ -26,14 +27,14 @@ Create a `Jupyter notebook` and this at the top.
 
 1. Write a function that takes in the DH parameters ($\theta$, $\alpha$, d, a) and returns
    the homogenious matrix for it.
-```python
-def homogeneousMatrix(theta, alpha, d, a):
-   """
-   This calculates a homogeneous matrix for the given parameters
-   """
-   ...
-   return matrix
-```
+	```python
+	def homogeneousMatrix(theta, alpha, d, a):
+	   """
+	   This calculates a homogeneous matrix for the given parameters
+	   """
+	   ...
+	   return matrix
+	```
 1. Using this function, find the homogeneous matrix if:
     1. $\alpha$ is x
     1. $\theta$ is x
@@ -41,21 +42,21 @@ def homogeneousMatrix(theta, alpha, d, a):
     1. a is x
 1. Given an array of DH parameters for a robot arm, write a function which takes this and
    returns a homogeneous matrix for the robot arm. Where the array would look like
-```python
-	arm = [
-		[theta, alpha, d, a],
-		[theta, alpha, d, a],
-		[theta, alpha, d, a],
-		...
-	]
+	```python
+		arm = [
+			[theta, alpha, d, a],
+			[theta, alpha, d, a],
+			[theta, alpha, d, a],
+			...
+		]
 
-	def forward(params):
-		"""
-		Given the params, it returns the forward kinematics equations
-		"""
-		...
-		return eqns
-```
+		def forward(params):
+			"""
+			Given the params, it returns the forward kinematics equations
+			"""
+			...
+			return eqns
+	```
 1. Using the previous function, determine the equation for the robot arm with the following
    DH parameters. *Hint:* your answer should be ....
 

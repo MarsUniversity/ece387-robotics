@@ -43,34 +43,43 @@ This homework will walk you through building the code to run the robot arm
 1. Write a function that takes in an angle (degrees or radians, your choice) and returns a
 string to command 1 servo to that position. There is a linear relationship (i.e., straight
 line) between angle and PWM.
-```python
-def deg2pwm(servo_num, angle):
-    """
-    deg2pwm(3, 20) -> "#3 P2000"
-    """
-    ...
-```
-*Hint:* If you took ECE231, you did this in the signal conditioning part of the class
-
+	```python
+	def deg2pwm(servo_num, angle):
+	    """
+	    deg2pwm(3, 20) -> "#3 P2000"
+	    """
+	    ...
+	```
 1. Using the function above, write another function that takes in 5 angles and returns the
 ASCII command string.
-```python
-def command(a, b, c, d, e):
-    """
-    command(10,20,30,40,50) -> #0 ... T2000\r
-    """
-    ...
-```
+	```python
+	def command(a, b, c, d, e):
+	    """
+	    command(10,20,30,40,50) -> #0 ... T2000\r
+	    """
+	    ...
+	```
 *Hint:* Remember to append `T2000\r` on the end
 
+1. Write a function to calculate cosine law.
+	```python
+	def cosine_law(a, b, c):
+		"""
+		Where a and b are the sides and c is opposite the angle you want to find.
+		It should return angles in radians
+		cosine_law(5,5,5) -> pi/3 or 60 degrees
+		"""
+		...
+	```
+
 1. Write a function that takes a 3d point (x, y, z) and returns the joint angles.
-```python
-def inverse(x,y,z, angle, claw):
-	"""
-	Calculates the joint angles given:
-	   (x,y,z) - end effector location
-	   angle - orientation of end effector
-	   claw - is the claw open or closed
-	"""
-	...
-```
+	```python
+	def inverse(x,y,z, angle, claw):
+		"""
+		Calculates the joint angles given:
+		   (x,y,z) - end effector location
+		   angle - orientation of end effector
+		   claw - is the claw open or closed
+		"""
+		...
+	```

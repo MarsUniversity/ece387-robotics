@@ -19,6 +19,9 @@ mkdir -p ${WWW_PATH}
 # hi
 # EOF
 
+# remove the .DS_Store files
+find . -type f -name '.DS_Store' -exec rm {} +
+
 chmod a+x build_html.sh
 
 for DIR in 'syllabus' 'block_1_basics' 'block_2_kinematics' 'block_3_vision' 'block_4_mobile_robotics' 'guides' 'templates'
