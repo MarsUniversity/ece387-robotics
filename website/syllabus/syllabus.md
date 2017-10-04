@@ -100,8 +100,8 @@ provide hands on experience with the topics discussed in the lectures. The final
 | [5](block-1.html)   | Python                        |      |         | [HW3 Python](hw123.pdf) |
 | [6](block-1.html)   | Lab 1: linux and python       |      |         | [Lab1](lab1.pdf) EOC |
 | [7](block-2.html)   | Kinematics: Intro             | Y    |         | |
-| [8](block-2.html)   | 2D Forward\Inv Kinematics     |      |         | |
-| [9](block-2.html)   | 3D Inverse\Inv Kinematics     |      |         | [HW4 Forward Kinematics](hw4.pdf)|
+| [8](block-2.html)   | 2D Forward-Inv Kinematics     |      |         | |
+| [9](block-2.html)   | 3D Inverse-Inv Kinematics     |      |         | [HW4 Forward Kinematics](hw4.pdf)|
 | [10](block-2.html)  | Robot Arm Control             |      |         | |
 | [11](block-3.html)  | Image Processing              |      |         | [HW5 Inverse Kinematics](hw5.pdf)|
 | [12](block-2.html)  | Lab 2: Robot Arm              |      |         | [Pre-Lab2](lab2.pdf) |
