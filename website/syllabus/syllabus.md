@@ -108,27 +108,27 @@ provide hands on experience with the topics discussed in the lectures. The final
 | [13](block-2.html)  | Lab 2: Robot Arm              | Y    |         | [Lab2](lab2.pdf) EOC |
 | [14](block-3.html)  | Image Processing              |      |         | |
 | [15](block-3.html)  | Image Processing              |      |         | [HW6 Image Sources](hw6.pdf) |
-| 16                  | GR 1  (move to 18?)           |      |         | |
+| 16                  | GR 1                          |      |         | |
 | [17](block-3.html)  | Computer Vision Intro         |      |         | |
 | [18](block-3.html)  | CV: Face Detection            |      |         | |
-| [19](block-3.html)  | CV: Marker Detection          |      |         | [HW7 Face Detection](hw7.pdf) |
-| [20](block-3.html)  | CV: Target Detection          |      |         | [HW8 Marker Detection](hw8.pdf) |
+| [19](block-3.html)  | CV: Marker Detection          |      |         | |
+| [20](block-3.html)  | CV: Target Detection          |      |         | [HW7 Detection I](hw7.pdf) |
 | [21](block-3.html)  | CV: Kalman Filter             | Y    |         | |
-| [22](block-3.html)  | CV: Target Tracking           |      |         | [HW9 Kalman Filtering](hw9.pdf) |
-| [23](block-3.html)  | Lab 3: Detection and Tracking |      |         | [Lab3](lab3.pdf) EOC |
-| [24](block-4.html)  | Mobile Robots                 |      |         | |
-| [25](block-4.html)  | Roomba Overview               |      |         | |
-| [26](block-4.html)  | Roomba Sensors (HW10 in class)|      |         | |
-| [27](block-4.html)  | Nav Particle Filter           |      |         | [HW10 Roomba Sensors](hw10.pdf) |
-| [28](block-4.html)  | Nav Motion Model              |      |         | |
-| [29](block-4.html)  | Lab 4: Sensor Calibration     |      |         | |
+| [22](block-3.html)  | CV: Target Tracking I         |      |         | [HW8 Detection II](hw8.pdf) |
+| [23](block-3.html)  | CV: Target Tracking II        |      |         | |
+| [24](block-3.html)  | Lab 3: Detection and Tracking |      |         | [HW9 Kalman Filter](hw9.pdf)|
+| [25](block-3.html)  | Lab 3: Detection and Tracking |      |         | [Lab3](lab3.pdf) EOC |
+| [26](block-4.html)  | Mobile Robots                 |      |         | |
+| [27](block-4.html)  | Roomba Overview               |      |         | |
+| [28](block-4.html)  | Roomba Sensors (HW10 in class)|      |         | |
+| [29](block-4.html)  | Controls                      |      |         | [HW10 Roomba Sensors](hw10.pdf) |
 | [30](block-4.html)  | Controls                      |      |         | |
-| [31](block-4.html)  | Path Planning                 |      |         | [Lab4](lab4.pdf) BOC |
-| [32](block-4.html)  | Path Planning (HW11 in class) |      |         | |
-| [33](block-4.html)  | TBD                           |      |         | [HW11](hw11.pdf) |
-| [34](block-4.html)  | TBD                           |      |         | |
-| [35](block-4.html)  | Lab 5: Roomba                 | Y    |         | |
-| [36](block-4.html)  | Lab 5: Roomba                 |      |         | [Lab5](lab5.pdf) EOC |
+| [31](block-4.html)  | Lab 4: Roomba Control         |      |         | |
+| [32](block-4.html)  | Lab 4: Roomba Control         |      |         | [Lab4](lab4.pdf) EOC |
+| [33](block-4.html)  | Path Planning                 |      |         | |
+| [34](block-4.html)  | Path Planning (HW11 in class) |      |         | |
+| [35](block-4.html)  | Lab 5: Roomba Sensors         | Y    |         | [HW11](hw11.pdf)|
+| [36](block-4.html)  | Lab 5: Roomba Sensors         |      |         | [Lab5](lab5.pdf) EOC |
 | 37                  | GR2                           |      |         | |
 | [38](block-4.html)  | Final Project                 |      |         | |
 | [39](block-4.html)  | Final Project                 |      |         | |
