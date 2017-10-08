@@ -11,3 +11,4 @@ ins_nav
 pyurg
 ar_markers
 pyserial
+pyhexdump
