@@ -91,48 +91,13 @@ Now use the software here to install stuff:
 	else:
 		apport_python_hook.install()
 
-## Static IP Address
-
-I don't think you need to do this ... students connect to RPI access point SSID and 
-connect to pi@10.10.10.1. They don't need anything else.
-
-https://raspberrypi.stackexchange.com/questions/37920/how-do-i-set-up-networking-wifi-static-ip-address
-
-https://medium.com/@cpt_midnight/static-ip-in-debian-9-stretch-acb4e5cb7dc1
-
-`/etc/network/interfaces`
-
-from:
-
-```bash
-# The primary network interface
-allow-hotplug eth0
-iface eth0 inet dhcp
-```
-
-To:
-
-```bash
-# The primary network interface
-allow-hotplug eth0
-iface eth0 inet static
-        address 192.168.1.202
-        netmask 255.255.255.0
-        gateway 192.0.1.1
-```
-
-run:
-
-  service networking restart
-  ifup eth0
-
 ### Debian Stupidity
 
 For whatever retarded reason, the interface names have changed such that you can no
 longer predict what they are going to be. They are dynamic and it makes it difficult
 to write (maybe impossible) scripts that need access to standard interfaces.
 
-To fix this mess and go back to the normal way the previous names eth0 and wlan0, 
+To fix this mess and go back to the normal way the previous names eth0 and wlan0,
 just pass net.ifnames=0 on the kernel command line in /boot/cmdline.txt. So now
 it looks something like this:
 
