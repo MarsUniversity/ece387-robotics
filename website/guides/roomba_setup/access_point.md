@@ -59,27 +59,54 @@ a local dhcp server on.
 1. Setup hostapd config file: `/etc/hostapd/hostapd.conf`:
 
 		interface=wlan1
-		driver=nl80211
 		ssid=<NameOfNetwork>
-		hw_mode=g
-		channel=7
-		wmm_enabled=0
-		macaddr_acl=0
+		channel=10
 		auth_algs=1
-		ignore_broadcast_ssid=0
 		wpa=2
 		wpa_passphrase=<password_atleast_8_characters>
 		wpa_key_mgmt=WPA-PSK
-		wpa_pairwise=TKIP
+		wpa_pairwise=CCMP
 		rsn_pairwise=CCMP
 
-1. In `/etc/default/hostapd`, add `DAEMON_CONF="/etc/hostapd/hostapd.conf"`
+1. Remove `/etc/init.d/hostapd` since it is unnecessary
 
-1. Now reboot with: `sudo reboot now`. Everything should come up working automatically.
+1. Create `/etc/system.d/system/hostapd.service`:
+    ```bash
+        [Unit]
+		Description=Hostapd Access Point
+		After=sys-subsystem-net-devices-wlan1.device
+		BindsTo=sys-subsystem-net-devices-wlan1.device
+
+		[Service]
+		Type=forking
+		PIDFile=/var/run/hostapd.pid
+		ExecStart=/usr/sbin/hostapd -B /etc/hostapd/hostapd.conf -P /var/run/hostapd.pid
+
+		[Install]
+		WantedBy=multi-user.target
+    ```
+	*Note:* if you are using an interface other than wlan1, make the correct
+	change above.
+
+1. Now do:
+
+		sudo systemctl enable hostapd
+		sudo systemctl start hostapd
+
+1. Finally, double check all is well with `service hostapd status` which should show
+  everything is up and running.
 
 There should be a script `setup-access-point.sh` that will automate this for you.
 
 # Login
 
+Now you should be able to join your robot's wifi using the SSID and WPA passphrase.
+Then login via `ssh`:
+
 	ssh pi@<robot_name>.local
-  ssh pi@10.10.10.1
+	ssh pi@10.10.10.1
+
+**Note:** In order for your Windoze machine to be able to use *robot_name*.local,
+you to install iTunes so Windoze can speak zeroconfig. I don't know of another
+way to do this. If you don't want to do that, then just use the ip address of
+10.10.10.1 which will work too.
