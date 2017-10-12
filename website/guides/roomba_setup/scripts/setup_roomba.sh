@@ -26,8 +26,8 @@ echo ""
 HOSTNAME=$1
 raspi-config nonint do_hostname $HOSTNAME
 
-# set static IP address -----------------------------
-echo "fix ip address"
+# install python libraries --------------------------
+pip install -U -r roomba.txt
 
 # set SSID on wifi ----------------------------------
 # note: SSID will be set too hostname
@@ -40,6 +40,6 @@ else
   ./setup-access-point.sh
 fi
 
-echo ""
+echo "************"
 echo "*** Done ***"
-echo ""
+echo "************"

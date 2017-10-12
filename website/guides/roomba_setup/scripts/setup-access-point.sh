@@ -4,8 +4,8 @@ set -e
 
 # check if we are root
 if [ "$EUID" -ne 0 ]
-	then echo "Please run as root"
-	exit 1
+  then echo "Please run as root"
+  exit 1
 fi
 
 echo ""
@@ -15,7 +15,7 @@ echo "+-------------------------+"
 echo " WARNING: only run once!"
 echo ""
 
-# Since this appends things to files, I don't want to append the 
+# Since this appends things to files, I don't want to append the
 # same thing multiple times ... not sure what kind of software
 # hell that would create!
 if [[ -f "/etc/dnsmasq.conf" ]]; then
@@ -34,72 +34,67 @@ systemctl stop hostapd
 
 echo "<<< Setting up interfaces, moving current config file to *.orig >>>"
 
-mv /etc/network/interfaces /etc/network/interfaces.orig
-
-INTERFACE_CONFIG="                                     \n\
-source-directory /etc/network/interfaces.d             \n\
-                                                       \n\
-auto lo                                                \n\
-iface lo inet loopback                                 \n\
-                                                       \n\
-iface eth0 inet manual                                 \n\
-                                                       \n\
-allow-hotplug wlan0                                    \n\
-iface wlan0 inet manual                                \n\
-    wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf   \n\
-                                                       \n\    
-allow-hotplug wlan1                                    \n\
-iface wlan1 inet static                                \n\
-  address 10.10.10.1                                   \n\
-  netmask 255.255.255.0                                \n\
-  network 10.10.10.0                                   \n"
-  
-echo -e "${INTERFACE_CONFIG}" > /etc/network/interfaces
+# mv /etc/network/interfaces /etc/network/interfaces.orig
+cat <<'EOF' >>/etc/network/interfaces
+allow-hotplug wlan1
+iface wlan1 inet static
+  address 10.10.10.1
+  netmask 255.255.255.0
+  network 10.10.10.0
+EOF
 
 echo "<<< Setting up DNSMASQ >>>"
 
 # setup the dhcpd
 # dhcp-range: start, end, mask, lease time
-DNSMASQ="                                                \n\
-interface=wlan1      # Use the usb wifi dongle           \n\
-dhcp-range=10.10.10.5,10.10.10.100,255.255.255.0,24h     \n"
-
 # backup the default one and write a new one
-mv /etc/dnsmasq.conf /etc/dnsmasq.conf.orig 
-echo -e "${DNSMASQ}" > /etc/dnsmasq.conf
+mv /etc/dnsmasq.conf /etc/dnsmasq.conf.orig
+cat <<'EOF' >/etc/dnsmasq.conf
+interface=wlan1      # Use the usb wifi dongle
+dhcp-range=10.10.10.5,10.10.10.100,255.255.255.0,24h
+EOF
 
 # changing dhcp, don't assign something to wlan1 ... leave out wlan0
 echo -e "denyinterfaces wlan1" >> /etc/dhcpcd.conf
 
 echo "<<< Setting up HOSTAPD >>>"
 
+# remove the old init.d version
+rm -f /etc/init.d/hostapd
+
 # the SSID for the access point will be the hostname
-HOSTNAME=`uname -n`
+HOSTNAME=`uname -n  | sed -e s/.local//`
 
 echo "<<< SSID is: "${HOSTNAME}" >>>"
 
-HOSTAPD="                      \n\
-interface=wlan1                \n\
-driver=nl80211                 \n\
-ssid="${HOSTNAME}"             \n\
-hw_mode=g                      \n\
-channel=7                      \n\
-wmm_enabled=0                  \n\
-macaddr_acl=0                  \n\
-auth_algs=1                    \n\
-ignore_broadcast_ssid=0        \n\
-wpa=2                          \n\
-wpa_passphrase=robotsarecool   \n\
-wpa_key_mgmt=WPA-PSK           \n\
-wpa_pairwise=TKIP              \n\
-rsn_pairwise=CCMP              \n"
-
 # write config file
-echo -e "${HOSTAPD}" > /etc/hostapd/hostapd.conf
+cat <<'EOF' >/etc/hostapd/hostapd.conf
+interface=wlan1
+ssid=${HOSTNAME}
+channel=10
+auth_algs=1
+wpa=2
+wpa_passphrase=robotsarecool
+wpa_key_mgmt=WPA-PSK
+wpa_pairwise=CCMP
+rsn_pairwise=CCMP
+EOF
 
-# tell hostapd where the config file is, append (>>) this line to the end
-echo -e "DAEMON_CONF=\"/etc/hostapd/hostapd.conf\" \n" >> /etc/default/hostapd
+cat <<'EOF' >/etc/system.d/system/hostapd.service
+[Unit]
+Description=Hostapd Access Point
+After=sys-subsystem-net-devices-wlan1.device
+BindsTo=sys-subsystem-net-devices-wlan1.device
 
+[Service]
+Type=forking
+PIDFile=/var/run/hostapd.pid
+ExecStart=/usr/sbin/hostapd -B /etc/hostapd/hostapd.conf -P /var/run/hostapd.pid
 
+[Install]
+WantedBy=multi-user.target
+EOF
+
+systemctl enable hostapd
 systemctl start dnsmasq
 systemctl start hostapd
