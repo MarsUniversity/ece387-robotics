@@ -91,48 +91,48 @@ provide hands on experience with the topics discussed in the lectures. The final
 
 # Schedule
 
-| Lsn                 | Topic                         | Quiz | Reading | Due       |
-|---------------------|-------------------------------|------|---------|-----------|
-| [1](block-1.html)   | Intro & Overview              |      |         |           |
-| [2](block-1.html)   | Linux Command Line            |      |         | Install required software |
-| [3](block-1.html)   | Python Intro                  |      |         | [HW1 Command Line](hw123.pdf) |
-| [4](block-1.html)   | Python                        |      |         | [HW2 Python](hw123.pdf) |
-| [5](block-1.html)   | Python                        |      |         | [HW3 Python](hw123.pdf) |
-| [6](block-1.html)   | Lab 1: linux and python       |      |         | [Lab1](lab1.pdf) EOC |
-| [7](block-2.html)   | Kinematics: Intro             | Y    |         | |
-| [8](block-2.html)   | 2D Forward-Inv Kinematics     |      |         | |
-| [9](block-2.html)   | 3D Inverse-Inv Kinematics     |      |         | [HW4 Forward Kinematics](hw4.pdf)|
-| [10](block-2.html)  | Robot Arm Control             |      |         | |
-| [11](block-3.html)  | Image Processing              |      |         | [HW5 Inverse Kinematics](hw5.pdf)|
-| [12](block-2.html)  | Lab 2: Robot Arm              |      |         | [Pre-Lab2](lab2.pdf) |
-| [13](block-2.html)  | Lab 2: Robot Arm              | Y    |         | [Lab2](lab2.pdf) EOC |
-| [14](block-3.html)  | Image Processing              |      |         | |
-| [15](block-3.html)  | Image Processing              |      |         | [HW6 Image Sources](hw6.pdf) |
-| 16                  | GR 1                          |      |         | |
-| [17](block-3.html)  | Computer Vision Intro         |      |         | |
-| [18](block-3.html)  | CV: Face Detection            |      |         | |
-| [19](block-3.html)  | CV: Marker Detection          |      |         | |
-| [20](block-3.html)  | CV: Target Detection          |      |         | [HW7 Detection I](hw7.pdf) |
-| [21](block-3.html)  | CV: Kalman Filter             | Y    |         | |
-| [22](block-3.html)  | CV: Target Tracking I         |      |         | [HW8 Detection II](hw8.pdf) |
-| [23](block-3.html)  | CV: Target Tracking II        |      |         | |
-| [24](block-3.html)  | Lab 3: Detection and Tracking |      |         | [HW9 Kalman Filter](hw9.pdf)|
-| [25](block-3.html)  | Lab 3: Detection and Tracking |      |         | [Lab3](lab3.pdf) EOC |
-| [26](block-4.html)  | Mobile Robots                 |      |         | |
-| [27](block-4.html)  | Roomba Overview               |      |         | |
-| [28](block-4.html)  | Roomba Sensors (HW10 in class)|      |         | |
-| [29](block-4.html)  | Controls                      |      |         | [HW10 Roomba Sensors](hw10.pdf) |
-| [30](block-4.html)  | Controls                      |      |         | |
-| [31](block-4.html)  | Lab 4: Roomba Control         |      |         | |
-| [32](block-4.html)  | Lab 4: Roomba Control         |      |         | [Lab4](lab4.pdf) EOC |
-| [33](block-4.html)  | Path Planning                 |      |         | |
-| [34](block-4.html)  | Path Planning (HW11 in class) |      |         | |
-| [35](block-4.html)  | Lab 5: Roomba Sensors         | Y    |         | [HW11](hw11.pdf)|
-| [36](block-4.html)  | Lab 5: Roomba Sensors         |      |         | [Lab5](lab5.pdf) EOC |
-| 37                  | GR2                           |      |         | |
-| [38](block-4.html)  | Final Project                 |      |         | |
-| [39](block-4.html)  | Final Project                 |      |         | |
-| [40](block-4.html)  | Final Project                 |      |         | [Final Project](final_project.pdf)|
+| Lsn                 | Topic                         | Reading             | Due                       |
+|---------------------|-------------------------------|---------------------|---------------------------|
+| [1](block-1.html)   | Intro & Overview              |                     |                           |
+| [2](block-1.html)   | Linux Command Line            | Matlof Ch 1.0 - 1.9 | Install required software |
+| [3](block-1.html)   | Python Intro                  |                     | [HW1 Command Line](hw123.pdf) |
+| [4](block-1.html)   | Python                        | Matlof Ch 3         | [HW2 Python](hw123.pdf) |
+| [5](block-1.html)   | Python                        |                     | [HW3 Python](hw123.pdf) |
+| [6](block-1.html)   | Lab 1: linux and python       |                     | [Lab1](lab1.pdf) EOC |
+| [7](block-2.html)   | Kinematics: Intro             | Craig Ch 3          | |
+| [8](block-2.html)   | 2D Forward-Inv Kinematics     |                     | |
+| [9](block-2.html)   | 3D Inverse-Inv Kinematics     |                     | [HW4 Forward Kinematics](hw4.pdf)|
+| [10](block-2.html)  | Robot Arm Control             |                     | |
+| [11](block-3.html)  | Image Processing              |                     | [HW5 Inverse Kinematics](hw5.pdf)|
+| [12](block-2.html)  | Lab 2: Robot Arm              |                     | [Pre-Lab2](lab2.pdf) |
+| [13](block-2.html)  | Lab 2: Robot Arm              |                     | [Lab2](lab2.pdf) EOC |
+| [14](block-3.html)  | Image Processing              |                     | |
+| [15](block-3.html)  | Image Processing              |                     | [HW6 Image Sources](hw6.pdf) |
+| 16                  | GR 1                          |                     | |
+| [17](block-3.html)  | Computer Vision Intro         |                     | |
+| [18](block-3.html)  | CV: Face Detection            |                     | |
+| [19](block-3.html)  | CV: Marker Detection          |                     | |
+| [20](block-3.html)  | CV: Target Detection          |                     | [HW7 Detection I](hw7.pdf) |
+| [21](block-3.html)  | CV: Kalman Filter             |                     | |
+| [22](block-3.html)  | CV: Target Tracking I         |                     | [HW8 Detection II](hw8.pdf) |
+| [23](block-3.html)  | CV: Target Tracking II        |                     | |
+| [24](block-3.html)  | Lab 3: Detection and Tracking |                     | [HW9 Kalman Filter](hw9.pdf)|
+| [25](block-3.html)  | Lab 3: Detection and Tracking |                     | [Lab3](lab3.pdf) EOC |
+| [26](block-4.html)  | Mobile Robots                 |                     | |
+| [27](block-4.html)  | Roomba Overview               |                     | |
+| [28](block-4.html)  | Roomba Sensors (HW10 in class)|                     | |
+| [29](block-4.html)  | Controls                      |                     | [HW10 Roomba Sensors](hw10.pdf) |
+| [30](block-4.html)  | Controls                      |                     | |
+| [31](block-4.html)  | Lab 4: Roomba Control         |                     | |
+| [32](block-4.html)  | Lab 4: Roomba Control         |                     | [Lab4](lab4.pdf) EOC |
+| [33](block-4.html)  | Path Planning                 |                     | |
+| [34](block-4.html)  | Path Planning (HW11 in class) |                     | |
+| [35](block-4.html)  | Lab 5: Roomba Sensors         |                     | [HW11](hw11.pdf)|
+| [36](block-4.html)  | Lab 5: Roomba Sensors         |                     | [Lab5](lab5.pdf) EOC |
+| 37                  | GR2                           |                     | |
+| [38](block-4.html)  | Final Project                 |                     | |
+| [39](block-4.html)  | Final Project                 |                     | |
+| [40](block-4.html)  | Final Project                 |                     | [Final Project](final_project.pdf)|
 
 # Templates
 
