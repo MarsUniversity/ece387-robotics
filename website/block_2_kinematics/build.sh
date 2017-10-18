@@ -15,6 +15,18 @@ echo " Block 2"
 echo "============================"
 
 # jupyter notebooks
+CMD=$(command -v "zip")
+for JUPYTER in 'lsn7'
+do
+  # echo "Moving ${JUPYTER}.tar.gz to ${WWW}"
+  # tar zcf ${JUPYTER}.tar.gz ${JUPYTER}
+  # mv *.gz ${WWW}
+    echo "Moving ${JUPYTER}.zip to ${WWW}"
+    ${CMD} -r ${JUPYTER}.zip ${JUPYTER}
+    mv *.zip ${WWW}
+done
+
+# for pdfs
 for NOTES in 'lsn7' 'lsn8' 'lsn9' 'lsn10'
 do
   cd ${NOTES}
