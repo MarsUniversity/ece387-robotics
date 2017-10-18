@@ -9,7 +9,7 @@
 - [18. Face Detection](lsn18.zip)
 - [19. AR Marker Detection](lsn19.zip)
 - [20. Target Detection](lsn20.zip)
-- [21. Kalman Filtering](lsn21-kf.pptx)
+- [21. Kalman Filtering](lsn21.zip)
 - [22. Target Tracking](lsn22.zip)
 
 ### Homework
