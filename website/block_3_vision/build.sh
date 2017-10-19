@@ -29,7 +29,7 @@ if [[ -z "${CMD}" ]]; then
 fi
 
 # jupyter notebooks
-for JUPYTER in 'lsn11' 'lsn14' 'lsn15' 'lsn17' 'lsn18/human' 'lsn19' 'lsn20/color' 'lsn21' 'lsn22'
+for JUPYTER in 'lsn11' 'lsn14' 'lsn15' 'lsn17' 'lsn18' 'lsn19' 'lsn20' 'lsn21' 'lsn22'
 do
   echo "Moving ${JUPYTER}.zip to ${WWW}"
   ${CMD} -r ${JUPYTER}.zip ${JUPYTER}
