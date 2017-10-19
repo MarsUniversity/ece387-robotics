@@ -27,7 +27,7 @@ do
 done
 
 # for pdfs
-for NOTES in 'lsn7' 'lsn8' 'lsn9' 'lsn10'
+for NOTES in 'lsn8' 'lsn9'
 do
   cd ${NOTES}
 	echo "Copying ${NOTES} to ${WWW}"
