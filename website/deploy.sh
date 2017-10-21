@@ -50,5 +50,11 @@ git config user.name ${USER}
 git add *
 git commit -m "Deploying to ${REPO}:${BRANCH}"
 
+echo "======================"
+echo "  git publish"
+echo "======================"
+
 # force the contents of this master branch to gh-pages branch
 git push --force --quiet "https://${GITHUB_TOKEN}@${REPO}" master:${BRANCH} > /dev/null 2>&1
+
+return 0
