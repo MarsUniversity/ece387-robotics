@@ -2,10 +2,10 @@
 
 ### Lessons
 
-- [7. Kinematics Intro](lsn7.pdf)
+- [7. Kinematics Intro](lsn7.zip)
 - [8. 2D Forward/Inverse Kinematics](lsn8.pdf)
 - [9. AL5D Robot arm forward/inverse kinematics](lsn9.pdf)
-- [10. Robot arm control](lsn10.pdf)
+- [10. Robot arm control](lsn10.zip)
 
 ### Homework
 
