@@ -55,6 +55,7 @@ echo "  git publish"
 echo "======================"
 
 # force the contents of this master branch to gh-pages branch
-git push --force --quiet "https://${GITHUB_TOKEN}@${REPO}" master:${BRANCH} > /dev/null 2>&1
+# git push --force --quiet "https://${GITHUB_TOKEN}@${REPO}" master:${BRANCH} > /dev/null 2>&1
+git push --force  "https://${GITHUB_TOKEN}@${REPO}" master:${BRANCH}
 
 return 0
