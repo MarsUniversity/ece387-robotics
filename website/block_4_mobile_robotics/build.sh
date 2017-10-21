@@ -15,12 +15,12 @@ echo " Block 4"
 echo "============================"
 
 # PPT
-for PPT in 'lsn24'
-do
-  echo "Copying ${PPT} to ${WWW}"
-  cp ${PPT}/*.pptx ${WWW}
-  echo "done"
-done
+# for PPT in 'lsn24'
+# do
+#   echo "Copying ${PPT} to ${WWW}"
+#   cp ${PPT}/*.pptx ${WWW}
+#   echo "done"
+# done
 
 # jupyter notebooks
 CMD=$(command -v "zip")
@@ -29,7 +29,7 @@ if [[ -z "${CMD}" ]]; then
     CMD="/c/Program\ Files/7-Zip/7z.exe a"
 fi
 
-for JUPYTER in 'lsn25' 'lsn26' 'lsn27' 'lsn28' 'lsn30' 'lsn31' 'lsn33' 'lsn34'
+for JUPYTER in 'lsn26' 'lsn27' 'lsn28' 'lsn29' 'lsn30' 'lsn33'
 do
   echo "Moving ${JUPYTER}.zip to ${WWW}"
   ${CMD} -r ${JUPYTER}.zip ${JUPYTER}
