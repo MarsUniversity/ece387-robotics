@@ -2,16 +2,13 @@
 
 ### Lessons
 
-- [24. Mobile Robots](lsn11.zip)
-- [25. iRobot Create Overview](lsn14.zip)
-- [26. iRobot Create Sensors](lsn15.zip)
-- [27. Navigation Particle Filter](lsn19.zip)
-- [28. Navigation Motion Modelling](lsn20.zip)
-- [30. Robot Controls](lsn21-kf.pptx)
-- [31. Path Planning](lsn22.zip)
-- [32. Path Planning](index.html)
-- [33. Inertial Navigation System (INS)](index.html)
-- [34. INS](index.html)
+- [26. Mobile Robots](lsn26.zip)
+- [27. iRobot Create Overview](lsn27.zip)
+- [28. iRobot Create Sensors](lsn28.zip)
+- [29. Robot Control](lsn29.zip)
+- [30. Robot Control](lsn30.zip)
+- [33. Path Planning](lsn33.zip)
+- [34. Path Planning](lsn34.zip)
 
 ### Homework
 
