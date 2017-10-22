@@ -157,6 +157,8 @@ def main():
 		'block_4_mobile_robotics'
 	]
 
+	run('mkdir -p www')
+
 	for blk, j, p in zip(blocks, jup, ppt):
 		build_block(blk, j, p)
 
