@@ -14,7 +14,7 @@ def run(cmd):
 def jupyter(lsns):
 	dest = '../www'
 	for lsn in lsns:
-		print('Moving {}.zip to {}'.format(lsn, dest))
+		print(' > Moving {}.zip to {}'.format(lsn, dest))
 		run('zip -r {}.zip {}'.format(lsn, lsn))
 		run('mv {}.zip {}'.format(lsn, dest))
 
@@ -32,7 +32,7 @@ def jupyter(lsns):
 def pandoc(dir):
 	os.chdir(dir)
 	files = os.listdir('.')
-	print('fiels', files)
+	# print('fiels', files)
 	for md in files:
 		if len(md.split('.')) == 2:
 			f, ext = md.split('.')
@@ -49,7 +49,7 @@ def html(html=None):
 	cmd = 'pandoc -s -S -c pandoc.css -t html5 -o {}.html {}.md'
 
 	files = os.listdir('.')
-	print('fiels', files)
+	# print('fiels', files)
 	for md in files:
 		if len(md.split('.')) == 2:
 			f, ext = md.split('.')
@@ -67,7 +67,7 @@ def html(html=None):
 def copy(lsn):
 	os.chdir(lsn)
 	files = os.listdir('.')
-	print('files', files)
+	# print('files', files)
 	for f in files:
 		if len(f.split('.')) == 2:
 			_, ext = f.split('.')
@@ -76,7 +76,7 @@ def copy(lsn):
 
 		if ext == 'pdf' or ext == 'pptx':
 			cmd = 'cp {} ../../www'.format(f)
-			print(cmd)
+			# print(cmd)
 			run(cmd)
 		else:
 			print('>>> Unknown file type:', f)
@@ -98,12 +98,13 @@ def build_block(block, jup, pptpdf=None):
 	# labs ---------------------------------------
 	pandoc('lab')
 
+	# pdfs and ppts ------------------------------
 	if pptpdf:
 		for dr in pptpdf:
 			copy(dr)
 	copy('references')
 
-	# block page
+	# block page ----------------------------------
 	html()
 
 	os.chdir('..')
@@ -119,9 +120,6 @@ def build_guides():
 		run('mv {}.pdf ../../www'.format(name))
 		os.chdir('..')
 
-	# run('pandoc build_website/readme.md -V geometry:margin=1in -s  -o build_website.pdf')
-	# run(cmd.format('build_website'))
-	# run('mv pandoc_setup.pdf ../www')
 	simple('build_website')
 	simple('pandoc_setup')
 	simple('ps4_controller')
