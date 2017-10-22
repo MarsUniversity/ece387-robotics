@@ -1,4 +1,7 @@
 os: osx
+language: python
+python:
+  - "2.7"
 sudo: false
 osx_image: xcode9
 git:
