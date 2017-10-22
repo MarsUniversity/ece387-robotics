@@ -18,7 +18,7 @@ install: true
 
 script:
     - cd website
-    - chmod a+x build_html.sh
+    - chmod a+x build.py
     - chmod a+x deploy.sh
-    - ./build_html.sh
+    - ./build.py
     - ./deploy.sh

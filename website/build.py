@@ -45,7 +45,7 @@ def pandoc(dir):
 	os.chdir('..')
 
 
-def html():
+def html(html=None):
 	cmd = 'pandoc -s -S -c pandoc.css -t html5 -o {}.html {}.md'
 
 	files = os.listdir('.')
@@ -56,8 +56,10 @@ def html():
 		else:
 			continue
 
+		if not html:
+			html = f
 		if ext == 'md':
-			run(cmd.format(f, f))
+			run(cmd.format(f, html))
 			run('mv {}.html ../www'.format(f))
 			run('cp pandoc.css ../www')
 
@@ -160,10 +162,15 @@ def main():
 
 	# build_guides()
 
+	# syllabus -----------------------------------------------------------------
+	run('cp pandoc.css www')
 	os.chdir('syllabus')
-	html()
+	# html()
+	run('pandoc syllabus.md -V geometry:margin=1in -s -o syllabus.pdf')
+	run('pandoc -s -S --toc -c pandoc.css syllabus.md -t html5 -o index.html')
 	os.chdir('..')
 
+	# templates ----------------------------------------------------------------
 	os.chdir('templates')
 	run('cp jupyter.ipynb ../www')
 	run('cp python.py ../www')
