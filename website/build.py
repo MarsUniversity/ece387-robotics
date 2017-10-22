@@ -61,7 +61,7 @@ def html(html=None):
 		if ext == 'md':
 			run(cmd.format(f, html))
 			run('mv {}.html ../www'.format(f))
-			run('cp pandoc.css ../www')
+			# run('cp pandoc.css ../www')
 
 
 def copy(lsn):
