@@ -155,26 +155,26 @@ def main():
 
 	run('mkdir -p www')
 
-	# for blk, j, p in zip(blocks, jup, ppt):
-	# 	build_block(blk, j, p)
+	for blk, j, p in zip(blocks, jup, ppt):
+		build_block(blk, j, p)
 
 	build_guides()
 
-	# # syllabus -----------------------------------------------------------------
-	# run('cp pandoc.css www')
-	# os.chdir('syllabus')
-	# # html()
-	# run('pandoc syllabus.md -V geometry:margin=1in -s -o syllabus.pdf')
-	# run('mv syllabus.pdf ../www')
-	# run('pandoc -s -S --toc -c pandoc.css syllabus.md -t html5 -o index.html')
-	# run('mv index.html ../www')
-	# os.chdir('..')
-	#
-	# # templates ----------------------------------------------------------------
-	# os.chdir('templates')
-	# run('cp jupyter.ipynb ../www')
-	# run('cp python.py ../www')
-	# os.chdir('..')
+	# syllabus -----------------------------------------------------------------
+	run('cp pandoc.css www')
+	os.chdir('syllabus')
+	# html()
+	run('pandoc syllabus.md -V geometry:margin=1in -s -o syllabus.pdf')
+	run('mv syllabus.pdf ../www')
+	run('pandoc -s -S --toc -c pandoc.css syllabus.md -t html5 -o index.html')
+	run('mv index.html ../www')
+	os.chdir('..')
+
+	# templates ----------------------------------------------------------------
+	os.chdir('templates')
+	run('cp jupyter.ipynb ../www')
+	run('cp python.py ../www')
+	os.chdir('..')
 
 
 if __name__ == "__main__":
