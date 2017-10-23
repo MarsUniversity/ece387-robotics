@@ -1,13 +1,17 @@
 #!/usr/bin/env bash
 
-CREATE="https://github.com/MomsFriendlyRobotCompany/pycreate2"
-IMU="https://github.com/MomsFriendlyRobotCompany/nxp_imu"
-CV="https://github.com/MomsFriendlyRobotCompany/opencvutils"
-FAKE="https://github.com/MomsFriendlyRobotCompany/fake_rpi"
-NAV="https://github.com/MomsFriendlyRobotCompany/ins_nav"
+BASE="https://github.com/MomsFriendlyRobotCompany/"
+CREATE="pycreate2"
+IMU="nxp_imu"
+CV="opencvutils"
+FAKE="fake_rpi"
+NAV="ins_nav"
 
 
 for REPO in ${CREATE} ${IMU} ${CV} ${FAKE} ${NAV}
 do
-  loc ${REPO}
+  echo "=========================================="
+  echo "   ${REPO}"
+  echo "=========================================="
+  ./loc.sh ${BASE}${REPO}
 done
