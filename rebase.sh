@@ -7,6 +7,9 @@
 #
 # I wrote this because I kept some large binaries in my repo (stupid) and they
 # changed over time. Next thing I noticed, my repo was 1.5GB.
+#
+# try first:
+# git reflog expire --expire=now --all && git gc --prune=now --aggressive
 
 # git info
 USER="walchko"
