@@ -113,9 +113,9 @@ provide hands on experience with the topics discussed in the lectures. The final
 | [18](block-3.html)  | CV: Face Detection            |                     | |
 | [19](block-3.html)  | CV: Marker Detection          |                     | |
 | [20](block-3.html)  | CV: Target Detection          |                     | [HW7 Detection I](hw7.pdf) |
-| [21](block-3.html)  | CV: Kalman Filter             |                     | |
-| [22](block-3.html)  | CV: Target Tracking I         |                     | [HW8 Detection II](hw8.pdf) |
-| [23](block-3.html)  | CV: Target Tracking II        |                     | |
+| [21](block-3.html)  | CV: Tracking I                |                     | |
+| [22](block-3.html)  | CV: Tracking II               |                     | [HW8 Detection II](hw8.pdf) |
+| [23](block-3.html)  | CV: Image Stitching           |                     | |
 | [24](block-3.html)  | Lab 3: Detection and Tracking |                     | [HW9 Kalman Filter](hw9.pdf)|
 | [25](block-3.html)  | Lab 3: Detection and Tracking |                     | [Lab3](lab3.pdf) EOC |
 | [26](block-4.html)  | Mobile Robots                 |                     | |
