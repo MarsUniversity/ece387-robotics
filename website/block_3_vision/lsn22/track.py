@@ -92,24 +92,35 @@ def findBall(img):
 	# print('Circle center: ({}, {})   radius: {} pixels'.format(x, y, radius))
 	return ((x, y), radius)
 
+def printKF(kf):
+	print('A', kf.transitionMatrix)
+	print('H', kf.measurementMatrix)
+	print('x-', kf.statePre)
+	print('x+', kf.statePost)
+	print('Q', kf.processNoiseCov)
+	print('R', kf.measurementNoiseCov)
+
+
 def trackTarget(filename):
 	# setup kf
 	kalman = cv2.KalmanFilter(4, 2, 0)  # state size, measurement size, control vector
 
-	dt = 1
-	A = np.eye(4)
+	dt = 1.
+	A = np.eye(4, dtype=np.float32)
 	A[0, 2] =  dt
 	A[1, 3] =  dt
 	kalman.transitionMatrix = A
 
-	H = np.array([[1., 0, 0, 0], [0, 1., 0, 0]])
+	H = np.array([[1., 0, 0, 0], [0, 1., 0, 0]], dtype=np.float32)
 	kalman.measurementMatrix = H
 
-	kalman.processNoiseCov = 1e-5 * np.eye(4)
-	kalman.measurementNoiseCov = 1e-1 * np.ones((1, 1))
+	kalman.processNoiseCov = 0.1 * np.eye(4, dtype=np.float32)
+	kalman.measurementNoiseCov = 1 * np.eye(2, dtype=np.float32)
 
-	kalman.errorCovPost = 1. * np.ones((2, 2))
-	kalman.statePost = 0.1 * np.random.randn(2, 1)
+	printKF(kalman)
+
+	# kalman.errorCovPost = 1. * np.ones((4, 4), dtype=np.float32)
+	# kalman.statePost = 0.1 * np.random.randn(2, 1)
 
 	# open video
 	cap = cv2.VideoCapture(filename)
@@ -122,9 +133,10 @@ def trackTarget(filename):
 	# color - doesn't seem to work
 	# params.blobColor = 255
 
-	# Change thresholds
-	# params.minThreshold = 0
-	# params.maxThreshold = 256
+	# Change thresholds - levels
+	# params.minThreshold = 0  # inclusive
+	# params.maxThreshold = 1  # exclusive
+	params.thresholdStep = 1
 
 	# Filter by Area.
 	# params.filterByArea = True
@@ -144,6 +156,10 @@ def trackTarget(filename):
 	# params.minInertiaRatio = 0.01
 
 	detector = cv2.SimpleBlobDetector_create(params)
+
+	init = True
+
+	sample = 0
 
 	# loop through each video frame and track the ball
 	while(cap.isOpened()):
@@ -166,16 +182,29 @@ def trackTarget(filename):
 				pt = (int(kp.pt[0]), int(kp.pt[1]))
 				cv2.circle(im_with_keypoints, pt, 2, (255, 0, 0), -1)
 
+				if init:
+					init = False
+					kalman.statePre = np.array([kp.pt[0], kp.pt[1], 0, 0], dtype=np.float32)
+
 			# print(keypoints)
 			print("----")
 			for kp in keypoints:
+				# print(dir(kp))
 				print("({:.0f}, {:.0f}) size={:.1f} resp={:.1f}".format(kp.pt[0], kp.pt[1], kp.size, kp.response))
 
-			loc = keypoints[0].pt
-			kalman.correct(np.array(loc))
+			kp = keypoints[0]
+
+			if sample%4 == 0:
+				kalman.correct(np.array([kp.pt[0], kp.pt[1]], dtype=np.float32))
+			else:
+				print('no update')
+
+			sample += 1
+
 			predict = kalman.predict()
 			print(predict)
-			# cv2.circle(frame, predict, rad, (0, 0, 255), 2)
+			loc = (predict[0], predict[1])
+			cv2.circle(im_with_keypoints, loc, 10, (0, 255, 0), 2)
 
 			showImage(im_with_keypoints)
 		else:
