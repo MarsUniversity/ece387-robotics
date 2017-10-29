@@ -52,10 +52,10 @@ def createVideo(filename):
 	radius = 50
 
 	for i in range(100):
-		img = array = np.zeros(shape, np.uint8)  # make black frame
+		img = array = 255*np.ones(shape, np.uint8)  # make black frame
 		x = int(shape[1]/2+radius*cos(2*pi*i/100))
 		y = int(shape[0]/2+radius*sin(2*pi*i/100))
-		img = cv2.circle(img,(x, y), 10, 255, -1)
+		img = cv2.circle(img,(x, y), 10, 0, -1)
 		img = cv2.cvtColor(img, cv2.COLOR_GRAY2BGR)
 		# showImage(img)
 		sv.write(img)
@@ -94,36 +94,95 @@ def findBall(img):
 
 def trackTarget(filename):
 	# setup kf
-	kalman = cv2.KalmanFilter(2, 1, 0)  # state size, measurement size, control vector
-	kalman.transitionMatrix = np.array(
-		[
-			[1., 1.],
-			[0., 1.]
-		]
-	)
-	kalman.measurementMatrix = 1. * np.ones((1, 2))
-	kalman.processNoiseCov = 1e-5 * np.eye(2)
+	kalman = cv2.KalmanFilter(4, 2, 0)  # state size, measurement size, control vector
+
+	dt = 1
+	A = np.eye(4)
+	A[0, 2] =  dt
+	A[1, 3] =  dt
+	kalman.transitionMatrix = A
+
+	H = np.array([[1., 0, 0, 0], [0, 1., 0, 0]])
+	kalman.measurementMatrix = H
+
+	kalman.processNoiseCov = 1e-5 * np.eye(4)
 	kalman.measurementNoiseCov = 1e-1 * np.ones((1, 1))
+
 	kalman.errorCovPost = 1. * np.ones((2, 2))
 	kalman.statePost = 0.1 * np.random.randn(2, 1)
 
 	# open video
 	cap = cv2.VideoCapture(filename)
 
+	# blob detector
+	# https://www.learnopencv.com/blob-detection-using-opencv-python-c/
+	# Setup SimpleBlobDetector parameters.
+	params = cv2.SimpleBlobDetector_Params()
+
+	# color - doesn't seem to work
+	# params.blobColor = 255
+
+	# Change thresholds
+	# params.minThreshold = 0
+	# params.maxThreshold = 256
+
+	# Filter by Area.
+	# params.filterByArea = True
+	# params.minArea = 1500
+
+	# Filter by Circularity - doesn't seem very precise
+	params.filterByCircularity = True
+	params.maxCircularity = 1.2
+	params.minCircularity = .7
+
+	# Filter by Convexity
+	# params.filterByConvexity = True
+	# params.minConvexity = 0.87
+
+	# Filter by Inertia
+	# params.filterByInertia = True
+	# params.minInertiaRatio = 0.01
+
+	detector = cv2.SimpleBlobDetector_create(params)
+
 	# loop through each video frame and track the ball
 	while(cap.isOpened()):
 		ret, frame = cap.read()
 		if ret:
 			gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-			loc, rad = findBall(gray)
+			# loc, rad = findBall(gray)
 			# (minVal, maxVal, minLoc, maxLoc) = cv2.minMaxLoc(gray)
-			cv2.circle(frame, loc, rad, (255, 0, 0), 2)
-			showImage(frame)
+			# cv2.circle(frame, loc, rad, (255, 0, 0), 2)
+
+			keypoints = detector.detect(gray)
+			im_with_keypoints = cv2.drawKeypoints(
+				frame,
+				keypoints,
+				None,  # output image
+				(0,0,255),
+				cv2.DRAW_MATCHES_FLAGS_DRAW_RICH_KEYPOINTS)
+
+			for kp in keypoints:
+				pt = (int(kp.pt[0]), int(kp.pt[1]))
+				cv2.circle(im_with_keypoints, pt, 2, (255, 0, 0), -1)
+
+			# print(keypoints)
+			print("----")
+			for kp in keypoints:
+				print("({:.0f}, {:.0f}) size={:.1f} resp={:.1f}".format(kp.pt[0], kp.pt[1], kp.size, kp.response))
+
+			loc = keypoints[0].pt
+			kalman.correct(np.array(loc))
+			predict = kalman.predict()
+			print(predict)
+			# cv2.circle(frame, predict, rad, (0, 0, 255), 2)
+
+			showImage(im_with_keypoints)
 		else:
 			cap.release()
 
 if __name__ == "__main__":
-	fname = 'tracking.mp4'
+	fname = 'tracking2.mp4'
 	# createVideo(fname)
 	# playVideo(fname)
 	trackTarget(fname)
