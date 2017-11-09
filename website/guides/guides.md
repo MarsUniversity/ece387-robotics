@@ -1,4 +1,4 @@
-# Documents
+% Documents
 
 These are to help document some of the setup and other useful things for the class.
 

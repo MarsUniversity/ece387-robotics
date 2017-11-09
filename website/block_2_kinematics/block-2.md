@@ -1,11 +1,11 @@
-# Block 2: Kinematics
+% Block 2: Kinematics
 
 ### Lessons
 
-- [7. Kinematics Intro](lsn7.zip)
+- [7. Kinematics Intro](http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_2_kinematics/lsn7/lsn7.ipynb)  [[download](lsn7.zip)]
 - [8. 2D Forward/Inverse Kinematics](lsn8.pdf)
 - [9. AL5D Robot arm forward/inverse kinematics](lsn9.pdf)
-- [10. Robot arm control](lsn10.zip)
+- [10. Robot arm control](http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_2_kinematics/lsn10/lsn10.ipynb)  [[download](lsn10.zip)]
 
 ### Homework
 

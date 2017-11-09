@@ -46,7 +46,7 @@ def pandoc(dir):
 
 
 def html():
-	cmd = 'pandoc -s -S -c pandoc.css -t html5 -o {0}.html {0}.md'
+	cmd = 'pandoc -s -c pandoc.css -t html5-smart -o {0}.html {0}.md'
 
 	files = os.listdir('.')
 	# print('fiels', files)
@@ -72,7 +72,7 @@ def copy(lsn):
 		else:
 			continue
 
-		if ext == 'pdf' or ext == 'pptx':
+		if ext == 'pdf' or ext == 'pptx' or ext == 'ppt':
 			cmd = 'cp {} ../../www'.format(f)
 			# print(cmd)
 			run(cmd)
@@ -153,6 +153,7 @@ def main():
 		'block_4_mobile_robotics'
 	]
 
+	run('rm -fr www')
 	run('mkdir -p www')
 
 	for blk, j, p in zip(blocks, jup, ppt):
@@ -166,7 +167,7 @@ def main():
 	# html()
 	run('pandoc syllabus.md -V geometry:margin=1in -s -o syllabus.pdf')
 	run('mv syllabus.pdf ../www')
-	run('pandoc -s -S --toc -c pandoc.css syllabus.md -t html5 -o index.html')
+	run('pandoc -s --toc -c pandoc.css syllabus.md -t html5-smart -o index.html')
 	run('mv index.html ../www')
 	os.chdir('..')
 

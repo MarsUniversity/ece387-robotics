@@ -1,12 +1,12 @@
-# Block 1: Robotics Basics
+% Block 1: Robotics Basics
 
 ### Lessons
 
 - [1. Robotics](lsn1-Intro.pptx)
 - [2. Linux Command Line](lsn2-linux.pptx)
 - [3. Python Introduction](lsn3-python.pptx)
-- [4. Python Matplotlib](lsn4.zip)
-- [5. Python Numpy](lsn5.zip)
+- [4. Python Matplotlib](http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_1_basics/lsn4/lsn4.ipynb)  [[download](lsn4.zip)]
+- [5. Python Numpy](http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_1_basics/lsn5/lsn5.ipynb)  [[download](lsn5.zip)]
 
 ### Homework
 
