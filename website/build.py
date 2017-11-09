@@ -143,8 +143,8 @@ def main():
 	jup = [
 		['lsn4', 'lsn5'],
 		['lsn7', 'lsn10'],
-		['lsn11', 'lsn14', 'lsn15', 'lsn17', 'lsn18', 'lsn19', 'lsn20', 'lsn21', 'lsn22'],
-		['lsn26', 'lsn27', 'lsn28', 'lsn29', 'lsn30', 'lsn33']
+		['lsn11', 'lsn14', 'lsn15', 'lsn17', 'lsn18', 'lsn19', 'lsn20', 'lsn21', 'lsn22', 'lsn23'],
+		['lsn26', 'lsn27', 'lsn28', 'lsn29', 'lsn30', 'lsn33', 'lsn34']
 	]
 	blocks = [
 		'block_1_basics',
