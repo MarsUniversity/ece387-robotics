@@ -48,14 +48,12 @@ is required.
 | 80 < B < 84  | 60 < D  < 67 |
 | 77 < B- < 80 |  0 < F  < 60 |
 
-|               | Prog Pts | Final Pts |
+|               | Prog %   | Final %   |
 |---------------|----------|-----------|
-| HW            | (5)25    | (6)30     |
-| GRs           | 100      | 100       |
-| Labs          | (2)40    | (3)60     |
-| Quizzes       | (2)20    | (2)20     |
-| Final Project |          | 100       |
-| TOTAL         | 185      | 310       |
+| HW            | 20       | 10        |
+| GRs           | 40       | 35        |
+| Labs          | 40       | 30        |
+| Final Project |          | 25        |
 
 ## Missing Class and the Late Policy
 
@@ -63,7 +61,7 @@ Inform your instructor of absences in advance via email. Please include the reas
 
 If you plan to miss a class, you *must* take any quiz or GR prior to your departure.
 
-Due to the limited time to conduct labs and the fact they are executed in groups, you can not miss a labs unless you have a medical excuse due to unplanned illness.
+Due to the limited time to conduct labs and the fact they are executed in groups, you can not miss both lab days unless you have a medical excuse due to unplanned illness. You can miss one lab day, but depending on situation (e.g., something you could have avoided), you may loose points for the lab.
 
 If you are expecting to miss class on the day an assignment is due, you shall turn in your assignment prior to your departure. Your instructor may grant a no-penalty turn-in extension for absences resulting from illness or other legitimate extenuating circumstances. Cadets shall coordinate late submittals in advance. The late policy for the Department of Electrical and Computer Engineering is as follows:
 
