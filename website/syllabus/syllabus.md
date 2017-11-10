@@ -113,7 +113,7 @@ project will focus on the Roomba robot, controls, computer vision, and path plan
 | [18](block-3.html)  | CV: Face Detection            |                     | |
 | [19](block-3.html)  | CV: Marker Detection          |                     | |
 | [20](block-3.html)  | CV: Target Detection          |                     | [HW7 Detection I](hw7.pdf) |
-| [21](block-3.html)  | CV: Tracking I                |                     | |
+| [21](block-3.html)  | CV: Tracking I                |[Kalman Filter](KalmanFilter.pdf)| |
 | [22](block-3.html)  | CV: Tracking II               |                     | [HW8 Detection II](hw8.pdf) |
 | [23](block-3.html)  | CV: Image Stitching           |                     | |
 | [24](block-3.html)  | Lab 3: Detection and Tracking |                     | [HW9 Kalman Filter](hw9.pdf)|
@@ -136,8 +136,8 @@ project will focus on the Roomba robot, controls, computer vision, and path plan
 
 # Templates
 
-- [Homework: Jupyter Notebook](jupyter.ipynb)
-- [Lab: Python](python.py)
+- [Jupyter Notebook](jupyter.ipynb)
+- [Python](python.py)
 
 # References
 
@@ -149,9 +149,22 @@ project will focus on the Roomba robot, controls, computer vision, and path plan
 - [Connecting to the Roomba via wifi](access_point.pdf)
 - [Pandoc setup for automating website/documentation generation](pandoc_setup.pdf)
 
-## Cheat Sheets
+## Class Python Libraries
+
+- [ar_markers](https://pypi.python.org/pypi/ar-markers)
+- [nxp_imu](https://pypi.python.org/pypi/nxp-imu)
+- [pycreate2](https://pypi.python.org/pypi/pycreate2)
+- [ins_nav](https://pypi.python.org/pypi/ins-nav)
+- [opencvutils](https://pypi.python.org/pypi/opencvutils)
+- [the-collector](https://pypi.python.org/pypi/the-collector)
+- [pyhexdump](https://pypi.python.org/pypi/pyhexdump)
+
+## Cheat Sheets and References
 
 - [Linux command line reference](command-line.pdf)
 - [Markdown](markdown.pdf)
-- [Python reference (long)](python.pdf)
-- [Python reference (short)](python-qr.pdf)
+- [Python (long)](python.pdf)
+- [Python (short)](python-qr.pdf)
+- [Jupyter reference I](jupyter-1.pdf)
+- [Jupyter reference II](jupyter-2.pdf)
+- [iRobot Create 2 interface](iRobot_Roomba_600_Open_Interface_Spec.pdf)
