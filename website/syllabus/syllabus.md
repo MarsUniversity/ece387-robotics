@@ -36,7 +36,7 @@ is required.
 |-------------|-----------------------------------------------------|
 | Course Text | None, various PDFs are provided for reading         |
 | Web Page    | [https://marsuniversity.github.io/ece387/](https://marsuniversity.github.io/ece387/) |
-| Software    | Python 2.7 will need to be installed on your laptop |
+| Software    | Python 2.7, OpenCV 3.3 and Jupyter notebook will need to be installed on your laptop |
 
 ## Grades
 
@@ -76,17 +76,17 @@ If you are expecting to miss class on the day an assignment is due, you shall tu
 
 ## Collaboration and Documentation Policy
 
-You may receive help from any DFEC faculty member on the homework. Do not work with other students in the class or who have taken the class previously. Document all help received on work submitted for grading IAW DF policies, or *none* if your work was completely individual effort.
-
-## Quizzes
-
-Short graded quizzes will be given periodically throughout the semester and are listed in the schedule. The quizzes are based on the previous lessons.
+You may receive help from any DFEC faculty member on the homework. Do not work
+with other students in the class or who have taken the class previously. Document
+all help received on work submitted for grading IAW DF policies, or document
+*none* if your work was completely individual effort.
 
 ## Labs and Final Project
 
 The labs are performed in groups of no more than 3 students. Each lab will build
 on the homework, in class lectures and readings. The purpose of the labs is to
-provide hands on experience with the topics discussed in the lectures. The final project will focus on the Roomba robot, controls, computer vision, and path planning.
+provide hands on experience with the topics discussed in the lectures. The final
+project will focus on the Roomba robot, controls, computer vision, and path planning.
 
 
 # Schedule
@@ -141,4 +141,17 @@ provide hands on experience with the topics discussed in the lectures. The final
 
 # References
 
-- [Install/setup guides and quick references](guides.html)
+## Install/Setup Guides
+
+- [**Required Software:** Laptop software install for python, OpenCV, and MS Compiler](software_install.pdf)
+- [Roomba Setup](roomba_setup.pdf)
+- [Interfacing Windoze and Linux file systems](windows_linux.pdf)
+- [Connecting to the Roomba via wifi](access_point.pdf)
+- [Pandoc setup for automating website/documentation generation](pandoc_setup.pdf)
+
+## Cheat Sheets
+
+- [Linux command line reference](command-line.pdf)
+- [Markdown](markdown.pdf)
+- [Python reference (long)](python.pdf)
+- [Python reference (short)](python-qr.pdf)
