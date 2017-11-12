@@ -112,7 +112,7 @@ project will focus on the Roomba robot, controls, computer vision, and path plan
 | 14  | [Filtering][14]  [[download](lsn14.zip)]              |[Edge Detection][edge]       | |
 | 15  | [Feature Detection][15]  [[download](lsn15.zip)]      |                             | [HW6](hw6.pdf) |
 | 16  | **GR 1**                                              |                             | |
-| 17  | [Computer Vision Intro][17]  [[download](lsn17.zip)]  |                             | |
+| 17  | [Cameras and Calibration][17]  [[download](lsn17.zip)]|                             | |
 | 18  | [Face Detection][18]  [[download](lsn18.zip)]         |                             | |
 | 19  | [Marker Detection][19]  [[download](lsn19.zip)]       |[Error Correction][error]    | |
 | 20  | [Color Detection][20]  [[download](lsn20.zip)]        |                             | [HW7](hw7.pdf) |
