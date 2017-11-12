@@ -8,7 +8,7 @@ header-includes:
     - \fancyfoot[LE,RO]{Robots are cool!}
 ---
 
-# [Sprint 2018 Syllabus](syllabus.pdf)
+# [Spring 2018 Syllabus](syllabus.pdf)
 
 ## Instructor
 
@@ -36,7 +36,10 @@ is required.
 |-------------|-----------------------------------------------------|
 | Course Text | None, various PDFs are provided for reading         |
 | Web Page    | [https://marsuniversity.github.io/ece387/](https://marsuniversity.github.io/ece387/) |
-| Software    | Python 2.7, OpenCV 3.3 and Jupyter notebook will need to be installed on your laptop |
+| Software    | Python 2.7                                          |
+|             | OpenCV 3.3.x                                        |
+|             | Jupyter notebooks                                   |
+|             | GitBash                                             |
 
 ## Grades
 
@@ -54,6 +57,9 @@ is required.
 | GRs           | 45       | 35        |
 | Labs          | 35       | 30        |
 | Final Project |          | 25        |
+
+- Homeworks are at the beginning of class (BOC)
+- Labs are due on the final day at the end of class (EOC)
 
 ## Missing Class and the Late Policy
 
@@ -86,7 +92,6 @@ on the homework, in class lectures and readings. The purpose of the labs is to
 provide hands on experience with the topics discussed in the lectures. The final
 project will focus on the Roomba robot, controls, computer vision, and path planning.
 
-
 # Schedule
 
 | Lsn | Topic                                                 | Reading                     | Due                       |
@@ -110,9 +115,9 @@ project will focus on the Roomba robot, controls, computer vision, and path plan
 | 17  | [Computer Vision Intro][17]  [[download](lsn17.zip)]  |                             | |
 | 18  | [Face Detection][18]  [[download](lsn18.zip)]         |                             | |
 | 19  | [Marker Detection][19]  [[download](lsn19.zip)]       |[Error Correction][error]    | |
-| 20  | [Target Detection][20]  [[download](lsn20.zip)]       |                             | [HW7](hw7.pdf) |
-| 21  | [Tracking I][21]  [[download](lsn21.zip)]             |[Kalman Filter][kf]          | |
-| 22  | [Tracking II][22]  [[download](lsn22.zip)]            |                             | [HW8](hw8.pdf) |
+| 20  | [Color Detection][20]  [[download](lsn20.zip)]        |                             | [HW7](hw7.pdf) |
+| 21  | [Change Detection][21]  [[download](lsn21.zip)]       |                             | |
+| 22  | [Tracking][22]  [[download](lsn22.zip)]               |[Kalman Filter][kf]          | [HW8](hw8.pdf) |
 | 23  | [Image Stitching][23]  [[download](lsn23.zip)]        |                             | |
 | 24  | [Lab 3: Detection and Tracking](lab3.pdf)             |                             | [HW9](hw9.pdf)|
 | 25  | [Lab 3: Detection and Tracking](lab3.pdf)             |                             | [Lab3](lab3.pdf) EOC |
