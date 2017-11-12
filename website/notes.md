@@ -4,5 +4,5 @@
 - the-collector: sensor readings, plots, voltage, current, encoders (figure out where are we)
 - Technologies
     - samba
-    - ssh
+    - ssh (never use telnet or rcp ... insecure)
     -
