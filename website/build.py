@@ -103,7 +103,7 @@ def build_block(block, jup, pptpdf=None):
 	copy('references')
 
 	# block page ----------------------------------
-	html()
+	# html()
 
 	os.chdir('..')
 
@@ -128,7 +128,7 @@ def build_guides():
 
 	copy('cheatsheet')
 
-	html()
+	# html()
 
 	os.chdir('..')
 

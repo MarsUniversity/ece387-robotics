@@ -89,48 +89,83 @@ project will focus on the Roomba robot, controls, computer vision, and path plan
 
 # Schedule
 
-| Lsn                 | Topic                         | Reading             | Due                       |
-|---------------------|-------------------------------|---------------------|---------------------------|
-| [1](block-1.html)   | Intro & Overview              |                     |                           |
-| [2](block-1.html)   | Linux Command Line            |[Matlof Ch 1.0-1.9](python-matlof.pdf)| Install required software |
-| [3](block-1.html)   | Python Intro                  |                     | [HW1 Command Line](hw123.pdf) |
-| [4](block-1.html)   | Python                        |[Matlof Ch 3](python-matlof.pdf)| [HW2 Python](hw123.pdf) |
-| [5](block-1.html)   | Python                        |                     | [HW3 Python](hw123.pdf) |
-| [6](block-1.html)   | Lab 1: linux and python       |                     | [Lab1](lab1.pdf) EOC |
-| [7](block-2.html)   | Kinematics: Intro             |[Craig Ch 3](Introduction-to-Robotics-Craig.pdf)| |
-| [8](block-2.html)   | 2D Forward-Inv Kinematics     |                     | |
-| [9](block-2.html)   | 3D Inverse-Inv Kinematics     |                     | [HW4 Forward Kinematics](hw4.pdf)|
-| [10](block-2.html)  | Robot Arm Control             |[RC Servos](hobby_servos.pdf)| |
-| [11](block-3.html)  | OpenCV Introduction           |                     | [HW5 Inverse Kinematics](hw5.pdf)|
-| [12](block-2.html)  | Lab 2: Robot Arm              |                     | [Pre-Lab2](lab2.pdf) |
-| [13](block-2.html)  | Lab 2: Robot Arm              |                     | [Lab2](lab2.pdf) EOC |
-| [14](block-3.html)  | Filtering                     |[Edge Detection](Edge_Detection.pdf)| |
-| [15](block-3.html)  | Feature Detection             |                     | [HW6 Image Sources](hw6.pdf) |
-| 16                  | GR 1                          |                     | |
-| [17](block-3.html)  | Computer Vision Intro         |                     | |
-| [18](block-3.html)  | CV: Face Detection            |                     | |
-| [19](block-3.html)  | CV: Marker Detection          |[Error Correction](ErrorCorrection.pdf)| |
-| [20](block-3.html)  | CV: Target Detection          |                     | [HW7 Detection I](hw7.pdf) |
-| [21](block-3.html)  | CV: Tracking I                |[Kalman Filter](KalmanFilter.pdf)| |
-| [22](block-3.html)  | CV: Tracking II               |                     | [HW8 Detection II](hw8.pdf) |
-| [23](block-3.html)  | CV: Image Stitching           |                     | |
-| [24](block-3.html)  | Lab 3: Detection and Tracking |                     | [HW9 Kalman Filter](hw9.pdf)|
-| [25](block-3.html)  | Lab 3: Detection and Tracking |                     | [Lab3](lab3.pdf) EOC |
-| [26](block-4.html)  | Mobile Robots                 |[Siegwart Ch 3](siegwartRobotBook.pdf)| |
-| [27](block-4.html)  | Roomba Overview               |[Siegwart Ch 4-4.1.71](siegwartRobotBook.pdf)| |
-| [28](block-4.html)  | Roomba Sensors (HW10 in class)|                     | |
-| [29](block-4.html)  | Controls                      |[Siegwart Ch 5](siegwartRobotBook.pdf)                     | [HW10 Roomba Sensors](hw10.pdf) |
-| [30](block-4.html)  | Controls                      |                     | |
-| [31](block-4.html)  | Lab 4: Roomba Control         |                     | |
-| [32](block-4.html)  | Lab 4: Roomba Control         |                     | [Lab4](lab4.pdf) EOC |
-| [33](block-4.html)  | Path Planning                 |[Flood Fill](FloodFill.pdf)| |
-| [34](block-4.html)  | Path Planning (HW11 in class) |                     | |
-| [35](block-4.html)  | Lab 5: Roomba Sensors         |                     | [HW11](hw11.pdf)|
-| [36](block-4.html)  | Lab 5: Roomba Sensors         |                     | [Lab5](lab5.pdf) EOC |
-| 37                  | GR2                           |                     | |
-| [38](block-4.html)  | Final Project                 |                     | |
-| [39](block-4.html)  | Final Project                 |                     | |
-| [40](block-4.html)  | Final Project                 |                     | [Final Project](final_project.pdf)|
+| Lsn | Topic                                                 | Reading                     | Due                       |
+|-----|-------------------------------------------------------|-----------------------------|---------------------------|
+| 1   | [Intro & Overview][1]                                 |                             |                           |
+| 2   | [Linux Command Line][2]                               | [Matlof Ch 1.0-1.9][matlof] | Install required software |
+| 3   | [Python Intro][3]                                     |                             | [HW 1](hw123.pdf) |
+| 4   | [Python Matplotlib][4] [[download](lsn4.zip)]         | [Matlof Ch 3][matlof]       | [HW 2](hw123.pdf) |
+| 5   | [Python Numpy][5]  [[download](lsn5.zip)]             |                             | [HW 3](hw123.pdf) |
+| 6   | [Lab 1: linux and python](lab1.pdf)                   |                             | [Lab1](lab1.pdf) EOC |
+| 7   | [Kinematics: Intro][7]  [[download](lsn5.zip)]        |[Craig Ch 3][craig]          | |
+| 8   | [2D Forward-Inv Kinematics][8]  [[download](lsn8.zip)]|                             | |
+| 9   | [3D Inverse-Inv Kinematics][9]  [[download](lsn9.zip)]|                             | [HW4](hw4.pdf)|
+| 10  | [Robot Arm Control][10]  [[download](lsn10.zip)]      |[RC Servos](hobby_servos.pdf)| |
+| 11  | [OpenCV Introduction][11]  [[download](lsn11.zip)]    |                             | [HW5](hw5.pdf)|
+| 12  | [Lab 2: Robot Arm](lab2.pdf)                          |                             | [Pre-Lab2](lab2.pdf) |
+| 13  | [Lab 2: Robot Arm](lab2.pdf)                          |                             | [Lab2](lab2.pdf) EOC |
+| 14  | [Filtering][14]  [[download](lsn14.zip)]              |[Edge Detection][edge]       | |
+| 15  | [Feature Detection][15]  [[download](lsn15.zip)]      |                             | [HW6](hw6.pdf) |
+| 16  | **GR 1**                                              |                             | |
+| 17  | [Computer Vision Intro][17]  [[download](lsn17.zip)]  |                             | |
+| 18  | [Face Detection][18]  [[download](lsn18.zip)]         |                             | |
+| 19  | [Marker Detection][19]  [[download](lsn19.zip)]       |[Error Correction][error]    | |
+| 20  | [Target Detection][20]  [[download](lsn20.zip)]       |                             | [HW7](hw7.pdf) |
+| 21  | [Tracking I][21]  [[download](lsn21.zip)]             |[Kalman Filter][kf]          | |
+| 22  | [Tracking II][22]  [[download](lsn22.zip)]            |                             | [HW8](hw8.pdf) |
+| 23  | [Image Stitching][23]  [[download](lsn23.zip)]        |                             | |
+| 24  | [Lab 3: Detection and Tracking](lab3.pdf)             |                             | [HW9](hw9.pdf)|
+| 25  | [Lab 3: Detection and Tracking](lab3.pdf)             |                             | [Lab3](lab3.pdf) EOC |
+| 26  | [Mobile Robotics][26]  [[download](lsn26.zip)]        |[Siegwart Ch 3][siegwart]    | |
+| 27  | [Roomba Sensors][27]  [[download](lsn27.zip)]         |[Siegwart Ch 4-4.1.71][siegwart]| |
+| 28  | [Sensor Calibration][28]  [[download](lsn28.zip)]     |                             | |
+| 29  | [Controls][29]  [[download](lsn29.zip)]               |[Siegwart Ch 5][siegwart]    | [HW10](hw10.pdf) |
+| 30  | [Controls][30]  [[download](lsn30.zip)]               |                             | |
+| 31  | [Lab 4: Roomba Control](lab4.pdf)                     |                             | |
+| 32  | [Lab 4: Roomba Control](lab4.pdf)                     |                             | [Lab4](lab4.pdf) EOC |
+| 33  | [Path Planning][33]  [[download](lsn33.zip)]          |[Flood Fill](FloodFill.pdf)  | |
+| 34  | [Path Planning][34]  [[download](lsn34.zip)]          |                             | |
+| 35  | [Lab 5: Roomba Sensors](lab5.pdf)                     |                             | [HW11](hw11.pdf)|
+| 36  | [Lab 5: Roomba Sensors](lab5.pdf)                     |                             | [Lab5](lab5.pdf) EOC |
+| 37  | **GR2**                                               |                             | |
+| 38  | [Final Project](final_project.pdf)                    |                             | |
+| 39  | [Final Project](final_project.pdf)                    |                             | |
+| 40  | [Final Project](final_project.pdf)                    |                             | [Final Project](final_project.pdf) EOC|
+
+[matlof]: python-matlof.pdf
+[craig]: Introduction-to-Robotics-Craig.pdf
+[siegwart]: siegwartRobotBook.pdf
+[edge]: Edge_Detection.pdf
+[error]: ErrorCorrection.pdf
+[kf]: KalmanFilter.pdf
+
+[1]: lsn1.pptx
+[2]: lsn2-linux.pptx
+[3]: lsn3-python.pptx
+[4]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_1_basics/lsn4/lsn4.ipynb
+[5]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_1_basics/lsn5/lsn5.ipynb
+[7]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_2_kinematics/lsn7/lsn7.ipynb
+[8]: lsn8.pdf
+[9]: lsn9.pdf
+[10]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_2_kinematics/lsn10/lsn10.ipynb
+[11]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_3_vision/lsn11/lsn11.ipynb
+[14]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_3_vision/lsn14/lsn14.ipynb
+[15]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_3_vision/lsn15/lsn15.ipynb
+[17]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_3_vision/lsn17/lsn17.ipynb
+[18]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_3_vision/lsn18/lsn18.ipynb
+[19]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_3_vision/lsn19/lsn19.ipynb
+[20]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_3_vision/lsn20/lsn20.ipynb
+[21]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_3_vision/lsn21/lsn21.ipynb
+[22]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_3_vision/lsn22/lsn22.ipynb
+[23]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_3_vision/lsn23/lsn23.ipynb
+[26]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_4_mobile_robotics/lsn26/lsn26.ipynb
+[27]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_4_mobile_robotics/lsn27/lsn27.ipynb
+[28]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_4_mobile_robotics/lsn28/lsn28.ipynb
+[29]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_4_mobile_robotics/lsn29/lsn29.ipynb
+[30]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_4_mobile_robotics/lsn30/lsn30.ipynb
+[33]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_4_mobile_robotics/lsn33/lsn33.ipynb
+[34]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_4_mobile_robotics/lsn34/lsn34.ipynb
+
 
 # Templates
 
@@ -156,6 +191,12 @@ project will focus on the Roomba robot, controls, computer vision, and path plan
 - [opencvutils](https://pypi.python.org/pypi/opencvutils)
 - [the-collector](https://pypi.python.org/pypi/the-collector)
 - [pyhexdump](https://pypi.python.org/pypi/pyhexdump)
+
+## OpenCV Documentation
+
+- [OpenCV Documentation, all languages](http://docs.opencv.org/trunk/index.html)
+- [OpenCV tutorials for python](http://docs.opencv.org/trunk/d6/d00/tutorial_py_root.html)
+- [OpenCV source code on github, python examples](https://github.com/opencv/opencv/tree/master/samples/python)
 
 ## Cheat Sheets and References
 
