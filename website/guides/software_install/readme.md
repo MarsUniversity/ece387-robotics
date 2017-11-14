@@ -7,7 +7,6 @@ header-includes:
     - \fancyhead[CO,CE]{ECE 387}
     - \fancyfoot[CO,CE]{\thepage}
     - \fancyfoot[LE,RO]{Robots are cool!}
-abstract: This will show you how to install the software for the class. We will install python 2.7, windoze compiler, OpenCV for python, and a bunch of python modules that will be used in the class.
 ---
 
 # Install
@@ -98,4 +97,4 @@ You have to have Python and GitBash installed already before you do this.
 
 ## Other Python Libraries
 
-1. Run `pip install -U pycreate2 ar_markers future sparklines pyserial`
+1. Run `pip install -U ar_markers future pysparklines pyserial`
