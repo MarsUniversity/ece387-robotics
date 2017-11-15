@@ -199,6 +199,7 @@ project will focus on the Roomba robot, controls, computer vision, and path plan
 
 ## OpenCV Documentation
 
+- [OpenCV 3 Overview pdf](OpenCV-3-overview.pdf)
 - [OpenCV Documentation, all languages](http://docs.opencv.org/trunk/index.html)
 - [OpenCV tutorials for python](http://docs.opencv.org/trunk/d6/d00/tutorial_py_root.html)
 - [OpenCV source code on github, python examples](https://github.com/opencv/opencv/tree/master/samples/python)
