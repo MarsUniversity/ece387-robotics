@@ -172,7 +172,7 @@ project will focus on the Roomba robot, controls, computer vision, and path plan
 [34]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_4_mobile_robotics/lsn34/lsn34.ipynb
 
 
-# Templates
+# Homework/Lab Templates
 
 - [Jupyter Notebook](jupyter.ipynb)
 - [Python](python.py)
@@ -186,6 +186,10 @@ project will focus on the Roomba robot, controls, computer vision, and path plan
 - [Interfacing Windoze and Linux file systems](windows_linux.pdf)
 - [Connecting to the Roomba via wifi](access_point.pdf)
 - [Pandoc setup for automating website/documentation generation](pandoc_setup.pdf)
+
+## On-line Python  and Command Line Class
+
+- www.codeacademy.com
 
 ## Class Python Libraries
 
@@ -208,6 +212,7 @@ project will focus on the Roomba robot, controls, computer vision, and path plan
 
 - [Linux command line reference](command-line.pdf)
 - [Markdown](markdown.pdf)
+- [LaTeX math symbols](latex-symbols.pdf)
 - [Python and matplotlib (long)](python.pdf)
 - [Python (short)](python-qr.pdf)
 - [Jupyter reference I](jupyter-1.pdf)

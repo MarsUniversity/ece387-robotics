@@ -25,7 +25,7 @@ flow controls we will use on the robots
 ## Task 1 Prelab: Install
 
 If you have not already, please install python on your computer following the
-software install instructions. This could take some time!!!
+software install instructions. **This could take some time!!!**
 
 ## Task 2: Create a Jupyter Notebook
 
@@ -34,7 +34,10 @@ software install instructions. This could take some time!!!
 		jupyter notebook
 
 	A web browser should open. From the top right, create a new `Python 2` notebook
-  called *Lab1*. Using Markdown (see the references or Google for proper syntax).
+  called *Lab1*. Using Markdown (see the references or Google for proper syntax)
+  when you complete Tasks 4 and 5, copy and paste your answers into the notebook.
+  I expect your results to look like lesson 4 & 5. If you don't know how, take a
+  look at the markdown in those notebooks.
   **Note:** this notebook is running on and saved to your laptop ... *not* the
   roomba.
 

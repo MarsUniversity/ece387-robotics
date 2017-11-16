@@ -134,14 +134,15 @@ def build_guides():
 
 
 def main():
+	# this ppt or pdf, lsn8 & 9 are pdf scanned notes
 	ppt = [
-		['lsn1', 'lsn2', 'lsn3'],
+		['lsn1', 'lsn2'],
 		['lsn8', 'lsn9'],
 		None,
 		None
 	]
 	jup = [
-		['lsn4', 'lsn5'],
+		['lsn3', 'lsn4', 'lsn5'],
 		['lsn7', 'lsn10'],
 		['lsn11', 'lsn14', 'lsn15', 'lsn17', 'lsn18', 'lsn19', 'lsn20', 'lsn21', 'lsn22', 'lsn23'],
 		['lsn26', 'lsn27', 'lsn28', 'lsn29', 'lsn30', 'lsn33', 'lsn34']
