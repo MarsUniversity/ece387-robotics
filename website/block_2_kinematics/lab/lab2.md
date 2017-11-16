@@ -35,15 +35,25 @@ above. The arm connects to your laptop via a USB-to-Serial connector.
 Unfortunately, it can be a little complicated to determine what the serial port
 name is on Windoze.
 
-**More Instructions**
+To see what COM port is connected to the robot, open “Control Panel”, select “Devices and Printers”, then navigate down to “Unspecified”. In my case, it has the device labeled as UC232R. Double-click on that device and view its “Hardware” Properties as shown in the view below.
 
-## Pre-Lab
+![](pics/serial-port-properties.png)
 
-Combine the functions from your previous homeworks into one python program. Your
-program should be able to call either the forward or inverse kinematics functions
-you developed.
+Note, here it indicates that a serial port converter is connected to *COM4*.
 
-## Task 1: Calibrate
+## [10 pts] Pre-Lab
+
+Combine the functions from your previous homeworks into 3 simple programs:
+`calibrations.py`, `forward_kinematics.py`, and `inverse_kinematics.py`.
+There is code below to help you get started. The code examples below
+are all functional programming but, if you want, you can change them to classes.
+
+**You should all of the code put together before the beginning of
+class. This will give some time to work through bugs.**
+
+At the beginning of class, show your instructor your code.
+
+## [20 pts] Task 1: Calibrate
 
 The robot arm uses toy RC servos^[https://en.wikipedia.org/wiki/Servo_(radio_control)]
 to move. These servos are commanded by a pulse width modulated signal^[https://en.wikipedia.org/wiki/Pulse-width_modulation]
@@ -52,24 +62,30 @@ price and not their performance. Therefore, you must determine the correct PWM s
 get your servo to move correctly ... every servo is different.
 
 The Lynx Motino AL5D has 5 servo motors that are able to turn between 0 and 180 degrees.
-The nominal PWM signals are shown below:
+The nominal PWM signals for the servos are shown below along with the gripper
+open/close:
 
 | Angle | PWM   | Gripper | PWM  |
 |-------|-------|---------|------|
 | 0     | 800   | Open    | 800  |
 | 180   | 2300  | Closed  | 2300 |
 
+Here is some code to get you started:
+
 ```python
 	#!/usr/bin/env python
 	from __future__ import print_function, division
 	import pyserial
 	import time
+  from math import pi
 
-	# open serial port
+	# open serial port ... change to yours
 	ser = pyserial.Serial('COM3', 115200)
 
 	def angle2pwm(angle):
 		# your code here
+    # this should convert an angle in degrees (or radians if you prefer) to a
+    # PWM angle
 
 	def move_servo(servo, angle):
 		# send a command to a single servo
@@ -81,10 +97,10 @@ The nominal PWM signals are shown below:
 		ser.write(cmd)
 
 	if __name__ == "__main__":
-		# your code here
+		move_servo(1, 90)  # again, either degrees or radians ... up to you
 ```
 
-## Task 2: Forward Kinematics
+## [40 pts] Task 2: Forward Kinematics
 
 Once you have figured out the best PWM settings for your robot arm, now use your code
 to move the arm through a sequence of orientations.
@@ -99,7 +115,43 @@ to move the arm through a sequence of orientations.
 After each step, pause for 2 seconds. When you have it working, show your
 instructor.
 
-## Task 3: Inverse Kinematics
+
+```python
+	#!/usr/bin/env python
+	from __future__ import print_function, division
+	import pyserial
+	from math import atan2, acos, sqrt, pi, cos, sin
+	import time
+
+	# open serial port
+	ser = pyserial.Serial('COM3', 115200)
+
+	def forward(x, y, z, orientation):
+		# your code here
+
+	def angle2pwm(angle):
+		# code
+
+	def move_arm(joint_angles):
+		# your code here
+
+	if __name__ == "__main__":
+    # after calibration, change as you need to
+    CLAW_OPEN = 800
+    CLAW_CLOSED = 2000
+		sequence = [
+			[0, 90, 90, 0, CLAW_OPEN], # theta1, theta2, theta3, open/close
+			[...],
+			...
+		]
+
+		for angles in sequence:
+			move_arm(angles)
+			time.sleep(5)
+
+```
+
+## [30 pts] Task 3: Inverse Kinematics
 
 Now use your code to move the arm through a sequence of positions. Since we are
 grabbing an object, when the step below says *closed* it really means half way
@@ -116,6 +168,8 @@ closed or $\frac{PWM_{closed}}{2}$
 | 7    | (    7, -4, 0)     | 0           | open    |
 | 8    | (    7, -4, 5)     | 0           | open    |
 | 9    | (10.75,  0, 5.75)  | 0           | open    |
+
+Here is some starter code to help you get started:
 
 ```python
 	#!/usr/bin/env python
@@ -138,7 +192,7 @@ closed or $\frac{PWM_{closed}}{2}$
 
 	if __name__ == "__main__":
 		sequence = [
-			[10.75, 0.0, 5.75, 0, 0], # x, y, z, orientation, gripper
+			[10.75, 0.0, 5.75, 0, 0], # x, y, z, orientation, gripper open/close
 			[...],
 			...
 		]

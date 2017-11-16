@@ -21,10 +21,10 @@ the notebook and turn it in.
 
 1. Using the camera on your laptop, grab an image of yourself and display it
 using `plt.imshow()`. Remember to convert the image from BGR to RGB colorspace.
-Also, print out (display) the size of the image in pixels
+Also, print out the size of the image in pixels
 
-2. Create a 1x2 subplot (two images side by side) of your image. Have the left image rotated
-counter clockwise 90 degrees and the right image inverted (flipped).
+2. Create a 1x2 subplot (two images side by side) of your image. Have the left
+image rotated counter clockwise 90 degrees and the right image inverted (flipped).
 
 3. Make a copy of your original image and split out (separate) the red, green,
 and blue planes. Then plot a 1x3 subplot of the histogram of your image. Make sure
