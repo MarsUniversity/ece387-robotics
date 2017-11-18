@@ -98,7 +98,7 @@ project will focus on the Roomba robot, controls, computer vision, and path plan
 |-----|-------------------------------------------------------|-----------------------------|---------------------------|
 | 1   | [Intro & Overview][1]                                 |                             |                           |
 | 2   | [Linux Command Line][2]                               | [Matlof Ch 1.0-1.9][matlof] | Install required software |
-| 3   | [Python Intro][3]                                     |                             | [HW 1](hw123.pdf) |
+| 3   | [Python Intro][3] [[download](lsn3.zip)]              |                             | [HW 1](hw123.pdf) |
 | 4   | [Python Matplotlib][4] [[download](lsn4.zip)]         | [Matlof Ch 3][matlof]       | [HW 2](hw123.pdf) |
 | 5   | [Python Numpy][5]  [[download](lsn5.zip)]             |                             | [HW 3](hw123.pdf) |
 | 6   | [Lab 1: linux and python](lab1.pdf)                   |                             | [Lab1](lab1.pdf) EOC |
@@ -146,7 +146,7 @@ project will focus on the Roomba robot, controls, computer vision, and path plan
 
 [1]: lsn1.pptx
 [2]: lsn2-linux.pptx
-[3]: lsn3-python.pptx
+[3]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_1_basics/lsn3/lsn3.ipynb
 [4]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_1_basics/lsn4/lsn4.ipynb
 [5]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_1_basics/lsn5/lsn5.ipynb
 [7]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_2_kinematics/lsn7/lsn7.ipynb
@@ -189,7 +189,7 @@ project will focus on the Roomba robot, controls, computer vision, and path plan
 
 ## On-line Python  and Command Line Class
 
-- www.codeacademy.com
+- [www.codeacademy.com](www.codeacademy.com)
 
 ## Class Python Libraries
 
