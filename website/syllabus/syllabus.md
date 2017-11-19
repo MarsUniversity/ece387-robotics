@@ -1,5 +1,5 @@
 ---
-title: ECE 387 Intro to Robotic Systems
+title: 'ECE 387: Intro to Robotic Systems'
 header-includes:
     - \usepackage{fancyhdr}
     - \pagestyle{fancy}
