@@ -1,5 +1,5 @@
 ---
-title: Lab 3
+title: 'Lab 3: Detection'
 header-includes:
     - \usepackage{fancyhdr}
     - \pagestyle{fancy}
@@ -8,62 +8,55 @@ header-includes:
     - \fancyfoot[LE,RO]{Robots are cool!}
 ---
 
-# Detect and Track
-
 This lab will exercise your understanding of image processing and computer vision.
 
-You should learn or gain experience with:
+![](demo.png)
 
-- Capturing images with OpenCV
-- Using image processing to clean up or prepare an image for a computer vision task
-- Find objects in a image
-- Locate and read AR markers
+You are going to build a python program that will manipulate a video stream from
+your laptop and do:
 
-## Task 1: Pictures
+- watch for movement (change detection)
+- detect faces/eyes
+- draw funny things on people
+- indication whether it is currently detecting faces or not
+- **[Bonus]** do star wars stuff
 
-Open a new `jupyter notebook` and do the following:
+## [20 pts] Task 1: Change Detection
 
-1. Take a picture of your group with the camera in your laptop and plot it in RGB.
-2. Now convert that picture to HSV and plot it
-3. Rotate the picture 90 degrees CCW
-4.
+1. Check the image for change, if nothing has changed in the image, then don't
+check it for faces
+   1. In a corner of the image put a marker, like a small red circle to indicate
+   there is nothing there
+1. Once there is movement, then search the region that changed for a face
+   1. Update the marker in the corner to show you have detected a face and
+   continuously doing Task 2 face detection
 
-## Task 2: AR Markers
+## [50 pts] Task 2: Face Detection
 
-1. Use the AR marker given to your group and determine what number it is. Show
-the image and results in your `jupyter notebook`.
+Create a python program and do the following:
 
-2. Now take a black marker and color in **one** black square and see if you can
-still determine the number. **WARNING:** Do not black out the orientation markers
-around the corner. If you don't know what that is review the lesson on AR markers.
+1. Open a window and display the live camera feed
+1. Using an OpenCV cascade filter, use it find faces and eyes in each image
+1. Using the identified face/eye locations do 3 things
+   1. Put glasses on each person using OpenCV drawing commands
+   1. Put a hat on each person
+   1. Draw funny eyebrows
+      1. You can even animate them
+   1. Something else ... if you have an idea ask your instructor first
 
-## Task 3: Detect
+## [30 pts] Task 3: AR Markers
 
-Using the code you developed for the homework
+1. Generate AR markers according to the libraries directions. Show
+the image and the marker number in your video feed.
+   1. NOTE: the library can only detect 1 marker in the image, no more
+1. Change what you draw on people based on the AR marker, so you will need to
+have a couple of them.
 
-```python
-	#!/usr/bin/env python
-	from __future__ import print_function, division
-	import pyserial
-	import time
+## [10 pts] Bonus
 
-	# open serial port
-	ser = pyserial.Serial('COM3', 115200)
+Instead of doing Task 1 like described, everything you do has to be tied to Star Wars, like:
 
-	def angle2pwm(angle):
-		# your code here
-
-	def move_servo(servo, angle):
-		# send a command to a single servo
-		# example:
-		#     servo 1  angle 0
-		#     send '#1 P800 T2000\r'
-		pwm = angle2pwm(angle)
-		cmd = '#{} P{}\r'.format(int(servo), int(pwm))
-		ser.write(cmd)
-
-	if __name__ == "__main__":
-		# your code here
-```
-
-## Task 2:
+- Put Darth Vader's, Boba Fett's, Jango Fett's, or a storm trooper's helmet on people
+- Put one of [Queen Amidala](http://starwars.wikia.com/wiki/Padm%C3%A9_Amidala) crazy outfits, headdress, or hats on people.
+- Use an AR marker to determine which outfit will go on people
+- Something else ... if you have an idea ask your instructor first

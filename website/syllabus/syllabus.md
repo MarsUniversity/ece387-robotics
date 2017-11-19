@@ -60,9 +60,6 @@ Cadets shall:
 | Labs          | 35       | 30        |
 | Final Project |          | 20        |
 
-- Homeworks are at the beginning of class (BOC)
-- Labs are due on the final day at the end of class (EOC)
-
 ## Missing Class and the Late Policy
 
 Inform your instructor of absences in advance via email. Please include the reason for the absence and any relevant SCA. Check the SCA to see if instructor permission is required and if it is, make the request prior to the absence. You will be given an Unexcused Absence in CAS if you fail to get permission.
@@ -96,6 +93,9 @@ project will focus on the Roomba robot, controls, computer vision, and path plan
 
 # Schedule
 
+- Homeworks are at the beginning of class (BOC)
+- Labs are due on the final day at the end of class (EOC)
+
 | Lsn | Topic                                                 | Reading                     | Due                       |
 |-----|-------------------------------------------------------|-----------------------------|---------------------------|
 | 1   | [Intro & Overview][1]                                 |                             |                           |
@@ -116,7 +116,7 @@ project will focus on the Roomba robot, controls, computer vision, and path plan
 | 16  | **GR 1**                                              |                             | |
 | 17  | [Cameras and Calibration][17]  [[download](lsn17.zip)]|                             | |
 | 18  | [Face Detection][18]  [[download](lsn18.zip)]         |                             | |
-| 19  | [Marker Detection][19]  [[download](lsn19.zip)]       | Error Correction            | |
+| 19  | [Marker Detection][19]  [[download](lsn19.zip)]       | Wolf                        | |
 | 20  | [Color Detection][20]  [[download](lsn20.zip)]        |                             | |
 | 21  | [Change Detection][21]  [[download](lsn21.zip)]       |                             | |
 | 22  | [Tracking][22]  [[download](lsn22.zip)]               |                             | [HW7](hw7.pdf) |
@@ -127,11 +127,11 @@ project will focus on the Roomba robot, controls, computer vision, and path plan
 | 27  | [Roomba Sensors][27]  [[download](lsn27.zip)]         | Siegwart Ch 4-4.1.71        | |
 | 28  | [Sensor Calibration][28]  [[download](lsn28.zip)]     |                             | |
 | 29  | [Controls][29]  [[download](lsn29.zip)]               | Siegwart Ch 5               | [HW8](hw8.pdf) |
-| 30  | [Controls][30]  [[download](lsn30.zip)]               |                             | |
+| 30  | [TBD][30]  [[download](lsn30.zip)]                    |                             | |
 | 31  | [Lab 4: Roomba Control](lab4.pdf)                     |                             | |
 | 32  | [Lab 4: Roomba Control](lab4.pdf)                     |                             | Lab4 EOC |
-| 33  | [Path Planning][33]  [[download](lsn33.zip)]          | Flood Fill                  | |
-| 34  | [Path Planning][34]  [[download](lsn34.zip)]          |                             | **Quiz 4**|
+| 33  | [Path Planning][33]  [[download](lsn33.zip)]          | Law                         | |
+| 34  | [TBD][34]  [[download](lsn34.zip)]                    |                             | **Quiz 4**|
 | 35  | [Lab 5: Roomba Sensors](lab5.pdf)                     |                             | [HW9](hw9.pdf)|
 | 36  | [Lab 5: Roomba Sensors](lab5.pdf)                     |                             | Lab5 EOC |
 | 37  | **GR2**                                               |                             | |
@@ -176,14 +176,14 @@ project will focus on the Roomba robot, controls, computer vision, and path plan
 
 ## Readings
 
-- [matlof](python-matlof.pdf)
-- [Craig](Introduction-to-Robotics-Craig.pdf)
+- [Matlof, "Fast Lane to Python"](python-matlof.pdf)
+- [Craig, "Introduction to Robotics"](Introduction-to-Robotics-Craig.pdf)
 - [RC Servos](hobby_servos.pdf)
-- [Edge Detection](Edge_Detection.pdf)
-- [Siegwart](siegwartRobotBook.pdf)
-- [Error Correction](ErrorCorrection.pdf)
-- [kf](KalmanFilter.pdf)
-- [Flood Fill](FloodFill.pdf)
+- [Edge Detection, 2nd half of pdf](Edge_Detection.pdf)
+- [Siegwart, "Introduction to Autonomous Mobile Robots"](siegwartRobotBook.pdf)
+- [Wolf, "AN INTRODUCTION TO ERROR CORRECTING CODES"](ErrorCorrection.pdf)
+- [Faragher, "Understanding the Basis of the Kalman Filter"](KalmanFilter.pdf)
+- [Law, "Quantitative Comparison of Flood Fill and Modified Flood Fill Algorithms"](FloodFill.pdf)
 
 ## Install/Setup Guides
 

@@ -21,10 +21,10 @@ You should learn or gain experience with:
 - How to read the sensors and react accordingly
 - How to monitor the Roomba robot
 
-## Task 1: Simple Commanding
+## [25 pts] Task 1: Simple Commanding
 
-Start off commanding the robot to move forward for 5 seconds and the backwards
-for 5 seconds.
+Start off commanding the robot to move forward for 5 seconds, the backwards
+for 5 seconds, turn at least 90 deg left, and finally at least 90 deg right.
 
 Basic usage information can be found on: https://pypi.python.org/pypi/pycreate2
 
@@ -48,7 +48,9 @@ Basic usage information can be found on: https://pypi.python.org/pypi/pycreate2
 		print('All done ... exiting :)')
 ```
 
-## Task 2: Read Sensors in Real-Time
+When you have this working, show your instructor.
+
+## [25 pts] Task 2: Read Sensors in Real-Time
 
 Now we are not going to command the robot to move anymore, but we are going to
 read the sensors. With the robot standing completely still, read the light bumper
@@ -81,23 +83,28 @@ sensors, print the results to the screen, and use your hand to change the readin
 
 		# your code here
 		while True:  # press ctrl-c to end it
-			sen = bot.get_sensors()
-			# print the light bumper sensor readings
-
-		print('All done ... exiting :)')
+      try:
+			  sen = bot.get_sensors()
+			  # print the light bumper sensor readings
+      except KeyboardInterrupt:
+        print('All done ... exiting :)')
 ```
 
 The point of this is to understand the values you need to avoid obstacles in the
 next task.
 
-## Task 3: Avoid Obstacles
+When you have this working, show your instructor.
+
+## [25 pts] Task 3: Avoid Obstacles
 
 Now write a program that runs and reads both the light bumpers and cliff sensors.
 If the light bumpers detect something within ~2 inches, it should turn away. If
 the cliff sensors values decreases too much (you will have to determine this
 level), the back up and turn away from the obstacle.
 
-## Task 4: Square
+When you have this working, show your instructor.
+
+## [25 pts] Task 4: Square
 
 Now using your obstacle avoidance routine from above, have the Roomba travel
 in a square that is 2 m on each side and end up in the same spot it started in.
