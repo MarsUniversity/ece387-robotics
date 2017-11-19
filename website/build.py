@@ -3,33 +3,34 @@ from __future__ import print_function
 # from subprocess import check_output
 from subprocess import call
 import os
+import platform
 
 
 def run(cmd):
+	# given a command string, it runs it
 	cmds = cmd.split()
 	# print(cmds)
 	call(cmds)
 
 
 def jupyter(lsns):
+	# packages up jupyter notebooks into a zip for download
 	dest = '../www'
+
+	# zip is f'ed up on windows ... not sure how to fix
+	# only do this for macOS and linux
+	sys = platform.system()
+	if sys not in ['Darwin', 'Linux', 'Linux2']:
+		return
 	for lsn in lsns:
 		print(' > Moving {}.zip to {}'.format(lsn, dest))
 		run('zip -r {}.zip {}'.format(lsn, lsn))
 		run('mv {}.zip {}'.format(lsn, dest))
 
 
-# def check_file(f):
-# 	ret = None
-# 	if f == '.DS_Store':
-# 		ret = None
-# 	elif len(f.split('.')) == 2:
-# 		f, ext = f.split('.')
-# 		ret = (f, ext)
-# 	return ret
-
-
 def pandoc(dir):
+	# finds files in a directory and converst Markdown into pdfs
+
 	os.chdir(dir)
 	files = os.listdir('.')
 	# print('fiels', files)
@@ -45,24 +46,25 @@ def pandoc(dir):
 	os.chdir('..')
 
 
-def html():
-	cmd = 'pandoc -s -c pandoc.css -t html5-smart -o {0}.html {0}.md'
-
-	files = os.listdir('.')
-	# print('fiels', files)
-	for md in files:
-		if len(md.split('.')) == 2:
-			f, ext = md.split('.')
-		else:
-			continue
-
-		if ext == 'md':
-			run(cmd.format(f))
-			run('mv {}.html ../www'.format(f))
-			# run('cp pandoc.css ../www')
+# def html():
+# 	cmd = 'pandoc -s -c pandoc.css -t html5-smart -o {0}.html {0}.md'
+#
+# 	files = os.listdir('.')
+# 	# print('fiels', files)
+# 	for md in files:
+# 		if len(md.split('.')) == 2:
+# 			f, ext = md.split('.')
+# 		else:
+# 			continue
+#
+# 		if ext == 'md':
+# 			run(cmd.format(f))
+# 			run('mv {}.html ../www'.format(f))
+# 			# run('cp pandoc.css ../www')
 
 
 def copy(lsn):
+	# copies pdfs, pptx, ppt to the website directory
 	os.chdir(lsn)
 	files = os.listdir('.')
 	# print('files', files)
@@ -83,6 +85,7 @@ def copy(lsn):
 
 
 def build_block(block, jup, pptpdf=None):
+	# given a block, it builds the website for that block
 	print('-'*30)
 	print('Changed in to {}'.format(block))
 	os.chdir(block)
@@ -101,9 +104,6 @@ def build_block(block, jup, pptpdf=None):
 		for dr in pptpdf:
 			copy(dr)
 	copy('references')
-
-	# block page ----------------------------------
-	# html()
 
 	os.chdir('..')
 
@@ -128,8 +128,23 @@ def build_guides():
 
 	copy('cheatsheet')
 
-	# html()
+	os.chdir('..')
 
+
+def build_syllabus():
+	run('cp pandoc.css www')
+	os.chdir('syllabus')
+	run('pandoc syllabus.md -V geometry:margin=1in -s -o syllabus.pdf')
+	run('mv syllabus.pdf ../www')
+	run('pandoc -s --toc -c pandoc.css syllabus.md -t html5-smart -o index.html')
+	run('mv index.html ../www')
+	os.chdir('..')
+
+
+def build_tempates():
+	os.chdir('templates')
+	run('cp jupyter.ipynb ../www')
+	run('cp python.py ../www')
 	os.chdir('..')
 
 
@@ -154,29 +169,32 @@ def main():
 		'block_4_mobile_robotics'
 	]
 
+	# delete the old website so we don't miss anything when building
 	run('rm -fr www')
 	run('mkdir -p www')
 
+	# let's build each block
 	for blk, j, p in zip(blocks, jup, ppt):
 		build_block(blk, j, p)
 
 	build_guides()
+	build_syllabus()
+	build_tempates()
 
 	# syllabus -----------------------------------------------------------------
-	run('cp pandoc.css www')
-	os.chdir('syllabus')
-	# html()
-	run('pandoc syllabus.md -V geometry:margin=1in -s -o syllabus.pdf')
-	run('mv syllabus.pdf ../www')
-	run('pandoc -s --toc -c pandoc.css syllabus.md -t html5-smart -o index.html')
-	run('mv index.html ../www')
-	os.chdir('..')
+	# run('cp pandoc.css www')
+	# os.chdir('syllabus')
+	# run('pandoc syllabus.md -V geometry:margin=1in -s -o syllabus.pdf')
+	# run('mv syllabus.pdf ../www')
+	# run('pandoc -s --toc -c pandoc.css syllabus.md -t html5-smart -o index.html')
+	# run('mv index.html ../www')
+	# os.chdir('..')
 
 	# templates ----------------------------------------------------------------
-	os.chdir('templates')
-	run('cp jupyter.ipynb ../www')
-	run('cp python.py ../www')
-	os.chdir('..')
+	# os.chdir('templates')
+	# run('cp jupyter.ipynb ../www')
+	# run('cp python.py ../www')
+	# os.chdir('..')
 
 
 if __name__ == "__main__":
