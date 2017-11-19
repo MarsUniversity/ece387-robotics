@@ -25,9 +25,9 @@ Create a `Jupyter notebook` and this at the top.
 	import arm  # some plotting functions to help
 ```
 
-The robot arm is commanded by an ASCII string that looks like this: `#0 P1000 #1 P2000 T2000\r`.
+The robot arm is commanded by an ASCII string that looks like this: `#0 P1000 #1 P2000 T2500\r`.
 This string tells servo 0 to set a PWM of 1000 and servo 1 set to a PWM of 2000. The last
-part of the command T2000 basically gives a time frame to move the arm to the new position.
+part of the command T2500 basically gives a time frame to move the arm to the new position.
 If we move too fast, we could damage the arm, so we are always going to send the last command
 as T2000 since high speed is not important to us. Now this command only moves the first 2
 servos, but our arm has 5 degrees of freedom (5 servos), so our command string will contain
@@ -44,9 +44,9 @@ This homework will walk you through building the code to run the robot arm
 string to command 1 servo to that position. There is a linear relationship (i.e., straight
 line) between angle and PWM.
 	```python
-	def deg2pwm(servo_num, angle):
+	def angle2pwm(angle):
 	    """
-	    deg2pwm(3, 20) -> "#3 P2000"
+	    angle2pwm(3, 20) -> pwm_counts
 	    """
 	    ...
 	```
@@ -74,11 +74,11 @@ ASCII command string.
 
 1. Write a function that takes a 3d point (x, y, z) and returns the joint angles.
 	```python
-	def inverse(x,y,z, angle, claw):
+	def inverse(x,y,z, orientation, claw):
 		"""
 		Calculates the joint angles given:
 		   (x,y,z) - end effector location
-		   angle - orientation of end effector
+		   orientation - orientation of end effector
 		   claw - is the claw open or closed
 		"""
 		...

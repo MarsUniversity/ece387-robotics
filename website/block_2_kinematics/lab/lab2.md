@@ -48,6 +48,64 @@ Combine the functions from your previous homeworks into 3 simple programs:
 There is code below to help you get started. The code examples below
 are all functional programming but, if you want, you can change them to classes.
 
+### Debuging
+
+To help you debug your code, every time your program sends a command to the arm,
+print out info shown below:
+
+```bash
+kevin@Logan arm $ ./arm.py
+Arm opened /dev/tty.usbserial-FTF7FUMR @ 115200
+[Move] ---------------------------
+  angles:     90     90     90     90
+  claw: open
+  cmd: #0 P1550 #1 P1550 #2 P1550 #3 P1550 #4 P800 T2500
+
+[Move] ---------------------------
+  angles:     90     90      0     90
+  claw: closed
+  cmd: #0 P1550 #1 P1550 #2 P800 #3 P1550 #4 P2300 T2500
+
+[Move] ---------------------------
+  angles:     90     90      0      0
+  claw: open
+  cmd: #0 P1550 #1 P1550 #2 P800 #3 P800 #4 P800 T2500
+
+[Move] ---------------------------
+  angles:     90     90      0    270
+  claw: closed
+  cmd: #0 P1550 #1 P1550 #2 P800 #3 P3050 #4 P2300 T2500
+
+[Move] ---------------------------
+  angles:      0     90    135    135
+  claw: open
+  cmd: #0 P800 #1 P1550 #2 P1925 #3 P1925 #4 P800 T2500
+
+[Move] ---------------------------
+  angles:    180     90     90     90
+  claw: closed
+  cmd: #0 P2300 #1 P1550 #2 P1550 #3 P1550 #4 P2300 T2500
+
+[Move] ---------------------------
+  angles:      0     90     90     90
+  claw: open
+  cmd: #0 P800 #1 P1550 #2 P1550 #3 P1550 #4 P800 T2500
+
+[Move] ---------------------------
+  angles:    180     90    135    135
+  claw: closed
+  cmd: #0 P2300 #1 P1550 #2 P1925 #3 P1925 #4 P2300 T2500
+
+[Move] ---------------------------
+  angles:     90     90     90     90
+  claw: open
+  cmd: #0 P1550 #1 P1550 #2 P1550 #3 P1550 #4 P800 T2500
+
+Done ...
+```
+
+### Pre-lab Turn In BOC
+
 **You should all of the code put together before the beginning of
 class. This will give some time to work through bugs.**
 
@@ -77,24 +135,49 @@ Here is some code to get you started:
 	from __future__ import print_function, division
 	import pyserial
 	import time
-  from math import pi
+	from math import pi
 
 	# open serial port ... change to yours
 	ser = pyserial.Serial('COM3', 115200)
 
 	def angle2pwm(angle):
 		# your code here
-    # this should convert an angle in degrees (or radians if you prefer) to a
-    # PWM angle
+		# this should convert an angle in degrees (or radians if you prefer) to a
+		# PWM angle and return it as an int
 
-	def move_servo(servo, angle):
-		# send a command to a single servo
+	def send(angles):
+		# send a command to servos
+		# angles = [45]  # these angles can be degrees or radians
 		# example:
 		#     servo 1  angle 0
-		#     send '#1 P800 T2000\r'
-		pwm = angle2pwm(angle)
-		cmd = '#{} P{}\r'.format(int(servo), int(pwm))
+		#     cmd = '#1 P800 T2500\r'
+		#
+		# multiple servos
+		# cmd = '#0 P1500 #1 P1500 #2 P1500 #3 P1500 #4 P1500 T4000\r'
+
+		# adjust these for your servos
+		pwm_min = 500
+		pwm_max = 2000
+
+		cmd = []
+		for channel, a in enumerate(angles):
+			pwm = angle2pwm(a)
+			if pwm_min > pwm < pwm_max:
+				print('ERROR: servo[{}] PWM{} out of limits {}'.format(channel, self.pwm, pwm))
+				raise Exception('PWM value out of range')
+			cmd.append('#{} P{}'.format(channel, pwm))
+		cmd.append('T{}\r'.format(speed))
+		cmd = ' '.join(cmd)
+
+		# adjust this if you are doing radians
+		print('[Move] ---------------------------')
+		aa = [x*180/pi for x in angles]  # convert to degrees
+		print('  angles: {:6.0f} {:6.0f} {:6.0f} {:6.0f}'.format(*aa[:4]))
+		print('  claw: {}'.format('open' if aa[4] == 0 else 'closed'))
+		print('  cmd: {}\n'.format(cmd))
+
 		ser.write(cmd)
+		time.sleep(2.5)
 
 	if __name__ == "__main__":
 		move_servo(1, 90)  # again, either degrees or radians ... up to you
@@ -112,7 +195,7 @@ to move the arm through a sequence of orientations.
 | 3    | (0.0, 111.5, 127.0, 74.5)    | closed  |
 | 4    | (0, 90, 90, 0)               | open    |
 
-After each step, pause for 2 seconds. When you have it working, show your
+After each step, pause for 2.5 seconds. When you have it working, show your
 instructor.
 
 
@@ -126,28 +209,31 @@ instructor.
 	# open serial port
 	ser = pyserial.Serial('COM3', 115200)
 
-	def forward(x, y, z, orientation):
+	def forward(angles):
 		# your code here
+		# you will have to adjust your angles for the servos
+		# use send to command robot
 
 	def angle2pwm(angle):
-		# code
-
-	def move_arm(joint_angles):
 		# your code here
 
+	def send(joint_angles):
+		# joint angles as an array
+		# convert them to pwm angles
+		# double check you are sending valid pwm angles
+		# print out debug info
+
 	if __name__ == "__main__":
-    # after calibration, change as you need to
-    CLAW_OPEN = 800
-    CLAW_CLOSED = 2000
-		sequence = [
+		# after calibration, change as you need to
+		CLAW_OPEN = 800
+		CLAW_CLOSED = 2000
+		angles = [
 			[0, 90, 90, 0, CLAW_OPEN], # theta1, theta2, theta3, open/close
 			[...],
 			...
 		]
 
-		for angles in sequence:
-			move_arm(angles)
-			time.sleep(5)
+		forward(angles)
 
 ```
 
@@ -181,8 +267,9 @@ Here is some starter code to help you get started:
 	# open serial port
 	ser = pyserial.Serial('COM3', 115200)
 
-	def inverse(x, y, z, orientation):
+	def inverse(x, y, z, orientation, claw):
 		# your code here
+		# return angles
 
 	def angle2pwm(angle):
 		# code
@@ -191,16 +278,19 @@ Here is some starter code to help you get started:
 		# your code here
 
 	if __name__ == "__main__":
-		sequence = [
+		points = [
 			[10.75, 0.0, 5.75, 0, 0], # x, y, z, orientation, gripper open/close
 			[...],
 			...
 		]
 
-		for angles in sequence:
-			move_arm(angles)
-			time.sleep(5)
+		move_arm(points)
 
 ```
 
 When you have it working, show your instructor.
+
+## [5 pts] Bonus
+
+Combine these into one program and pass a command line argument to run either the
+forward or inverse kinematics.

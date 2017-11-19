@@ -1,5 +1,5 @@
 ---
-title: Lab 4
+title: 'Lab 4: Roomba Control'
 header-includes:
     - \usepackage{fancyhdr}
     - \pagestyle{fancy}
@@ -8,93 +8,110 @@ header-includes:
     - \fancyfoot[LE,RO]{Robots are cool!}
 ---
 
-# Sensor Calibration
+# Roomba Control
 
-![Adafruit inertial measurement unit](pics/imu-iso.jpg){width=50%}
+![iRobot Create 2](pics/create.png){width=33%}
 
-In this lab you will calibrate the inertial measurement unit (IMU)^[https://en.wikipedia.org/wiki/Inertial_measurement_unit]
-on your roomba. We are using Adafruit's NXP IMU. The board consists of two separate ICs:
-
-### FXOS8700 3-Axis Accelerometer/Magnetometer
-
-- 2-3.6V Supply
-- $\pm$ 2/4/8 g adjustable acceleration range
-- $\pm$ 1200 $\mu$T magnetic sensor range
-- Output data rates (ODR) from 1.563 Hz to 800 Hz
-- 14-bit ADC resolution for acceleration measurements
-- 16-bit ADC resolution for magnetic measurements
-
-### FXAS21002 3-Axis Gyroscope
-
-- 2-3.6V Supply
-- $\pm$ 250/500/1000/2000 deg/s configurable range
-- Output Data Rates (ODR) from 12.5 to 800 Hz
-- 16-bit digital output resolution
-- 192 bytes FIFO buffer (32 X/Y/Z samples)
+In this lab we are finally going to play with the Roomba and start commanding
+it to move around. This will prepare you for the final project with the Roomba.
 
 You should learn or gain experience with:
 
-- Collect raw data from a robotic sensor
-- Understand that most sensors are inaccurate or useless without proper
-calibration
-- Learn a very simple technique to calibrate an IMU
+- How to command the Roomba
+- How to read the sensors and react accordingly
+- How to monitor the Roomba robot
 
-## Task 1: Get Data
+## Task 1: Simple Commanding
 
-The first part of the lab we will gather data. Using the provided code `bagit`, you will
-save a bunch of data. `bagit` will save the sensor data to a json^[https://en.wikipedia.org/wiki/JSON]
-file.
+Start off commanding the robot to move forward for 5 seconds and the backwards
+for 5 seconds.
+
+Basic usage information can be found on: https://pypi.python.org/pypi/pycreate2
 
 ```python
 	#!/usr/bin/env python
-
 	from __future__ import print_function, division
-	import nxp_imu
+	import pycreate2
 	import time
 
 	if __name__ == "__main__":
-		imu = nxp_imu.IMU('imu.json')
-		bag = bagit.Bag(['imu'])
+		# this creates the robot instance we will use
+		bot = pycreate2.Create('/dev/ttyUSB0')
+		bot.safe()
 
-		for i in range(1000):
-			a,m,g = imu.get()         # grab data
-			bag.push('imu', (a,m,g))  # save data
-			time.sleep(1/20)          # grab data at 20 Hz
+		# your code here
+		# move forward
+		time.sleep(5)
+		# move backwards
+		time.sleep(5)
 
-		bag.close()
-		print('Done ...')
+		print('All done ... exiting :)')
 ```
 
-When you are capturing the data, you will do it 2 different ways:
+## Task 2: Read Sensors in Real-Time
 
-1. The first way is to help determine biases, so we need to roll the roomba around and
-exercise the axes of the sensor. **WARNING:** If you drop the roomba, you automatically
-fail the lab. There are not enough robots available if we start damaging them. Please make
-sure you have a good grip at all times and no horse play!
-2. Start off holding the roomba level. Slowly rotate 360 degrees stopping for a few seconds
-every 90 degrees. This second data set is to check our biases are correct. Remember, the
-biases you calculate are only good the robot you develop them for, they are not transferable
-to another robot.
+Now we are not going to command the robot to move anymore, but we are going to
+read the sensors. With the robot standing completely still, read the light bumper
+sensors, print the results to the screen, and use your hand to change the readings.
 
-After you have save the data successfully, take a look at the data.
+	# reading the IR sensors
+	sen = bot.get_sensors()
+	sen.light_bumper_left
+	sen.light_bumper_front_left
+	sen.light_bumper_center_left
+	sen.light_bumper_center_right
+	sen.light_bumper_front_right
+	sen.light_bumper_right
 
-    cat imu_1.json
+	sen.cliff_left_signal
+	sen.cliff_front_left_signal
+	sen.cliff_front_right_signal
+	sen.cliff_right_signal
 
-You will notice that the data is all text. Since text is generally not efficient, a better
-way to store lots of data would be to use a binary form of json (bson^[https://en.wikipedia.org/wiki/BSON])
-with some method of compress to reduce the data file size.
+```python
+	#!/usr/bin/env python
+	from __future__ import print_function, division
+	import pycreate2
+	import time
 
-## Task 2: Determine Calibration
+	if __name__ == "__main__":
+		# this creates the robot instance we will use
+		bot = pycreate2.Create('/dev/ttyUSB0')
+		bot.safe()
 
-Now open a new `jupyter notebook` and input the first set of data. Use the template provided and determine the biases of the IMU.
+		# your code here
+		while True:  # press ctrl-c to end it
+			sen = bot.get_sensors()
+			# print the light bumper sensor readings
 
-## Task 3: Correct for Biases
+		print('All done ... exiting :)')
+```
 
-Once you have the biases, apply them to the second set of data and see if you get what
-you expect. Also plot the second set of data without the calibration data so see what
-an uncalibrated IMU gives you ... are the results noticeably bad?
+The point of this is to understand the values you need to avoid obstacles in the
+next task.
 
-## Turn In
+## Task 3: Avoid Obstacles
 
-When you are done, print out and turn in your `jupyter notebook` showing *Task 2*
-and *Task 3*.
+Now write a program that runs and reads both the light bumpers and cliff sensors.
+If the light bumpers detect something within ~2 inches, it should turn away. If
+the cliff sensors values decreases too much (you will have to determine this
+level), the back up and turn away from the obstacle.
+
+## Task 4: Square
+
+Now using your obstacle avoidance routine from above, have the Roomba travel
+in a square that is 2 m on each side and end up in the same spot it started in.
+
+**Note:** You will need to be able to command your Roomba to go places while simultaneously
+avoiding obstacles in your path for the final project.
+
+When you have this working, show your instructor. You still need to be able to
+avoid obstacles while doing this, however, if something gets in your way, you
+do not have to worry about ending in the same location you started in. Just complete the cube (best effort) after avoiding the obstacle.
+
+Explain to your instructor the following questions:
+
+- Did it work?
+- How close were you?
+- Why did this or why not did this work?
+- How could you improve it?
