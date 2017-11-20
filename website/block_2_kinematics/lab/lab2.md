@@ -53,7 +53,10 @@ will return to normal mode and the new baud rate will be written to EEPROM.
 Unfortunately, it can be a little complicated to determine what the serial port
 name is on Windoze.
 
-To see what COM port is connected to the robot, open “Control Panel”, select “Devices and Printers”, then navigate down to “Unspecified”. In my case, it has the device labeled as UC232R. Double-click on that device and view its “Hardware” Properties as shown in the view below.
+To see what COM port is connected to the robot, open “Control Panel”, select 
+“Devices and Printers”, then navigate down to “Unspecified”. In my case, it has 
+the device labeled as UC232R. Double-click on that device and view its “Hardware” 
+Properties as shown in the view below.
 
 ![](pics/serial-port-properties.png)
 
@@ -131,8 +134,8 @@ At the beginning of class, show your instructor your code.
 
 ## [20 pts] Task 1: Calibrate
 
-The robot arm uses toy RC servos^[https://en.wikipedia.org/wiki/Servo_(radio_control)]
-to move. These servos are commanded by a pulse width modulated signal^[https://en.wikipedia.org/wiki/Pulse-width_modulation]
+The robot arm uses toy [RC servos](https://en.wikipedia.org/wiki/Servo_(radio_control))
+to move. These servos are commanded by a [pulse width modulated signal](https://en.wikipedia.org/wiki/Pulse-width_modulation)
 (PWM) to set their position. Unfortunately, these toy servos are produced for their low
 price and not their performance. Therefore, you must determine the correct PWM signal to
 get your servo to move correctly ... every servo is different.
