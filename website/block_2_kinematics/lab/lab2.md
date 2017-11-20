@@ -30,6 +30,24 @@ above. The arm connects to your laptop via a USB-to-Serial connector.
 
 ![USB-to-Serial](pics/usb2serial.jpg)
 
+### Baudrate
+
+If you have one of the newer arms (they don't have the blue/white USB-to-serial
+converter), you may have to toggle your baud rate to 115kbps. The SSC-32U is 
+shipped with a default Baud rate of 9600. It also supports setting Baud rate
+using the onboard push button. To set the Baud rate:
+
+1. Press and hold the button. At first the LEDs will glow to indicate the current Baud rate.
+    1. 9600 (green)
+    1. 38400 (red)
+    1. 115200 (both green and red)
+    1. Non-standard Baud rate (no LEDs)
+1. After 2 seconds the LEDs will start to alternate, indicating you can change the Baud rate.
+1. Release the button.
+1. Press the button to cycle through baud rates outlined in step 1.
+1. Once you have selected the Baud rate you want, do nothing; after 5 seconds the LEDs
+will return to normal mode and the new baud rate will be written to EEPROM.
+
 ### Determining the Serial Port
 
 Unfortunately, it can be a little complicated to determine what the serial port
