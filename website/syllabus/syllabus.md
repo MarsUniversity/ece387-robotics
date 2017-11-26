@@ -207,6 +207,16 @@ project will focus on the Roomba robot, controls, computer vision, and path plan
 - [the-collector](https://pypi.python.org/pypi/the-collector): saving live data for later
 - [pyhexdump](https://pypi.python.org/pypi/pyhexdump): reads binary files
 
+## Standford Python Class: Introduction to Scientific Python, CME 193
+
+- [Intro](python-1.pdf)
+- [Functions & Testing](python-2.pdf)
+- [Data Structures](python-3.pdf)
+- [Object Oriented Programming](python-4.pdf)
+- [Numpy and Matplotlib](python-5.pdf)
+- [File I/O and Strings](python-6.pdf)
+- [Other Topics](python-7.pdf)
+
 ## OpenCV Documentation
 
 - [OpenCV 3 Overview pdf](OpenCV-3-overview.pdf)
@@ -221,6 +231,7 @@ project will focus on the Roomba robot, controls, computer vision, and path plan
 - [LaTeX math symbols](latex-symbols.pdf)
 - [Python and matplotlib (long)](python.pdf)
 - [Python (short)](python-qr.pdf)
+- [Python Crash Course](https://github.com/ehmatthes/pcc/tree/master/cheat_sheets)
 - [Jupyter reference I](jupyter-1.pdf)
 - [Jupyter reference II](jupyter-2.pdf)
 - [iRobot Create 2 (short)](roomba.pdf)
