@@ -197,6 +197,10 @@ project will focus on the Roomba robot, controls, computer vision, and path plan
 
 - [www.codeacademy.com](www.codeacademy.com)
 
+## Lynxmotion Arm Guide
+
+- [SSC-32u Servo motor controller](ssc-32u_guide.pdf)
+
 ## Class Python Libraries
 
 - [ar_markers](https://pypi.python.org/pypi/ar-markers): detecting QR markers
