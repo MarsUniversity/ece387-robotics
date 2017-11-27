@@ -33,7 +33,7 @@ above. The arm connects to your laptop via a USB-to-Serial connector.
 ### Baudrate
 
 If you have one of the newer arms (they don't have the blue/white USB-to-serial
-converter), you may have to toggle your baud rate to 115kbps. The SSC-32U is 
+converter), you may have to toggle your baud rate to 115kbps. The SSC-32U is
 shipped with a default Baud rate of 9600. It also supports setting Baud rate
 using the onboard push button. To set the Baud rate:
 
@@ -53,9 +53,9 @@ will return to normal mode and the new baud rate will be written to EEPROM.
 Unfortunately, it can be a little complicated to determine what the serial port
 name is on Windoze.
 
-To see what COM port is connected to the robot, open “Control Panel”, select 
-“Devices and Printers”, then navigate down to “Unspecified”. In my case, it has 
-the device labeled as UC232R. Double-click on that device and view its “Hardware” 
+To see what COM port is connected to the robot, open “Control Panel”, select
+“Devices and Printers”, then navigate down to “Unspecified”. In my case, it has
+the device labeled as UC232R. Double-click on that device and view its “Hardware”
 Properties as shown in the view below.
 
 ![](pics/serial-port-properties.png)
