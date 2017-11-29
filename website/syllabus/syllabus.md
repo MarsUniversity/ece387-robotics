@@ -98,11 +98,11 @@ project will focus on the Roomba robot, controls, computer vision, and path plan
 
 | Lsn | Topic                                                 | Reading                     | Due                       |
 |-----|-------------------------------------------------------|-----------------------------|---------------------------|
-| 1   | [Intro & Overview][1]                                 |                             |                           |
+| 1   | [Intro & Overview][1]                                 |                             | Read syllabus and familiarize yourself with the website links/references |
 | 2   | [Linux Command Line][2]                               | Matlof Ch 1.0-1.9           | Install required software |
 | 3   | [Python Intro][3] [[download](lsn3.zip)]              |                             | [HW 1](hw123.pdf) |
-| 4   | [Python Matplotlib][4] [[download](lsn4.zip)]         | Matlof Ch 3                 | [HW 2](hw123.pdf) |
-| 5   | [Python Numpy][5]  [[download](lsn5.zip)]             |                             | [HW 3](hw123.pdf) |
+| 4   | [Python Numpy, sympy, Matplotlib][4] [[download](lsn4.zip)]| Matlof Ch 3                 | [HW 2](hw123.pdf) |
+| 5   | [Python Quiz][5]  [[download](lsn5.zip)]              |                             | [HW 3](hw123.pdf) |
 | 6   | [Lab 1: linux and python](lab1.pdf)                   |                             | Lab1 EOC |
 | 7   | [Kinematics: Intro][7]  [[download](lsn5.zip)]        | Craig Ch 3                  | **Quiz 1**|
 | 8   | [2D Forward-Inv Kinematics][8]  [[download](lsn8.zip)]|                             | |
