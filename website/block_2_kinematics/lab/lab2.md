@@ -45,7 +45,7 @@ using the onboard push button. To set the Baud rate:
 1. After 2 seconds the LEDs will start to alternate, indicating you can change the Baud rate.
 1. Release the button.
 1. Press the button to cycle through baud rates outlined in step 1.
-1. Once you have selected the Baud rate you want, do nothing; after 5 seconds the LEDs
+1. Once you have selected the Baud rate you want, do nothing after 5 seconds the LEDs
 will return to normal mode and the new baud rate will be written to EEPROM.
 
 ### Determining the Serial Port
@@ -53,9 +53,9 @@ will return to normal mode and the new baud rate will be written to EEPROM.
 Unfortunately, it can be a little complicated to determine what the serial port
 name is on Windoze.
 
-To see what COM port is connected to the robot, open “Control Panel”, select
-“Devices and Printers”, then navigate down to “Unspecified”. In my case, it has
-the device labeled as UC232R. Double-click on that device and view its “Hardware”
+To see what COM port is connected to the robot, open Control Panel, select
+Devices and Printers, then navigate down to Unspecified. In my case, it has
+the device labeled as UC232R. Double-click on that device and view its Hardware
 Properties as shown in the view below.
 
 ![](pics/serial-port-properties.png)
