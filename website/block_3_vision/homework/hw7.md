@@ -1,5 +1,5 @@
 ---
-title: Homework 8
+title: Homework 7
 header-includes:
     - \usepackage{fancyhdr}
     - \pagestyle{fancy}
@@ -40,15 +40,11 @@ Print that image out (a small one is fine) and attach it to something flat (mayb
 tape it to a book). What is the number that the marker represents? (*hint:* when
 you generated it, the program should have printed out the number)
 
-2. Using the marker you just generated, grab a picture of you and the marker using
-the camera in your laptop. Now write some code using the `ar_marker` library to
-determine the image.
+2. Using the marker you just generated, grab a picture of you (make sure your face
+  is in the image) and the marker using the camera in your laptop. Now write
+  some code using the `ar_marker` library to read the marker in the image.
 
 ## Face Detection
 
 3. Using the image of yourself and marker above, write some code to detect your face
 and draw a green box around it with blue dot in the center.
-
-# Change Detection
-
-4.

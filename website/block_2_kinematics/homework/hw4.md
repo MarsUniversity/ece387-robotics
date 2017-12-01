@@ -16,7 +16,7 @@ is an individual exercise.
 # Forward Kinematics
 
 Using the template from the website, create a `Jupyter notebook` for this
-assignment.
+assignment. Remember to setup your notebook like this
 
 ```python
 	%matplotlib inline
@@ -27,7 +27,7 @@ assignment.
 
 1. Write a function that takes in the DH parameters ($\theta$, $\alpha$, d, a) and returns
    the homogenious matrix for it.
-	```python
+   ```python
 	def homogeneousMatrix(theta, alpha, d, a):
 	   """
 	   This calculates a homogeneous matrix for the given parameters
@@ -42,7 +42,7 @@ assignment.
     1. a is x
 1. Given an array of DH parameters for a robot arm, write a function which takes this and
    returns a homogeneous matrix for the robot arm. Where the array would look like
-	```python
+   ```python
 		arm = [
 			[theta, alpha, d, a],
 			[theta, alpha, d, a],
@@ -58,7 +58,7 @@ assignment.
 			return eqns
 	```
 1. Using the previous function, determine the equation for the robot arm with the following
-   DH parameters. *Hint:* your answer should be ....
+   DH parameters. Make sure you simplify your answer symbolically. *Hint:* your answer should be ....
 
    | i |$\theta_i$|$\alpha_i$| $d_i$ | $a_i$ |
    |---|----------|----------|-------|-------|

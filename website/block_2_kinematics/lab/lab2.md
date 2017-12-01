@@ -26,7 +26,7 @@ You should learn or gain experience with:
 ![AL5D Robot Arm](pics/lynx_motion_al5d.jpg){width=75%}
 
 The arm is equipped with 5 servos and the distance between are given in the figure
-above. The arm connects to your laptop via a USB-to-Serial connector.
+above. The arm connects to your laptop via a USB-to-Serial connector shown below.
 
 ![USB-to-Serial](pics/usb2serial.jpg)
 
@@ -127,10 +127,11 @@ Done ...
 
 ### Pre-lab Turn In BOC
 
-**You should all of the code put together before the beginning of
+**You should have all of the code put together before the beginning of
 class. This will give some time to work through bugs.**
 
-At the beginning of class, show your instructor your code.
+At the beginning of class, hand in a printed copy of your code. You will be graded
+on your code's ability to support this lab.
 
 ## [20 pts] Task 1: Calibrate
 
@@ -207,16 +208,32 @@ Here is some code to get you started:
 ## [40 pts] Task 2: Forward Kinematics
 
 Once you have figured out the best PWM settings for your robot arm, now use your code
-to move the arm through a sequence of orientations.
+to move the arm through a sequence of orientations. The angle arrays are setup
+such that [theta0, theta1, theta2, theta3, theta4]. Remeber, that the last servo
+drives the gripper.
 
 | Step | Position                     | Gripper |
 |------|------------------------------|---------|
 | 1    | (0, 90, 90, 0)               | open    |
-| 2    | (-23.2, 83.8, 102.3, 71.5)   | closed  |
-| 3    | (0.0, 111.5, 127.0, 74.5)    | closed  |
+| 2    | (0, 90, 90, 0)               | closed  |
+| 3    | (0, 90, 90, 0)               | closed  |
 | 4    | (0, 90, 90, 0)               | open    |
 
-After each step, pause for 2.5 seconds. When you have it working, show your
+```python
+angles_lab = [
+	[0, 90, 90, 0, CLAW_OPEN],
+	[0, 90, 0, 0, CLAW_CLOSED],
+	[0, 90, 0, -90, CLAW_OPEN],
+	[0, 90, 0, 180, CLAW_CLOSED],
+	[-90, 90, 135, 45, CLAW_OPEN],
+	[90, 90, 90, 0, CLAW_CLOSED],
+	[-90, 90, 90, 0, CLAW_OPEN],
+	[90, 90, 135, 45, CLAW_CLOSED],
+	[0, 90, 90, 0, CLAW_OPEN]
+]
+```
+
+After each step, pause for 2.5 seconds (`T2500`). When you have it working, show your
 instructor.
 
 
@@ -262,7 +279,7 @@ instructor.
 
 Now use your code to move the arm through a sequence of positions. Since we are
 grabbing an object, when the step below says *closed* it really means half way
-closed or $\frac{PWM_{closed}}{2}$
+closed or $\frac{PWM_{closed}}{2}$.
 
 | Step | Position           | Orientation | Gripper |
 |------|--------------------|-------------|---------|
@@ -275,6 +292,20 @@ closed or $\frac{PWM_{closed}}{2}$
 | 7    | (    7, -4, 0)     | 0           | open    |
 | 8    | (    7, -4, 5)     | 0           | open    |
 | 9    | (10.75,  0, 5.75)  | 0           | open    |
+
+```python
+points_lab = [
+	[10.75, 0, 5.75, 0.0, CLAW_OPEN],
+	[9.5, 0, 4, 0, CLAW_OPEN],
+	[9.5, 0, 0, 0, CLAW_OPEN],
+	[9.5, 0, 0, 0, CLAW_GRAB],
+	[9.5, 0, 4, 0.0, CLAW_GRAB],
+	[7, -4, 0, 0, CLAW_GRAB],
+	[7, -4, 0, 0, CLAW_OPEN],
+	[7, -4, 5, 0, CLAW_OPEN],
+	[10.75, 0, 5.75, 0.0, CLAW_OPEN],
+]
+```
 
 Here is some starter code to help you get started:
 

@@ -8,9 +8,12 @@ header-includes:
     - \fancyfoot[LE,RO]{Robots are cool!}
 ---
 
-This lab will exercise your understanding of image processing and computer vision.
+This lab will exercise your understanding of face detection and AR markers. This
+lab will be working with a video stream, so we will **not** use a jupyter notebook.
+Unfortunately jupyter is not good with live video, however, they are working on
+on adding that feature.
 
-![](demo.png)
+![](demo.png){width=60%}
 
 You are going to build a python program that will manipulate a video stream from
 your laptop and do:
@@ -18,6 +21,7 @@ your laptop and do:
 - watch for movement (change detection)
 - detect faces/eyes
 - draw funny things on people
+- detect AR markers
 - indication whether it is currently detecting faces or not
 - **[Bonus]** do star wars stuff
 

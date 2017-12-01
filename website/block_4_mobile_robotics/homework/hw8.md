@@ -15,9 +15,9 @@ is an individual exercise.
 
 # Telemetry
 
-1. Download the telemetry file from: xxxx
+1. Download the telemetry file `hw8.json` from lesson 28
 1. Create a Jupyter notebook and load the data using `the-collector` library
 1. Plot the following items with a grid, axes labelled, and titles:
-  1. left/right ncoder counts in a single plot, use a legend for the 2 datasets
-  1. all light bumpers (index 36-41) in a 2x3 subplot
-  1. all cliff signals (index 20-23) in a 2x2 subplot
+    1. left/right encoder counts in a single plot, use a legend for the 2 datasets
+    1. all light bumpers (index 36-41) in a 2x3 subplot
+    1. all cliff signals (index 20-23) in a 2x2 subplot

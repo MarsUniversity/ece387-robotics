@@ -15,14 +15,13 @@ is an individual exercise.
 
 # Inverse Kinematics
 
-Create a `Jupyter notebook` and this at the top.
+Create a `Jupyter notebook` and with this at the top.
 
 ```python
 	%matplotlib inline
 
 	from __future__ import division, print_function
 	from matplotlib import pylab
-	import arm  # some plotting functions to help
 ```
 
 The robot arm is commanded by an ASCII string that looks like this: `#0 P1000 #1 P2000 T2500\r`.
@@ -31,9 +30,12 @@ part of the command T2500 basically gives a time frame to move the arm to the ne
 If we move too fast, we could damage the arm, so we are always going to send the last command
 as T2000 since high speed is not important to us. Now this command only moves the first 2
 servos, but our arm has 5 degrees of freedom (5 servos), so our command string will contain
-5 servo commands and the T2000 command with a `\r` on the end.
+5 servo commands and the T2500 command with a `\r` on the end.
 
-This homework will walk you through building the code to run the robot arm
+This homework will walk you through building the code to run the robot arm. In
+the lab, you will need to calibrate your servos. For now, we will use these
+values which are close. Make sure you write your code so it is easy to change
+these values later.
 
 | Angle [deg] | PWM  |
 |-------------|------|
@@ -42,26 +44,31 @@ This homework will walk you through building the code to run the robot arm
 
 1. Write a function that takes in an angle (degrees or radians, your choice) and returns a
 string to command 1 servo to that position. There is a linear relationship (i.e., straight
-line) between angle and PWM.
+line) between angle and PWM. For radians, you should get `angle2pwm(5)` = XX.
+
 	```python
 	def angle2pwm(angle):
 	    """
-	    angle2pwm(3, 20) -> pwm_counts
+	    returns pwm counts
 	    """
 	    ...
 	```
 1. Using the function above, write another function that takes in 5 angles and returns the
-ASCII command string.
+ASCII command string. For radians, you should get `command(1,2,3,4,5)` = XX.
+
 	```python
 	def command(a, b, c, d, e):
 	    """
-	    command(10,20,30,40,50) -> #0 ... T2000\r
+	    returns the servo controller string #0 ... T2500\r
 	    """
 	    ...
 	```
-*Hint:* Remember to append `T2000\r` on the end
+*Hint:* Remember to append `T2500\r` on the end
 
-1. Write a function to calculate cosine law.
+1. Write a function to calculate cosine law. For radians, you should get
+`cosine_law(5,5,5)` = $\pi$/3. This is an equilateral triangle where all angles
+are the same.
+
 	```python
 	def cosine_law(a, b, c):
 		"""
@@ -73,6 +80,8 @@ ASCII command string.
 	```
 
 1. Write a function that takes a 3d point (x, y, z) and returns the joint angles.
+Given `inverse(3,3,3,0,0)`, you should get: `(X...)`
+
 	```python
 	def inverse(x,y,z, orientation, claw):
 		"""

@@ -27,9 +27,6 @@ create a 1x3 subplot (three side by side). Title each image according to its
 color channel
 1. Create a 1x2 subplot (two images side by side) of your image. Have the left
 image rotated counter clockwise 90 degrees and the right image inverted (flipped).
-1. Make a copy of your original image and split out (separate) the red, green,
-and blue planes. Then plot a 1x3 subplot of the histogram of your image. Make sure
-to set the title of each subplot to the appropriate color and turn on the grid.
 1. Make a copy of your original image and on the copy, write your name and date
 on the image. Write your name in blue and the date in green.
 1. Crop the image so it only shows your face (*hint:* use an ROI) and then plot

@@ -15,14 +15,13 @@ is an individual exercise.
 
 # Path Planning
 
-Create a `jupyter notebook` with the following:
+Create a `jupyter notebook` with the following, you may need to import other libraries too:
 
 ```python
 	%matplotlib inline
 
 	from __future__ import division, print_function
 	import matplotlib.pyplot as plt
-	from pathplanning import a_star, calcHeuristic, matShow, getPath, putPathMap
 
 	grid = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 			[0, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0],
@@ -42,8 +41,9 @@ Create a `jupyter notebook` with the following:
 1. Did A Star search the entire map?
 1. What happens if you set the heuristic to all 0's?
 1. Plot the path through the map using a heuristic of all 0's. (*hint:* just
-	redo the above with a different heuristic)
+	redo problem 1 with a different heuristic)
 1. Now test what happens when you set the heuristic to a random number. Use
 `random.randint(0, 50)` to randomly pick your heuristic value. Plot the path
 on the map.
-1. Is the solution always the same when the heuristic is random? Why or why not?
+1. Re-run the previous solution 5 times, does it always return the same path
+when the heuristic is random? Why or why not?

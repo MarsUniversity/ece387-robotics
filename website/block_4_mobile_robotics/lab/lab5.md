@@ -1,11 +1,11 @@
 ---
 title: 'Lab 5: Sensor Calibration'
 header-includes:
-    - \usepackage{fancyhdr}
-    - \pagestyle{fancy}
-    - \fancyhead[CO,CE]{ECE 387}
-    - \fancyfoot[CO,CE]{\thepage}
-    - \fancyfoot[LE,RO]{Robots are cool!}
+		- \usepackage{fancyhdr}
+		- \pagestyle{fancy}
+		- \fancyhead[CO,CE]{ECE 387}
+		- \fancyfoot[CO,CE]{\thepage}
+		- \fancyfoot[LE,RO]{Robots are cool!}
 ---
 
 # Sensor Calibration
@@ -13,67 +13,89 @@ header-includes:
 ![Adafruit inertial measurement unit](pics/imu-iso.jpg){width=50%}
 
 In this lab you will calibrate the inertial measurement unit (IMU)^[https://en.wikipedia.org/wiki/Inertial_measurement_unit]
-on your roomba.
+on your roomba. Below, is a suggested timeline for completing the required
+tasks. All 3 tasks must be completed by the end-of-class on the second day
+of lab.
+
+# [0 pts] Pre-lab
+
+There is a lot to do in this lab. It would be wise to show up on Day 1 with your
+**notebook already setup**, so all you have to do is collect data and drop it in.
+Also, start writing the python program **before** you show up on Day 2. It could
+take you a while to get it right.
 
 # Day 1
 
-## Get Data
+## [50 pts] Task 1
 
 The first part of the lab we will gather data. Use the python library
 `the-collector` to save the data
 
 ```python
-	#!/usr/bin/env python
+#!/usr/bin/env python
 
-	from __future__ import print_function, division
-	import nxp_imu
-	from the-collector.bagit import BagWriter
-	import time
+from __future__ import print_function, division
+import nxp_imu
+from the-collector.bagit import BagWriter
+import time
 
-	if __name__ == "__main__":
-		imu = nxp_imu.IMU('imu.json')
-		bag = bag = BagWriter()
-		bag.open(['imu'])
+if __name__ == "__main__":
+	imu = nxp_imu.IMU()
+	bag = BagWriter()
+	bag.open(['accel', 'mag', 'gyro'])
 
-		for i in range(1000):
-			a,m,g = imu.get()         # grab data
-			bag.push('imu', (a,m,g))  # save data
-			time.sleep(1/20)          # grab data at 20 Hz
+	for i in range(1000):
+		a,m,g = imu.get()  # grab data
 
-		bag.write('imu.json')
-		print('Done ...')
+		# save data
+		bag.push('accel', a)
+		bag.push('mag', m)
+		bag.push('gyro', g)
+
+		time.sleep(1/20)  # grab data at 20 Hz
+
+	bag.write('imu.json')
+	print('Done ...')
 ```
 
-When you are capturing the data, you will do it 2 different ways:
+- You need to determine the biases for the IMU. You will use the RISC (Roomba
+IMU Sensor Calibrator) and spin it gently (~1/4 - 1/2 revolution per second)
+around while gathering IMU data.
 
-1. The first way is to help determine biases, so we need to roll the roomba around and
-exercise the axes of the sensor. **WARNING:** If you drop the roomba, you automatically
-fail the lab. There are not enough robots available if we start damaging them. Please make
-sure you have a good grip at all times and no horse play!
-2. Start off holding the roomba level. Slowly rotate 360 degrees stopping for a few seconds
-every 90 degrees. This second data set is to check our biases are correct. Remember, the
-biases you calculate are only good the robot you develop them for, they are not transferable
-to another robot.
+Also, most modern cell phones have a digital compass in them. Actually they may
+have the same IMU we are using in them, since this is a cell phone IMU. Use your
+compass to calculate the start/stop orientation of your roomba. Remember, the
+x-axis (forward) points out the front.
 
-After you have save the data successfully, take a look at the data.
+**WARNING:** If you drop/damage the roomba, you automatically fail the lab.
+There are not enough robots available if we start damaging them.
 
-	cat imu_1.json
+- After you have save the data successfully, take a look at the data on the command
+line: `cat imu_1.json`.
 
-You will notice that the data is all text. Since text is generally not efficient, a better
+- You will notice that the data is all text. Since text is generally not efficient, a better
 way to store lots of data would be to use a binary form of json (bson^[https://en.wikipedia.org/wiki/BSON])
 with some method of compress to reduce the data file size.
 
-## Determine Calibration
+- Next, plot the raw data like we did in class for the IMU (all 3 sensors).
+Does it look the same?
 
-Now open a new `jupyter notebook` and input the first set of data. Use the
-template provided and follow the same process we did in clas to determine the
-biases of the IMU.
+## [40 pts] Task 2
 
-## Correct for Biases
+Follow the same process we did in class to determine the biases of the IMU for the
+accelerometer and the magnetometer. Once you have the biases, apply them to the
+data and re-plot the accelerometer/magnetometer and calculate the orientations.
+You should see plots like we produced in class.
 
-Once you have the biases, apply them to the second set of data and see if you get what
-you expect. Also plot the second set of data without the calibration data so see what
-an uncalibrated IMU gives you ... are the results noticeably bad?
+# Day 2
+
+## [10 pts] Task 3
+
+Now that you have a good compass, pick a heading and run the roomba along the
+length of the hallway. Note, there may still be some difference between your IMU
+and the cell phone's interpretation of the compass direction. Your cell phone could
+be correcting for the difference between true North and magnetic North. It could
+be around 8-10 degrees depending on a variety of factors.
 
 # Turn In
 
