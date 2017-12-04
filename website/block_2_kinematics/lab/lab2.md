@@ -58,7 +58,7 @@ Devices and Printers, then navigate down to Unspecified. In my case, it has
 the device labeled as UC232R. Double-click on that device and view its Hardware
 Properties as shown in the view below.
 
-![](pics/serial-port-properties.png)
+![](pics/serial-port-properties.png){width=60%}
 
 Note, here it indicates that a serial port converter is connected to *COM4*.
 
@@ -212,13 +212,6 @@ to move the arm through a sequence of orientations. The angle arrays are setup
 such that [theta0, theta1, theta2, theta3, theta4]. Remeber, that the last servo
 drives the gripper.
 
-| Step | Position                     | Gripper |
-|------|------------------------------|---------|
-| 1    | (0, 90, 90, 0)               | open    |
-| 2    | (0, 90, 90, 0)               | closed  |
-| 3    | (0, 90, 90, 0)               | closed  |
-| 4    | (0, 90, 90, 0)               | open    |
-
 ```python
 angles_lab = [
 	[0, 90, 90, 0, CLAW_OPEN],
@@ -266,7 +259,7 @@ instructor.
 		CLAW_OPEN = 800
 		CLAW_CLOSED = 2000
 		angles = [
-			[0, 90, 90, 0, CLAW_OPEN], # theta1, theta2, theta3, open/close
+			[0, 90, 90, 0, CLAW_OPEN], # theta0, theta1, theta2, theta3, open/close
 			[...],
 			...
 		]
@@ -279,19 +272,7 @@ instructor.
 
 Now use your code to move the arm through a sequence of positions. Since we are
 grabbing an object, when the step below says *closed* it really means half way
-closed or $\frac{PWM_{closed}}{2}$.
-
-| Step | Position           | Orientation | Gripper |
-|------|--------------------|-------------|---------|
-| 1    | (10.75, 0, 5.75)   | 0           | open    |
-| 2    | (  9.5,  0, 4)     | 0           | open    |
-| 3    | (  9.5,  0, 0)     | 0           | open    |
-| 4    | (  9.5,  0, 0)     | 0           | closed  |
-| 5    | (  9.5,  0, 4)     | 0           | closed  |
-| 6    | (    7, -4, 0)     | 0           | closed  |
-| 7    | (    7, -4, 0)     | 0           | open    |
-| 8    | (    7, -4, 5)     | 0           | open    |
-| 9    | (10.75,  0, 5.75)  | 0           | open    |
+closed or $PWM_{closed}$/2.
 
 ```python
 points_lab = [
@@ -345,4 +326,10 @@ When you have it working, show your instructor.
 ## [5 pts] Bonus
 
 Combine these into one program and pass a command line argument to run either the
-forward or inverse kinematics.
+forward or inverse kinematics. There are multiple ways to do this. You can try
+using `sys.argv` to do get command line parameters (Google it). You are only expected
+to switch between moving the arm via points or angles. So:
+
+     ./arm.py [angles|points]
+
+Note the actual points/angles are embedded in your program.

@@ -56,7 +56,7 @@ line) between angle and PWM. For radians, you should get `angle2pwm(2)` = 1663.
   Now try `angle2pwm(1)` = ???
 
 1. Using the function above, write another function that takes in 5 angles and returns the
-ASCII command string. For radians, you should get `command(1,2,3,2,1)` = XX.
+ASCII command string. For radians, you should get `command(1,2,3,2,1)` = `#0 P1881 #1 P1663 #2 P2045 #3 P2263 #4 P1281 T2500`.
 
 	```python
 	def command(a, b, c, d, e):
@@ -65,7 +65,9 @@ ASCII command string. For radians, you should get `command(1,2,3,2,1)` = XX.
 	    """
 	    ...
 	```
-*Hint:* Remember to append `T2500\r` on the end
+    *Hint:* Remember to append `T2500\r` on the end
+
+    Now try command(3,2,1,2,3), what is your command string?
 
 1. Write a function to calculate cosine law. For radians, you should get
 `cosine_law(5,5,5)` = $\pi$/3. This is an equilateral triangle where all angles
@@ -80,10 +82,10 @@ are the same.
 		"""
 		...
 	```
-  Now try `cosine_law(1,2,3)` = ??? in degrees
+  Now try `cosine_law(2,5,4)` = ??? in degrees
 
 1. Write a function that takes a 3d point (x, y, z) and returns the joint angles.
-Given `inverse(3,3,3,0,0)`, you should get: `(X...)`
+Given `inverse(3,3,3,0,0)`, you should get: `(45, 182.6, 156.4, 26.3, 0)`
 
 	```python
 	def inverse(x,y,z, orientation, claw):
@@ -95,3 +97,4 @@ Given `inverse(3,3,3,0,0)`, you should get: `(X...)`
 		"""
 		...
 	```
+  Now try `inverse(3,4,5, 90, 0)`
