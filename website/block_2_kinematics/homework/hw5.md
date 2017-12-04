@@ -44,7 +44,7 @@ these values later.
 
 1. Write a function that takes in an angle (degrees or radians, your choice) and returns a
 string to command 1 servo to that position. There is a linear relationship (i.e., straight
-line) between angle and PWM. For radians, you should get `angle2pwm(5)` = XX.
+line) between angle and PWM. For radians, you should get `angle2pwm(2)` = 1663.
 
 	```python
 	def angle2pwm(angle):
@@ -53,8 +53,10 @@ line) between angle and PWM. For radians, you should get `angle2pwm(5)` = XX.
 	    """
 	    ...
 	```
+  Now try `angle2pwm(1)` = ???
+
 1. Using the function above, write another function that takes in 5 angles and returns the
-ASCII command string. For radians, you should get `command(1,2,3,4,5)` = XX.
+ASCII command string. For radians, you should get `command(1,2,3,2,1)` = XX.
 
 	```python
 	def command(a, b, c, d, e):
@@ -78,6 +80,7 @@ are the same.
 		"""
 		...
 	```
+  Now try `cosine_law(1,2,3)` = ??? in degrees
 
 1. Write a function that takes a 3d point (x, y, z) and returns the joint angles.
 Given `inverse(3,3,3,0,0)`, you should get: `(X...)`
