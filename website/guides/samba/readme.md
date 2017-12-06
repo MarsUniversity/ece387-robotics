@@ -20,20 +20,16 @@ Just like the network other drives, `K drive` for example, we can connect to
 linux and bring up its hard drive. This will allow us to drag/drop code on
 the linux system and edit it.
 
-Using this method requires Windows to understand the zeroconfig protocol
-linux uses. The **only** way I know how to do this is to install
-[*iTunes*](https://www.apple.com/itunes/download/). If
-you don't do this, then you will have to connect using the robot's IP address.
-
 1. Click the **Start** button and select **Computer**
 2. Click **Map a network drive** on the top toolbar
 
 ![Map the Drive](pics/mapDrive.png){width=50%}
 
-3. Enter the share name: `\\robot_name.local\pi`
+3. Enter the share name: `\\10.10.10.1\m/tday`
+    1. Remember to use the correct login name: `mday` or `tday`
     1. Make sure to check the box **Connect using different credentials**
 
-![Make sure to login with different credentials: username: pi, password: raspberry](pics/logOn.png){width=50%}
+![Make sure to login with different credentials: username: mday or tday, password: raspberry](pics/logOn.png){width=50%}
 
 4. Click **Finish**
 5. Input *username* and *password*
@@ -110,4 +106,6 @@ Sometimes you need to access a Windoze hard drive or another Linux system with a
 	sudo mkdir /mnt/samba
 	sudo chown pi:pi /mnt/samba      
 	```
+      1. Note in the `chown` command, the `pi:pi` should be changed to whatever username and
+      group you want to change the folder `/mnt/samba` too
 1. Now this should mount automatically after boot, but if not: `sudo mount -a`

@@ -108,6 +108,6 @@ it looks something like this:
 Since all RPi's hostname are raspberrypi.local, it **sucks** when you try to
 connect to a new one and you get the man-in-the-middle attack warning.
 
-You can disable the check with:
+You can bypass the check with:
 
     ssh -o UserKnownHostsFile=/dev/null pi@raspberrypi.local

@@ -1,5 +1,5 @@
 ---
-title: Lab 2
+title: "Lab 2: Serial Manipulator"
 header-includes:
     - \usepackage{fancyhdr}
     - \pagestyle{fancy}

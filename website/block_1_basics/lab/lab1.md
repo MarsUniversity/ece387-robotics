@@ -1,5 +1,5 @@
 ---
-title: Lab 1 Linux and Python
+title: "Lab 1: Linux and Python"
 header-includes:
     - \usepackage{fancyhdr}
     - \pagestyle{fancy}
