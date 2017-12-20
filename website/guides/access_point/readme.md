@@ -15,6 +15,9 @@ abstract: This will show you how to setup direct wifi access to the Roomba witho
 Use [mote](https://github.com/MomsFriendlyRobotCompany/mote) for the initial setup. Then follow the instructions
 here for more.
 
+**NOTE:** Because of various security issues, this had to be changed to username:
+m/tday and I am now using only the built in wifi, no dongle.
+
 # Wifi and Access Point Setup
 
 Setting up the RPi as an [access point](https://www.raspberrypi.org/documentation/configuration/wireless/access-point.md#internet-sharing) so you can log directly into it without needing an access
@@ -105,8 +108,3 @@ Then login via `ssh`:
 
 	ssh pi@<robot_name>.local
 	ssh pi@10.10.10.1
-
-**Note:** In order for your Windoze machine to be able to use *robot_name*.local,
-you to install iTunes so Windoze can speak zeroconfig. I don't know of another
-way to do this. If you don't want to do that, then just use the ip address of
-10.10.10.1 which will work too.

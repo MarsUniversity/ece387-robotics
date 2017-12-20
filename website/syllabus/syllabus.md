@@ -104,8 +104,8 @@ project will focus on the Roomba robot, controls, computer vision, and path plan
 | 4   | [Python Numpy, sympy, Matplotlib][4] [[download](lsn4.zip)]| Matlof Ch 3                 | [HW 2](hw123.pdf) |
 | 5   | [Python Quiz][5]  [[download](lsn5.zip)]              |                             | [HW 3](hw123.pdf) |
 | 6   | [Lab 1: linux and python](lab1.pdf)                   |                             | Lab1 EOC |
-| 7   | [Kinematics: Intro][7]  [[download](lsn5.zip)]        | Craig Ch 3                  | **Quiz 1**|
-| 8   | [2D Forward-Inv Kinematics][8]  [[download](lsn8.zip)]|                             | |
+| 7   | [Kinematics: Intro][7]  [[download](lsn5.zip)]        | Craig Ch 3                  | |
+| 8   | [2D Forward-Inv Kinematics][8]  [[download](lsn8.zip)]|                             | **Quiz 1** |
 | 9   | [3D Inverse-Inv Kinematics][9]  [[download](lsn9.zip)]|                             | [HW4](hw4.pdf)|
 | 10  | [Robot Arm Control][10]  [[download](lsn10.zip)]      | RC Servos                   | |
 | 11  | [OpenCV Introduction][11]  [[download](lsn11.zip)]    |                             | [HW5](hw5.pdf)|
@@ -189,13 +189,13 @@ project will focus on the Roomba robot, controls, computer vision, and path plan
 
 - [**Required Software:** Laptop software install for python, OpenCV, and MS Compiler](software_install.pdf)
 - [Roomba Setup](roomba_setup.pdf)
-- [Interfacing Windoze and Linux file systems](windows_linux.pdf)
+- [Interfacing Windoze and Linux file systems](samba.pdf)
 - [Connecting to the Roomba via wifi](access_point.pdf)
 - [Pandoc setup for automating website/documentation generation](pandoc_setup.pdf)
 
 ## On-line Python  and Command Line Class
 
-- [www.codeacademy.com](www.codeacademy.com)
+- [www.codeacademy.com](https://www.codeacademy.com)
 
 ## Lynxmotion Arm Guide
 
@@ -238,5 +238,4 @@ project will focus on the Roomba robot, controls, computer vision, and path plan
 - [Python Crash Course](https://github.com/ehmatthes/pcc/tree/master/cheat_sheets)
 - [Jupyter reference I](jupyter-1.pdf)
 - [Jupyter reference II](jupyter-2.pdf)
-- [iRobot Create 2 (short)](roomba.pdf)
-- [iRobot Create 2 interface (long)](iRobot_Roomba_600_Open_Interface_Spec.pdf)
+- [iRobot Create 2 Open Interface Spec](iRobot_Roomba_600_Open_Interface_Spec.pdf)
