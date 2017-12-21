@@ -33,7 +33,7 @@ for 3 seconds, turn in place ~90 deg left, and finally turn in place ~90 deg rig
 It should approximately end up back where it started and in the same orientation.
 
 **WARNING:** For all commands with the roomba, do not set the speed above
-200 mm/sec.
+200 mm/sec. This is so it doesn't get away from you and cause havoc.
 
 Basic usage information can be found on: https://pypi.python.org/pypi/pycreate2
 
@@ -141,3 +141,10 @@ Explain to your instructor the following questions:
 - Why did this or why not did this work?
 - How could you improve it?
 - Are you able to avoid obstacles?
+
+# CR Clause
+
+All team members will receive the same grade unless it is identified that all
+members did not equally help out. The offending member(s) will receive a scaled
+grade equal to the team grade time 0.75. If this happens more than once, then
+the offending individual will become a team of one.

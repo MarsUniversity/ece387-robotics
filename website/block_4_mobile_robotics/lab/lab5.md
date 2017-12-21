@@ -101,3 +101,10 @@ be around 8-10 degrees depending on a variety of factors.
 
 When you are done, print out and turn in your `jupyter notebook` showing *Task 2*
 and *Task 3*.
+
+# CR Clause
+
+All team members will receive the same grade unless it is identified that all
+members did not equally help out. The offending member(s) will receive a scaled
+grade equal to the team grade time 0.75. If this happens more than once, then
+the offending individual will become a team of one.

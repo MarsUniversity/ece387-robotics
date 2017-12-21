@@ -333,3 +333,10 @@ to switch between moving the arm via points or angles. So:
      ./arm.py [angles|points]
 
 Note the actual points/angles are embedded in your program.
+
+# CR Clause
+
+All team members will receive the same grade unless it is identified that all
+members did not equally help out. The offending member(s) will receive a scaled
+grade equal to the team grade time 0.75. If this happens more than once, then
+the offending individual will become a team of one.

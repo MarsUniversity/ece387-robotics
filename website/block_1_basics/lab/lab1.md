@@ -20,7 +20,9 @@ You should learn or gain experience with:
 flow controls we will use on the robots
 - We will also gain some familiarity with jupyter notebooks
 
-**For this coding, let the EE's do most of the work, CompE's help out, but you have more experience already with python than they do, so help but don't do it unless time is running out in the lab**
+**For this coding, let the EE's do most of the work. CompE's can help out, but
+they already have more experience with python than EE's do. CompE's should only
+take over if time is running out in the lab**
 
 ## Setup a Jupyter Notebook
 
@@ -187,3 +189,10 @@ will be the easiest way to edit programs on your robot.
 # Turn-in
 
 At the end of lab, print your `jupyter notebook` out and turn it in.
+
+# CR Clause
+
+All team members will receive the same grade unless it is identified that all
+members did not equally help out. The offending member(s) will receive a scaled
+grade equal to the team grade time 0.75. If this happens more than once, then
+the offending individual will become a team of one.
