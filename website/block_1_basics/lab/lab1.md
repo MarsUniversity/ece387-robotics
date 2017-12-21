@@ -44,7 +44,7 @@ from matplotlib import pyplot as plt
 
 Using Markdown (see the references or Google for proper syntax)
 when you complete all of the Tasks, copy and paste your answers into the notebook.
-I expect your results to look like lesson 4 & 5. If you don't know how, take a
+I expect your results to look like lesson 3, 4 & 5. If you don't know how, take a
 look at the markdown in those notebooks.
 
 **Note:** this notebook is running on and saved to your laptop ... *not* the
@@ -52,8 +52,9 @@ roomba.
 
 ## [5 pts] Prelab: Install
 
-If you have not already, please install python on your computer following the
-software install instructions. **This could take some time!!!**
+If you have not already, please install the required software on your computer
+following the software install instructions from the course website.
+**This could take some time!!!**
 
 ## [15 pts] Task 1: SSH and Crypto
 
@@ -61,11 +62,11 @@ Login username/passwords:
 
 | Class Day   | Username | Password  |
 |-------------|----------|-----------|
-| M-day class | mday     | raspberry |
-| T-day class | tday     | raspberry |
+| T4 class    | t4       | raspberry |
+| T5 class    | t5       | raspberry |
 
 **Note:** I changed the login process late in the game. If you see something
-in the documentation saying login in as `pi`, ignore it. Use the `mday` or `tday`
+in the documentation saying login in as `pi`, ignore it. Use the `t4` or `t5`
 logins.
 
 1. Using `gitbash`, open a terminal window and change to your home directory with:
@@ -104,11 +105,11 @@ logins.
 
 **Note:** This computer you are using can now login to the roomba. If anyone else
 on the team wants/needs to, then just repeat the above steps. It is probably a
-good idea everyone can login with their own notebook ... just in case.
+good idea everyone can login with their own notebook just in case.
 
 ## [50 pts] Task 2: Linux Command Line
 
-1. Login to your assigned roomba with the following command: `ssh m/tday@10.10.10.1`.
+1. Login to your assigned roomba with the following command: `ssh username@10.10.10.1`.
   Since you created a key in the previous task and shared it, you *should not* be
   asked for a username or password. If you are, notify your instructor.
 1. Once you have logged in, copy/paste the welcome you see into your notebook
