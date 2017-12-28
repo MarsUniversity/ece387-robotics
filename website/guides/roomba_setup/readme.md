@@ -45,13 +45,34 @@ Now use the software here to install stuff:
 
 ## OpenCV
 
-    git clone https://github.com/MomsFriendlyRobotCompany/raspbian_pkgs.git
-    cd raspbian_pkgs/opencv
+    git clone https://github.com/MomsFriendlyRobotCompany/dpkg_opencv
+    cd dpkg_opencv/opencv
     sudo ./update-opencv.sh
-    dpkg -i libopencv3-kevin.deb
+    dpkg -i libopencv3.4.0.deb
+
+# User Accounts
+
+Created accounts for t5 and t6, repeat this process for all accounts:
+
+1. Create new user `t5`: `sudo adduser t5`
+1. Give samba access: `sudo smbpasswd -a t5`
+1. Fix access to give `pi` group access to home folder: `sudo chown -R t5:pi /home/t5`
+1. Fix access so group can modify but others cannot access: `sudo chmod -R g+rwX o-rwX /home/t5`
+1. Give access to `reboot` and `shutdown`, in `/etc/sudoers` add: `t5   ALL=(ALL:ALL) NOPASSWD: /sbin/reboot, /sbin/shutdown`
 
 
-# Issues
+# Bypass known_hosts
+
+Since all RPi's hostname are raspberrypi.local, it **sucks** when you try to
+connect to a new one and you get the man-in-the-middle attack warning.
+
+You can bypass the check with:
+
+    ssh -o UserKnownHostsFile=/dev/null pi@raspberrypi.local
+
+---
+
+# Old Issues
 
 ## Fix python path
 
@@ -91,7 +112,7 @@ Now use the software here to install stuff:
 	else:
 		apport_python_hook.install()
 
-### Debian Stupidity
+## Debian Stupidity
 
 For whatever retarded reason, the interface names have changed such that you can no
 longer predict what they are going to be. They are dynamic and it makes it difficult
@@ -102,12 +123,3 @@ just pass net.ifnames=0 on the kernel command line in /boot/cmdline.txt. So now
 it looks something like this:
 
 	dwc_otg.lpm_enable=0 console=serial0,115200 console=tty1 root=PARTUUID=c3f225c6-02 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait net.ifnames=0
-
-## Bypass known_hosts
-
-Since all RPi's hostname are raspberrypi.local, it **sucks** when you try to
-connect to a new one and you get the man-in-the-middle attack warning.
-
-You can bypass the check with:
-
-    ssh -o UserKnownHostsFile=/dev/null pi@raspberrypi.local
