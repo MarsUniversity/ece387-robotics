@@ -21,7 +21,7 @@ def jupyter(lsns):
 	# only do this for macOS and linux
 	sys = platform.system()
 	if sys not in ['Darwin', 'Linux', 'Linux2']:
-		echo "\n <<< You have a crappy OS that doesn't work with zip well >>>\n"
+		print("\n <<< You have a crappy OS that doesn't work with zip well >>>\n")
 		return
 	for lsn in lsns:
 		print(' > Moving {}.zip to {}'.format(lsn, dest))
