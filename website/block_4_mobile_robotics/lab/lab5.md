@@ -17,6 +17,20 @@ on your roomba. Below, is a suggested timeline for completing the required
 tasks. All 3 tasks must be completed by the end-of-class on the second day
 of lab.
 
+You should learn or gain experience with:
+
+- How IMU's work
+- How to calibrate a basic robotic sensor
+- Commanding the roomba to follow a pre-defined heading
+
+**WARNING:** If you drop/damage the roomba, you automatically fail the lab.
+There are not enough robots available if we start damaging them.
+
+## Authorized Resources
+
+You may only get help within your group or from the instructor. Do not talk to
+other groups or other cadets about this lab.
+
 # [0 pts] Pre-lab
 
 There is a lot to do in this lab. It would be wise to show up on Day 1 with your
@@ -67,9 +81,6 @@ have the same IMU we are using in them, since this is a cell phone IMU. Use your
 compass to calculate the start/stop orientation of your roomba. Remember, the
 x-axis (forward) points out the front.
 
-**WARNING:** If you drop/damage the roomba, you automatically fail the lab.
-There are not enough robots available if we start damaging them.
-
 - After you have save the data successfully, take a look at the data on the command
 line: `cat imu_1.json`.
 
@@ -101,10 +112,3 @@ be around 8-10 degrees depending on a variety of factors.
 
 When you are done, print out and turn in your `jupyter notebook` showing *Task 2*
 and *Task 3*.
-
-# CR Clause
-
-All team members will receive the same grade unless it is identified that all
-members did not equally help out. The offending member(s) will receive a scaled
-grade equal to the team grade time 0.75. If this happens more than once, then
-the offending individual will become a team of one.

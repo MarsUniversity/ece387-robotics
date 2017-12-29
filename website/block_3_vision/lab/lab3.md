@@ -8,6 +8,8 @@ header-includes:
     - \fancyfoot[LE,RO]{Robots are cool!}
 ---
 
+# Detection
+
 This lab will exercise your understanding of face detection and AR markers. You
 will be working with a video stream, so we will **not** use a jupyter notebook.
 Unfortunately jupyter is not good with live video, however, they are working on
@@ -24,6 +26,12 @@ your laptop and do:
 - detect AR markers
 - indication whether it is currently detecting faces or not
 - **[Bonus]** do star wars stuff
+
+
+## Authorized Resources
+
+You may only get help within your group or from the instructor. Do not talk to
+other groups or other cadets about this lab.
 
 # Displaying Video in Python
 

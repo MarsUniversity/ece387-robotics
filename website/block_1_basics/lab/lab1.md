@@ -24,6 +24,12 @@ flow controls we will use on the robots
 they already have more experience with python than EE's do. CompE's should only
 take over if time is running out in the lab**
 
+
+## Authorized Resources
+
+You may only get help within your group or from the instructor. Do not talk to
+other groups or other cadets about this lab.
+
 ## Setup a Jupyter Notebook
 
 You will use a Jupyter notebook for this lab. From the command line, start the
@@ -190,10 +196,3 @@ will be the easiest way to edit programs on your robot.
 # Turn-in
 
 At the end of lab, print your `jupyter notebook` out and turn it in.
-
-# CR Clause
-
-All team members will receive the same grade unless it is identified that all
-members did not equally help out. The offending member(s) will receive a scaled
-grade equal to the team grade time 0.75. If this happens more than once, then
-the offending individual will become a team of one.

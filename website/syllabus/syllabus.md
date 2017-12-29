@@ -8,6 +8,79 @@ header-includes:
     - \fancyfoot[LE,RO]{Robots are cool!}
 ---
 
+| Lsn | Topic                                                 | Reading                     | Due                       |
+|-----|-------------------------------------------------------|-----------------------------|---------------------------|
+| 1   | [Intro & Overview][1]                                 |                             | |
+| 2   | [Linux Command Line][2]                               | Matlof Ch 1.0-1.9           | Install required software |
+| 3   | [Python Intro][3] [[download](lsn3.zip)]              |                             | [HW 1](hw123.pdf) |
+| 4   | [Python Numpy, Sympy, Matplotlib][4] [[download](lsn4.zip)]| Matlof Ch 3            | [HW 2](hw123.pdf) |
+| 5   | [Python Quiz][5]  [[download](lsn5.zip)]              |                             | [HW 3](hw123.pdf) |
+| 6   | [Lab 1: linux and python](lab1.pdf)                   |                             | Lab1 EOC |
+| 7   | [Kinematics: Intro][7]  [[download](lsn5.zip)]        | Craig Ch 3                  | |
+| 8   | 2D Forward-Inv Kinematics                             |                             | **Quiz 1** |
+| 9   | 3D Inverse-Inv Kinematics                             |                             | [HW4](hw4.pdf)|
+| 10  | [Robot Arm Control][10]  [[download](lsn10.zip)]      | RC Servos                   | |
+| 11  | [OpenCV Introduction][11]  [[download](lsn11.zip)]    |                             | [HW5](hw5.pdf)|
+| 12  | [Lab 2: Robot Arm](lab2.pdf)                          |                             | [Pre-Lab2](lab2.pdf) |
+| 13  | [Lab 2: Robot Arm](lab2.pdf)                          |                             | Lab2 EOC |
+| 14  | [Filtering][14]  [[download](lsn14.zip)]              | Edge Detection              | [HW6](hw6.pdf)|
+| 15  | [Feature Detection][15]  [[download](lsn15.zip)]      |                             | **Quiz 2**|
+| 16  | **GR 1**                                              |                             | |
+| 17  | [Cameras and Calibration][17]  [[download](lsn17.zip)]|                             | |
+| 18  | [Face Detection][18]  [[download](lsn18.zip)]         |                             | |
+| 19  | [Marker Detection][19]  [[download](lsn19.zip)]       | Wolf                        | |
+| 20  | [Color Detection][20]  [[download](lsn20.zip)]        |                             | |
+| 21  | [Change Detection][21]  [[download](lsn21.zip)]       |                             | |
+| 22  | [Tracking][22]  [[download](lsn22.zip)]               |                             | [HW7](hw7.pdf) |
+| 23  | [Image Stitching][23]  [[download](lsn23.zip)]        |                             | **Quiz 3**|
+| 24  | [Lab 3: Detection and Tracking](lab3.pdf)             |                             | |
+| 25  | [Lab 3: Detection and Tracking](lab3.pdf)             |                             | Lab3 EOC |
+| 26  | [Mobile Robotics][26]  [[download](lsn26.zip)]        | Siegwart Ch 3               | |
+| 27  | [Roomba Sensors][27]  [[download](lsn27.zip)]         | Siegwart Ch 4-4.1.71        | |
+| 28  | [Sensor Calibration][28]  [[download](lsn28.zip)]     |                             | |
+| 29  | [Controls][29]  [[download](lsn29.zip)]               | Siegwart Ch 5               | [HW8](hw8.pdf) |
+| 30  | [Lab 4: Roomba Control](lab4.pdf)                     |                             | |
+| 31  | [Lab 4: Roomba Control](lab4.pdf)                     |                             | Lab4 EOC |
+| 32  | Path Planning                                         | Law                         | |
+| 33  | [Path Planning][33]  [[download](lsn33.zip)]          |                             | |
+| 34  | [Lab 5: Roomba Sensors](lab5.pdf)                     |                             | [HW9](hw9.pdf)|
+| 35  | [Lab 5: Roomba Sensors](lab5.pdf)                     |                             | Lab5 EOC |
+| 36  | [Final Project](final_project.pdf)                    |                             | **Quiz 4** |
+| 37  | **GR2**                                               |                             | |
+| 38  | [Final Project](final_project.pdf)                    |                             | |
+| 39  | [Final Project](final_project.pdf)                    |                             | |
+| 40  | [Final Project](final_project.pdf)                    |                             | Final Project EOC|
+
+- Homeworks are at the beginning of class (BOC)
+- Labs are due on the final day at the end of class (EOC)
+
+[1]: lsn1.pptx
+[2]: lsn2-linux.pptx
+[3]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_1_basics/lsn3/lsn3.ipynb
+[4]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_1_basics/lsn4/lsn4.ipynb
+[5]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_1_basics/lsn5/lsn5.ipynb
+[7]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_2_kinematics/lsn7/lsn7.ipynb
+[8]: lsn8.pdf
+[9]: lsn9.pdf
+[10]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_2_kinematics/lsn10/lsn10.ipynb
+[11]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_3_vision/lsn11/lsn11.ipynb
+[14]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_3_vision/lsn14/lsn14.ipynb
+[15]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_3_vision/lsn15/lsn15.ipynb
+[17]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_3_vision/lsn17/lsn17.ipynb
+[18]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_3_vision/lsn18/lsn18.ipynb
+[19]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_3_vision/lsn19/lsn19.ipynb
+[20]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_3_vision/lsn20/lsn20.ipynb
+[21]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_3_vision/lsn21/lsn21.ipynb
+[22]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_3_vision/lsn22/lsn22.ipynb
+[23]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_3_vision/lsn23/lsn23.ipynb
+[26]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_4_mobile_robotics/lsn26/lsn26.ipynb
+[27]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_4_mobile_robotics/lsn27/lsn27.ipynb
+[28]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_4_mobile_robotics/lsn28/lsn28.ipynb
+[29]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_4_mobile_robotics/lsn29/lsn29.ipynb
+[30]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_4_mobile_robotics/lsn30/lsn30.ipynb
+[33]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_4_mobile_robotics/lsn33/lsn33.ipynb
+[34]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_4_mobile_robotics/lsn34/lsn34.ipynb
+
 # [Spring 2018 Syllabus](syllabus.pdf)
 
 ## Instructor
@@ -91,81 +164,10 @@ on the homework, in class lectures and readings. The purpose of the labs is to
 provide hands on experience with the topics discussed in the lectures. The final
 project will focus on the Roomba robot, controls, computer vision, and path planning.
 
-# Schedule
-
-- Homeworks are at the beginning of class (BOC)
-- Labs are due on the final day at the end of class (EOC)
-
-| Lsn | Topic                                                 | Reading                     | Due                       |
-|-----|-------------------------------------------------------|-----------------------------|---------------------------|
-| 1   | [Intro & Overview][1]                                 |                             | Read syllabus and familiarize yourself with the website links/references |
-| 2   | [Linux Command Line][2]                               | Matlof Ch 1.0-1.9           | Install required software |
-| 3   | [Python Intro][3] [[download](lsn3.zip)]              |                             | [HW 1](hw123.pdf) |
-| 4   | [Python Numpy, sympy, Matplotlib][4] [[download](lsn4.zip)]| Matlof Ch 3                 | [HW 2](hw123.pdf) |
-| 5   | [Python Quiz][5]  [[download](lsn5.zip)]              |                             | [HW 3](hw123.pdf) |
-| 6   | [Lab 1: linux and python](lab1.pdf)                   |                             | Lab1 EOC |
-| 7   | [Kinematics: Intro][7]  [[download](lsn5.zip)]        | Craig Ch 3                  | |
-| 8   | [2D Forward-Inv Kinematics][8]  [[download](lsn8.zip)]|                             | **Quiz 1** |
-| 9   | [3D Inverse-Inv Kinematics][9]  [[download](lsn9.zip)]|                             | [HW4](hw4.pdf)|
-| 10  | [Robot Arm Control][10]  [[download](lsn10.zip)]      | RC Servos                   | |
-| 11  | [OpenCV Introduction][11]  [[download](lsn11.zip)]    |                             | [HW5](hw5.pdf)|
-| 12  | [Lab 2: Robot Arm](lab2.pdf)                          |                             | [Pre-Lab2](lab2.pdf) |
-| 13  | [Lab 2: Robot Arm](lab2.pdf)                          |                             | Lab2 EOC |
-| 14  | [Filtering][14]  [[download](lsn14.zip)]              | Edge Detection              | [HW6](hw6.pdf)|
-| 15  | [Feature Detection][15]  [[download](lsn15.zip)]      |                             | **Quiz 2**|
-| 16  | **GR 1**                                              |                             | |
-| 17  | [Cameras and Calibration][17]  [[download](lsn17.zip)]|                             | |
-| 18  | [Face Detection][18]  [[download](lsn18.zip)]         |                             | |
-| 19  | [Marker Detection][19]  [[download](lsn19.zip)]       | Wolf                        | |
-| 20  | [Color Detection][20]  [[download](lsn20.zip)]        |                             | |
-| 21  | [Change Detection][21]  [[download](lsn21.zip)]       |                             | |
-| 22  | [Tracking][22]  [[download](lsn22.zip)]               |                             | [HW7](hw7.pdf) |
-| 23  | [Image Stitching][23]  [[download](lsn23.zip)]        |                             | **Quiz 3**|
-| 24  | [Lab 3: Detection and Tracking](lab3.pdf)             |                             | |
-| 25  | [Lab 3: Detection and Tracking](lab3.pdf)             |                             | Lab3 EOC |
-| 26  | [Mobile Robotics][26]  [[download](lsn26.zip)]        | Siegwart Ch 3               | |
-| 27  | [Roomba Sensors][27]  [[download](lsn27.zip)]         | Siegwart Ch 4-4.1.71        | |
-| 28  | [Sensor Calibration][28]  [[download](lsn28.zip)]     |                             | |
-| 29  | [Controls][29]  [[download](lsn29.zip)]               | Siegwart Ch 5               | [HW8](hw8.pdf) |
-| 30  | [Lab 4: Roomba Control](lab4.pdf)                     |                             | |
-| 31  | [Lab 4: Roomba Control](lab4.pdf)                     |                             | Lab4 EOC |
-| 32  | [Path Planning][33]  [[download](lsn33.zip)]          | Law                         | |
-| 33  | [Lab 5: Roomba Sensors](lab5.pdf)                     |                             | [HW9](hw9.pdf)|
-| 34  | [Lab 5: Roomba Sensors](lab5.pdf)                     |                             | Lab5 EOC |
-| 35  | [Final Project](final_project.pdf)                    |                             | **Quiz 4** |
-| 36  | **GR2**                                               |                             | |
-| 37  | [Final Project](final_project.pdf)                    |                             | |
-| 38  | [Final Project](final_project.pdf)                    |                             | |
-| 39  | [Final Project](final_project.pdf)                    |                             | |
-| 40  | [Final Project](final_project.pdf)                    |                             | Final Project EOC|
-
-[1]: lsn1.pptx
-[2]: lsn2-linux.pptx
-[3]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_1_basics/lsn3/lsn3.ipynb
-[4]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_1_basics/lsn4/lsn4.ipynb
-[5]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_1_basics/lsn5/lsn5.ipynb
-[7]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_2_kinematics/lsn7/lsn7.ipynb
-[8]: lsn8.pdf
-[9]: lsn9.pdf
-[10]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_2_kinematics/lsn10/lsn10.ipynb
-[11]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_3_vision/lsn11/lsn11.ipynb
-[14]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_3_vision/lsn14/lsn14.ipynb
-[15]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_3_vision/lsn15/lsn15.ipynb
-[17]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_3_vision/lsn17/lsn17.ipynb
-[18]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_3_vision/lsn18/lsn18.ipynb
-[19]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_3_vision/lsn19/lsn19.ipynb
-[20]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_3_vision/lsn20/lsn20.ipynb
-[21]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_3_vision/lsn21/lsn21.ipynb
-[22]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_3_vision/lsn22/lsn22.ipynb
-[23]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_3_vision/lsn23/lsn23.ipynb
-[26]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_4_mobile_robotics/lsn26/lsn26.ipynb
-[27]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_4_mobile_robotics/lsn27/lsn27.ipynb
-[28]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_4_mobile_robotics/lsn28/lsn28.ipynb
-[29]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_4_mobile_robotics/lsn29/lsn29.ipynb
-[30]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_4_mobile_robotics/lsn30/lsn30.ipynb
-[33]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_4_mobile_robotics/lsn33/lsn33.ipynb
-[34]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_4_mobile_robotics/lsn34/lsn34.ipynb
-
+All team members will receive the same grade unless it is identified that all
+members did not equally help out. The offending member(s) will receive a scaled
+grade equal to the team grade time 0.75. If this happens more than once, then
+the offending individual will become a team of one.
 
 # Homework/Lab Templates
 

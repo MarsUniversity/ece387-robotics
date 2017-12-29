@@ -21,6 +21,7 @@ def jupyter(lsns):
 	# only do this for macOS and linux
 	sys = platform.system()
 	if sys not in ['Darwin', 'Linux', 'Linux2']:
+		echo "\n <<< You have a crappy OS that doesn't work with zip well >>>\n"
 		return
 	for lsn in lsns:
 		print(' > Moving {}.zip to {}'.format(lsn, dest))
@@ -149,10 +150,10 @@ def build_tempates():
 
 
 def main():
-	# this ppt or pdf, lsn8 & 9 are pdf scanned notes
+	# this pptx's
 	ppt = [
 		['lsn1', 'lsn2'],
-		['lsn8', 'lsn9'],
+		None,
 		None,
 		None
 	]
@@ -160,7 +161,7 @@ def main():
 		['lsn3', 'lsn4', 'lsn5'],
 		['lsn7', 'lsn10'],
 		['lsn11', 'lsn14', 'lsn15', 'lsn17', 'lsn18', 'lsn19', 'lsn20', 'lsn21', 'lsn22', 'lsn23'],
-		['lsn26', 'lsn27', 'lsn28', 'lsn29', 'lsn30', 'lsn33', 'lsn34']
+		['lsn26', 'lsn27', 'lsn28', 'lsn29', 'lsn33']
 	]
 	blocks = [
 		'block_1_basics',
@@ -198,5 +199,6 @@ def main():
 
 
 if __name__ == "__main__":
+	# this is a problem on macOS, where these stupid os files get found
 	os.system("find . -type f -name '.DS_Store' -exec rm {} +")
 	main()

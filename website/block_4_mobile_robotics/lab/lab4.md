@@ -21,6 +21,17 @@ You should learn or gain experience with:
 - How to read the sensors and react accordingly
 - How to monitor the Roomba robot
 
+**WARNING:** If you drop/damage the roomba, you automatically fail the lab.
+There are not enough robots available if we start damaging them.
+
+**WARNING:** For all commands with the roomba, do not set the speed above
+200 mm/sec. This is so it doesn't get away from you and cause havoc.
+
+## Authorized Resources
+
+You may only get help within your group or from the instructor. Do not talk to
+other groups or other cadets about this lab.
+
 ## [5 pts] Pre-lab
 
 Hand in a copy of your code code. You should have functions for each task in the
@@ -31,9 +42,6 @@ lab. Use the example code below to help you.
 Start off commanding the robot to move forward for 3 seconds, the backwards
 for 3 seconds, turn in place ~90 deg left, and finally turn in place ~90 deg right.
 It should approximately end up back where it started and in the same orientation.
-
-**WARNING:** For all commands with the roomba, do not set the speed above
-200 mm/sec. This is so it doesn't get away from you and cause havoc.
 
 Basic usage information can be found on: https://pypi.python.org/pypi/pycreate2
 
@@ -113,6 +121,17 @@ next task.
 the roomba can sense. Also what are their values.
 1. Cliff Sensors: What are the sensor values for carpet and the masking tape?
 
+Also, write a small program that reads the roomba's power level and reports
+its current battery charge. It should print out something like this:
+
+```bash
+Battery [mAhrs]: 1200
+```
+
+After a while, the roomba's internal battery will wear out, it is nice to know
+how low it is. This will probably have a bigger impact on latter class periods
+rather than earlier class periods.
+
 When you have this working, show your instructor.
 
 ## [25 pts] Task 3: Avoid Obstacles
@@ -128,11 +147,12 @@ When you have this working, show your instructor.
 ## [25 pts] Task 4: Square
 
 Now using your obstacle avoidance routine from above, have the Roomba travel
-in a square that is 2 m on each side and end up in the same spot it started in.
+in a square that is ~2 m on each side and end up in the same spot it started in.
 
 When you have this working, show your instructor. You still need to be able to
 avoid obstacles while doing this, however, if something gets in your way, you
-do not have to worry about ending in the same location you started in. Just complete the cube (best effort) after avoiding the obstacle.
+do not have to worry about ending in the same location you started in. Just
+complete the cube (best effort) after avoiding the obstacle.
 
 Explain to your instructor the following questions:
 
@@ -141,10 +161,3 @@ Explain to your instructor the following questions:
 - Why did this or why not did this work?
 - How could you improve it?
 - Are you able to avoid obstacles?
-
-# CR Clause
-
-All team members will receive the same grade unless it is identified that all
-members did not equally help out. The offending member(s) will receive a scaled
-grade equal to the team grade time 0.75. If this happens more than once, then
-the offending individual will become a team of one.
