@@ -15,7 +15,7 @@ To get this to work, you need the following software installed on your laptop:
 
 - `git-bash` to get use to the command line we will be using on our linux robots
 - `python` which will be our primary programming language
-- OpenCV 3.3.x for computer vision
+- OpenCV 3.4.x for computer vision
 - Jupyter notebooks, most of the class material is written in this and you will need it to turn some homeworks and labs
 
 ## Git-Bash
@@ -54,11 +54,6 @@ If there is already a `.bash_profile` there, then overwrite it with this one.
 
 ## Python
 
-1. Grab the python package from [https://www.python.org/downloads/windows/](https://www.python.org/downloads/windows/)
-1. You should have something like `python-2.7.14.amd64.msi`, run that and install the software to your C: drive
-1. Open a bash window
-1. Update your software with: `pip install -U pip setuptools wheel`
-
 ### Microsoft Compiler for Python 2.7
 
 In order to build some of the python packages we need, you have to have a compiler
@@ -68,9 +63,20 @@ install one.
 1. Download the [https://www.microsoft.com/en-us/download/details.aspx?id=44266](https://www.microsoft.com/en-us/download/details.aspx?id=44266)
 1. Once you have it, double click and install it
 
-## OpenCV 3.3.1 (or newest)
+### Install Python
 
-1. Download OpenCV 3.3.x from [https://github.com/opencv/opencv/releases](https://github.com/opencv/opencv/releases). Look for a file name like `opencv-3.3.1-vc14.exe`. Obviously if the current version is `3.4.2`, the the filename will have that version number in it instead of `3.3.1` Your browser should put it in your `Downloads` folder. If it goes else where, then adjust the instructions below.
+**YOU MUST USE PYTHON 2.7**
+
+1. Grab the python package from [https://www.python.org/downloads/windows/](https://www.python.org/downloads/windows/)
+1. You should have something like `python-2.7.14.amd64.msi` which is the x86-64 MSI
+installer, run that and install the software to your C: drive
+1. Open a bash window
+1. Update your software with: `pip install -U pip setuptools wheel`
+1. Then install other python libraries: `pip install -U ar_markers future pysparklines pyserial the-collector numpy PyYAML nose simplejson fake-rpi build-utils`
+
+## OpenCV 3.4.0 (or newest)
+
+1. Download OpenCV 3.3.x from [https://github.com/opencv/opencv/releases](https://github.com/opencv/opencv/releases). Look for a file name like `opencv-3.4.0-vc14_vc15.exe`. Obviously if the current version is `3.4.2`, the the filename will have that version number in it instead of `3.4.0` Your browser should put it in your `Downloads` folder. If it goes else where, then adjust the instructions below.
 1. Go to the download location and double click on the `exe`, this will decompress it and create a `opencv` folder
 1. Grab the opencv library (`cv2.pyd`) and put it into your python library
     1. from: `C:\Users\<your username>\Downloads\opencv\build\python\2.7\x64\cv2.pyd`
@@ -82,7 +88,7 @@ install one.
     1. if there are no errors ... you are good!
     1. type: `cv2.__version__` and the current version should come up ... something like 3.3.1 or whatever version you downloaded.
 
-If you ever need to update your system to a new version, like `3.3.4`, you can repeat this process. You *might* need to update the python library `numpy`, but that should be easily fixed with" `pip install -U numpy`. OpenCV and `numpy` are tighly coupled.
+If you ever need to update your system to a new version, like `3.4.4`, you can repeat this process. You *might* need to update the python library `numpy`, but that should be easily fixed with" `pip install -U numpy`. OpenCV and `numpy` are tighly coupled.
 
 ## Jupyter Notebooks
 
@@ -90,11 +96,7 @@ You have to have Python and GitBash installed already before you do this.
 
 1. Open a bash window
 1. Run: `pip install -U pip setuptools wheel`
-1. Run: `pip install -U numpy jupyter opencvutils matplotlib jupyter_tools`
+1. Run: `pip install -U numpy jupyter opencvutils matplotlib jupyter_tools sympy`
 1. Once that finishes installing, run: `jupyter notebook`
 1. A webpage should open up. From there you can create or
-   navigate to jupyter notebooks and open them.
-
-## Other Python Libraries
-
-1. Run `pip install -U ar_markers future pysparklines pyserial`
+   navigate to where your jupyter notebooks are stored and open them.

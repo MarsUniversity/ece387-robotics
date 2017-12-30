@@ -1,5 +1,5 @@
 ---
-title: Setting Up Pandoc on macOS
+title: Setting Up Pandoc and Publishing the Website
 author: Kevin J. Walchko
 header-includes:
     - \usepackage{fancyhdr}
@@ -93,7 +93,20 @@ MiKTeX installs the software necessary to To set up the environment do:
 
 # Github
 
-## Access
+## Automatic Generation
 
+Using Travis-CI, travis can automagically build the website every time you push
+code. Here are some details:
+
+- Setup the `.travis.yml`, like it is in the root directory
 - Generate a [Personal Access Token](https://docs.travis-ci.com/user/deployment/pages/) on github
 - Add it to your travis account settings by setting [environment variable](https://docs.travis-ci.com/user/environment-variables#Defining-Variables-in-Repository-Settings) called GITHUB_TOKEN with a value of the personal access token (lots of numbers)
+
+## Manual Generation
+
+Not sure the automatic is really required. You can disable it in the `.travis.yml`
+file and then run the following from the `website` directory:
+
+- `./build.py` which builds the entire website and stores it in `www`
+- `./deploy.py` which pushes everything in `www` to the repo `gh-pages` branch
+of the website

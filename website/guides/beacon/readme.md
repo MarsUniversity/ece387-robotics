@@ -2,7 +2,7 @@
 
 
 
-# Bluetooth BLE iBeacons
+# Bluetooth BLE iBeacons [Not doing this, they suck]
 
 ## References
 

@@ -77,7 +77,8 @@ are all functional programming but, if you want, you can change them to classes.
 ### Debuging
 
 To help you debug your code, every time your program sends a command to the arm,
-print out info shown below:
+print out info shown below. You will also need to add a line for each movement
+showing the position the end-effector moved to:
 
 ```bash
 kevin@Logan arm $ ./arm.py
@@ -214,7 +215,7 @@ Here is some code to get you started:
 
 Once you have figured out the best PWM settings for your robot arm, now use your code
 to move the arm through a sequence of orientations. The angle arrays are setup
-such that [theta0, theta1, theta2, theta3, theta4]. Remeber, that the last servo
+such that [theta0, theta1, theta2, theta3, theta4]. Remember, that the last servo
 drives the gripper.
 
 ```python
@@ -231,8 +232,10 @@ angles_lab = [
 ]
 ```
 
-After each step, pause for 2.5 seconds (`T2500`). When you have it working, show your
-instructor.
+After each step, pause for 2.5 seconds (`T2500`) when you demo it. Additionally,
+have your code print out the end-effector's location and double check it by
+measuring it with a ruler. When you have it working, show your
+instructor the demo and the printed/measured positions ... do the two agree?
 
 
 ```python
