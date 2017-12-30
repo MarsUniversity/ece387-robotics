@@ -14,7 +14,7 @@ header-includes:
 | 2   | [Linux Command Line][2]                               | Matlof Ch 1.0-1.9           | Install required software |
 | 3   | [Python Intro][3] [[download](lsn3.zip)]              |                             | [HW 1](hw123.pdf) |
 | 4   | [Python Numpy, Sympy, Matplotlib][4] [[download](lsn4.zip)]| Matlof Ch 3            | [HW 2](hw123.pdf) |
-| 5   | [Python Quiz][5]  [[download](lsn5.zip)]              |                             | [HW 3](hw123.pdf) |
+| 5   | [**Python Quiz**][5]  [[download](lsn5.zip)]          |                             | [HW 3](hw123.pdf) |
 | 6   | [Lab 1: linux and python](lab1.pdf)                   |                             | Lab1 EOC |
 | 7   | [Kinematics: Intro][7]  [[download](lsn5.zip)]        | Craig Ch 3                  | |
 | 8   | 2D Forward-Inv Kinematics                             |                             | **Quiz 1** |
@@ -111,7 +111,7 @@ Cadets shall:
 | Course Text | None, various PDFs are provided for reading         |
 | Web Page    | [https://marsuniversity.github.io/ece387/](https://marsuniversity.github.io/ece387/) |
 | Software    | Python 2.7                                          |
-|             | OpenCV 3.3.x                                        |
+|             | OpenCV 3.4.x                                        |
 |             | Jupyter notebooks                                   |
 |             | GitBash                                             |
 

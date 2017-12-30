@@ -10,6 +10,8 @@ header-includes:
 
 # Overview
 
+![](pics/create.png)
+
 This lab will test your understanding of both linux command line and python.
 
 You should learn or gain experience with:
@@ -68,11 +70,11 @@ Login username/passwords:
 
 | Class Day   | Username | Password  |
 |-------------|----------|-----------|
-| T4 class    | t4       | raspberry |
 | T5 class    | t5       | raspberry |
+| T6 class    | t6       | raspberry |
 
 **Note:** I changed the login process late in the game. If you see something
-in the documentation saying login in as `pi`, ignore it. Use the `t4` or `t5`
+in the documentation saying login in as `pi`, ignore it. Use the `t5` or `t6`
 logins.
 
 1. Using `gitbash`, open a terminal window and change to your home directory with:
@@ -87,7 +89,7 @@ logins.
 1. Next, open a browser and goto: 10.10.10.1:8080. A webpage should pop-up with
   your robot's name on it and some other stuff. If you see this, then you are
   properly connected and all is good.
-1. Next share your key with your roomba: `ssh-copy-id p=m/tday@10.10.10.1`. It will ask
+1. Next share your key with your roomba: `ssh-copy-id p=<username>@10.10.10.1`. It will ask
   for a password: *raspberry*. It will also say something about adding roomba's
   IP address to a list of known hosts ... that is fine.
 1. Copy/paste the ssh key ascii art finger print into your notebook. If you ever
@@ -115,7 +117,7 @@ good idea everyone can login with their own notebook just in case.
 
 ## [50 pts] Task 2: Linux Command Line
 
-1. Login to your assigned roomba with the following command: `ssh username@10.10.10.1`.
+1. Login to your assigned roomba with the following command: `ssh <username>@10.10.10.1`.
   Since you created a key in the previous task and shared it, you *should not* be
   asked for a username or password. If you are, notify your instructor.
 1. Once you have logged in, copy/paste the welcome you see into your notebook
@@ -189,10 +191,25 @@ use `numpy` and print out the results of `C` and `D`
 ## [10 pts] Task 4: Samba
 
 Follow the setup guide on the website, "Interfacing Windoze and Linux file systems",
-and login to the roomba. Put a screen shot of your home directory (`/home/mday or tday`)
+and login to the roomba. Put a screen shot of your home directory (`/home/t5 or t6`)
 in this notebook. From Windoze finder, you should be able to read/write files. This
 will be the easiest way to edit programs on your robot.
 
 # Turn-in
 
 At the end of lab, print your `jupyter notebook` out and turn it in.
+
+# If this is the last class of the day
+
+**DO NOT JUST SHUT OFF POWER TO THE RPI**
+
+We need to shut everything down nicely. Our Roomba's have [archeyjs](https://www.npmjs.com/package/archeyjs)
+installed on them. Open a web browser to `10.10.10.1:8080` and you should see this:
+
+![](pics/raspbian.png) {width=50%}
+
+1) Click on the `Commands` button on the webpage.
+
+![](pics/commands.png) {width=50%}
+
+2) Then select `sudo shutdown now`. Wait 1 minute and then unplug the RPi.
