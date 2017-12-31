@@ -85,6 +85,10 @@ if __name__ == "__main__":
     cv2.destroyAllWindows() # clean up GUI
 ```
 
+*Hint:* It might be easier to start off working in jupyter on an image. Build your
+filter and get it working. Then move on to reading in a video stream and applying
+your filter to each frame.
+
 # Lab 3
 
 Create a python program (or separate programs) and do the following:
@@ -127,3 +131,9 @@ Instead of doing Task 2 like described, everything you do has to be tied to Star
 - Put one of [Queen Amidala](http://starwars.wikia.com/wiki/Padm%C3%A9_Amidala) crazy outfits, headdress, or hats on people.
 - Use an AR marker to determine which outfit will go on people
 - Something else ... if you have an idea ask your instructor first
+
+**To do it right is hard, so cut corners if you have to**
+
+Here is a simple top hat I did:
+
+![](hat.png)
