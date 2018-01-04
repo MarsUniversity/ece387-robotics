@@ -25,11 +25,11 @@ the linux system and edit it.
 
 ![Map the Drive](pics/mapDrive.png){width=50%}
 
-3. Enter the share name: `\\10.10.10.1\m/tday`
-    1. Remember to use the correct login name: `mday` or `tday`
+3. Enter the share name: `\\10.10.10.1\t5`
+    1. Remember to use the correct login name: `t5` or `t6`
     1. Make sure to check the box **Connect using different credentials**
 
-![Make sure to login with different credentials: username: mday or tday, password: raspberry](pics/logOn.png){width=50%}
+![Make sure to login with different credentials: username: t5 or t6, password: raspberry](pics/logOn.png){width=50%}
 
 4. Click **Finish**
 5. Input *username* and *password*
@@ -47,19 +47,20 @@ the linux system and edit it.
 Just in case you cannot connect up your laptop to linux using Samba, you can use
 SCP to send/retrieve files between Windoze and Linux. The basic commands are:
 
-    scp my_file.py pi@<roomba_ip_address>:~     # from laptop to roomba
-    scp pi@<roomba_ip_address>:my_file.py .     # from roomba to your laptop
-    scp -r my_directory pi@<roomba_ip_address>  # send an entire folder
+    scp my_file.py <username>@<roomba_ip_address>:~     # from laptop to roomba
+    scp <username>@<roomba_ip_address>:my_file.py .     # from roomba to your laptop's local directroy
+    scp -r my_directory <username>@<roomba_ip_address>  # send an entire folder from laptop to roomba
 
 Now when you are doing this, you might have to give a better location for the
 file like:
 
-    scp ~/ece387_work/test.py pi@10.10.10.1:/home/pi/my_stuff
+    scp ~/ece387_work/test.py <username>@10.10.10.1:/home/<username>/my_stuff
 
-Also, replace the *<roomba_ip_address>* with the correct IP address.
+Also, replace the *<roomba_ip_address>* with the correct IP address. For our class,
+this *should always* be 10.10.10.1, but if working on a different linux computer, change accordingly.
 This would transfer the file `test.py` located in your home directory on your
 laptop and transfer it to the roomba. It would place it in the folder `my_stuff`
-in pi's home directory.
+in users's home directory.
 
 If you have setup your public/private key (as described below in the SSH section)
 you will not have to input any passwords. Otherwise, you will be prompted for
@@ -85,13 +86,18 @@ The process will look similar to the screenshot below.
 4. Next we have to send that over to our linux system: `ssh-copy-id pi@robot_name.local`.
    Accept anything that pops up. You will need to put in the *username* and *password*
    to authenticate you can add this digital cert to the system.
-5. Now test it out: `ssh pi@robot_name.local`. It should log you directly into
+5. Now test it out: `ssh <username>@<roomba_ip_address>`. It should log you directly into
    the robot, your authentication is handled via [Diffie–Hellman](https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange)
    protocol and the certificate we just created.
+       1. If you are doing this on linux/unix, then you can use zeroconfig: `ssh t5@robot.local`.
+       [Zeroconfig](https://en.wikipedia.org/wiki/Zero-configuration_networking),
+       then does an multicast lookup and converts the computer name
+       robot.local (or whatever the computer's name is) to an ip address.
 
 # Accessing Windows from Linux
 
-Sometimes you need to access a Windoze hard drive or another Linux system with a  Samba share from a Linux system.
+Sometimes you need to access a Windoze hard drive or another Linux system with a  
+Samba share from a Linux system.
 
 1. Edit `/etc/fstab` with the following line:
     ```bash
