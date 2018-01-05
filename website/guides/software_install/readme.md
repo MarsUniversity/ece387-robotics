@@ -20,14 +20,19 @@ To get this to work, you need the following software installed on your laptop:
 
 ## Git-Bash
 
-1. Grab the git-bash package from [git-scm.com](https://git-scm.com/download/win) and install it
-1. From this folder, grab `.bash_profile` (note it has "." on the front so it is a hidden file) and drop it in your home folder
-    1. My home folder, for example, is: `C:/Users/Kevin.Walchko`
+![](editor-gitbash.png)
+
+1. Grab the git-bash package from [git-scm.com](https://git-scm.com/download/win)
+    1. Take the default options, but there is a new one, see below:
+    1. Something like the second window now asks if you want to install the nano text editor. I like
+    nano, it is a very simple editor. Otherwise your default is vim, which is insanely complex
+    and I personnally dislike.
 1. Now to open a bash window, you can double click on the git-bash icon on your desktop or from the start menu: All Programs -> Git -> Git Bash
 
 Also to make your life a little easier, use this `.bash_profile` (*note:* there
 is a `.` on the front of the file name to indicate it is hidden). Just place this
-in a simple text file and leave it in your home directory `C:/Users/<your name>`:
+in a simple text file and leave it in your home directory `C:/Users/<your name>`, my home folder, 
+for example, is: `C:/Users/Kevin.Walchko`:
 
 ```bash
 # start .bash_profile -------------------------
@@ -100,3 +105,15 @@ You have to have Python and GitBash installed already before you do this.
 1. Once that finishes installing, run: `jupyter notebook`
 1. A webpage should open up. From there you can create or
    navigate to where your jupyter notebooks are stored and open them.
+
+## VS Studio
+
+![](VSStudio.png)
+
+I am not a microsoft fan, but 10CS makes using my editor of choice Atom difficult
+to use here at USAFA. I have played around with Visual Studio Code which is **very**
+similar to Atom, so I will make a suggestion if you need a decent python editor.
+
+Download: https://code.visualstudio.com/?wt.mc_id=DX_841432
+
+Just remember I haven't really done much with it yet.
