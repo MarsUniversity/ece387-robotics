@@ -20,5 +20,7 @@ script:
     - cd website
     - chmod a+x build.py
     - chmod a+x deploy.sh
+    - chmod a+x build_and_deploy.sh
     # - ./build.py
     # - ./deploy.sh
+    - ./build_and_deploy.sh
