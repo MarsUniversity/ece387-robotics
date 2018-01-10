@@ -18,6 +18,13 @@ To get this to work, you need the following software installed on your laptop:
 - OpenCV 3.4.x for computer vision
 - Jupyter notebooks, most of the class material is written in this and you will need it to turn some homeworks and labs
 
+**WARNING:** 10CS loves to do a horrible job! Some people have issues with using the `pip` command
+and get an error about SSL certificates. That is the EDU firewall screwing with us. Please just
+go somewhere (like Arnold Hall which has open wifi or McDonalds) and run the command from there.
+
+**WARNING:** Please follow the instructions to the letter and in order. They are correct! I 
+have installed all of this software following these instructions on multiple computers.
+
 ## Git-Bash
 
 ![](editor-gitbash.png)
@@ -74,10 +81,15 @@ install one.
 
 1. Grab the python package from [https://www.python.org/downloads/windows/](https://www.python.org/downloads/windows/)
 1. You should have something like `python-2.7.14.amd64.msi` which is the x86-64 MSI
-installer, run that and install the software to your C: drive
+installer, run that and install the software to your C: drive. Just take all of the default
+options. You should end up with C:/Python27 on your hard drive. If not, you did something
+wrong. Uninstall and try again.
 1. Open a bash window
 1. Update your software with: `pip install -U pip setuptools wheel`
-1. Then install other python libraries: `pip install -U ar_markers future pysparklines pyserial the-collector numpy PyYAML nose simplejson fake-rpi build-utils`
+1. Then install other python libraries: `pip install -U ar_markers future pysparklines pyserial the_collector numpy PyYAML nose simplejson fake-rpi build-utils`
+1. Now do `pip list` and you should see each one of the above libraries installed.
+Some of these will pull in other libraries too, so they maybe more than just the
+above.
 
 ## OpenCV 3.4.0 (or newest)
 
@@ -92,6 +104,9 @@ installer, run that and install the software to your C: drive
     1. type: `import cv2`
     1. if there are no errors ... you are good!
     1. type: `cv2.__version__` and the current version should come up ... something like 3.4.0 or whatever version you downloaded.
+    1. If you have errors, you did something wrong! You have to put the library exactly where
+    I told you and you have to have the python libraries (using `pip`) from the python install
+    section installed. OpenCV depends on `numpy` and will crash if not installed.
 
 If you ever need to update your system to a new version, like `3.4.4`, you can repeat this process. You *might* need to update the python library `numpy`, but that should be easily fixed with" `pip install -U numpy`. OpenCV and `numpy` are tighly coupled.
 
@@ -102,17 +117,19 @@ You have to have Python and GitBash installed already before you do this.
 1. Open a bash window
 1. Run: `pip install -U pip setuptools wheel`
 1. Run: `pip install -U numpy jupyter opencvutils matplotlib jupyter_tools sympy`
+1. Run `pip list` and you should see each one of these libraries installed. If not then
+redo it.
 1. Once that finishes installing, run: `jupyter notebook`
 1. A webpage should open up. From there you can create or
    navigate to where your jupyter notebooks are stored and open them.
 
-## VS Studio
+## [OPTIONAL] VS Studio
 
 ![](VSStudio.png)
 
-I am not a microsoft fan, but 10CS makes using my editor of choice Atom difficult
-to use here at USAFA. I have played around with Visual Studio Code which is **very**
-similar to Atom, so I will make a suggestion if you need a decent python editor.
+I am not a microsoft fan, but 10CS makes using my editor of choice [Atom](https://atom.io/) 
+difficult to use here at USAFA. I have played around with Visual Studio Code which is **very**
+similar to Atom, so I will suggest it if you need a decent python editor.
 
 Download: https://code.visualstudio.com/?wt.mc_id=DX_841432
 
