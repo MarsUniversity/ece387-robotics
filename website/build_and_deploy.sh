@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TRAVIS_BUILD = true
+TRAVIS_BUILD=true
 
 if [[ ${TRAVIS_BUILD} ]]; then
 	./build.py
