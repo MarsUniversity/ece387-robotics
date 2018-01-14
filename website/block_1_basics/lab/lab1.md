@@ -10,7 +10,7 @@ header-includes:
 
 # Overview
 
-![](pics/create.png)
+![](pics/create.png){width=25%}
 
 This lab will test your understanding of both linux command line and python.
 
@@ -40,7 +40,7 @@ You will use a Jupyter notebook for this lab. From the command line, start the
 		jupyter notebook
 
 A web browser should open. From the top right, create a new `Python 2` notebook
-called *Lab1*. Set up your notbook with the following:
+called *Lab1*. Set up your notebook with the following:
 
 ```python
 %matplotlib inline
@@ -206,10 +206,10 @@ At the end of lab, print your `jupyter notebook` out and turn it in.
 We need to shut everything down nicely. Our Roomba's have [archeyjs](https://www.npmjs.com/package/archeyjs)
 installed on them. Open a web browser to `10.10.10.1:8080` and you should see this:
 
-![](pics/raspbian.png) {width=50%}
+![](pics/raspbian.png){ width=50% }
 
 1) Click on the `Commands` button on the webpage.
 
-![](pics/commands.png) {width=50%}
+![](pics/commands.png){width=50%}
 
 2) Then select `sudo shutdown now`. Wait 1 minute and then unplug the RPi.
