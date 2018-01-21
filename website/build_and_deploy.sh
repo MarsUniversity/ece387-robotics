@@ -1,6 +1,6 @@
 #!/bin/bash
 DEPLOY_SURGE=false
-TRAVIS_BUILD=false
+TRAVIS_BUILD=true
 
 if [[ ${TRAVIS_BUILD} ]]; then
 	./build.py
