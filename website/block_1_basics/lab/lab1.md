@@ -206,7 +206,7 @@ At the end of lab, print your `jupyter notebook` out and turn it in.
 We need to shut everything down nicely. Our Roomba's have [archeyjs](https://www.npmjs.com/package/archeyjs)
 installed on them. Open a web browser to `10.10.10.1:8080` and you should see this:
 
-![](pics/raspbian.png){ width=50% }
+![](pics/raspbian.png){width=50%}
 
 1) Click on the `Commands` button on the webpage.
 
