@@ -4,29 +4,35 @@ from __future__ import print_function
 from subprocess import call
 import os
 import platform
+import sys
+
+devnull = open(os.devnull, 'w')
 
 
 def run(cmd):
 	# given a command string, it runs it
 	cmds = cmd.split()
 	# print(cmds)
-	call(cmds)
+	call(cmds, stdout=devnull)
 
 
 def jupyter(lsns):
 	# packages up jupyter notebooks into a zip for download
 	dest = '../www'
 
-	# zip is f'ed up on windows ... not sure how to fix
-	# only do this for macOS and linux
-	sys = platform.system()
-	if sys not in ['Darwin', 'Linux', 'Linux2']:
-		print("\n <<< You have a crappy OS that doesn't work with zip well >>>\n")
-		return
+	# handle zipping different on different systems
+	sysos = platform.system()
+	if sysos not in ['Darwin', 'Linux', 'Linux2']:
+		cmd_str = '7z.exe a  {}.zip ./{}'
+	else:
+		cmd_str = 'zip -r {}.zip {}'
+	# 	print("\n <<< You have a crappy OS that doesn't work with zip well >>>\n")
+	# 	return
 	for lsn in lsns:
 		print(' > Moving {}.zip to {}'.format(lsn, dest))
-		run('zip -r {}.zip {}'.format(lsn, lsn))
+		run(cmd_str.format(lsn, lsn))
 		run('mv {}.zip {}'.format(lsn, dest))
+		sys.stdout.flush()  # have to do this for windoze, it sucks!!
 
 
 def pandoc(dir):
