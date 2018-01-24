@@ -1,13 +1,13 @@
 #!/bin/bash
-DEPLOY_SURGE=false
-TRAVIS_BUILD=true
 
-if [[ ${TRAVIS_BUILD} ]]; then
+# travis deploy
+if true; then
 	./build.py
 	./deploy.sh
 fi
 
-if [[ ${DEPLOY_SURGE} ]]; then
+# surge deploy -- it has issues with pdfs
+if false; then
 	./build.py
 	surge --domain https://ece387.surge.sh --project www
 fi
