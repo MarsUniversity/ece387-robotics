@@ -56,7 +56,7 @@ line) between angle and PWM. For radians, you should get `angle2pwm(2)` = 1663.
   Now try `angle2pwm(1)` = ???
 
 1. Using the function above, write another function that takes in 5 angles and returns the
-ASCII command string. For radians, you should get `command(1,2,3,2,1)` = `#0 P1881 #1 P1663 #2 P2045 #3 P2263 #4 P1281 T2500`.
+ASCII command string. For radians, you should get `command(1,2,3,2,1)` = `#0 P1281 #1 P1663 #2 P2045 #3 P1663 #4 P1281 T2500\r` where `\r` is a return in [ASCII](http://www.asciitable.com/).
 
 	```python
 	def command(a, b, c, d, e):
