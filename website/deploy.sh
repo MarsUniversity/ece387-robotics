@@ -11,15 +11,17 @@ if [[ "$#" -eq 0 ]]; then
 	echo "You must give an OS"
 	echo "./deploy.sh windows   OR   ./deploy.sh macos"
 	exit 1
-elif [[ "$1" == "windows" || "$1" == "macos" ]]; then
-	OS = "$1"
-else
-	echo "Unrecognized OS:" "$1"
+fi
+
+OS=$1
+if [[ "${OS}" != "windows" && "${OS}" != "macos" ]]; then
+	echo "Unrecognized OS: ${OS}"
 	exit 1
 fi
 
-# OS="windows"
-# OS="macos"
+echo "=================================="
+echo "Building for ${OS}"
+echo "==================================\n"
 
 # repo and branch to save website too
 REPO="github.com/MarsUniversity/ece387"
@@ -36,12 +38,12 @@ if [[ ${TRAVIS} ]]; then
 	git config user.name ${USER}
 	REMOTE="https://${GITHUB_TOKEN}@${REPO}"
 # setup for local manual push
-elif [[ ${OS} == "windows" ]]; then
+elif [[ "${OS}" == "windows" ]]; then
 	TMP="/c/Users/Kevin.Walchko/tmp/tmpdir"
 	# REMOTE="git@github.com:MarsUniversity/ece387.git"
 	REMOTE="https://github.com/MarsUniversity/ece387.git"
 	rm -fr ${TMP}
-elif [[ ${OS} == "macos" ]]; then
+elif [[ "${OS}" == "macos" ]]; then
 	TMP="/var/tmp/tmpdir"
 	REMOTE="git@github.com:MarsUniversity/ece387.git"
 fi

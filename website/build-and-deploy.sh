@@ -1,20 +1,19 @@
 #!/bin/bash
 
 if [[ "$#" -eq 0 ]]; then
-	echo "You must give an OS: windows, macos"
-	echo "Example: ./build-and-deploy.sh macos"
+	echo "You must give an OS"
+	echo "./deploy.sh windows   OR   ./deploy.sh macos"
 	exit 1
-elif [[ "$1" == "windows" ]]; then
-	echo "Building for Windozes"
-elif [[ "$1" == "macos" ]]; then
-	echo "Building for macOS"
-else
-	echo "Unrecognized OS" "$1"
+fi
+
+OS=$1
+if [[ "${OS}" != "windows" && "${OS}" != "macos" ]]; then
+	echo "Unrecognized OS: ${OS}"
 	exit 1
 fi
 
 ./build.py
-./deploy.sh "$1"
+./deploy.sh "${OS}"
 
 
 # if [[ ${TRAVIS} ]]; then
