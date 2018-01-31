@@ -15,6 +15,8 @@ is an individual exercise.
 
 # Inverse Kinematics
 
+![](arm.jpg)
+
 Create a `Jupyter notebook` and with this at the top.
 
 ```python
