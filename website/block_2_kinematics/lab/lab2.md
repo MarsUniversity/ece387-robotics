@@ -232,7 +232,7 @@ Here is some code to get you started:
 		move_servo(1, 90)  # again, either degrees or radians ... up to you
 ```
 
-- When you have this working, show your instructor
+- When you have this working, show your instructor you can move a servo
 - Also, identify which frames are different than DH and how you are going to handle that.
 
 ## [40 pts] Task 2: Forward Kinematics
@@ -243,6 +243,9 @@ such that [theta0, theta1, theta2, theta3, theta4]. Remember, that the last serv
 drives the gripper.
 
 ```python
+CLAW_OPEN = 0
+CLAW_CLOSED = 180
+
 angles_lab = [
 	[0, 90, 90, 0, CLAW_OPEN],
 	[0, 90, 0, 0, CLAW_CLOSED],
@@ -301,6 +304,9 @@ instructor the demo and the printed/measured positions ... do the two agree?
 ```
 
 - When you have this working, show your instructor
+- For at least one forward kinematic set of angles given, measure the x, y, and z position of the
+gripper and show the calculated x, y, and z position your forward kinematics calculated. They 
+should be the same.
 
 ## [20 pts] Task 3: Inverse Kinematics
 
