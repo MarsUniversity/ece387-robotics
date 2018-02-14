@@ -26,8 +26,7 @@ from sympy import symbols, sin, cos, pi, simplify
 import numpy as np
 ```
 
-1. Write a function that takes in the DH parameters ($\theta$, $\alpha$, d, a) and returns
-   the homogenious matrix for it.
+1. Write a function that takes in the DH parameters ($\theta$, $\alpha$, d, a) and returns the homogeneous matrix for it.
    ```python
 	def homogeneousMatrix(theta, alpha, d, a):
 	   """
@@ -37,11 +36,13 @@ import numpy as np
 	   return matrix
 	```
     Using this function and the values below, print out the translation for this transform using:
-        1. $\alpha$ is 20 degrees
-        1. $\theta$ is 45 degrees
-        1. d is 6 inches
-        1. a is 5 inches
-    *Hint:* You should get (x,y,z): [5 -6*sin(pi/9) 6*cos(pi/9)]
+    1. $\alpha$ is 20 degrees
+    1. $\theta$ is 45 degrees
+    1. d is 6 inches
+    1. a is 5 inches
+
+    *Hint:* You should get $(x,y,z)$: $[5 -6*sin(pi/9) 6*cos(pi/9)]$
+
 1. Given an array of DH parameters for a robot arm, write a function which takes this and
    returns a homogeneous matrix for the robot arm. Where the array would look like
    ```python

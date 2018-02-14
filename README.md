@@ -1,6 +1,4 @@
 
-[![Build Status](https://travis-ci.org/MarsUniversity/ece387.svg?branch=master)](https://travis-ci.org/MarsUniversity/ece387)
-
-# ece387-robotics
+# ECE387 Introduction to Robotic Systems (Spring 2018)
 
 Undergraduate robotics course

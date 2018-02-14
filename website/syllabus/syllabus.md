@@ -16,7 +16,7 @@ header-includes:
 | 4   | [Python Numpy, Sympy, Matplotlib][4] [[download](lsn4.zip)]| Matlof Ch 3            | [HW 2](hw123.pdf) |
 | 5   | [**Python Quiz**][5]  [[download](lsn5.zip)]          |                             | [HW 3](hw123.pdf) |
 | 6   | [Lab 1: linux and python](lab1.pdf)                   |                             | Lab1 EOC |
-| 7   | [Kinematics: Intro][7]  [[download](lsn5.zip)]        | Craig Ch 3                  | |
+| 7   | [Kinematics: Intro][7]  [[download](lsn7.zip)]        | Craig Ch 3                  | |
 | 8   | 2D Forward-Inv Kinematics                             |                             | **Quiz 1** |
 | 9   | 3D Inverse-Inv Kinematics                             |                             | [HW4](hw4.pdf)|
 | 10  | [Robot Arm Control][10]  [[download](lsn10.zip)]      | RC Servos                   | |
