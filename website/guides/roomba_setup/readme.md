@@ -58,7 +58,7 @@ Created accounts for t5 and t6, repeat this process for all accounts:
 1. Give samba access: `sudo smbpasswd -a t5`
 1. Fix access to give `pi` group access to home folder: `sudo chown -R t5:pi /home/t5`
 1. Fix access so group can modify but others cannot access: `sudo chmod -R g+rwX o-rwX /home/t5`
-1. Give access to `reboot` and `shutdown`, in `/etc/sudoers` add: `t5   ALL=(ALL:ALL) NOPASSWD: /sbin/reboot, /sbin/shutdown`
+1. [*So far I have not done this*]Give access to `reboot` and `shutdown`, in `/etc/sudoers` add: `t5   ALL=(ALL:ALL) NOPASSWD: /sbin/reboot, /sbin/shutdown`
 
 
 # Bypass known_hosts
