@@ -68,25 +68,24 @@ if __name__ == "__main__":
 
 		time.sleep(1/20)  # grab data at 20 Hz
 
-	bag.write('imu.json')
+	bag.write('imu.json')  # you can call this file anything you want
 	print('Done ...')
 ```
 
 - You need to determine the biases for the IMU. You will use the RISC (Roomba
 IMU Sensor Calibrator) and spin it gently (~1/4 - 1/2 revolution per second)
-around while gathering IMU data.
+around while gathering IMU data. Do a good 2-3 full revolutions in both the
+clockwise and counter clockwise directions, so you have plenty of data.
 
 Also, most modern cell phones have a digital compass in them. Actually they may
 have the same IMU we are using in them, since this is a cell phone IMU. Use your
-compass to calculate the start/stop orientation of your roomba. Remember, the
+compass to calculate the start/stop orientation of your Roomba. Remember, the
 x-axis (forward) points out the front.
 
 - After you have save the data successfully, take a look at the data on the command
-line: `cat imu_1.json`.
+line: `cat imu.json` or whatever you called the file.
 
-- You will notice that the data is all text. Since text is generally not efficient, a better
-way to store lots of data would be to use a binary form of json (bson^[https://en.wikipedia.org/wiki/BSON])
-with some method of compress to reduce the data file size.
+- You will notice that the data is all text.
 
 - Next, plot the raw data like we did in class for the IMU (all 3 sensors).
 Does it look the same?
@@ -102,11 +101,19 @@ You should see plots like we produced in class.
 
 ## [10 pts] Task 3
 
-Now that you have a good compass, pick a heading and run the roomba along the
+Demonstrate to your instructor the IMU's heading verse the compass heading on your
+cellphone. They should be close, but won't be the same.
+
+Now that you have a good compass, pick a heading and run the Roomba along the
 length of the hallway. Note, there may still be some difference between your IMU
 and the cell phone's interpretation of the compass direction. Your cell phone could
 be correcting for the difference between true North and magnetic North. It could
 be around 8-10 degrees depending on a variety of factors.
+
+**Also**, the Roomba's motors generate a magnetic field that can influence the
+compass too. In a real application, you would also calibrate the compass for the
+effects of the motor's magnetic field. However, that is a lot of work and we
+should be able to get close doing it this way.
 
 # Turn In
 
