@@ -42,8 +42,6 @@ Create a `jupyter notebook` with the following, you may need to import other lib
 1. What happens if you set the heuristic to all 0's?
 1. Plot the path through the map using a heuristic of all 0's. (*hint:* just
 	redo problem 1 with a different heuristic)
-1. Now test what happens when you set the heuristic to a random number. Use
-`random.randint(0, 50)` to randomly pick your heuristic value. Plot the path
-on the map.
+1. Now test what happens when you set the heuristic to a random number. Use `np.random.randint(0, row*col, (row, col), np.uint8)` to randomly pick your heuristic value. Plot the path on the map.
 1. Re-run the previous solution 5 times, does it always return the same path
 when the heuristic is random? Why or why not?
