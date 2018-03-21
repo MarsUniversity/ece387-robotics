@@ -41,8 +41,8 @@ header-includes:
 | 29  | [Controls][29]  [[download](lsn29.zip)]               | Siegwart Ch 5               | [HW8](hw8.pdf) |
 | 30  | [Lab 4: Roomba Control](lab4.pdf)                     |                             | |
 | 31  | [Lab 4: Roomba Control](lab4.pdf)                     |                             | Lab4 EOC |
-| 32  | [Path Planning][32]  [[download](lsn32.zip)]          | Law                         | |
-| 33  | TBD                                                   |                             | |
+| 32  | Path Planning                                         | Law                         | |
+| 33  | [Path Planning][33]  [[download](lsn33.zip)]          |                             | |
 | 34  | [Lab 5: Roomba Sensors](lab5.pdf)                     |                             | [HW9](hw9.pdf)|
 | 35  | [Lab 5: Roomba Sensors](lab5.pdf)                     |                             | Lab5 EOC |
 | 36  | [Final Project](final_project.pdf)                    |                             | **Quiz 4** |
@@ -77,7 +77,9 @@ header-includes:
 [27]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_4_mobile_robotics/lsn27/lsn27.ipynb
 [28]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_4_mobile_robotics/lsn28/lsn28.ipynb
 [29]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_4_mobile_robotics/lsn29/lsn29.ipynb
-[32]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_4_mobile_robotics/lsn32/lsn32.ipynb
+[30]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_4_mobile_robotics/lsn30/lsn30.ipynb
+[33]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_4_mobile_robotics/lsn33/lsn33.ipynb
+[34]: http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_4_mobile_robotics/lsn34/lsn34.ipynb
 
 # [Spring 2018 Syllabus](syllabus.pdf)
 
