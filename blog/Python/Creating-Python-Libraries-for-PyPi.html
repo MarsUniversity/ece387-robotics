@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- <link rel='stylesheet' type='text/css' href='https://cdn.rawgit.com/MarsUniversity/ece387/master/website/pandoc.css'> -->
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+    	<link href="https://cdnjs.cloudflare.com/ajax/libs/cc-icons/1.2.1/css/cc-icons.min.css" rel="stylesheet">
+    	<link href="https://cdn.rawgit.com/walchko/font-linux/v0.7.2/assets/font-linux.css" rel="stylesheet">
+      <!-- <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous"> -->
+      <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro" rel="stylesheet">
+      <link href="https://walchko.github.io/site.css" rel="stylesheet" type="text/css" />
+      <!-- <link href="../../site.css" rel="stylesheet" type="text/css" /> -->
+    	<!-- <link href="https://walchko.github.io/pygments.css" rel="stylesheet" type="text/css" /> -->
+      <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [["$","$"],["\\(","\\)"]]
+          }
+        });
+      </script>
+
+	  <!-- code pulled from jupyter nbconvert for syntax coloring -->
+	  <style type="text/css">
+    .highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
+    </style>
+
+    </head>
+    <body>
+      <div id="outer-wrapper">
+        <div id="header-wrapper">
+  <div class="title xtralarge bold"><a href="https://walchko.github.io/index.html">Planet Express</a></div>
+  <div class="normal small"> Our crew is replaceable. Your package isn't. </div>
+
+  <div class="nav normal">
+    <a class="logo" href="https://walchko.github.io/index.html">Home</a>
+    <a class="logo" href="https://walchko.github.io/colophon.html">Colophon</a>
+    <a class="logo" href="https://walchko.github.io/about.html">About</a>
+    <a class="logo" href="https://walchko.github.io/topics.html">Topics</a>
+  </div>
+</div>
+
+
+          <div id="main">
+            
+            
+              <h1 id="python-modules">Python Modules</h1>
+<dl>
+<dt>date</dt>
+<dd><p>2017-06-21</p>
+</dd>
+<dt>summary</dt>
+<dd><p>Making a Python package for Pypi</p>
+</dd>
+</dl>
+<h2 id="module-setup">Module Setup</h2>
+<pre><code>module_name
+-- LICENSE
+-- setup.py
+-- README.rst
+-- module
+   -- __init__.py
+   -- script1.py
+   -- script2.py</code></pre>
+<h3 id="setup.py"><code>setup.py</code></h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="co">#!/usr/bin/env python</span></a>
+<a class="sourceLine" id="cb2-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="im">from</span> setuptools <span class="im">import</span> setup</a>
+<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="im">from</span> cool_name <span class="im">import</span> __version__ <span class="im">as</span> VERSION</a>
+<a class="sourceLine" id="cb2-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb2-6" data-line-number="6">ENTRY_POINTS <span class="op">=</span> {</a>
+<a class="sourceLine" id="cb2-7" data-line-number="7">    <span class="st">&#39;console_scripts&#39;</span>: [</a>
+<a class="sourceLine" id="cb2-8" data-line-number="8">        <span class="st">&#39;something = cool_name/something:main&#39;</span>,</a>
+<a class="sourceLine" id="cb2-9" data-line-number="9">    ],</a>
+<a class="sourceLine" id="cb2-10" data-line-number="10">}</a>
+<a class="sourceLine" id="cb2-11" data-line-number="11"></a>
+<a class="sourceLine" id="cb2-12" data-line-number="12"></a>
+<a class="sourceLine" id="cb2-13" data-line-number="13">README_FILE <span class="op">=</span> <span class="st">&#39;README.rst&#39;</span></a>
+<a class="sourceLine" id="cb2-14" data-line-number="14"></a>
+<a class="sourceLine" id="cb2-15" data-line-number="15"><span class="kw">def</span> get_long_description():</a>
+<a class="sourceLine" id="cb2-16" data-line-number="16">    <span class="cf">with</span> <span class="bu">open</span>(README_FILE, <span class="st">&#39;r&#39;</span>) <span class="im">as</span> fd:</a>
+<a class="sourceLine" id="cb2-17" data-line-number="17">        desc <span class="op">=</span> fd.read()</a>
+<a class="sourceLine" id="cb2-18" data-line-number="18">    <span class="cf">return</span> desc</a>
+<a class="sourceLine" id="cb2-19" data-line-number="19"></a>
+<a class="sourceLine" id="cb2-20" data-line-number="20"></a>
+<a class="sourceLine" id="cb2-21" data-line-number="21">setup(</a>
+<a class="sourceLine" id="cb2-22" data-line-number="22">    author<span class="op">=</span><span class="st">&#39;Kevin Walchko&#39;</span>,</a>
+<a class="sourceLine" id="cb2-23" data-line-number="23">    author_email<span class="op">=</span><span class="st">&#39;kevin.walchko@outlook.com&#39;</span>,</a>
+<a class="sourceLine" id="cb2-24" data-line-number="24">    name<span class="op">=</span><span class="st">&#39;cool_name&#39;</span>,</a>
+<a class="sourceLine" id="cb2-25" data-line-number="25">    version<span class="op">=</span>VERSION,</a>
+<a class="sourceLine" id="cb2-26" data-line-number="26">    description<span class="op">=</span><span class="st">&#39;A library to do cool things&#39;</span>,</a>
+<a class="sourceLine" id="cb2-27" data-line-number="27">    long_description<span class="op">=</span>get_long_description(),</a>
+<a class="sourceLine" id="cb2-28" data-line-number="28">    url<span class="op">=</span><span class="st">&#39;http://github.com/walchko/cool_name&#39;</span>,</a>
+<a class="sourceLine" id="cb2-29" data-line-number="29">    classifiers<span class="op">=</span>[</a>
+<a class="sourceLine" id="cb2-30" data-line-number="30">        <span class="st">&#39;Development Status :: 4 - Beta&#39;</span>,</a>
+<a class="sourceLine" id="cb2-31" data-line-number="31">        <span class="st">&#39;Intended Audience :: Developers&#39;</span>,</a>
+<a class="sourceLine" id="cb2-32" data-line-number="32">        <span class="st">&#39;License :: OSI Approved :: MIT License&#39;</span>,</a>
+<a class="sourceLine" id="cb2-33" data-line-number="33">        <span class="st">&#39;Operating System :: OS Independent&#39;</span>,</a>
+<a class="sourceLine" id="cb2-34" data-line-number="34">        <span class="st">&#39;Programming Language :: Python :: 2.7&#39;</span>,</a>
+<a class="sourceLine" id="cb2-35" data-line-number="35">        <span class="st">&#39;Topic :: Software Development :: Libraries&#39;</span>,</a>
+<a class="sourceLine" id="cb2-36" data-line-number="36">        <span class="st">&#39;Topic :: Software Development :: Libraries :: Python Modules&#39;</span>,</a>
+<a class="sourceLine" id="cb2-37" data-line-number="37">        <span class="st">&#39;Topic :: Software Development :: Libraries :: Application Frameworks&#39;</span></a>
+<a class="sourceLine" id="cb2-38" data-line-number="38">    ],</a>
+<a class="sourceLine" id="cb2-39" data-line-number="39">    license<span class="op">=</span><span class="st">&#39;MIT&#39;</span>,</a>
+<a class="sourceLine" id="cb2-40" data-line-number="40">    keywords<span class="op">=</span><span class="st">&#39;cool name stuff&#39;</span>,</a>
+<a class="sourceLine" id="cb2-41" data-line-number="41">    packages<span class="op">=</span>[<span class="st">&#39;cool_name&#39;</span>],</a>
+<a class="sourceLine" id="cb2-42" data-line-number="42">    install_requires<span class="op">=</span>[<span class="st">&#39;pyserial&#39;</span>],</a>
+<a class="sourceLine" id="cb2-43" data-line-number="43">    entry_points<span class="op">=</span>ENTRY_POINTS</a>
+<a class="sourceLine" id="cb2-44" data-line-number="44">)</a></code></pre></div>
+<h3 id="init__.py"><code>__init__.py</code></h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="co">#!/usr/bin/env python</span></a>
+<a class="sourceLine" id="cb3-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb3-3" data-line-number="3">__version__ <span class="op">=</span> <span class="st">&#39;1.2.3&#39;</span></a></code></pre></div>
+<h2 id="pip-commands"><code>pip</code> Commands</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Commands</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>pip install module</code></td>
+<td>install from PyPi</td>
+</tr>
+<tr class="even">
+<td><code>pip install -e .</code></td>
+<td>install local for development</td>
+</tr>
+<tr class="odd">
+<td><code>pip install -U module</code></td>
+<td>upgrade module from PyPi</td>
+</tr>
+<tr class="even">
+<td><code>pip uninstall module</code></td>
+<td>uninstall module</td>
+</tr>
+</tbody>
+</table>
+<h2 id="pypi">PyPi</h2>
+<p>Some good resources are <a href="https://packaging.python.org/en/latest/distributing.html#uploading-your-project-to-pypi">Python Packaging Guide</a> and <a href="https://tom-christie.github.io/articles/pypi/">Tom Christie</a> for more info.</p>
+<ol type="1">
+<li>Create an account at pypi.org</li>
+<li>Create a package repository at pypi.org using the <a href="https://pypi.python.org/pypi?%3Aaction=submit_form">web form</a> and uploading the PKG-INFO file</li>
+<li><code>python setup.py test</code></li>
+<li><code>python setup.py sdist</code></li>
+<li><code>twine upload dist/*</code></li>
+</ol>
+<p>Twine can be installed using <code>pip install twine</code> which will secure your upload and protect your password. Also the username and password are stored in a <code>.pypirc</code> in your home directory.</p>
+<p>The structure of a .pypirc file is pretty simple:</p>
+<pre><code>[distutils]
+index-servers = pypi
+
+[pypi]
+repository: https://www.python.org/pypi
+username: &lt;username&gt;
+password: &lt;password&gt;</code></pre>
+<h2 id="wheel-and-eggs">Wheel and Eggs</h2>
+<p>They are basically just zip files:</p>
+<pre><code>$ unzip -l /path/to/file.egg
+$ unzip -l /path/to/file.whl</code></pre>
+
+            
+          </div>
+
+        </div>
+    </body>
+
+    <div id="footer-wrapper">
+
+  <div class="logo"></div>
+
+  <div class="logo">
+    <a class="logo" href="http://github.com/walchko"><i class="fl-github fl-36"></i></a>
+    <a class="logo" href="http://stackoverflow.com/users/5374768/kevin"><i class="fl-stackoverflow fl-36"></i></a>
+    <a class="logo" href="http://raspberrypi.stackexchange.com/users/1677/kevin"><i class="fl-stackexchange fl-36"></i></a>
+    <a class="logo" href="https://www.npmjs.com/~kevin.walchko"><i class="fl-npm fl-36"></i></a>
+    <a class="logo" href="https://pypi.python.org/pypi"><i class="fl-python fl-36"></i></a>
+    <a class="logo" href="https://bitbucket.org/walchko/"><i class="fl-bitbucket fl-36"></i></a>
+  </div>
+
+  <div class="logo">
+    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+      <i class="cc cc-by-sa cc-lg"></i>
+    </a>
+  </div>
+
+  <div class="pure-u-1">
+    <a class="logo" href="https://github.com/walchko/pelican">&copy;&nbsp;2016&nbsp;Kevin J. Walchko</a>
+  </div>
+
+</div>
+
+
+</html>

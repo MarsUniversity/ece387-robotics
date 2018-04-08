@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- <link rel='stylesheet' type='text/css' href='https://cdn.rawgit.com/MarsUniversity/ece387/master/website/pandoc.css'> -->
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+    	<link href="https://cdnjs.cloudflare.com/ajax/libs/cc-icons/1.2.1/css/cc-icons.min.css" rel="stylesheet">
+    	<link href="https://cdn.rawgit.com/walchko/font-linux/v0.7.2/assets/font-linux.css" rel="stylesheet">
+      <!-- <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous"> -->
+      <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro" rel="stylesheet">
+      <link href="https://walchko.github.io/site.css" rel="stylesheet" type="text/css" />
+      <!-- <link href="../../site.css" rel="stylesheet" type="text/css" /> -->
+    	<!-- <link href="https://walchko.github.io/pygments.css" rel="stylesheet" type="text/css" /> -->
+      <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [["$","$"],["\\(","\\)"]]
+          }
+        });
+      </script>
+
+	  <!-- code pulled from jupyter nbconvert for syntax coloring -->
+	  <style type="text/css">
+    .highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
+    </style>
+
+    </head>
+    <body>
+      <div id="outer-wrapper">
+        <div id="header-wrapper">
+  <div class="title xtralarge bold"><a href="https://walchko.github.io/index.html">Planet Express</a></div>
+  <div class="normal small"> Our crew is replaceable. Your package isn't. </div>
+
+  <div class="nav normal">
+    <a class="logo" href="https://walchko.github.io/index.html">Home</a>
+    <a class="logo" href="https://walchko.github.io/colophon.html">Colophon</a>
+    <a class="logo" href="https://walchko.github.io/about.html">About</a>
+    <a class="logo" href="https://walchko.github.io/topics.html">Topics</a>
+  </div>
+</div>
+
+
+          <div id="main">
+            
+            
+              <h1 id="samba">Samba</h1>
+<dl>
+<dt>date</dt>
+<dd><p>2016-06-26</p>
+</dd>
+<dt>summary</dt>
+<dd><p>Setting up Samba so linux plays nice with macOS</p>
+</dd>
+</dl>
+<p>Apple is finally beginning to move away from AFP and really embrace SMB with macOS Sierra. To setup <code>samba</code> on linux:</p>
+<pre><code>sudo apt-get update
+sudo apt-get install samba samba-common-bin
+sudo cp /etc/samba/smb.conf /etc/samba/smb.bak
+sudo pico /etc/samba/smb.conf</code></pre>
+<h2 id="home-files-pi">Home Files (pi)</h2>
+<p>Now change the following lines to:</p>
+<pre><code>wins support = yes
+...
+[homes]
+    browseable = yes
+    read only = no</code></pre>
+<p>Now execute:</p>
+<pre><code>sudo smbpasswd -a pi
+sudo service smbd restart
+sudo service nmbd restart</code></pre>
+<p>You should now have access to your home files when you login as <code>pi</code>. A condensed version is below:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="co">#======================= Global Settings =======================</span></a>
+<a class="sourceLine" id="cb4-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb4-3" data-line-number="3">[<span class="ex">global</span>]</a>
+<a class="sourceLine" id="cb4-4" data-line-number="4">   <span class="ex">workgroup</span> = WORKGROUP</a>
+<a class="sourceLine" id="cb4-5" data-line-number="5">   <span class="ex">wins</span> support = yes</a>
+<a class="sourceLine" id="cb4-6" data-line-number="6">   <span class="ex">dns</span> proxy = no</a>
+<a class="sourceLine" id="cb4-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb4-8" data-line-number="8"><span class="co">#### Debugging/Accounting ####</span></a>
+<a class="sourceLine" id="cb4-9" data-line-number="9">   <span class="ex">log</span> file = /var/log/samba/log.%m</a>
+<a class="sourceLine" id="cb4-10" data-line-number="10">   <span class="ex">max</span> log size = 1000</a>
+<a class="sourceLine" id="cb4-11" data-line-number="11">   <span class="ex">syslog</span> = 0</a>
+<a class="sourceLine" id="cb4-12" data-line-number="12">   <span class="ex">panic</span> action = /usr/share/samba/panic-action %d</a>
+<a class="sourceLine" id="cb4-13" data-line-number="13"></a>
+<a class="sourceLine" id="cb4-14" data-line-number="14"></a>
+<a class="sourceLine" id="cb4-15" data-line-number="15"><span class="co">####### Authentication #######</span></a>
+<a class="sourceLine" id="cb4-16" data-line-number="16"></a>
+<a class="sourceLine" id="cb4-17" data-line-number="17">   <span class="ex">server</span> role = standalone server</a>
+<a class="sourceLine" id="cb4-18" data-line-number="18">   <span class="ex">passdb</span> backend = tdbsam</a>
+<a class="sourceLine" id="cb4-19" data-line-number="19">   <span class="ex">obey</span> pam restrictions = yes</a>
+<a class="sourceLine" id="cb4-20" data-line-number="20">   <span class="ex">unix</span> password sync = yes</a>
+<a class="sourceLine" id="cb4-21" data-line-number="21">   <span class="fu">passwd</span> program = /usr/bin/passwd %u</a>
+<a class="sourceLine" id="cb4-22" data-line-number="22">   <span class="fu">passwd</span> chat = *Enter\snew\s*\spassword:* %n\n *Retype\snew\s*\spassword:* %n\n *password\supdated\ssuccessfully* .</a>
+<a class="sourceLine" id="cb4-23" data-line-number="23">   <span class="ex">pam</span> password change = yes</a>
+<a class="sourceLine" id="cb4-24" data-line-number="24">   <span class="ex">map</span> to guest = bad user</a>
+<a class="sourceLine" id="cb4-25" data-line-number="25"></a>
+<a class="sourceLine" id="cb4-26" data-line-number="26"><span class="co">############ Misc ############</span></a>
+<a class="sourceLine" id="cb4-27" data-line-number="27"></a>
+<a class="sourceLine" id="cb4-28" data-line-number="28"><span class="co"># Allow users who&#39;ve been granted usershare privileges to create</span></a>
+<a class="sourceLine" id="cb4-29" data-line-number="29"><span class="co"># public shares, not just authenticated ones</span></a>
+<a class="sourceLine" id="cb4-30" data-line-number="30">   <span class="ex">usershare</span> allow guests = yes</a>
+<a class="sourceLine" id="cb4-31" data-line-number="31"></a>
+<a class="sourceLine" id="cb4-32" data-line-number="32"><span class="co">#======================= Share Definitions =======================</span></a>
+<a class="sourceLine" id="cb4-33" data-line-number="33"></a>
+<a class="sourceLine" id="cb4-34" data-line-number="34">[<span class="ex">pi</span>]</a>
+<a class="sourceLine" id="cb4-35" data-line-number="35">   <span class="ex">comment</span> = Home Directories</a>
+<a class="sourceLine" id="cb4-36" data-line-number="36">   <span class="ex">browseable</span> = yes</a>
+<a class="sourceLine" id="cb4-37" data-line-number="37">   <span class="bu">read</span> <span class="va">only</span> <span class="va">=</span> <span class="va">no</span></a>
+<a class="sourceLine" id="cb4-38" data-line-number="38">   <span class="ex">create</span> mask = 0700</a>
+<a class="sourceLine" id="cb4-39" data-line-number="39">   <span class="ex">directory</span> mask = 0700</a>
+<a class="sourceLine" id="cb4-40" data-line-number="40">   <span class="ex">valid</span> users = %S</a>
+<a class="sourceLine" id="cb4-41" data-line-number="41">   <span class="va">path=</span>/home/%S</a>
+<a class="sourceLine" id="cb4-42" data-line-number="42"></a>
+<a class="sourceLine" id="cb4-43" data-line-number="43">[<span class="ex">Mnt</span>]</a>
+<a class="sourceLine" id="cb4-44" data-line-number="44">   <span class="ex">comment</span> = My shared stuff</a>
+<a class="sourceLine" id="cb4-45" data-line-number="45">   <span class="ex">path</span> = /mnt</a>
+<a class="sourceLine" id="cb4-46" data-line-number="46">   <span class="ex">create</span> mask = 0700</a>
+<a class="sourceLine" id="cb4-47" data-line-number="47">   <span class="ex">directory</span> mask = 0700</a>
+<a class="sourceLine" id="cb4-48" data-line-number="48">   <span class="bu">read</span> <span class="va">only</span> <span class="va">=</span> <span class="va">no</span></a>
+<a class="sourceLine" id="cb4-49" data-line-number="49">   <span class="ex">browseable</span> = yes</a>
+<a class="sourceLine" id="cb4-50" data-line-number="50">   <span class="ex">public</span> = yes</a>
+<a class="sourceLine" id="cb4-51" data-line-number="51">   <span class="ex">force</span> user = pi</a>
+<a class="sourceLine" id="cb4-52" data-line-number="52">   <span class="co">#force user = root</span></a>
+<a class="sourceLine" id="cb4-53" data-line-number="53">   <span class="ex">only</span> guest = no</a></code></pre></div>
+<h2 id="export-a-shared-folder">Export a Shared Folder</h2>
+<p>Create a folder or choose an existing one and make sure <code>pi</code> has control of it with <code>sudo chown -R pi:pi /path/to/share</code>. In the <code>smb.config</code> file from above, add the following at the bottom:</p>
+<pre><code>[Stuff] # name that will show up when browsing  (change it to something meaningful)
+   comment = My shared stuff
+   path = /mnt/usbstorage/Stuff
+   create mask = 0775
+   directory mask = 0775
+   read only = no
+   browseable = yes
+   public = yes
+   force user = pi
+   #force user = root
+   only guest = no</code></pre>
+<p>Where <code>7=rwx 5=r-x 5=r-x</code> is for owner, group, and other. It is probably better to go with 0700 rather than 0755.</p>
+<pre><code>Permission    Action      chmod option
+======================================
+read          (view)      r or 4
+write         (edit)      w or 2
+execute       (execute)   x or 1
+
+User    ls output
+==================
+owner   -rwx------
+group   ----rwx---
+other   -------rwx
+
+Symbolic Notation    Octal Notation    English
+============================================================
+----------            0000               no permissions
+---x--x--x            0111               execute
+--w--w--w-            0222               write
+--wx-wx-wx            0333               write &amp; execute
+-r--r--r--            0444               read
+-r-xr-xr-x            0555               read &amp; execute
+-rw-rw-rw-            0666               read &amp; write
+-rwxrwxrwx            0777               read. write &amp; execute</code></pre>
+<p><a href="http://askubuntu.com/questions/638796/what-is-meaning-of-755-permissions-in-samba-share">file permission ref</a></p>
+<h2 id="macos">macOS</h2>
+<p>Also make sure SMB sharing is turned on (should be):</p>
+<p><img src="pics/sharing_files.png" alt="image" class="align-center" width="400" /></p>
+<pre><code>System Preferences -&gt; Sharing -&gt; File Sharing On</code></pre>
+<p>You should see something like (look for the smb entry):</p>
+<pre><code>Other users can access shared folders on this computer, and administrators
+all volumes, at “afp://xx.xx.xx.xx” or “smb://xx.xx.xx.xx”.</code></pre>
+<p>If not, go into <code>options</code> and turn on SMB. Also I had to check the box next to my username.</p>
+<p><img src="pics/sharing_options.png" alt="image" class="align-center" width="400" /></p>
+<h2 id="infuse"><a href="https://firecore.com/infuse">Infuse</a></h2>
+<p>I can also use this app to play movies on SMB shares. You can get it in the app store.</p>
+
+            
+          </div>
+
+        </div>
+    </body>
+
+    <div id="footer-wrapper">
+
+  <div class="logo"></div>
+
+  <div class="logo">
+    <a class="logo" href="http://github.com/walchko"><i class="fl-github fl-36"></i></a>
+    <a class="logo" href="http://stackoverflow.com/users/5374768/kevin"><i class="fl-stackoverflow fl-36"></i></a>
+    <a class="logo" href="http://raspberrypi.stackexchange.com/users/1677/kevin"><i class="fl-stackexchange fl-36"></i></a>
+    <a class="logo" href="https://www.npmjs.com/~kevin.walchko"><i class="fl-npm fl-36"></i></a>
+    <a class="logo" href="https://pypi.python.org/pypi"><i class="fl-python fl-36"></i></a>
+    <a class="logo" href="https://bitbucket.org/walchko/"><i class="fl-bitbucket fl-36"></i></a>
+  </div>
+
+  <div class="logo">
+    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+      <i class="cc cc-by-sa cc-lg"></i>
+    </a>
+  </div>
+
+  <div class="pure-u-1">
+    <a class="logo" href="https://github.com/walchko/pelican">&copy;&nbsp;2016&nbsp;Kevin J. Walchko</a>
+  </div>
+
+</div>
+
+
+</html>

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- <link rel='stylesheet' type='text/css' href='https://cdn.rawgit.com/MarsUniversity/ece387/master/website/pandoc.css'> -->
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+    	<link href="https://cdnjs.cloudflare.com/ajax/libs/cc-icons/1.2.1/css/cc-icons.min.css" rel="stylesheet">
+    	<link href="https://cdn.rawgit.com/walchko/font-linux/v0.7.2/assets/font-linux.css" rel="stylesheet">
+      <!-- <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous"> -->
+      <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro" rel="stylesheet">
+      <link href="https://walchko.github.io/site.css" rel="stylesheet" type="text/css" />
+      <!-- <link href="../../site.css" rel="stylesheet" type="text/css" /> -->
+    	<!-- <link href="https://walchko.github.io/pygments.css" rel="stylesheet" type="text/css" /> -->
+      <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [["$","$"],["\\(","\\)"]]
+          }
+        });
+      </script>
+
+	  <!-- code pulled from jupyter nbconvert for syntax coloring -->
+	  <style type="text/css">
+    .highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
+    </style>
+
+    </head>
+    <body>
+      <div id="outer-wrapper">
+        <div id="header-wrapper">
+  <div class="title xtralarge bold"><a href="https://walchko.github.io/index.html">Planet Express</a></div>
+  <div class="normal small"> Our crew is replaceable. Your package isn't. </div>
+
+  <div class="nav normal">
+    <a class="logo" href="https://walchko.github.io/index.html">Home</a>
+    <a class="logo" href="https://walchko.github.io/colophon.html">Colophon</a>
+    <a class="logo" href="https://walchko.github.io/about.html">About</a>
+    <a class="logo" href="https://walchko.github.io/topics.html">Topics</a>
+  </div>
+</div>
+
+
+          <div id="main">
+            
+            
+              <h1 id="ps4-controller">PS4 Controller</h1>
+<dl>
+<dt>date</dt>
+<dd><p>2016-05-05</p>
+</dd>
+<dt>modified</dt>
+<dd><p>2016-07-28</p>
+</dd>
+<dt>summary</dt>
+<dd><p>How to hook up your PS4 controller to Raspbian.</p>
+</dd>
+</dl>
+<p><img src="pics/ps4.jpg" alt="image" class="align-center" style="width:75.0%" /></p>
+<h2 id="setup-bluetooth">Setup Bluetooth</h2>
+<p>Reference <a href="http://pes.mundayweb.com/html/Using%20PS4%20Control%20Pads%20via%20Bluetooth.html">here</a></p>
+<p>Requirements</p>
+<ol type="1">
+<li>A compatible Bluetooth 2.1+ USB adapter</li>
+<li>At least one official Sony PlayStation 4 control pad</li>
+</ol>
+<h2 id="setup">Setup</h2>
+<p>Log into your Raspberry Pi either via SSH or using a keyboard at the console.</p>
+<pre><code>sudo systemctl enable bluetooth.service
+sudo systemctl start bluetooth.service</code></pre>
+<p>Pairing using <code>bluetoothctl</code>:</p>
+<pre><code>sudo bluetoothctl</code></pre>
+<p>Some of the commands available:</p>
+<pre><code>[bluetooth]# help
+Available commands:
+  list                       List available controllers
+  show [ctrl]                Controller information
+  select &lt;ctrl&gt;              Select default controller
+  devices                    List available devices
+  paired-devices             List paired devices
+  power &lt;on/off&gt;             Set controller power
+  pairable &lt;on/off&gt;          Set controller pairable mode
+  discoverable &lt;on/off&gt;      Set controller discoverable mode
+  agent &lt;on/off/capability&gt;  Enable/disable agent with given capability
+  default-agent              Set agent as the default one
+  scan &lt;on/off&gt;              Scan for devices
+  info &lt;dev&gt;                 Device information
+  pair &lt;dev&gt;                 Pair with device
+  trust &lt;dev&gt;                Trust device
+  untrust &lt;dev&gt;              Untrust device
+  block &lt;dev&gt;                Block device
+  unblock &lt;dev&gt;              Unblock device
+  remove &lt;dev&gt;               Remove device
+  connect &lt;dev&gt;              Connect device
+  disconnect &lt;dev&gt;           Disconnect device
+  version                    Display version
+  quit                       Quit program</code></pre>
+<p>At the <code>bluetoothctl</code> prompt type the following commands:</p>
+<pre><code>agent on
+default-agent
+power on
+discoverable on
+pairable on
+scan on</code></pre>
+<p><strong>Note</strong> I had to hit <code>ctrl-c</code> to get it to work after running <code>bluetoothctl</code> for some reason.</p>
+<p>Example output can be found below:</p>
+<pre><code>[pi@pes ~]$ bluetoothctl
+[NEW] Controller 00:15:XX:XX:XX:XX pes [default]
+[bluetooth]# agent on
+Agent registered
+[bluetooth]# default-agent
+Default agent request successful
+[bluetooth]# power on
+Changing power on succeeded
+[bluetooth]# discoverable on
+Changing discoverable on succeeded
+[CHG] Controller 00:15:XX:XX:XX:XX Discoverable: yes
+[bluetooth]# pairable on
+Changing pairable on succeeded
+[bluetooth]# scan on
+Discovery started</code></pre>
+<p>Now put your Sony PlayStation 4 control pad into pairable mode by holding down the Share and PlayStation buttons until the light bar on the control pad flashes yellow. After a few seconds you should see at the <code>bluetoothctl</code> prompt that your control pad has been discovered, e.g.:</p>
+<pre><code>[bluetooth]# scan on
+Discovery started
+[CHG] Controller 00:15:XX:XX:XX:XX Discovering: yes
+[NEW] Device 00:3C:XX:XX:XX:XX 00-3C-XX-XX-XX-XX
+[NEW] Device 1C:66:XX:XX:XX:XX 1C-66-XX-XX-XX-XX
+[CHG] Device 1C:66:XX:XX:XX:XX LegacyPairing: no
+[CHG] Device 1C:66:XX:XX:XX:XX Name: Wireless Controller
+[CHG] Device 1C:66:XX:XX:XX:XX Alias: Wireless Controller
+[CHG] Device 1C:66:XX:XX:XX:XX LegacyPairing: yes
+[CHG] Device 1C:66:XX:XX:XX:XX Class: 0x002508
+[CHG] Device 1C:66:XX:XX:XX:XX Icon: input-gaming</code></pre>
+<p>Take a note of the Bluetooth MAC address shown for “Wireless Controller”, e.g. 1C:66:XX:XX:XX:XX in my case.</p>
+<p>Now type:</p>
+<pre><code>pair MAC</code></pre>
+<p>where MAC is the MAC address of your control pad and when prompted enter 0000 as the PIN, for example:</p>
+<pre><code>[bluetooth]# pair 1C:66:XX:XX:XX:XX
+Attempting to pair with 1C:66:XX:XX:XX:XX
+[CHG] Device 1C:66:XX:XX:XX:XX Connected: yes
+Request PIN code
+[agent] Enter PIN code: 0000
+[CHG] Device 1C:66:XX:XX:XX:XX Modalias: usb:v054Cp05C4d0100
+[CHG] Device 1C:66:XX:XX:XX:XX UUIDs: 00001124-0000-1000-8000-00805f9b34fb
+[CHG] Device 1C:66:XX:XX:XX:XX UUIDs: 00001200-0000-1000-8000-00805f9b34fb
+[CHG] Device 1C:66:XX:XX:XX:XX Paired: yes
+Pairing successful
+[CHG] Device 1C:66:XX:XX:XX:XX Connected: no</code></pre>
+<p>Next we must trust the control pad by running:</p>
+<pre><code>trust MAC</code></pre>
+<p>where MAC is the MAC address of your control pad, for example:</p>
+<pre><code>[bluetooth]# trust 1C:66:XX:XX:XX:XX
+[CHG] Device 1C:66:XX:XX:XX:XX Trusted: yes
+Changing 1C:66:XX:XX:XX:XX trust succeeded</code></pre>
+<p>Finally, run the following command to connect to the control pad:</p>
+<pre><code>[bluetooth]# connect 1C:66:XX:XX:XX:XX
+Attempting to connect to 1C:66:XX:XX:XX:XX
+[CHG] Device 1C:66:XX:XX:XX:XX Connected: yes
+Connection successful</code></pre>
+<p>Then type <code>quit</code> to exit back to the command prompt. You should now see that the light bar on your control pad is blue.</p>
+<p>Other useful info:</p>
+<pre><code>[bluetooth]# info 1C:66:xx:xx:xx:xx
+Device 1C:66:xx:xx:xx:xx
+    Name: Wireless Controller
+    Alias: Wireless Controller
+    Class: 0x002508
+    Icon: input-gaming
+    Paired: yes
+    Trusted: yes
+    Blocked: no
+    Connected: yes
+    LegacyPairing: no
+    UUID: Human Interface Device... (00001124-0000-1000-8000-00805f9b34fb)
+    UUID: PnP Information           (00001200-0000-1000-8000-00805f9b34fb)
+    Modalias: usb:v054Cp05C4d0100</code></pre>
+<pre><code>[bluetooth]# paired-devices
+Device 1C:66:xx:xx:xx:xx Wireless Controller</code></pre>
+<pre><code>[bluetooth]# connect 1C:66:xx:xx:xx:xx
+Attempting to connect to 1C:66:xx:xx:xx:xx
+Connection successful</code></pre>
+<pre><code>[bluetooth]# disconnect 1C:66:6D:76:9B:B4
+Attempting to disconnect from 1C:66:xx:xx:xx:xx
+Successful disconnected
+[CHG] Device 1C:66:xx:xx:xx:xx Connected: no</code></pre>
+<h2 id="reconnect-after-reboot">Reconnect after reboot</h2>
+<ol type="1">
+<li>put PS4 controller into pairable mode (press PS button and Share), the front light bar will flash.</li>
+<li><dl>
+<dt>run <code>bluetoothctl</code></dt>
+<dd><ol type="1">
+<li>connect 1C:66:6D:76:9B:B4</li>
+</ol>
+</dd>
+</dl></li>
+</ol>
+<h2 id="debug">Debug</h2>
+<pre><code>cat /dev/input/js0</code></pre>
+<p>You should see some strange characters appear as you use the joystick.</p>
+<pre><code>sudo apt-get install joystick
+jstest /dev/input/js0</code></pre>
+<h2 id="finally-got-working">Finally Got Working</h2>
+<p>There are issues with <a href="http://raspberrypi.stackexchange.com/questions/45570/how-do-i-make-serial-work-on-the-raspberry-pi3">serial port on rpi 3</a></p>
+<pre><code>pi@zoidberg ~ $ more /boot/cmdline.txt
+dwc_otg.lpm_enable=0 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4
+elevator=deadline fsck.repair=yes rootwait</code></pre>
+<pre><code>sudo apt-get install joystick</code></pre>
+<p>The info below will allow you to connect a PS4 and get you <code>/dev/input/js0</code> however, only the touch pad worked when I did <code>jstest /dev/input/js0</code> (or you could do <code>cat /dev/input/js0</code> but only strange characters appear, but it works too).</p>
+<p>So do <code>pip install ds4drv</code> (you need version 0.5.1 to work on jessie/rpi3) and it will go through and pair your device. Also follow the instructions on <a href="https://github.com/chrippa/ds4drv">ds4drv</a> to setup udev right. Then run:</p>
+<pre><code>ds4drv</code></pre>
+<p>This will pair and setup your joystick to work (I use SDL2 as my joystick interface) and it work great.</p>
+<p>Also note, the light bar in the front should be strong, bright blue when paired. Using the instructions below, and only getting it to partially work, my light bar was blue, but dimm.</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="http://www.psdevwiki.com/ps4/DualShock_4">PS4 wiki</a></li>
+<li><a href="http://eleccelerator.com/wiki/index.php?title=DualShock_4" class="uri">http://eleccelerator.com/wiki/index.php?title=DualShock_4</a></li>
+<li><a href="https://github.com/chrippa/ds4drv">ds4drv</a></li>
+</ul>
+
+            
+          </div>
+
+        </div>
+    </body>
+
+    <div id="footer-wrapper">
+
+  <div class="logo"></div>
+
+  <div class="logo">
+    <a class="logo" href="http://github.com/walchko"><i class="fl-github fl-36"></i></a>
+    <a class="logo" href="http://stackoverflow.com/users/5374768/kevin"><i class="fl-stackoverflow fl-36"></i></a>
+    <a class="logo" href="http://raspberrypi.stackexchange.com/users/1677/kevin"><i class="fl-stackexchange fl-36"></i></a>
+    <a class="logo" href="https://www.npmjs.com/~kevin.walchko"><i class="fl-npm fl-36"></i></a>
+    <a class="logo" href="https://pypi.python.org/pypi"><i class="fl-python fl-36"></i></a>
+    <a class="logo" href="https://bitbucket.org/walchko/"><i class="fl-bitbucket fl-36"></i></a>
+  </div>
+
+  <div class="logo">
+    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+      <i class="cc cc-by-sa cc-lg"></i>
+    </a>
+  </div>
+
+  <div class="pure-u-1">
+    <a class="logo" href="https://github.com/walchko/pelican">&copy;&nbsp;2016&nbsp;Kevin J. Walchko</a>
+  </div>
+
+</div>
+
+
+</html>

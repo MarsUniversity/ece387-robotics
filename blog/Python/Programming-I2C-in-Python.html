@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- <link rel='stylesheet' type='text/css' href='https://cdn.rawgit.com/MarsUniversity/ece387/master/website/pandoc.css'> -->
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+    	<link href="https://cdnjs.cloudflare.com/ajax/libs/cc-icons/1.2.1/css/cc-icons.min.css" rel="stylesheet">
+    	<link href="https://cdn.rawgit.com/walchko/font-linux/v0.7.2/assets/font-linux.css" rel="stylesheet">
+      <!-- <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous"> -->
+      <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro" rel="stylesheet">
+      <link href="https://walchko.github.io/site.css" rel="stylesheet" type="text/css" />
+      <!-- <link href="../../site.css" rel="stylesheet" type="text/css" /> -->
+    	<!-- <link href="https://walchko.github.io/pygments.css" rel="stylesheet" type="text/css" /> -->
+      <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [["$","$"],["\\(","\\)"]]
+          }
+        });
+      </script>
+
+	  <!-- code pulled from jupyter nbconvert for syntax coloring -->
+	  <style type="text/css">
+    .highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
+    </style>
+
+    </head>
+    <body>
+      <div id="outer-wrapper">
+        <div id="header-wrapper">
+  <div class="title xtralarge bold"><a href="https://walchko.github.io/index.html">Planet Express</a></div>
+  <div class="normal small"> Our crew is replaceable. Your package isn't. </div>
+
+  <div class="nav normal">
+    <a class="logo" href="https://walchko.github.io/index.html">Home</a>
+    <a class="logo" href="https://walchko.github.io/colophon.html">Colophon</a>
+    <a class="logo" href="https://walchko.github.io/about.html">About</a>
+    <a class="logo" href="https://walchko.github.io/topics.html">Topics</a>
+  </div>
+</div>
+
+
+          <div id="main">
+            
+            
+              <p>&lt;img src=&quot;pics/python-snake.jpg&quot; width=&quot;100%&quot;&gt;</p>
+<h1 id="programming-i2c">Programming I2C</h1>
+<dl>
+<dt>date</dt>
+<dd><p>2016-04-21</p>
+</dd>
+<dt>modified</dt>
+<dd><p>2017-01-02</p>
+</dd>
+<dt>summary</dt>
+<dd><p>Simple Python I2C example</p>
+</dd>
+</dl>
+<p>I2C (Inter-Integrated Circuit), pronounced I-squared-C, is a multi-master, multi-slave, single-ended, serial computer bus invented by Philips Semiconductor (now NXP Semiconductors). It is typically used for attaching lower-speed peripheral ICs to processors and microcontrollers in short-distance, intra-board communication. Alternatively I2C is spelled I2C (pronounced I-two-C) or IIC (pronounced I-I-C).</p>
+<p>Addressing is based of a 7-bit addressing system, where each data packet looks like:</p>
+<figure>
+<img src="pics/7-bit-address-i2c.png" class="align-center" width="600" />
+</figure>
+<p>If you have everything setup correctly, you should be able to see what is on your i2c bus by typing:</p>
+<pre class="sourceCode bashsession"><code>[kevin@raspberrypi ~]$ sudo i2cdetect -y 1
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00:          -- -- -- -- -- -- -- -- -- -- -- -- --
+10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+20: 20 -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+40: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+70: -- -- -- -- -- -- -- --</code></pre>
+<p>Note that something is attached to the <code>0x20</code> address.</p>
+<h2 id="python-scripts">Python Scripts</h2>
+<pre><code>pip install Adafruit_GPIO</code></pre>
+<p>Then a simple program might look like:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="im">import</span> Adafruit_GPIO <span class="im">as</span> GPIO</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb3-3" data-line-number="3">io <span class="op">=</span> GPIO.MCP23017(<span class="bn">0x20</span>)</a>
+<a class="sourceLine" id="cb3-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb3-5" data-line-number="5"><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>,<span class="dv">16</span>):</a>
+<a class="sourceLine" id="cb3-6" data-line-number="6">    io.setup(i,GPIO.OUT) <span class="co"># set all pins to output</span></a>
+<a class="sourceLine" id="cb3-7" data-line-number="7">pins <span class="op">=</span> {<span class="dv">1</span>:<span class="dv">1</span>,<span class="dv">3</span>:<span class="dv">0</span>,<span class="dv">5</span>:<span class="dv">1</span>} <span class="co"># set pins 1&amp;5 True and pin 3 False</span></a>
+<a class="sourceLine" id="cb3-8" data-line-number="8">io.output_pins(pins)</a></code></pre></div>
+<p>smbus-cffi</p>
+<pre><code>sudo apt-get install build-essential libi2c-dev i2c-tools python-dev libffi-dev
+pip install smbus-cffi</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="im">import</span> smbus</a>
+<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="co"># from Adafruit import smbus</span></a>
+<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="im">import</span> time</a>
+<a class="sourceLine" id="cb5-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb5-5" data-line-number="5"><span class="co">#bus = smbus.SMBus(0)  # Rev 1 Pi uses 0</span></a>
+<a class="sourceLine" id="cb5-6" data-line-number="6">bus <span class="op">=</span> smbus.SMBus(<span class="dv">1</span>) <span class="co"># Rev 2 Pi uses 1</span></a>
+<a class="sourceLine" id="cb5-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb5-8" data-line-number="8">DEVICE <span class="op">=</span> <span class="bn">0x20</span> <span class="co"># Device address (A0-A2)</span></a>
+<a class="sourceLine" id="cb5-9" data-line-number="9">IODIRA <span class="op">=</span> <span class="bn">0x00</span> <span class="co"># Pin direction register</span></a>
+<a class="sourceLine" id="cb5-10" data-line-number="10">OLATA  <span class="op">=</span> <span class="bn">0x14</span> <span class="co"># Register for outputs</span></a>
+<a class="sourceLine" id="cb5-11" data-line-number="11">GPIOA  <span class="op">=</span> <span class="bn">0x12</span> <span class="co"># Register for inputs</span></a>
+<a class="sourceLine" id="cb5-12" data-line-number="12"></a>
+<a class="sourceLine" id="cb5-13" data-line-number="13"><span class="co"># Set all GPA pins as outputs by setting</span></a>
+<a class="sourceLine" id="cb5-14" data-line-number="14"><span class="co"># all bits of IODIRA register to 0</span></a>
+<a class="sourceLine" id="cb5-15" data-line-number="15">bus.write_byte_data(DEVICE,IODIRA,<span class="bn">0x00</span>)</a>
+<a class="sourceLine" id="cb5-16" data-line-number="16"></a>
+<a class="sourceLine" id="cb5-17" data-line-number="17"><span class="co"># Set output all 7 output bits to 0</span></a>
+<a class="sourceLine" id="cb5-18" data-line-number="18">bus.write_byte_data(DEVICE,OLATA,<span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb5-19" data-line-number="19"></a>
+<a class="sourceLine" id="cb5-20" data-line-number="20"><span class="cf">for</span> MyData <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">8</span>):</a>
+<a class="sourceLine" id="cb5-21" data-line-number="21">  <span class="co"># Count from 1 to 8 which in binary will count</span></a>
+<a class="sourceLine" id="cb5-22" data-line-number="22">  <span class="co"># from 001 to 111</span></a>
+<a class="sourceLine" id="cb5-23" data-line-number="23">  bus.write_byte_data(DEVICE,OLATA,MyData)</a>
+<a class="sourceLine" id="cb5-24" data-line-number="24">  <span class="bu">print</span> MyData</a>
+<a class="sourceLine" id="cb5-25" data-line-number="25">  time.sleep(<span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb5-26" data-line-number="26"></a>
+<a class="sourceLine" id="cb5-27" data-line-number="27"><span class="co"># Set all bits to zero</span></a>
+<a class="sourceLine" id="cb5-28" data-line-number="28">bus.write_byte_data(DEVICE,OLATA,<span class="dv">0</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="co"># from Adafruit import smbus</span></a>
+<a class="sourceLine" id="cb6-2" data-line-number="2"><span class="im">import</span> smbus</a>
+<a class="sourceLine" id="cb6-3" data-line-number="3"><span class="im">import</span> time</a>
+<a class="sourceLine" id="cb6-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb6-5" data-line-number="5"><span class="co"># bus = smbus.SMBus(0)  # Rev 1 Pi uses 0</span></a>
+<a class="sourceLine" id="cb6-6" data-line-number="6">bus <span class="op">=</span> smbus.SMBus(<span class="dv">1</span>) <span class="co"># Rev 2 Pi uses 1</span></a>
+<a class="sourceLine" id="cb6-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb6-8" data-line-number="8">DEVICE <span class="op">=</span> <span class="bn">0x20</span> <span class="co"># Device address (A0-A2)</span></a>
+<a class="sourceLine" id="cb6-9" data-line-number="9">IODIRA <span class="op">=</span> <span class="bn">0x00</span> <span class="co"># Pin direction register</span></a>
+<a class="sourceLine" id="cb6-10" data-line-number="10">GPIOA  <span class="op">=</span> <span class="bn">0x12</span> <span class="co"># Register for inputs</span></a>
+<a class="sourceLine" id="cb6-11" data-line-number="11"></a>
+<a class="sourceLine" id="cb6-12" data-line-number="12"><span class="co"># Set first 7 GPA pins as outputs and</span></a>
+<a class="sourceLine" id="cb6-13" data-line-number="13"><span class="co"># last one as input.</span></a>
+<a class="sourceLine" id="cb6-14" data-line-number="14">bus.write_byte_data(DEVICE,IODIRA,<span class="bn">0x80</span>)</a>
+<a class="sourceLine" id="cb6-15" data-line-number="15"></a>
+<a class="sourceLine" id="cb6-16" data-line-number="16"><span class="co"># Loop until user presses CTRL-C</span></a>
+<a class="sourceLine" id="cb6-17" data-line-number="17"><span class="cf">while</span> <span class="va">True</span>:</a>
+<a class="sourceLine" id="cb6-18" data-line-number="18"></a>
+<a class="sourceLine" id="cb6-19" data-line-number="19">  <span class="co"># Read state of GPIOA register</span></a>
+<a class="sourceLine" id="cb6-20" data-line-number="20">  MySwitch <span class="op">=</span> bus.read_byte_data(DEVICE,GPIOA)</a>
+<a class="sourceLine" id="cb6-21" data-line-number="21"></a>
+<a class="sourceLine" id="cb6-22" data-line-number="22">  <span class="cf">if</span> MySwitch <span class="op">&amp;</span> 0b10000000 <span class="op">==</span> 0b10000000:</a>
+<a class="sourceLine" id="cb6-23" data-line-number="23">      <span class="bu">print</span> <span class="st">&quot;Switch was pressed!&quot;</span></a>
+<a class="sourceLine" id="cb6-24" data-line-number="24">      time.sleep(<span class="dv">1</span>)</a></code></pre></div>
+<p>Converting between binary data and int, float, etc can be done with standard python libraries.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="im">import</span> struct</a>
+<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="im">import</span> binascii</a>
+<a class="sourceLine" id="cb7-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb7-4" data-line-number="4">binascii.unhexlify(<span class="st">&#39;010f&#39;</span>)  <span class="co"># &#39;\x01\x0f&#39;</span></a>
+<a class="sourceLine" id="cb7-5" data-line-number="5">struct.pack(<span class="st">&#39;&gt;h&#39;</span>,<span class="bn">0x010f</span>)  <span class="co"># big endian &#39;\x01\x0f&#39;</span></a>
+<a class="sourceLine" id="cb7-6" data-line-number="6">struct.pack(<span class="st">&#39;&lt;h&#39;</span>,<span class="bn">0x010f</span>)  <span class="co"># little endian &#39;\x0f\x01&#39;</span></a>
+<a class="sourceLine" id="cb7-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb7-8" data-line-number="8">b <span class="op">=</span> struct.pack(<span class="st">&#39;&lt;h&#39;</span>,<span class="bn">0x0101</span>)  <span class="co"># &#39;\x0f\x01&#39;</span></a>
+<a class="sourceLine" id="cb7-9" data-line-number="9">struct.unpack(<span class="st">&#39;&lt;h&#39;</span>, b)  <span class="co"># (257,)</span></a>
+<a class="sourceLine" id="cb7-10" data-line-number="10"></a>
+<a class="sourceLine" id="cb7-11" data-line-number="11"><span class="co"># little endian conversions</span></a>
+<a class="sourceLine" id="cb7-12" data-line-number="12">struct.unpack(<span class="st">&#39;&lt;h&#39;</span>,<span class="st">&#39;</span><span class="ch">\x00\xef</span><span class="st">&#39;</span>)  <span class="co"># (-4352,) signed short</span></a>
+<a class="sourceLine" id="cb7-13" data-line-number="13">struct.unpack(<span class="st">&#39;&lt;H&#39;</span>,<span class="st">&#39;</span><span class="ch">\x00\xef</span><span class="st">&#39;</span>)  <span class="co"># (61184,) unsigned short</span></a>
+<a class="sourceLine" id="cb7-14" data-line-number="14">struct.unpack(<span class="st">&#39;&lt;f&#39;</span>,<span class="st">&#39;</span><span class="ch">\x01\x01\xff\xaa</span><span class="st">&#39;</span>)  <span class="co"># (-4.529779600460221e-13,) float</span></a></code></pre></div>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/I%C2%B2C">wikipedia i2c</a></li>
+<li><a href="https://docs.python.org/2/library/struct.html?highlight=struct#module-struct">struct python docs</a></li>
+</ul>
+
+            
+          </div>
+
+        </div>
+    </body>
+
+    <div id="footer-wrapper">
+
+  <div class="logo"></div>
+
+  <div class="logo">
+    <a class="logo" href="http://github.com/walchko"><i class="fl-github fl-36"></i></a>
+    <a class="logo" href="http://stackoverflow.com/users/5374768/kevin"><i class="fl-stackoverflow fl-36"></i></a>
+    <a class="logo" href="http://raspberrypi.stackexchange.com/users/1677/kevin"><i class="fl-stackexchange fl-36"></i></a>
+    <a class="logo" href="https://www.npmjs.com/~kevin.walchko"><i class="fl-npm fl-36"></i></a>
+    <a class="logo" href="https://pypi.python.org/pypi"><i class="fl-python fl-36"></i></a>
+    <a class="logo" href="https://bitbucket.org/walchko/"><i class="fl-bitbucket fl-36"></i></a>
+  </div>
+
+  <div class="logo">
+    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+      <i class="cc cc-by-sa cc-lg"></i>
+    </a>
+  </div>
+
+  <div class="pure-u-1">
+    <a class="logo" href="https://github.com/walchko/pelican">&copy;&nbsp;2016&nbsp;Kevin J. Walchko</a>
+  </div>
+
+</div>
+
+
+</html>

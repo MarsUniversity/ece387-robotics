@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- <link rel='stylesheet' type='text/css' href='https://cdn.rawgit.com/MarsUniversity/ece387/master/website/pandoc.css'> -->
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+    	<link href="https://cdnjs.cloudflare.com/ajax/libs/cc-icons/1.2.1/css/cc-icons.min.css" rel="stylesheet">
+    	<link href="https://cdn.rawgit.com/walchko/font-linux/v0.7.2/assets/font-linux.css" rel="stylesheet">
+      <!-- <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous"> -->
+      <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro" rel="stylesheet">
+      <link href="https://walchko.github.io/site.css" rel="stylesheet" type="text/css" />
+      <!-- <link href="../../site.css" rel="stylesheet" type="text/css" /> -->
+    	<!-- <link href="https://walchko.github.io/pygments.css" rel="stylesheet" type="text/css" /> -->
+      <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [["$","$"],["\\(","\\)"]]
+          }
+        });
+      </script>
+
+	  <!-- code pulled from jupyter nbconvert for syntax coloring -->
+	  <style type="text/css">
+    .highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
+    </style>
+
+    </head>
+    <body>
+      <div id="outer-wrapper">
+        <div id="header-wrapper">
+  <div class="title xtralarge bold"><a href="https://walchko.github.io/index.html">Planet Express</a></div>
+  <div class="normal small"> Our crew is replaceable. Your package isn't. </div>
+
+  <div class="nav normal">
+    <a class="logo" href="https://walchko.github.io/index.html">Home</a>
+    <a class="logo" href="https://walchko.github.io/colophon.html">Colophon</a>
+    <a class="logo" href="https://walchko.github.io/about.html">About</a>
+    <a class="logo" href="https://walchko.github.io/topics.html">Topics</a>
+  </div>
+</div>
+
+
+          <div id="main">
+            
+            
+              <p><img src="pics/docker.png" /></p>
+<h1 id="docker">Docker</h1>
+<p>Here is a script to build a container:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="co"># Installs Jupyter Notebook and IPython kernel from the current branch</span></a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="co"># Another Docker container should inherit with `FROM jupyter/notebook`</span></a>
+<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="co"># to run actual services.</span></a>
+<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="co">#</span></a>
+<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="co"># For opinionated stacks of ready-to-run Jupyter applications in Docker,</span></a>
+<a class="sourceLine" id="cb1-6" data-line-number="6"><span class="co"># check out docker-stacks &lt;https://github.com/jupyter/docker-stacks&gt;</span></a>
+<a class="sourceLine" id="cb1-7" data-line-number="7"><span class="co">#</span></a>
+<a class="sourceLine" id="cb1-8" data-line-number="8"><span class="co"># build: docker build -t rpi .</span></a>
+<a class="sourceLine" id="cb1-9" data-line-number="9"><span class="co"># run: docker run -ti -p 8888:8888  -v `pwd`/notebooks:/notebooks rpi /bin/bash</span></a>
+<a class="sourceLine" id="cb1-10" data-line-number="10"><span class="co">#</span></a>
+<a class="sourceLine" id="cb1-11" data-line-number="11"><span class="co"># https://www.devopsskills.info/docker/docker-remove-none-images/</span></a>
+<a class="sourceLine" id="cb1-12" data-line-number="12"><span class="co"># docker images | egrep &quot;^&lt;none&gt;&quot; | awk &#39;{print $3}&#39; | xargs docker rmi -f</span></a>
+<a class="sourceLine" id="cb1-13" data-line-number="13"></a>
+<a class="sourceLine" id="cb1-14" data-line-number="14"><span class="ex">FROM</span> debian:stretch</a>
+<a class="sourceLine" id="cb1-15" data-line-number="15"></a>
+<a class="sourceLine" id="cb1-16" data-line-number="16"><span class="co"># Not essential, but wise to set the lang</span></a>
+<a class="sourceLine" id="cb1-17" data-line-number="17"><span class="co"># Note: Users with other languages should set this in their derivative image</span></a>
+<a class="sourceLine" id="cb1-18" data-line-number="18"><span class="ex">ENV</span> LANGUAGE en_US.UTF-8</a>
+<a class="sourceLine" id="cb1-19" data-line-number="19"><span class="ex">ENV</span> LANG en_US.UTF-8</a>
+<a class="sourceLine" id="cb1-20" data-line-number="20"><span class="ex">ENV</span> LC_ALL en_US.UTF-8</a>
+<a class="sourceLine" id="cb1-21" data-line-number="21"><span class="ex">ENV</span> PYTHONIOENCODING UTF-8</a>
+<a class="sourceLine" id="cb1-22" data-line-number="22"></a>
+<a class="sourceLine" id="cb1-23" data-line-number="23"><span class="co"># Python binary and source dependencies</span></a>
+<a class="sourceLine" id="cb1-24" data-line-number="24"><span class="ex">RUN</span> apt-get update -qq <span class="kw">&amp;&amp;</span> <span class="kw">\</span></a>
+<a class="sourceLine" id="cb1-25" data-line-number="25">    <span class="va">DEBIAN_FRONTEND=</span>noninteractive <span class="ex">apt-get</span> install -yq --no-install-recommends \</a>
+<a class="sourceLine" id="cb1-26" data-line-number="26">        build-essential \</a>
+<a class="sourceLine" id="cb1-27" data-line-number="27">        ca-certificates \</a>
+<a class="sourceLine" id="cb1-28" data-line-number="28">        curl \</a>
+<a class="sourceLine" id="cb1-29" data-line-number="29">        git \</a>
+<a class="sourceLine" id="cb1-30" data-line-number="30">        htop \</a>
+<a class="sourceLine" id="cb1-31" data-line-number="31">        nodejs \</a>
+<a class="sourceLine" id="cb1-32" data-line-number="32">        libcurl4-openssl-dev \</a>
+<a class="sourceLine" id="cb1-33" data-line-number="33">        libffi-dev \</a>
+<a class="sourceLine" id="cb1-34" data-line-number="34">        libsqlite3-dev \</a>
+<a class="sourceLine" id="cb1-35" data-line-number="35">        libzmq3-dev \</a>
+<a class="sourceLine" id="cb1-36" data-line-number="36">        nodejs \</a>
+<a class="sourceLine" id="cb1-37" data-line-number="37">        pandoc \</a>
+<a class="sourceLine" id="cb1-38" data-line-number="38">        python \</a>
+<a class="sourceLine" id="cb1-39" data-line-number="39">        python3 \</a>
+<a class="sourceLine" id="cb1-40" data-line-number="40">        python-dev \</a>
+<a class="sourceLine" id="cb1-41" data-line-number="41">        python3-dev \</a>
+<a class="sourceLine" id="cb1-42" data-line-number="42">        sqlite3 \</a>
+<a class="sourceLine" id="cb1-43" data-line-number="43">        texlive-fonts-recommended \</a>
+<a class="sourceLine" id="cb1-44" data-line-number="44">        texlive-latex-base \</a>
+<a class="sourceLine" id="cb1-45" data-line-number="45">        texlive-latex-extra \</a>
+<a class="sourceLine" id="cb1-46" data-line-number="46">        wget \</a>
+<a class="sourceLine" id="cb1-47" data-line-number="47">        zlib1g-dev <span class="kw">&amp;&amp;</span> <span class="kw">\</span></a>
+<a class="sourceLine" id="cb1-48" data-line-number="48">    <span class="ex">apt-get</span> clean <span class="kw">&amp;&amp;</span> <span class="kw">\</span></a>
+<a class="sourceLine" id="cb1-49" data-line-number="49">    <span class="fu">rm</span> -rf /var/lib/apt/lists/*</a>
+<a class="sourceLine" id="cb1-50" data-line-number="50"></a>
+<a class="sourceLine" id="cb1-51" data-line-number="51"><span class="co"># Install the recent pip release</span></a>
+<a class="sourceLine" id="cb1-52" data-line-number="52"><span class="ex">RUN</span> curl -O https://bootstrap.pypa.io/get-pip.py <span class="kw">&amp;&amp;</span> <span class="kw">\</span></a>
+<a class="sourceLine" id="cb1-53" data-line-number="53">    <span class="ex">python2</span> get-pip.py <span class="kw">&amp;&amp;</span> <span class="kw">\</span></a>
+<a class="sourceLine" id="cb1-54" data-line-number="54">    <span class="ex">python3</span> get-pip.py <span class="kw">&amp;&amp;</span> <span class="kw">\</span></a>
+<a class="sourceLine" id="cb1-55" data-line-number="55">    <span class="fu">rm</span> get-pip.py <span class="kw">&amp;&amp;</span> <span class="kw">\</span></a>
+<a class="sourceLine" id="cb1-56" data-line-number="56">    <span class="ex">pip2</span> --no-cache-dir install requests[security] <span class="kw">&amp;&amp;</span> <span class="kw">\</span></a>
+<a class="sourceLine" id="cb1-57" data-line-number="57">    <span class="ex">pip3</span> --no-cache-dir install requests[security] <span class="kw">&amp;&amp;</span> <span class="kw">\</span></a>
+<a class="sourceLine" id="cb1-58" data-line-number="58">    <span class="fu">rm</span> -rf /root/.cache</a>
+<a class="sourceLine" id="cb1-59" data-line-number="59"></a>
+<a class="sourceLine" id="cb1-60" data-line-number="60"><span class="co"># Install some dependencies.</span></a>
+<a class="sourceLine" id="cb1-61" data-line-number="61"><span class="ex">RUN</span> pip2 --no-cache-dir install jupyter numpy matplotlib <span class="kw">&amp;&amp;</span> <span class="kw">\</span></a>
+<a class="sourceLine" id="cb1-62" data-line-number="62">    <span class="ex">pip3</span> --no-cache-dir install jupyter numpy matplotlib <span class="kw">&amp;&amp;</span> <span class="kw">\</span></a>
+<a class="sourceLine" id="cb1-63" data-line-number="63">    <span class="kw">\</span></a>
+<a class="sourceLine" id="cb1-64" data-line-number="64">    <span class="fu">rm</span> -rf /root/.cache</a>
+<a class="sourceLine" id="cb1-65" data-line-number="65"></a>
+<a class="sourceLine" id="cb1-66" data-line-number="66"><span class="co"># Move notebook contents into place.</span></a>
+<a class="sourceLine" id="cb1-67" data-line-number="67"><span class="co">#ADD . /usr/src/jupyter-notebook</span></a>
+<a class="sourceLine" id="cb1-68" data-line-number="68"><span class="ex">ADD</span> ./.bashrc /root</a>
+<a class="sourceLine" id="cb1-69" data-line-number="69"><span class="ex">ADD</span> ./hostname /etc</a>
+<a class="sourceLine" id="cb1-70" data-line-number="70"></a>
+<a class="sourceLine" id="cb1-71" data-line-number="71"><span class="co">#pip3 install --no-cache-dir /usr/src/jupyter-notebook &amp;&amp; \</span></a>
+<a class="sourceLine" id="cb1-72" data-line-number="72">#<span class="ex">pip2</span> install --no-cache-dir widgetsnbextension <span class="kw">&amp;&amp;</span> <span class="kw">\</span></a>
+<a class="sourceLine" id="cb1-73" data-line-number="73"><span class="co">#pip3 install --no-cache-dir widgetsnbextension &amp;&amp; \</span></a>
+<a class="sourceLine" id="cb1-74" data-line-number="74"></a>
+<a class="sourceLine" id="cb1-75" data-line-number="75"><span class="co"># Install dependencies and run tests.</span></a>
+<a class="sourceLine" id="cb1-76" data-line-number="76"><span class="co">#RUN BUILD_DEPS=&quot;nodejs&quot; &amp;&amp; \</span></a>
+<a class="sourceLine" id="cb1-77" data-line-number="77"><span class="ex">RUN</span> apt-get update -qq <span class="kw">&amp;&amp;</span> <span class="kw">\</span></a>
+<a class="sourceLine" id="cb1-78" data-line-number="78">    <span class="va">DEBIAN_FRONTEND=</span>noninteractive <span class="ex">apt-get</span> install -yq <span class="va">$BUILD_DEPS</span> <span class="kw">&amp;&amp;</span> <span class="kw">\</span></a>
+<a class="sourceLine" id="cb1-79" data-line-number="79">    <span class="kw">\</span></a>
+<a class="sourceLine" id="cb1-80" data-line-number="80">    <span class="ex">apt-get</span> clean <span class="kw">&amp;&amp;</span> <span class="kw">\</span></a>
+<a class="sourceLine" id="cb1-81" data-line-number="81">    <span class="fu">rm</span> -rf /root/.cache <span class="kw">&amp;&amp;</span> <span class="kw">\</span></a>
+<a class="sourceLine" id="cb1-82" data-line-number="82">    <span class="fu">rm</span> -rf /root/.config <span class="kw">&amp;&amp;</span> <span class="kw">\</span></a>
+<a class="sourceLine" id="cb1-83" data-line-number="83">    <span class="fu">rm</span> -rf /root/.local <span class="kw">&amp;&amp;</span> <span class="kw">\</span></a>
+<a class="sourceLine" id="cb1-84" data-line-number="84">    <span class="fu">rm</span> -rf /root/tmp <span class="kw">&amp;&amp;</span> <span class="kw">\</span></a>
+<a class="sourceLine" id="cb1-85" data-line-number="85">    <span class="fu">rm</span> -rf /var/lib/apt/lists/* <span class="kw">&amp;&amp;</span> <span class="kw">\</span></a>
+<a class="sourceLine" id="cb1-86" data-line-number="86">    <span class="ex">apt-get</span> purge -y --auto-remove \</a>
+<a class="sourceLine" id="cb1-87" data-line-number="87">        -o APT::AutoRemove::RecommendsImportant=false -o APT::AutoRemove::SuggestsImportant=false <span class="va">$BUILD_DEPS</span></a>
+<a class="sourceLine" id="cb1-88" data-line-number="88"></a>
+<a class="sourceLine" id="cb1-89" data-line-number="89"><span class="co"># Run tests.</span></a>
+<a class="sourceLine" id="cb1-90" data-line-number="90"><span class="co">#RUN pip3 install --no-cache-dir notebook[test] &amp;&amp; nosetests -v notebook</span></a>
+<a class="sourceLine" id="cb1-91" data-line-number="91"></a>
+<a class="sourceLine" id="cb1-92" data-line-number="92"><span class="co"># Add a notebook profile.</span></a>
+<a class="sourceLine" id="cb1-93" data-line-number="93"><span class="ex">RUN</span> mkdir -p -m 700 /root/.jupyter/ <span class="kw">&amp;&amp;</span> <span class="kw">\</span></a>
+<a class="sourceLine" id="cb1-94" data-line-number="94">    <span class="bu">echo</span> <span class="st">&quot;c.NotebookApp.ip = &#39;*&#39;&quot;</span> <span class="op">&gt;&gt;</span> /root/.jupyter/jupyter_notebook_config.py</a>
+<a class="sourceLine" id="cb1-95" data-line-number="95"></a>
+<a class="sourceLine" id="cb1-96" data-line-number="96"><span class="ex">VOLUME</span> /notebooks</a>
+<a class="sourceLine" id="cb1-97" data-line-number="97"><span class="ex">WORKDIR</span> /notebooks</a>
+<a class="sourceLine" id="cb1-98" data-line-number="98"></a>
+<a class="sourceLine" id="cb1-99" data-line-number="99"><span class="ex">EXPOSE</span> 8888</a>
+<a class="sourceLine" id="cb1-100" data-line-number="100"></a>
+<a class="sourceLine" id="cb1-101" data-line-number="101"><span class="ex">CMD</span> [<span class="st">&quot;jupyter&quot;</span>, <span class="st">&quot;notebook&quot;</span>, <span class="st">&quot;--no-browser&quot;</span>, <span class="st">&quot;--allow-root&quot;</span>]</a></code></pre></div>
+
+            
+          </div>
+
+        </div>
+    </body>
+
+    <div id="footer-wrapper">
+
+  <div class="logo"></div>
+
+  <div class="logo">
+    <a class="logo" href="http://github.com/walchko"><i class="fl-github fl-36"></i></a>
+    <a class="logo" href="http://stackoverflow.com/users/5374768/kevin"><i class="fl-stackoverflow fl-36"></i></a>
+    <a class="logo" href="http://raspberrypi.stackexchange.com/users/1677/kevin"><i class="fl-stackexchange fl-36"></i></a>
+    <a class="logo" href="https://www.npmjs.com/~kevin.walchko"><i class="fl-npm fl-36"></i></a>
+    <a class="logo" href="https://pypi.python.org/pypi"><i class="fl-python fl-36"></i></a>
+    <a class="logo" href="https://bitbucket.org/walchko/"><i class="fl-bitbucket fl-36"></i></a>
+  </div>
+
+  <div class="logo">
+    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+      <i class="cc cc-by-sa cc-lg"></i>
+    </a>
+  </div>
+
+  <div class="pure-u-1">
+    <a class="logo" href="https://github.com/walchko/pelican">&copy;&nbsp;2016&nbsp;Kevin J. Walchko</a>
+  </div>
+
+</div>
+
+
+</html>

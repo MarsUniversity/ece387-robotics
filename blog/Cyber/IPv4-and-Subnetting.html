@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- <link rel='stylesheet' type='text/css' href='https://cdn.rawgit.com/MarsUniversity/ece387/master/website/pandoc.css'> -->
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+    	<link href="https://cdnjs.cloudflare.com/ajax/libs/cc-icons/1.2.1/css/cc-icons.min.css" rel="stylesheet">
+    	<link href="https://cdn.rawgit.com/walchko/font-linux/v0.7.2/assets/font-linux.css" rel="stylesheet">
+      <!-- <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous"> -->
+      <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro" rel="stylesheet">
+      <link href="https://walchko.github.io/site.css" rel="stylesheet" type="text/css" />
+      <!-- <link href="../../site.css" rel="stylesheet" type="text/css" /> -->
+    	<!-- <link href="https://walchko.github.io/pygments.css" rel="stylesheet" type="text/css" /> -->
+      <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [["$","$"],["\\(","\\)"]]
+          }
+        });
+      </script>
+
+	  <!-- code pulled from jupyter nbconvert for syntax coloring -->
+	  <style type="text/css">
+    .highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
+    </style>
+
+    </head>
+    <body>
+      <div id="outer-wrapper">
+        <div id="header-wrapper">
+  <div class="title xtralarge bold"><a href="https://walchko.github.io/index.html">Planet Express</a></div>
+  <div class="normal small"> Our crew is replaceable. Your package isn't. </div>
+
+  <div class="nav normal">
+    <a class="logo" href="https://walchko.github.io/index.html">Home</a>
+    <a class="logo" href="https://walchko.github.io/colophon.html">Colophon</a>
+    <a class="logo" href="https://walchko.github.io/about.html">About</a>
+    <a class="logo" href="https://walchko.github.io/topics.html">Topics</a>
+  </div>
+</div>
+
+
+          <div id="main">
+            
+            
+              <h1 id="subnetting">Subnetting</h1>
+<dl>
+<dt>date</dt>
+<dd><p>2015-12-28</p>
+</dd>
+<dt>summary</dt>
+<dd><p>How IPv4 subnetting works</p>
+</dd>
+</dl>
+<p><a href="http://www.techrepublic.com/blog/data-center/ip-subnetting-made-easy-125343/">IP subnetting made easy</a> by George Ou has a good overview, here is a summary.</p>
+<p>The IP address is a 32 bit number which provides 0 to 4,294,967,295 unique addresses on a network. This is chopped up into 4 8-bit octets separated by a period.</p>
+<p>0.0.0.0 to 0.0.0.255 is one octet which provide 256 addresses.</p>
+<h2 id="subnetwork">Subnetwork</h2>
+<p>Chopping a large network up into smaller pieces is subnetworking.</p>
+<ul>
+<li>beginning is always even, network id</li>
+<li>ending is always odd, broadcast id</li>
+<li>you can not use the network or broadcast id address, since they have special meaning</li>
+<li>0.0.0.0/8 (0.0.0.0 to 0.255.255.255) not used</li>
+<li>127.0.0.0/8 (127.0.0.0 to 127.255.255.255) used for loop back addresses</li>
+<li>Number of hosts: 2^bits - 2 where bits is the number of bits for the subnet and the -2 accounts for both the network and broadcast id's</li>
+</ul>
+<p>You need to chop along clean binary division as shown below:</p>
+<figure>
+<img src="pics/subnetting_b.png" />
+</figure>
+<h2 id="network-classes"><a href="http://en.wikipedia.org/wiki/Classful_network#Introduction_of_address_classes">Network Classes</a></h2>
+<table>
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 26%" />
+<col style="width: 12%" />
+<col style="width: 11%" />
+<col style="width: 41%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Class</th>
+<th>IP Range</th>
+<th>Subnet Bits</th>
+<th>Mask Bits</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>0.0.0.0 to 127.255.255.255</td>
+<td>24</td>
+<td>8</td>
+<td>the first half of the address space</td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>128.0.0.0 to 191.255.255.255</td>
+<td>16</td>
+<td>16</td>
+<td>half the remaining address space</td>
+</tr>
+<tr class="odd">
+<td>C</td>
+<td>192.0.0.0 to 223.255.255.255</td>
+<td>8</td>
+<td>24</td>
+<td>half the remaining address space</td>
+</tr>
+<tr class="even">
+<td>D</td>
+<td>224.0.0.0 to 239.255.255.255</td>
+<td>undefined</td>
+<td>undefined</td>
+<td>half the remaining address space for multicast</td>
+</tr>
+<tr class="odd">
+<td>E</td>
+<td>240.0.0.0 to 255.255.255.255</td>
+<td>undefined</td>
+<td>undefined</td>
+<td>everything remaining</td>
+</tr>
+</tbody>
+</table>
+<figure>
+<img src="pics/subnetting_h.png" />
+</figure>
+<h2 id="private-subnetworks"><a href="http://en.wikipedia.org/wiki/Private_network">Private Subnetworks</a></h2>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 14%" />
+<col style="width: 12%" />
+<col style="width: 16%" />
+<col style="width: 30%" />
+<col style="width: 17%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Class</th>
+<th>Subnet Bits</th>
+<th>Mask Bits</th>
+<th>IP</th>
+<th>IP Range</th>
+<th>Number of Hosts</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>24</td>
+<td>8</td>
+<td>10.0.0.0/8</td>
+<td>10.0.0.0 to 10.255.255.255</td>
+<td>16,777,216</td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>20</td>
+<td>12</td>
+<td>172.16.0.0/12</td>
+<td>172.16.0.0 to 172.31.255.255</td>
+<td>1,048,576</td>
+</tr>
+<tr class="odd">
+<td>C</td>
+<td>16</td>
+<td>16</td>
+<td>192.168.0.0/16</td>
+<td>192.168.0.0 to 192.168.255.255</td>
+<td>65,536</td>
+</tr>
+<tr class="even">
+<td>C</td>
+<td>16</td>
+<td>16</td>
+<td>169.254.0.0/16</td>
+<td>169.254.0.0 to 169.254.255.255</td>
+<td>65,536</td>
+</tr>
+</tbody>
+</table>
+<p>The 169.254.0.0 addresses are only used when DHCP server is not available.</p>
+<h2 id="address-bits">Address Bits</h2>
+<ul>
+<li>8 bits = 256 addresses (254 hosts, minus the network and broadcast id's)</li>
+<li>9 bits = 512 addresses</li>
+<li>10 bits = 1024 addresses</li>
+<li>11 bits = 2048 addresses</li>
+</ul>
+<figure>
+<img src="pics/subnetting_a.png" />
+</figure>
+<figure>
+<img src="pics/subnetting_c.png" />
+</figure>
+<h2 id="masks">Masks</h2>
+<p>Typical home networks use 192.168.0.0/16 where the 16 indicates a 16-bit mask giving addresses from 192.168.0.0 to 192.168.255.255. Since a complete mask is 32-bits and each octet is 8-bits each, 16-bits uses the bottom 2 octets or 192.168.x.x. An 8-bit mask would use the lower 3 octets or 192.x.x.x. A 24-bit mask would only use the bottom octet of the address range, or 192.168.1.x.</p>
+<ul>
+<li>8-bit mask: 255.0.0.0</li>
+<li>16-bit mask: 255.255.0.0</li>
+<li>24-bit mask: 255.255.255.0</li>
+</ul>
+<h2 id="calculator">Calculator</h2>
+<p><a href="http://www.subnet-calculator.com">IP address calculator</a> <a href="http://jodies.de/ipcalc?">Another one</a></p>
+<pre><code>192.168.0.1/16:
+Address:   192.168.0.1           11000000.10101000 .00000000.00000001
+Netmask:   255.255.0.0 = 16      11111111.11111111 .00000000.00000000
+Wildcard:  0.0.255.255           00000000.00000000 .11111111.11111111
+=&gt;
+Network:   192.168.0.0/16        11000000.10101000 .00000000.00000000 (Class C)
+Broadcast: 192.168.255.255       11000000.10101000 .11111111.11111111
+HostMin:   192.168.0.1           11000000.10101000 .00000000.00000001
+HostMax:   192.168.255.254       11000000.10101000 .11111111.11111110
+Hosts/Net: 65534                 (Private Internet)
+
+192.168.1.1/24:
+Address:   192.168.1.1           11000000.10101000.00000001 .00000001
+Netmask:   255.255.255.0 = 24    11111111.11111111.11111111 .00000000
+Wildcard:  0.0.0.255             00000000.00000000.00000000 .11111111
+=&gt;
+Network:   192.168.1.0/24        11000000.10101000.00000001 .00000000 (Class C)
+Broadcast: 192.168.1.255         11000000.10101000.00000001 .11111111
+HostMin:   192.168.1.1           11000000.10101000.00000001 .00000001
+HostMax:   192.168.1.254         11000000.10101000.00000001 .11111110
+Hosts/Net: 254                   (Private Internet)</code></pre>
+
+            
+          </div>
+
+        </div>
+    </body>
+
+    <div id="footer-wrapper">
+
+  <div class="logo"></div>
+
+  <div class="logo">
+    <a class="logo" href="http://github.com/walchko"><i class="fl-github fl-36"></i></a>
+    <a class="logo" href="http://stackoverflow.com/users/5374768/kevin"><i class="fl-stackoverflow fl-36"></i></a>
+    <a class="logo" href="http://raspberrypi.stackexchange.com/users/1677/kevin"><i class="fl-stackexchange fl-36"></i></a>
+    <a class="logo" href="https://www.npmjs.com/~kevin.walchko"><i class="fl-npm fl-36"></i></a>
+    <a class="logo" href="https://pypi.python.org/pypi"><i class="fl-python fl-36"></i></a>
+    <a class="logo" href="https://bitbucket.org/walchko/"><i class="fl-bitbucket fl-36"></i></a>
+  </div>
+
+  <div class="logo">
+    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+      <i class="cc cc-by-sa cc-lg"></i>
+    </a>
+  </div>
+
+  <div class="pure-u-1">
+    <a class="logo" href="https://github.com/walchko/pelican">&copy;&nbsp;2016&nbsp;Kevin J. Walchko</a>
+  </div>
+
+</div>
+
+
+</html>

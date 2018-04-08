@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- <link rel='stylesheet' type='text/css' href='https://cdn.rawgit.com/MarsUniversity/ece387/master/website/pandoc.css'> -->
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+    	<link href="https://cdnjs.cloudflare.com/ajax/libs/cc-icons/1.2.1/css/cc-icons.min.css" rel="stylesheet">
+    	<link href="https://cdn.rawgit.com/walchko/font-linux/v0.7.2/assets/font-linux.css" rel="stylesheet">
+      <!-- <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous"> -->
+      <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro" rel="stylesheet">
+      <link href="https://walchko.github.io/site.css" rel="stylesheet" type="text/css" />
+      <!-- <link href="../../site.css" rel="stylesheet" type="text/css" /> -->
+    	<!-- <link href="https://walchko.github.io/pygments.css" rel="stylesheet" type="text/css" /> -->
+      <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [["$","$"],["\\(","\\)"]]
+          }
+        });
+      </script>
+
+	  <!-- code pulled from jupyter nbconvert for syntax coloring -->
+	  <style type="text/css">
+    .highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
+    </style>
+
+    </head>
+    <body>
+      <div id="outer-wrapper">
+        <div id="header-wrapper">
+  <div class="title xtralarge bold"><a href="https://walchko.github.io/index.html">Planet Express</a></div>
+  <div class="normal small"> Our crew is replaceable. Your package isn't. </div>
+
+  <div class="nav normal">
+    <a class="logo" href="https://walchko.github.io/index.html">Home</a>
+    <a class="logo" href="https://walchko.github.io/colophon.html">Colophon</a>
+    <a class="logo" href="https://walchko.github.io/about.html">About</a>
+    <a class="logo" href="https://walchko.github.io/topics.html">Topics</a>
+  </div>
+</div>
+
+
+          <div id="main">
+            
+            
+              <h1 id="dpkt-cheatsheet">dpkt Cheatsheet</h1>
+<dl>
+<dt>date</dt>
+<dd><p>2015-12-30</p>
+</dd>
+<dt>summary</dt>
+<dd><p>How to use <code>dpkt</code> to mine packets on your netowrk for info</p>
+</dd>
+</dl>
+<p>dpkt is a python library for manipulating packets and although it is a good library it is very poorly documented.</p>
+<figure>
+<img src="pics/TCP-IP-model-vs-OSI-model.png" class="align-center" />
+</figure>
+<h2 id="useful-ports">Useful Ports</h2>
+<h3 id="tcp">TCP</h3>
+<table>
+<thead>
+<tr class="header">
+<th>TCP Port</th>
+<th>Service</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>21</td>
+<td>IRC</td>
+</tr>
+<tr class="even">
+<td>22</td>
+<td>SSH</td>
+</tr>
+<tr class="odd">
+<td>25</td>
+<td>STMP</td>
+</tr>
+<tr class="even">
+<td>80</td>
+<td>Http</td>
+</tr>
+<tr class="odd">
+<td>123</td>
+<td>Network Time Server</td>
+</tr>
+<tr class="even">
+<td>443</td>
+<td>Https</td>
+</tr>
+<tr class="odd">
+<td>445</td>
+<td>SMB</td>
+</tr>
+<tr class="even">
+<td>548</td>
+<td>Apple File Protocol (AFP) over TCP</td>
+</tr>
+<tr class="odd">
+<td>3689</td>
+<td>iTunes using the iTunes Library Sharing feature</td>
+</tr>
+<tr class="even">
+<td>5009</td>
+<td>Airport admin utility</td>
+</tr>
+<tr class="odd">
+<td>9100</td>
+<td>HP Jet Direct</td>
+</tr>
+<tr class="even">
+<td>10000</td>
+<td>??</td>
+</tr>
+</tbody>
+</table>
+<h3 id="udp">UDP</h3>
+<table>
+<thead>
+<tr class="header">
+<th>UDP Port</th>
+<th>Service</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>67,68</td>
+<td>DHCP</td>
+</tr>
+<tr class="even">
+<td>123</td>
+<td>NTP</td>
+</tr>
+<tr class="odd">
+<td>5353</td>
+<td>mDNS, Bonjour</td>
+</tr>
+<tr class="even">
+<td>17500</td>
+<td>Dropbox</td>
+</tr>
+</tbody>
+</table>
+<h2 id="packet-types">Packet Types</h2>
+<p>There are many types of packets supported and several ways to test what they are:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="cf">if</span> <span class="bu">isinstance</span>(packet,dpkt.ethernet.ETH_TYPE_IP)</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="cf">if</span> <span class="bu">type</span>(packet) <span class="op">==</span> dpkt.ethernet.ETH_TYPE_IP</a>
+<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="cf">if</span> packet.p <span class="op">==</span> dpkt.ethernet.ETH_TYPE_IP</a></code></pre></div>
+<p>dpkt.tcp.* dpkt.udp.* dpkt.icmp.*</p>
+<table>
+<thead>
+<tr class="header">
+<th>dpkt.ethernet.*</th>
+<th>Val</th>
+<th>dpkt.ip.*</th>
+<th>Val</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ETH_TYPE_ARP</td>
+<td></td>
+<td>IP_PROTO_ICMP</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>ETH_TYPE_IP</td>
+<td>2048</td>
+<td>IP_PROTO_TCP</td>
+<td>6</td>
+</tr>
+<tr class="odd">
+<td><p>ETH_TYPE_IP6</p></td>
+<td><p>34525</p></td>
+<td><p>IP_PROTO_UDP ICMP6 SCTP</p></td>
+<td><p>17 58 132</p></td>
+</tr>
+</tbody>
+</table>
+<h2 id="ethernet-physical-datalink-layers">Ethernet (Physical &amp; Datalink Layers)</h2>
+<p>Ethernet is a family of computer networking technologies for local area networks (LANs).</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb2-1" data-line-number="1">ether <span class="op">=</span> dpkt.ethernet.Ethernet(data)</a>
+<a class="sourceLine" id="cb2-2" data-line-number="2">mac <span class="op">=</span> ...</a></code></pre></div>
+<pre><code>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|       Ethernet destination address (first 32 bits)            |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+| Ethernet dest (last 16 bits)  |Ethernet source (first 16 bits)|
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|       Ethernet source address (last 32 bits)                  |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|        Type code              |                               |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</code></pre>
+<table>
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 82%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Addresses</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>224.0.0.251</td>
+<td><a href="http://en.wikipedia.org/wiki/Multicast_address">Multicast DNS</a> (mDNS)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ip-internet-protocol">IP (Internet Protocol)</h2>
+<p>The Internet Protocol (IP) is the principal communications protocol in the Internet protocol suite for relaying datagrams across network boundaries. Its routing function enables internetworking, and essentially establishes the Internet.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb4-1" data-line-number="1">ip <span class="op">=</span> dpkt.ip.IP(data)</a>
+<a class="sourceLine" id="cb4-2" data-line-number="2">ip <span class="op">=</span> ether.data</a>
+<a class="sourceLine" id="cb4-3" data-line-number="3">ip_addr <span class="op">=</span> socket.inet_ntoa(ip.src<span class="op">|</span>ip.dst)</a></code></pre></div>
+<pre><code>0                   1                   2                   3
+0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|Version|  IHL  |Type of Service|          Total Length         |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|         Identification        |Flags|      Fragment Offset    |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|  Time to Live |    Protocol   |         Header Checksum       |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|                       Source Address                          |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|                    Destination Address                        |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|                    Options                    |    Padding    |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</code></pre>
+<h2 id="ipv6">IPv6</h2>
+<pre><code>$ host -t AAAA www.cyberciti.biz
+www.cyberciti.biz has IPv6 address 2607:f0d0:1002:51::4
+
+$ ping6 2607:f0d0:1002:51::4
+PING 2607:f0d0:1002:51::4(2607:f0d0:1002:51::4) 56 data bytes
+64 bytes from 2607:f0d0:1002:51::4: icmp_seq=1 ttl=64 time=0.056 ms
+64 bytes from 2607:f0d0:1002:51::4: icmp_seq=2 ttl=64 time=0.027 ms
+64 bytes from 2607:f0d0:1002:51::4: icmp_seq=3 ttl=64 time=0.021 ms
+64 bytes from 2607:f0d0:1002:51::4: icmp_seq=4 ttl=64 time=0.023 ms</code></pre>
+<p>dpkt.ip6.IP6</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw">class</span> IP6(dpkt.Packet):</a>
+<a class="sourceLine" id="cb7-2" data-line-number="2">    __hdr__ <span class="op">=</span> (</a>
+<a class="sourceLine" id="cb7-3" data-line-number="3">        (<span class="st">&#39;_v_fc_flow&#39;</span>, <span class="st">&#39;I&#39;</span>, 0x60000000L),</a>
+<a class="sourceLine" id="cb7-4" data-line-number="4">        (<span class="st">&#39;plen&#39;</span>, <span class="st">&#39;H&#39;</span>, <span class="dv">0</span>),  <span class="co"># payload length (not including header)</span></a>
+<a class="sourceLine" id="cb7-5" data-line-number="5">        (<span class="st">&#39;nxt&#39;</span>, <span class="st">&#39;B&#39;</span>, <span class="dv">0</span>),  <span class="co"># next header protocol</span></a>
+<a class="sourceLine" id="cb7-6" data-line-number="6">        (<span class="st">&#39;hlim&#39;</span>, <span class="st">&#39;B&#39;</span>, <span class="dv">0</span>),  <span class="co"># hop limit</span></a>
+<a class="sourceLine" id="cb7-7" data-line-number="7">        (<span class="st">&#39;src&#39;</span>, <span class="st">&#39;16s&#39;</span>, <span class="st">&#39;&#39;</span>),</a>
+<a class="sourceLine" id="cb7-8" data-line-number="8">        (<span class="st">&#39;dst&#39;</span>, <span class="st">&#39;16s&#39;</span>, <span class="st">&#39;&#39;</span>)</a>
+<a class="sourceLine" id="cb7-9" data-line-number="9">        )</a></code></pre></div>
+<dl>
+<dt>nxt</dt>
+<dd><p>Next header type, typical values are 6 for TCP, 17 for UDP, 58 for ICMPv6, 132 for SCTP.</p>
+</dd>
+</dl>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb8-1" data-line-number="1">socket.inet_ntop(AF_INET6, ip.dst)</a>
+<a class="sourceLine" id="cb8-2" data-line-number="2">socket.inet_pton(socket.AF_INET6, <span class="st">&quot;2001:1938:26f:1:204:4bff:0:1&quot;</span>)</a>
+<a class="sourceLine" id="cb8-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb8-4" data-line-number="4">ip <span class="op">=</span> eth.data</a>
+<a class="sourceLine" id="cb8-5" data-line-number="5"><span class="cf">if</span> eth.<span class="bu">type</span> <span class="op">==</span> dpkt.ethernet.ETH_TYPE_IP6 <span class="kw">and</span> ip.nxt <span class="op">==</span> dpkt.ip.IP_PROTO_UDP:</a></code></pre></div>
+<h2 id="udp-user-datagram-protocol">UDP (User Datagram Protocol)</h2>
+<p>UDP uses a simple connectionless transmission model with a minimum of protocol mechanism. It has no handshaking dialogues, and thus exposes any unreliability of the underlying network protocol to the user's program. There is no guarantee of delivery, ordering, or duplicate protection. UDP provides checksums for data integrity, and port numbers for addressing different functions at the source and destination of the datagram.</p>
+<pre><code>0        7 8     15 16    23 24    31
+ +--------+--------+--------+--------+
+ |     Source      |   Destination   |
+ |      Port       |      Port       |
+ +--------+--------+--------+--------+
+ |                 |                 |
+ |     Length      |    Checksum     |
+ +--------+--------+--------+--------+
+ |
+ |          data octets ...
+ +---------------- ...</code></pre>
+<h2 id="tcp-transmission-control-protocol">TCP (Transmission Control Protocol)</h2>
+<p>The Transmission Control Protocol (TCP) is a core protocol of the Internet Protocol Suite. TCP provides reliable, ordered, and error-checked delivery of a stream of octets between applications running on hosts communicating over an IP network.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb10-1" data-line-number="1">tcp <span class="op">=</span> ip.data</a>
+<a class="sourceLine" id="cb10-2" data-line-number="2">port <span class="op">=</span> tcp.sport<span class="op">|</span>dport</a></code></pre></div>
+<pre><code>0                   1                   2                   3
+0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|          Source Port          |       Destination Port        |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|                        Sequence Number                        |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|                    Acknowledgment Number                      |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|  Data |           |U|A|P|R|S|F|                               |
+| Offset| Reserved  |R|C|S|S|Y|I|            Window             |
+|       |           |G|K|H|T|N|N|                               |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|           Checksum            |         Urgent Pointer        |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|                    Options                    |    Padding    |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|                             data                              |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</code></pre>
+<h3 id="tcp-flags">TCP Flags</h3>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb12-1" data-line-number="1">fin_flag <span class="op">=</span> ( tcp.flags <span class="op">&amp;</span> dpkt.tcp.TH_FIN ) <span class="op">!=</span> <span class="dv">0</span></a>
+<a class="sourceLine" id="cb12-2" data-line-number="2">syn_flag <span class="op">=</span> ( tcp.flags <span class="op">&amp;</span> dpkt.tcp.TH_SYN ) <span class="op">!=</span> <span class="dv">0</span></a>
+<a class="sourceLine" id="cb12-3" data-line-number="3">rst_flag <span class="op">=</span> ( tcp.flags <span class="op">&amp;</span> dpkt.tcp.TH_RST ) <span class="op">!=</span> <span class="dv">0</span></a>
+<a class="sourceLine" id="cb12-4" data-line-number="4">psh_flag <span class="op">=</span> ( tcp.flags <span class="op">&amp;</span> dpkt.tcp.TH_PUSH) <span class="op">!=</span> <span class="dv">0</span></a>
+<a class="sourceLine" id="cb12-5" data-line-number="5">ack_flag <span class="op">=</span> ( tcp.flags <span class="op">&amp;</span> dpkt.tcp.TH_ACK ) <span class="op">!=</span> <span class="dv">0</span></a>
+<a class="sourceLine" id="cb12-6" data-line-number="6">urg_flag <span class="op">=</span> ( tcp.flags <span class="op">&amp;</span> dpkt.tcp.TH_URG ) <span class="op">!=</span> <span class="dv">0</span></a>
+<a class="sourceLine" id="cb12-7" data-line-number="7">ece_flag <span class="op">=</span> ( tcp.flags <span class="op">&amp;</span> dpkt.tcp.TH_ECE ) <span class="op">!=</span> <span class="dv">0</span></a>
+<a class="sourceLine" id="cb12-8" data-line-number="8">cwr_flag <span class="op">=</span> ( tcp.flags <span class="op">&amp;</span> dpkt.tcp.TH_CWR ) <span class="op">!=</span> <span class="dv">0</span></a></code></pre></div>
+<h2 id="dns-domain-name-system">DNS (Domain Name System)</h2>
+<p>The Domain Name System (DNS) is a hierarchical distributed naming system for computers, services, or any resource connected to the Internet or a private network. An often-used analogy to explain the Domain Name System is that it serves as the phone book for the Internet by translating human-friendly computer hostnames into IP addresses. For example, the domain name www.example.com translates to the addresses 93.184.216.119 (IPv4) and 2606:2800:220:6d:26bf:1447:1097:aa7 (IPv6).</p>
+<p>A simple example of parsing a DNS packet</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb13-1" data-line-number="1">eth <span class="op">=</span> dpkt.ethernet.Ethernet(buf)</a>
+<a class="sourceLine" id="cb13-2" data-line-number="2">ip <span class="op">=</span> eth.data</a>
+<a class="sourceLine" id="cb13-3" data-line-number="3">udp <span class="op">=</span> ip.data</a>
+<a class="sourceLine" id="cb13-4" data-line-number="4"><span class="co"># make the dns object out of the udp data and check for it being a RR (answer)</span></a>
+<a class="sourceLine" id="cb13-5" data-line-number="5"><span class="co"># and for opcode QUERY (I know, counter-intuitive)</span></a>
+<a class="sourceLine" id="cb13-6" data-line-number="6"><span class="cf">if</span> udp.dport <span class="op">!=</span> <span class="dv">53</span> <span class="kw">and</span> udp.sport <span class="op">!=</span> <span class="dv">53</span>: <span class="cf">continue</span></a>
+<a class="sourceLine" id="cb13-7" data-line-number="7">dns <span class="op">=</span> dpkt.dns.DNS(udp.data)</a>
+<a class="sourceLine" id="cb13-8" data-line-number="8"><span class="cf">if</span> dns.qr <span class="op">!=</span> dpkt.dns.DNS_R: <span class="cf">continue</span></a>
+<a class="sourceLine" id="cb13-9" data-line-number="9"><span class="cf">if</span> dns.opcode <span class="op">!=</span> dpkt.dns.DNS_QUERY: <span class="cf">continue</span></a>
+<a class="sourceLine" id="cb13-10" data-line-number="10"><span class="cf">if</span> dns.rcode <span class="op">!=</span> dpkt.dns.DNS_RCODE_NOERR: <span class="cf">continue</span></a>
+<a class="sourceLine" id="cb13-11" data-line-number="11"><span class="cf">if</span> <span class="bu">len</span>(dns.an) <span class="op">&lt;</span> <span class="dv">1</span>: <span class="cf">continue</span></a>
+<a class="sourceLine" id="cb13-12" data-line-number="12"><span class="co"># now we&#39;re going to process and spit out responses based on record type</span></a>
+<a class="sourceLine" id="cb13-13" data-line-number="13"><span class="co"># ref: http://en.wikipedia.org/wiki/List_of_DNS_record_types</span></a>
+<a class="sourceLine" id="cb13-14" data-line-number="14"><span class="cf">for</span> answer <span class="kw">in</span> dns.an:</a>
+<a class="sourceLine" id="cb13-15" data-line-number="15">    <span class="cf">if</span> answer.<span class="bu">type</span> <span class="op">==</span> dpkt.dns.DNS_CNAME:</a>
+<a class="sourceLine" id="cb13-16" data-line-number="16">        <span class="bu">print</span> <span class="st">&quot;CNAME request&quot;</span>, answer.name, <span class="st">&quot;</span><span class="ch">\t</span><span class="st">response&quot;</span>, answer.cname</a>
+<a class="sourceLine" id="cb13-17" data-line-number="17">    <span class="cf">elif</span> answer.<span class="bu">type</span> <span class="op">==</span> dpkt.dns.DNS_A:</a>
+<a class="sourceLine" id="cb13-18" data-line-number="18">        <span class="bu">print</span> <span class="st">&quot;A request&quot;</span>, answer.name, <span class="st">&quot;</span><span class="ch">\t</span><span class="st">response&quot;</span>, socket.inet_ntoa(answer.rdata)</a>
+<a class="sourceLine" id="cb13-19" data-line-number="19">    <span class="cf">elif</span> answer.<span class="bu">type</span> <span class="op">==</span> dpkt.dns.DNS_PTR:</a>
+<a class="sourceLine" id="cb13-20" data-line-number="20">        <span class="bu">print</span> <span class="st">&quot;PTR request&quot;</span>, answer.name, <span class="st">&quot;</span><span class="ch">\t</span><span class="st">response&quot;</span>, answer.ptrname</a></code></pre></div>
+<p>Make a DNS packet</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb14-1" data-line-number="1">dns <span class="op">=</span> dpkt.dns.DNS(udp.data)</a>
+<a class="sourceLine" id="cb14-2" data-line-number="2">dns.op <span class="op">=</span> dpkt.dns.DNS_RA</a>
+<a class="sourceLine" id="cb14-3" data-line-number="3">dns.rcode <span class="op">=</span> dpkt.dns.DNS_RCODE_NOERR</a>
+<a class="sourceLine" id="cb14-4" data-line-number="4">dns.qr <span class="op">=</span> dpkt.dns.DNS_R</a>
+<a class="sourceLine" id="cb14-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb14-6" data-line-number="6"><span class="co"># make a record</span></a>
+<a class="sourceLine" id="cb14-7" data-line-number="7">arr <span class="op">=</span> dpkt.dns.DNS.RR()</a>
+<a class="sourceLine" id="cb14-8" data-line-number="8">arr.cls <span class="op">=</span> dpkt.dns.DNS_IN</a>
+<a class="sourceLine" id="cb14-9" data-line-number="9">arr.<span class="bu">type</span> <span class="op">=</span> dpkt.dns.DNS_A</a>
+<a class="sourceLine" id="cb14-10" data-line-number="10">arr.name <span class="op">=</span> <span class="st">&#39;paypal.com&#39;</span></a>
+<a class="sourceLine" id="cb14-11" data-line-number="11">arr.ip <span class="op">=</span> dnet.addr(<span class="st">&#39;127.0.0.1&#39;</span>).ip</a>
+<a class="sourceLine" id="cb14-12" data-line-number="12"></a>
+<a class="sourceLine" id="cb14-13" data-line-number="13">dns.an.append(arr)</a>
+<a class="sourceLine" id="cb14-14" data-line-number="14"><span class="bu">print</span> dns</a>
+<a class="sourceLine" id="cb14-15" data-line-number="15"><span class="op">&gt;&gt;</span> DNS(an<span class="op">=</span>[RR(name<span class="op">=</span><span class="st">&#39;paypal.com&#39;</span>)], qd<span class="op">=</span>[Q(name<span class="op">=</span><span class="st">&#39;paypal.com&#39;</span>)], <span class="bu">id</span><span class="op">=</span><span class="dv">21825</span>, op<span class="op">=</span><span class="dv">32896</span>)</a></code></pre></div>
+<h3 id="dns-arrays">DNS Arrays</h3>
+<table>
+<thead>
+<tr class="header">
+<th>dpkt.dns.* arrays</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>qd(name='',type='')</td>
+<td>Question</td>
+</tr>
+<tr class="even">
+<td>qd.name</td>
+<td>The name that was searched, such as 'www.google.com'</td>
+</tr>
+<tr class="odd">
+<td>qd.cls</td>
+<td>class, dpkt.dns.DNS_IN</td>
+</tr>
+<tr class="even">
+<td>qd.type</td>
+<td>dpkt.dns.DNS_A, many more options</td>
+</tr>
+<tr class="odd">
+<td>an(name='',type='')</td>
+<td>Answer</td>
+</tr>
+<tr class="even">
+<td>ns</td>
+<td>List of name servers for this domain. You can iterate over the list</td>
+</tr>
+</tbody>
+</table>
+<h3 id="dns-codes">DNS Codes</h3>
+<dl>
+<dt>qr</dt>
+<dd><p>Type of message, either query or response, hence Q/R: dpkt.dns.DNS_Q (0), dpkt.dns.DNS_R (1)</p>
+</dd>
+<dt>opcode</dt>
+<dd><p>What type of query, usually standard query: dpkt.dns.DNS_QUERY (0)</p>
+</dd>
+<dt>rcode</dt>
+<dd><p>Errors: dpkt.dns.DNS_RCODE_NOERR (0), anything else is an error</p>
+</dd>
+<dt>op</dt>
+<dd><p>No clue what this is: dpkt.dns.DNS_RA, dpkt.dns.DNS_AA</p>
+</dd>
+<dt>ar</dt>
+<dd><p>Authority record or additional record</p>
+</dd>
+</dl>
+<h3 id="dns-questions">DNS Questions</h3>
+<p>dpkt.dns.DNS.Q(data)</p>
+<dl>
+<dt>name</dt>
+<dd><p>Domain name</p>
+</dd>
+<dt>type</dt>
+<dd><p>Type of query</p>
+</dd>
+<dt>cls</dt>
+<dd><p>Class of query</p>
+</dd>
+<dt>data</dt>
+<dd><p>Data ?</p>
+</dd>
+</dl>
+<h3 id="dns-answer">DNS Answer</h3>
+<p>dpkt keeps an array of responses in dpkt.dns.DNS.RR(data) with the fields:</p>
+<dl>
+<dt>name</dt>
+<dd><p>Name that was queried</p>
+</dd>
+<dt>type</dt>
+<dd><p>Type of response, see dpkt.dns.*.type table</p>
+</dd>
+<dt>cls</dt>
+<dd><p>Class of response, usually internet addr: dpkt.dns.DNS_IN (1)</p>
+</dd>
+<dt>ttl</dt>
+<dd><p>The number of seconds the result can be cached</p>
+</dd>
+<dt>rlen</dt>
+<dd><p>The length of the RDATA field</p>
+</dd>
+<dt>rdata</dt>
+<dd><p>The response data. The format is dependent on the TYPE field: A(1) is IPv4 addr, CNAME(5) then a name, NS(2) is name servers, etc</p>
+</dd>
+<dt>data</dt>
+<dd><p>Data?</p>
+</dd>
+</dl>
+<table>
+<thead>
+<tr class="header">
+<th>dpkt.dns.*.type</th>
+<th></th>
+<th>Description, assume rr is the python dpkt.dns.DNS object</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>DNS_A</td>
+<td>1</td>
+<td>IPv4 address; data = socket.inet_ntoa(rr.ip)</td>
+</tr>
+<tr class="even">
+<td>DNS_AAAA</td>
+<td>28</td>
+<td>IPv6 address</td>
+</tr>
+<tr class="odd">
+<td>DNS_CNAME</td>
+<td>5</td>
+<td>Conical name or alias</td>
+</tr>
+<tr class="even">
+<td>DNS_HINFO</td>
+<td>13</td>
+<td>OS info</td>
+</tr>
+<tr class="odd">
+<td>DNS_MX</td>
+<td>15</td>
+<td>Mail server: an.mxname</td>
+</tr>
+<tr class="even">
+<td>DNS_NS</td>
+<td>2</td>
+<td>Name server info:</td>
+</tr>
+<tr class="odd">
+<td>DNS_PTR</td>
+<td>12</td>
+<td>Map IP to hostname, data = rr.ptrname; ex. 10.27/1.168.192.in-addr.arpa. 1800 PTR mail.example.com.</td>
+</tr>
+<tr class="even">
+<td>DNS_SRV</td>
+<td>33</td>
+<td>Service locator; data = rr.srvname, rr.priority, rr.weight, rr.port</td>
+</tr>
+<tr class="odd">
+<td>DNS_SOA</td>
+<td>6</td>
+<td>Start of Authorities, gives info about domain: admin, contact info, etc</td>
+</tr>
+<tr class="even">
+<td>DNS_TXT</td>
+<td>16</td>
+<td>Text field; data = tuple(rr.text) # Convert the list to a hashable tuple</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb15-1" data-line-number="1"><span class="kw">class</span> DNS(dpkt.Packet):</a>
+<a class="sourceLine" id="cb15-2" data-line-number="2">    hdr__ <span class="op">=</span> (</a>
+<a class="sourceLine" id="cb15-3" data-line-number="3">        (<span class="st">&#39;id&#39;</span>, <span class="st">&#39;H&#39;</span>, <span class="dv">0</span>),</a>
+<a class="sourceLine" id="cb15-4" data-line-number="4">        (<span class="st">&#39;op&#39;</span>, <span class="st">&#39;H&#39;</span>, DNS_RD),  <span class="co"># recursive query</span></a>
+<a class="sourceLine" id="cb15-5" data-line-number="5">        <span class="co"># XXX - lists of query, RR objects</span></a>
+<a class="sourceLine" id="cb15-6" data-line-number="6">        (<span class="st">&#39;qd&#39;</span>, <span class="st">&#39;H&#39;</span>, []),</a>
+<a class="sourceLine" id="cb15-7" data-line-number="7">        (<span class="st">&#39;an&#39;</span>, <span class="st">&#39;H&#39;</span>, []),</a>
+<a class="sourceLine" id="cb15-8" data-line-number="8">        (<span class="st">&#39;ns&#39;</span>, <span class="st">&#39;H&#39;</span>, []),</a>
+<a class="sourceLine" id="cb15-9" data-line-number="9">        (<span class="st">&#39;ar&#39;</span>, <span class="st">&#39;H&#39;</span>, [])</a>
+<a class="sourceLine" id="cb15-10" data-line-number="10">    )</a>
+<a class="sourceLine" id="cb15-11" data-line-number="11"></a>
+<a class="sourceLine" id="cb15-12" data-line-number="12"><span class="kw">class</span> RR(Q):</a>
+<a class="sourceLine" id="cb15-13" data-line-number="13">    <span class="co">&quot;&quot;&quot;DNS resource record.&quot;&quot;&quot;</span></a>
+<a class="sourceLine" id="cb15-14" data-line-number="14">    __hdr__ <span class="op">=</span> (</a>
+<a class="sourceLine" id="cb15-15" data-line-number="15">        (<span class="st">&#39;name&#39;</span>, <span class="st">&#39;1025s&#39;</span>, <span class="st">&#39;&#39;</span>),</a>
+<a class="sourceLine" id="cb15-16" data-line-number="16">        (<span class="st">&#39;type&#39;</span>, <span class="st">&#39;H&#39;</span>, DNS_A),</a>
+<a class="sourceLine" id="cb15-17" data-line-number="17">        (<span class="st">&#39;cls&#39;</span>, <span class="st">&#39;H&#39;</span>, DNS_IN),</a>
+<a class="sourceLine" id="cb15-18" data-line-number="18">        (<span class="st">&#39;ttl&#39;</span>, <span class="st">&#39;I&#39;</span>, <span class="dv">0</span>),</a>
+<a class="sourceLine" id="cb15-19" data-line-number="19">        (<span class="st">&#39;rlen&#39;</span>, <span class="st">&#39;H&#39;</span>, <span class="dv">4</span>),</a>
+<a class="sourceLine" id="cb15-20" data-line-number="20">        (<span class="st">&#39;rdata&#39;</span>, <span class="st">&#39;s&#39;</span>, <span class="st">&#39;&#39;</span>)</a>
+<a class="sourceLine" id="cb15-21" data-line-number="21">    )</a>
+<a class="sourceLine" id="cb15-22" data-line-number="22"></a>
+<a class="sourceLine" id="cb15-23" data-line-number="23"><span class="kw">class</span> Q(dpkt.Packet):</a>
+<a class="sourceLine" id="cb15-24" data-line-number="24">    <span class="co">&quot;&quot;&quot;DNS question.&quot;&quot;&quot;</span></a>
+<a class="sourceLine" id="cb15-25" data-line-number="25">    __hdr__ <span class="op">=</span> (</a>
+<a class="sourceLine" id="cb15-26" data-line-number="26">        (<span class="st">&#39;name&#39;</span>, <span class="st">&#39;1025s&#39;</span>, <span class="st">&#39;&#39;</span>),</a>
+<a class="sourceLine" id="cb15-27" data-line-number="27">        (<span class="st">&#39;type&#39;</span>, <span class="st">&#39;H&#39;</span>, DNS_A),</a>
+<a class="sourceLine" id="cb15-28" data-line-number="28">        (<span class="st">&#39;cls&#39;</span>, <span class="st">&#39;H&#39;</span>, DNS_IN)</a>
+<a class="sourceLine" id="cb15-29" data-line-number="29">    )</a></code></pre></div>
+<p>Some examples:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb16-1" data-line-number="1">DNS_CACHE_FLUSH <span class="op">=</span> <span class="bn">0x8000</span></a>
+<a class="sourceLine" id="cb16-2" data-line-number="2">answer <span class="op">=</span> dpkt.dns.DNS.RR(</a>
+<a class="sourceLine" id="cb16-3" data-line-number="3">    <span class="bu">type</span> <span class="op">=</span> dpkt.dns.DNS_TXT,</a>
+<a class="sourceLine" id="cb16-4" data-line-number="4">    cls <span class="op">=</span> dpkt.dns.DNS_IN <span class="op">|</span> DNS_CACHE_FLUSH,</a>
+<a class="sourceLine" id="cb16-5" data-line-number="5">    ttl <span class="op">=</span> <span class="dv">200</span>,</a>
+<a class="sourceLine" id="cb16-6" data-line-number="6">    name <span class="op">=</span> <span class="st">&#39;www.hello.com&#39;</span>,</a>
+<a class="sourceLine" id="cb16-7" data-line-number="7">    text <span class="op">=</span> <span class="st">&#39;Some text&#39;</span>)</a>
+<a class="sourceLine" id="cb16-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb16-9" data-line-number="9">ans <span class="op">=</span> dpkt.dns.DNS.RR(</a>
+<a class="sourceLine" id="cb16-10" data-line-number="10">    <span class="bu">type</span> <span class="op">=</span> dpkt.dns.DNS_SRV,</a>
+<a class="sourceLine" id="cb16-11" data-line-number="11">    cls <span class="op">=</span> dpkt.dns.DNS_IN <span class="op">|</span> DNS_CACHE_FLUSH,</a>
+<a class="sourceLine" id="cb16-12" data-line-number="12">    ttl <span class="op">=</span> <span class="va">self</span>._response_ttl,</a>
+<a class="sourceLine" id="cb16-13" data-line-number="13">    name <span class="op">=</span> q.name,</a>
+<a class="sourceLine" id="cb16-14" data-line-number="14">    srvname <span class="op">=</span> full_hostname,</a>
+<a class="sourceLine" id="cb16-15" data-line-number="15">    priority <span class="op">=</span> priority,</a>
+<a class="sourceLine" id="cb16-16" data-line-number="16">    weight <span class="op">=</span> weight,</a>
+<a class="sourceLine" id="cb16-17" data-line-number="17">    port <span class="op">=</span> port)</a>
+<a class="sourceLine" id="cb16-18" data-line-number="18"><span class="co"># The target host (srvname) requires to send an A record with its IP</span></a>
+<a class="sourceLine" id="cb16-19" data-line-number="19"><span class="co"># address. We do this as if a query for it was sent.</span></a>
+<a class="sourceLine" id="cb16-20" data-line-number="20">q <span class="op">=</span> dpkt.dns.DNS.Q(name<span class="op">=</span>full_hostname, <span class="bu">type</span><span class="op">=</span>dpkt.dns.DNS_A)</a>
+<a class="sourceLine" id="cb16-21" data-line-number="21">answers <span class="op">=</span> []</a>
+<a class="sourceLine" id="cb16-22" data-line-number="22"><span class="cf">for</span> ip_addr <span class="kw">in</span> <span class="va">self</span>._a_records[q.name]:</a>
+<a class="sourceLine" id="cb16-23" data-line-number="23">    answers.append(dpkt.dns.DNS.RR(</a>
+<a class="sourceLine" id="cb16-24" data-line-number="24">        <span class="bu">type</span> <span class="op">=</span> dpkt.dns.DNS_A,</a>
+<a class="sourceLine" id="cb16-25" data-line-number="25">        cls <span class="op">=</span> dpkt.dns.DNS_IN <span class="op">|</span> DNS_CACHE_FLUSH,</a>
+<a class="sourceLine" id="cb16-26" data-line-number="26">        ttl <span class="op">=</span> <span class="va">self</span>._response_ttl,</a>
+<a class="sourceLine" id="cb16-27" data-line-number="27">        name <span class="op">=</span> q.name,</a>
+<a class="sourceLine" id="cb16-28" data-line-number="28">        ip <span class="op">=</span> ip_addr))</a>
+<a class="sourceLine" id="cb16-29" data-line-number="29">[ans] <span class="op">+</span> answers</a>
+<a class="sourceLine" id="cb16-30" data-line-number="30"></a>
+<a class="sourceLine" id="cb16-31" data-line-number="31">MDNS_IP_ADDR <span class="op">=</span> <span class="st">&#39;224.0.0.251&#39;</span></a>
+<a class="sourceLine" id="cb16-32" data-line-number="32">MDNS_PORT <span class="op">=</span> <span class="dv">5353</span></a>
+<a class="sourceLine" id="cb16-33" data-line-number="33">resp_dns <span class="op">=</span> dpkt.dns.DNS(</a>
+<a class="sourceLine" id="cb16-34" data-line-number="34">    op <span class="op">=</span> dpkt.dns.DNS_AA, <span class="co"># Authoritative Answer.</span></a>
+<a class="sourceLine" id="cb16-35" data-line-number="35">    rcode <span class="op">=</span> dpkt.dns.DNS_RCODE_NOERR,</a>
+<a class="sourceLine" id="cb16-36" data-line-number="36">    an <span class="op">=</span> answers)</a>
+<a class="sourceLine" id="cb16-37" data-line-number="37"><span class="co"># This property modifies the &quot;op&quot; field:</span></a>
+<a class="sourceLine" id="cb16-38" data-line-number="38">resp_dns.qr <span class="op">=</span> dpkt.dns.DNS_R, <span class="co"># Response.</span></a>
+<a class="sourceLine" id="cb16-39" data-line-number="39">sock.send(<span class="bu">str</span>(resp_dns), MDNS_IP_ADDR, MDNS_PORT)</a></code></pre></div>
+<h2 id="dnslib">DNSLib</h2>
+<p>class RR :rclass: ? :rdlength: ? :rname: ? :rtype: ? :ttl: ?</p>
+<h2 id="arp">ARP</h2>
+<p>The Address Resolution Protocol (ARP) is a telecommunication protocol used for resolution of network layer addresses into link layer addresses, a critical function in multiple-access networks. ARP is used to convert a network address (e.g. an IPv4 address) to a physical address such as an Ethernet address (also known as a MAC address). wiki &lt;http://en.wikipedia.org/wiki/Address_Resolution_Protocol&gt;__</p>
+<p>If you have the IP address, you can get the MAC address by sending an ARP message with a broadcast MAC address (FF:FF:FF:FF:FF:FF or 00:00:00:00:00:00 (arping uses)) which every computer will read. Then the computer with the IP address will respond with its MAC address.</p>
+<table>
+<thead>
+<tr class="header">
+<th>dpkt.arp.*</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>op</td>
+<td>dpkt.arp.ARP_OP_REQUEST,dpkt.arp.ARP_OP_REPLY</td>
+</tr>
+<tr class="even">
+<td>sha</td>
+<td>Source hardware address</td>
+</tr>
+<tr class="odd">
+<td>spa</td>
+<td>Source protocol address</td>
+</tr>
+<tr class="even">
+<td>tha</td>
+<td>Target hardware address</td>
+</tr>
+<tr class="odd">
+<td>tpa</td>
+<td>Target protocol address</td>
+</tr>
+</tbody>
+</table>
+<p>This doesn't work on Windows and OSX becuase socket.PF_PACKET isn't defined, only on linux:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb17-1" data-line-number="1">s <span class="op">=</span> socket.socket(socket.PF_PACKET, socket.SOCK_RAW)</a>
+<a class="sourceLine" id="cb17-2" data-line-number="2">s.bind((<span class="st">&#39;en1&#39;</span>, ethernet.ETH_TYPE_ARP))</a></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb18-1" data-line-number="1">my_mac <span class="op">=</span> commands.getoutput(<span class="st">&quot;ifconfig &quot;</span> <span class="op">+</span> <span class="st">&#39;en1&#39;</span> <span class="op">+</span> <span class="st">&quot;| grep ether | awk &#39;{ print $2 }&#39;&quot;</span>)</a>
+<a class="sourceLine" id="cb18-2" data-line-number="2">ans <span class="op">=</span> commands.getoutput(<span class="st">&#39;arp -i en1 -l -n 192.168.1.13&#39;</span>)</a>
+<a class="sourceLine" id="cb18-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb18-4" data-line-number="4"><span class="co"># bulid an ARP reply</span></a>
+<a class="sourceLine" id="cb18-5" data-line-number="5">arp_p <span class="op">=</span> arp.ARP()</a>
+<a class="sourceLine" id="cb18-6" data-line-number="6">arp_p.sha <span class="op">=</span> eth_aton(src_mac)</a>
+<a class="sourceLine" id="cb18-7" data-line-number="7">arp_p.spa <span class="op">=</span> socket.inet_aton(src_ip)</a>
+<a class="sourceLine" id="cb18-8" data-line-number="8">arp_p.tha <span class="op">=</span> eth_aton(dst_mac)</a>
+<a class="sourceLine" id="cb18-9" data-line-number="9">arp_p.tpa <span class="op">=</span> socket.inet_aton(dst_ip)</a>
+<a class="sourceLine" id="cb18-10" data-line-number="10">arp_p.op <span class="op">=</span> arp.ARP_OP_REPLY</a>
+<a class="sourceLine" id="cb18-11" data-line-number="11"></a>
+<a class="sourceLine" id="cb18-12" data-line-number="12">packet <span class="op">=</span> ethernet.Ethernet()</a>
+<a class="sourceLine" id="cb18-13" data-line-number="13">packet.src <span class="op">=</span> eth_aton(so_mac)</a>
+<a class="sourceLine" id="cb18-14" data-line-number="14">packet.dst <span class="op">=</span> eth_aton(to_mac)</a>
+<a class="sourceLine" id="cb18-15" data-line-number="15">packet.data <span class="op">=</span> arp_p</a>
+<a class="sourceLine" id="cb18-16" data-line-number="16">packet.<span class="bu">type</span> <span class="op">=</span> ethernet.ETH_TYPE_ARP</a></code></pre></div>
+<p>You can also use arping to find the MAC:</p>
+<pre class="sourceCode bashsession"><code>[kevin@Tardis docs]$ sudo arping -c 3 192.168.1.6
+ARPING 192.168.1.6
+Timeout
+42 bytes from 40:30:04:f0:8c:50 (192.168.1.6): index=0 time=556.113 msec
+42 bytes from 40:30:04:f0:8c:50 (192.168.1.6): index=1 time=164.716 msec
+
+--- 192.168.1.6 statistics ---
+3 packets transmitted, 2 packets received,  33% unanswered (0 extra)
+rtt min/avg/max/std-dev = 164.716/360.415/556.113/195.698 ms</code></pre>
+<p>Or simplify it using other utils:</p>
+<pre><code>sudo arping -c 2 192.168.1.5 | grep bytes | awk &#39;{ print $4 }&#39;</code></pre>
+<h3 id="decoding-an-arp-packet">Decoding an ARP Packet</h3>
+<div class="sourceCode" id="cb21"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb21-1" data-line-number="1"><span class="im">import</span> binascii</a>
+<a class="sourceLine" id="cb21-2" data-line-number="2"><span class="kw">def</span> add_colons_to_mac( mac_addr ) :</a>
+<a class="sourceLine" id="cb21-3" data-line-number="3">    <span class="co">&quot;&quot;&quot;This function accepts a 12 hex digit string and converts it to a colon</span></a>
+<a class="sourceLine" id="cb21-4" data-line-number="4"><span class="co">separated string&quot;&quot;&quot;</span></a>
+<a class="sourceLine" id="cb21-5" data-line-number="5">    s <span class="op">=</span> <span class="bu">list</span>()</a>
+<a class="sourceLine" id="cb21-6" data-line-number="6">    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">12</span><span class="op">/</span><span class="dv">2</span>) :  <span class="co"># mac_addr should always be 12 chars, we work in groups of 2 chars</span></a>
+<a class="sourceLine" id="cb21-7" data-line-number="7">        s.append( mac_addr[i<span class="op">*</span><span class="dv">2</span>:i<span class="op">*</span><span class="dv">2</span><span class="op">+</span><span class="dv">2</span>] )</a>
+<a class="sourceLine" id="cb21-8" data-line-number="8">    r <span class="op">=</span> <span class="st">&quot;:&quot;</span>.join(s)</a>
+<a class="sourceLine" id="cb21-9" data-line-number="9">    <span class="cf">return</span> r</a>
+<a class="sourceLine" id="cb21-10" data-line-number="10"></a>
+<a class="sourceLine" id="cb21-11" data-line-number="11">eth <span class="op">=</span> dpkt.ethernet.Ethernet(pkt)</a>
+<a class="sourceLine" id="cb21-12" data-line-number="12"></a>
+<a class="sourceLine" id="cb21-13" data-line-number="13"><span class="co"># should actually double check this is an ARP packet and not assume</span></a>
+<a class="sourceLine" id="cb21-14" data-line-number="14">arp <span class="op">=</span> eth.arp</a>
+<a class="sourceLine" id="cb21-15" data-line-number="15"><span class="bu">print</span> <span class="st">&quot;source protocol address&quot;</span>, socket.inet_ntoa(arp.spa)</a>
+<a class="sourceLine" id="cb21-16" data-line-number="16"><span class="bu">print</span> <span class="st">&quot;source hardware address&quot;</span>, add_colons_to_mac( binascii.hexlify(arp.sha) )</a>
+<a class="sourceLine" id="cb21-17" data-line-number="17"><span class="bu">print</span> <span class="st">&quot;Target protocol address&quot;</span>, socket.inet_ntoa(arp.tpa)  <span class="co">#IPv4 address</span></a>
+<a class="sourceLine" id="cb21-18" data-line-number="18"><span class="bu">print</span> <span class="st">&quot;target hardware address&quot;</span>, add_colons_to_mac( binascii.hexlify(arp.tha) )</a>
+<a class="sourceLine" id="cb21-19" data-line-number="19">arp_cache[arp.spa] <span class="op">=</span> arp.sha</a>
+<a class="sourceLine" id="cb21-20" data-line-number="20">add_colons_to_mac( binascii.hexlify(arp_cache[ip]))</a></code></pre></div>
+<h2 id="icmp">ICMP</h2>
+<p>The Internet Control Message Protocol (ICMP) is one of the main protocols of the Internet Protocol Suite. It is used by network devices, like routers, to send error messages indicating, for example, that a requested service is not available or that a host or router could not be reached.</p>
+<p>The variable size of the ICMP packet data section has been exploited. In the well-known &quot;Ping of death,&quot; large or fragmented ping packets are used for denial-of-service attacks. ICMP can also be used to create covert channels for communication, as with the LOKI exploit.</p>
+<pre><code>0                   1                   2                   3
+0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|     Type      |     Code      |          Checksum             |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|                             unused                            |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|      Internet Header + 64 bits of Original Data Datagram      |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</code></pre>
+<p>types</p>
+<ul>
+<li>echo reply 0</li>
+<li>destination unreachable 3</li>
+<li>echo request 8</li>
+<li>timestamp 13</li>
+<li>timestamp reply 14</li>
+</ul>
+<h2 id="icmpv6-rfc4443">ICMPv6 <a href="http://www.ietf.org/rfc/rfc4443.txt">RFC4443</a></h2>
+<p>The ICMPv6 messages have the following general format:</p>
+<pre><code>0                   1                   2                   3
+0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|     Type      |     Code      |          Checksum             |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|                                                               |
++                         Message Body                          +
+|                                                               |</code></pre>
+<p>ICMPv6 messages are grouped into two classes: error messages and informational messages. Error messages are identified as such by a zero in the high-order bit of their message Type field values. Thus, error messages have message types from 0 to 127; informational messages have message types from 128 to 255.</p>
+<p>ICMPv6 error message types:</p>
+<blockquote>
+<p>1 Destination Unreachable 2 Packet Too Big 3 Time Exceeded 4 Parameter Problem</p>
+</blockquote>
+<p>ICMPv6 informational message types:</p>
+<blockquote>
+<p>128 Echo Request 129 Echo Reply</p>
+</blockquote>
+<p>ICMPv6 Fields:</p>
+<p>Type 1 Destination Unreachable</p>
+<dl>
+<dt>Code 0 - No route to destination</dt>
+<dd><p>1 - Communication with destination administratively prohibited 2 - Beyond scope of source address 3 - Address unreachable 4 - Port unreachable 5 - Source address failed ingress/egress policy 6 - Reject route to destination</p>
+</dd>
+</dl>
+<p>ICMPv6 Informational Messages</p>
+<h3 id="echo-request-message">Echo Request Message</h3>
+<pre><code>0                   1                   2                   3
+0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|     Type      |     Code      |          Checksum             |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|           Identifier          |        Sequence Number        |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|     Data ...
++-+-+-+-+-</code></pre>
+<blockquote>
+<dl>
+<dt>Type</dt>
+<dd><p>128</p>
+</dd>
+<dt>Code</dt>
+<dd><p>0</p>
+</dd>
+<dt>Identifier</dt>
+<dd><p>An identifier to aid in matching Echo Replies to this Echo Request. May be zero.</p>
+</dd>
+<dt>Sequence Number</dt>
+<dd><p>A sequence number to aid in matching Echo Replies to this Echo Request. May be zero.</p>
+</dd>
+<dt>Data</dt>
+<dd><p>Zero or more octets of arbitrary data.</p>
+</dd>
+</dl>
+</blockquote>
+<h3 id="echo-reply-message">Echo Reply Message</h3>
+<pre><code>0                   1                   2                   3
+0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|     Type      |     Code      |          Checksum             |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|           Identifier          |        Sequence Number        |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|     Data ...
++-+-+-+-+-</code></pre>
+<dl>
+<dt>Type</dt>
+<dd><p>129</p>
+</dd>
+<dt>Code</dt>
+<dd><p>0</p>
+</dd>
+<dt>Identifier</dt>
+<dd><p>The identifier from the invoking Echo Request message.</p>
+</dd>
+<dt>Sequence Number</dt>
+<dd><p>The sequence number from the invoking Echo Request message.</p>
+</dd>
+<dt>Data</dt>
+<dd><p>The data from the invoking Echo Request message.</p>
+</dd>
+</dl>
+<h2 id="neighbor-discovery-nd-protocol-for-internet-protocol-version-6-ipv6">Neighbor Discovery (ND) protocol for Internet Protocol Version 6 (IPv6)</h2>
+<p><a href="http://www.ietf.org/rfc/rfc4861.txt">RFC4861</a></p>
+<p>Nodes (hosts and routers) use Neighbor Discovery to determine the link-layer addresses for neighbors known to reside on attached links and to quickly purge cached values that become invalid. Hosts also use Neighbor Discovery to find neighboring routers that are willing to forward packets on their behalf. Finally, nodes use the protocol to actively keep track of which neighbors are reachable and which are not, and to detect changed link-layer addresses.</p>
+<p>Neighbor Solicitation Message Format</p>
+<p>Nodes send Neighbor Solicitations to request the link-layer address of a target node while also providing their own link-layer address to the target. Neighbor Solicitations are multicast when the node needs to resolve an address and unicast when the node seeks to verify the reachability of a neighbor.</p>
+<pre><code>0                   1                   2                   3
+0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|     Type      |     Code      |          Checksum             |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|                           Reserved                            |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|                                                               |
++                                                               +
+|                                                               |
++                       Target Address                          +
+|                                                               |
++                                                               +
+|                                                               |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|   Options ...
++-+-+-+-+-+-+-+-+-+-+-+-
+
+IP Fields:
+
+  Source Address
+                 Either an address assigned to the interface from
+                 which this message is sent or (if Duplicate Address
+                 Detection is in progress [ADDRCONF]) the
+                 unspecified address.
+  Destination Address
+                 Either the solicited-node multicast address
+                 corresponding to the target address, or the target
+                 address.
+  Hop Limit      255</code></pre>
+<blockquote>
+<p>ICMP Fields:</p>
+<blockquote>
+<p>Type 135</p>
+<p>Code 0</p>
+<p>Checksum The ICMP checksum. See [ICMPv6].</p>
+<dl>
+<dt>Reserved This field is unused. It MUST be initialized to</dt>
+<dd><p>zero by the sender and MUST be ignored by the receiver.</p>
+</dd>
+<dt>Target Address The IP address of the target of the solicitation.</dt>
+<dd><p>It MUST NOT be a multicast address.</p>
+</dd>
+</dl>
+</blockquote>
+<p>Possible options:</p>
+<blockquote>
+<dl>
+<dt>Source link-layer address</dt>
+<dd><p>The link-layer address for the sender. MUST NOT be included when the source IP address is the unspecified address. Otherwise, on link layers that have addresses this option MUST be included in multicast solicitations and SHOULD be included in unicast solicitations.</p>
+</dd>
+</dl>
+</blockquote>
+</blockquote>
+<p>Neighbor Advertisement Message Format</p>
+<p>A node sends Neighbor Advertisements in response to Neighbor Solicitations and sends unsolicited Neighbor Advertisements in order to (unreliably) propagate new information quickly.</p>
+<pre><code>0                   1                   2                   3
+0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|     Type      |     Code      |          Checksum             |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|R|S|O|                     Reserved                            |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|                                                               |
++                                                               +
+|                                                               |
++                       Target Address                          +
+|                                                               |
++                                                               +
+|                                                               |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|   Options ...
++-+-+-+-+-+-+-+-+-+-+-+-</code></pre>
+<p>IP Fields:</p>
+<dl>
+<dt>Source Address</dt>
+<dd><p>An address assigned to the interface from which the advertisement is sent.</p>
+</dd>
+<dt>Destination Address</dt>
+<dd><p>For solicited advertisements, the Source Address of an invoking Neighbor Solicitation or, if the solicitation's Source Address is the unspecified address, the all-nodes multicast address. For unsolicited advertisements typically the all-nodes multicast address.</p>
+</dd>
+<dt>Hop Limit</dt>
+<dd><p>255</p>
+</dd>
+</dl>
+<p>ICMP Fields:</p>
+<dl>
+<dt>Type</dt>
+<dd><p>136</p>
+</dd>
+<dt>Code</dt>
+<dd><p>0</p>
+</dd>
+<dt>Checksum</dt>
+<dd><p>The ICMP checksum. See [ICMPv6].</p>
+</dd>
+<dt>R</dt>
+<dd><p>Router flag. When set, the R-bit indicates that the sender is a router. The R-bit is used by Neighbor Unreachability Detection to detect a router that changes to a host.</p>
+</dd>
+<dt>S</dt>
+<dd><p>Solicited flag. When set, the S-bit indicates that the advertisement was sent in response to a Neighbor Solicitation from the Destination address. The S-bit is used as a reachability confirmation for Neighbor Unreachability Detection. It MUST NOT be set in multicast advertisements or in unsolicited unicast advertisements.</p>
+</dd>
+<dt>O</dt>
+<dd><p>Override flag. When set, the O-bit indicates that the advertisement should override an existing cache entry and update the cached link-layer address. When it is not set the advertisement will not update a cached link-layer address though it will update an existing Neighbor Cache entry for which no link-layer address is known. It SHOULD NOT be set in solicited advertisements for anycast addresses and in solicited proxy advertisements. It SHOULD be set in other solicited advertisements and in unsolicited advertisements.</p>
+</dd>
+<dt>Reserved</dt>
+<dd><p>29-bit unused field. It MUST be initialized to zero by the sender and MUST be ignored by the receiver.</p>
+</dd>
+<dt>Target Address</dt>
+<dd><p>For solicited advertisements, the Target Address field in the Neighbor Solicitation message that prompted this advertisement. For an unsolicited advertisement, the address whose link-layer address has changed. The Target Address MUST NOT be a multicast address.</p>
+</dd>
+</dl>
+<p>Possible options:</p>
+<dl>
+<dt>Target link-layer address</dt>
+<dd><p>The link-layer address for the target, i.e., the sender of the advertisement. This option MUST be included on link layers that have addresses when responding to multicast solicitations. When responding to a unicast Neighbor Solicitation this option SHOULD be included.</p>
+<p>The option MUST be included for multicast solicitations in order to avoid infinite Neighbor Solicitation &quot;recursion&quot; when the peer node does not have a cache entry to return a Neighbor Advertisements message. When responding to unicast solicitations, the option can be omitted since the sender of the solicitation has the correct link-layer address; otherwise, it would not be able to send the unicast solicitation in the first place. However, including the link-layer address in this case adds little overhead and eliminates a potential race condition where the sender deletes the cached link-layer address prior to receiving a response to a previous solicitation.</p>
+</dd>
+</dl>
+<h2 id="multicast-dns-mdns">Multicast DNS (mDNS)</h2>
+<p>The multicast Domain Name System (mDNS) resolves host names to IP addresses within small networks that do not include a local name server. It is a zero configuration service, using essentially the same programming interfaces, packet formats and operating semantics as the unicast Domain Name System (DNS). While it is designed to be stand-alone capable, it can work in concert with unicast DNS servers.</p>
+<p>The mDNS Ethernet frame is a multicast UDP packet to:</p>
+<ul>
+<li>MAC address 01:00:5E:00:00:FB (for IPv4) or 33:33:00:00:00:FB (for IPv6)</li>
+<li>IPv4 address 224.0.0.251 or IPv6 address FF02::FB</li>
+<li>UDP port 5353</li>
+</ul>
+<p>You can simulate mDNS request with `dig`:</p>
+<pre class="sourceCode bashsession"><code>[kevin@Tardis test]$ dig -p 5353 @224.0.0.251 calculon.local
+
+; &lt;&lt;&gt;&gt; DiG 9.8.3-P1 &lt;&lt;&gt;&gt; -p 5353 @224.0.0.251 calculon.local
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 53097
+;; flags: qr aa; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;calculon.local.            IN  A
+
+;; ANSWER SECTION:
+calculon.local.     10  IN  A   192.168.1.17
+
+;; Query time: 59 msec
+;; SERVER: 192.168.1.17#5353(224.0.0.251)
+;; WHEN: Thu May 28 12:04:07 2015
+;; MSG SIZE  rcvd: 48</code></pre>
+<h2 id="active-network-mapping">Active Network Mapping</h2>
+<p>Fast determination if a host is up: UDP - low cost to send packets</p>
+<ol type="1">
+<li>Send UDP packets to a port on a remote machine</li>
+<li>Listen for ICMP (error, type=code=3) responses back. An unreachable port error means the host is up</li>
+</ol>
+<p>Scan a host for open ports: TCP</p>
+<ol type="1">
+<li>For each host that is up, start the handshake process:</li>
+<li>Send a SYN packet to a port</li>
+<li>Wait for the ACK (port is open) and then send a RST (reset) to close out the process and move on to the next port</li>
+<li>If you don't get the ACK, then the port is closed</li>
+</ol>
+<h2 id="passive-network-mapping">Passive Network Mapping</h2>
+<p>Listen for:</p>
+<ul>
+<li>DNS responses: DNS_A will match names to IPv4 addresses</li>
+<li>mDNS: same as above</li>
+<li>mDNS: DNS_SRV will match services to IPv4 addresses</li>
+</ul>
+<h2 id="resources">Resources</h2>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/List_of_DNS_record_types">DNS record types</a></li>
+<li><a href="http://www.commercialventvac.com/dpkt.html#mozTocId839997">dpkt doc</a></li>
+<li><a href="https://jon.oberheide.org/blog/2008/08/25/dpkt-tutorial-1-icmp-echo/">dpkt-tutorial-1-icmp-echo</a></li>
+<li><a href="https://jon.oberheide.org/blog/2008/10/15/dpkt-tutorial-2-parsing-a-pcap-file/">dpkt-tutorial-2-parsing-a-pcap-file</a></li>
+<li><a href="https://jon.oberheide.org/blog/2008/12/20/dpkt-tutorial-3-dns-spoofing/">dpkt-tutorial-3-dns-spoofing</a></li>
+<li><a href="http://www.binarytides.com/python-packet-sniffer-code-linux/">IP Protocol headers</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Internet_Control_Message_Protocol">ICMP message</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Address_Resolution_Protocol">ARP message</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Multicast_DNS">mDNS message</a></li>
+<li><a href="http://unixwiz.net/techtips/iguide-kaminsky-dns-vuln.html">unixwiz.net</a></li>
+<li><a href="http://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-6">IANA DNS types</a></li>
+<li><a href="http://www.ietf.org">Internet Engineering Task Force</a></li>
+</ul>
+<h2 id="airplay">Airplay</h2>
+<p><a href="http://nto.github.io/AirPlay.html#audio-airportexpressauthentication" class="uri">http://nto.github.io/AirPlay.html#audio-airportexpressauthentication</a></p>
+<h2 id="misc">Misc</h2>
+<div class="sourceCode" id="cb29"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb29-1" data-line-number="1"><span class="im">import</span> AppKit</a>
+<a class="sourceLine" id="cb29-2" data-line-number="2"><span class="co"># Create instance of OS X notification center</span></a>
+<a class="sourceLine" id="cb29-3" data-line-number="3">notification_center <span class="op">=</span> AppKit.NSUserNotificationCenter.defaultUserNotificationCenter()</a>
+<a class="sourceLine" id="cb29-4" data-line-number="4"><span class="co"># Create new notification instance</span></a>
+<a class="sourceLine" id="cb29-5" data-line-number="5">notification <span class="op">=</span> AppKit.NSUserNotification.alloc().init()</a>
+<a class="sourceLine" id="cb29-6" data-line-number="6">notification.setTitle_(title)</a>
+<a class="sourceLine" id="cb29-7" data-line-number="7">notification.setSubtitle_(subtitle)</a>
+<a class="sourceLine" id="cb29-8" data-line-number="8">notification.setInformativeText_(content)</a>
+<a class="sourceLine" id="cb29-9" data-line-number="9"><span class="co"># Deliver OS notifications</span></a>
+<a class="sourceLine" id="cb29-10" data-line-number="10">notification_center.deliverNotification_(notification)</a></code></pre></div>
+
+            
+          </div>
+
+        </div>
+    </body>
+
+    <div id="footer-wrapper">
+
+  <div class="logo"></div>
+
+  <div class="logo">
+    <a class="logo" href="http://github.com/walchko"><i class="fl-github fl-36"></i></a>
+    <a class="logo" href="http://stackoverflow.com/users/5374768/kevin"><i class="fl-stackoverflow fl-36"></i></a>
+    <a class="logo" href="http://raspberrypi.stackexchange.com/users/1677/kevin"><i class="fl-stackexchange fl-36"></i></a>
+    <a class="logo" href="https://www.npmjs.com/~kevin.walchko"><i class="fl-npm fl-36"></i></a>
+    <a class="logo" href="https://pypi.python.org/pypi"><i class="fl-python fl-36"></i></a>
+    <a class="logo" href="https://bitbucket.org/walchko/"><i class="fl-bitbucket fl-36"></i></a>
+  </div>
+
+  <div class="logo">
+    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+      <i class="cc cc-by-sa cc-lg"></i>
+    </a>
+  </div>
+
+  <div class="pure-u-1">
+    <a class="logo" href="https://github.com/walchko/pelican">&copy;&nbsp;2016&nbsp;Kevin J. Walchko</a>
+  </div>
+
+</div>
+
+
+</html>

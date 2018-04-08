@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- <link rel='stylesheet' type='text/css' href='https://cdn.rawgit.com/MarsUniversity/ece387/master/website/pandoc.css'> -->
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+    	<link href="https://cdnjs.cloudflare.com/ajax/libs/cc-icons/1.2.1/css/cc-icons.min.css" rel="stylesheet">
+    	<link href="https://cdn.rawgit.com/walchko/font-linux/v0.7.2/assets/font-linux.css" rel="stylesheet">
+      <!-- <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous"> -->
+      <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro" rel="stylesheet">
+      <link href="https://walchko.github.io/site.css" rel="stylesheet" type="text/css" />
+      <!-- <link href="../../site.css" rel="stylesheet" type="text/css" /> -->
+    	<!-- <link href="https://walchko.github.io/pygments.css" rel="stylesheet" type="text/css" /> -->
+      <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [["$","$"],["\\(","\\)"]]
+          }
+        });
+      </script>
+
+	  <!-- code pulled from jupyter nbconvert for syntax coloring -->
+	  <style type="text/css">
+    .highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
+    </style>
+
+    </head>
+    <body>
+      <div id="outer-wrapper">
+        <div id="header-wrapper">
+  <div class="title xtralarge bold"><a href="https://walchko.github.io/index.html">Planet Express</a></div>
+  <div class="normal small"> Our crew is replaceable. Your package isn't. </div>
+
+  <div class="nav normal">
+    <a class="logo" href="https://walchko.github.io/index.html">Home</a>
+    <a class="logo" href="https://walchko.github.io/colophon.html">Colophon</a>
+    <a class="logo" href="https://walchko.github.io/about.html">About</a>
+    <a class="logo" href="https://walchko.github.io/topics.html">Topics</a>
+  </div>
+</div>
+
+
+          <div id="main">
+            
+            
+              <h1 id="create-a-local-repository">Create a Local Repository</h1>
+<dl>
+<dt>date</dt>
+<dd><p>2015-11-28</p>
+</dd>
+<dt>modified</dt>
+<dd><p>2016-07-28</p>
+</dd>
+<dt>summary</dt>
+<dd><p>Create a debian package and setup a repository</p>
+</dd>
+</dl>
+<p><em>Why would you want to do this?</em> Because the packages on Raspbian are grossly outdated in most cases. This allows me to compile current versions of software and easily install/uninstall them without cluttering up my OS.</p>
+<p>Let's use node.js as an example. <strong>Note</strong> I used multiple windows in this, one to create the package/install node and another to run the server and debug.</p>
+<h2 id="get-software">Get Software</h2>
+<p>If you don't have it already get:</p>
+<pre><code>apt-get install build-essential</code></pre>
+<p>Then grab node.js from the website (current version is 4.4.7):</p>
+<pre><code>wget https://nodejs.org/dist/v4.4.7/node-v4.4.7-linux-armv6l.tar.xz
+tar -xvf node-v4.4.7-linux-armv6l.tar.xz
+cd node-v4.4.7-linux-armv6l</code></pre>
+<h2 id="create-debian-package">Create Debian Package</h2>
+<p>The basic layout of a debian package is:</p>
+<pre><code>package/
+  -- usr/loca/*  (bin, lib, include, etc)
+  -- DEBIAN/
+      -- changelog
+      -- copyright
+      -- compat
+      -- control
+      -- install</code></pre>
+<p>The copyright should look like:</p>
+<pre><code>Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: package
+Upstream-Contact: Name, &lt;email@address&gt;
+
+Files: *
+Copyright: 2011, Name, &lt;email@address&gt;
+License: (GPL-2+ | LGPL-2 | GPL-3 | whatever)
+Full text of licence.
+.
+Unless there is a it can be found in /usr/share/common-licenses</code></pre>
+<p>However, since this is for my own consumption, you don't need all of this to get it to work.</p>
+<p>Now inside the <code>node-v4.4.7-linux-armv6l</code> directory do:</p>
+<pre><code>mkdir DEBIAN
+mkdir usr
+mkdir usr/local
+
+cp bin usr/local
+cp lib usr/local
+cp include usr/local
+cp share usr/local</code></pre>
+<p>Setup a control file for the package with <code>pico DEBIAN/control</code>:</p>
+<pre><code>Package: nodejs
+Version: 4.4.7
+Section: custom
+Priority: optional
+Architecture: all
+Essential: no
+Installed-Size: 1024
+Maintainer: me
+Description: kevin - installs node.js</code></pre>
+<p>Now go up one directory:</p>
+<pre><code>cd ..
+dpkg-deb --build node-v4.4.7-linux-armv6l
+mv node.deb node-4.4.7_arm6l.deb</code></pre>
+<p>Now, if you chose an architecture other than <code>arm6l</code> like <code>arm7l</code> then name the package that.</p>
+<h2 id="test">Test</h2>
+<p>Make sure it works:</p>
+<pre><code>dpkg -i node-4.4.7_arm6l.deb
+node --version
+npm --version</code></pre>
+<h2 id="create-local-repository">Create Local Repository</h2>
+<p>Get the node static webserver using <code>npm</code>:</p>
+<pre><code>npm install -g http-server</code></pre>
+<p>Create the repository:</p>
+<pre><code>cd /some/where/you/want
+mkdir www
+cd www
+mkdir debian
+cp /path/to/node-4.4.7_arm6l.deb www/debian</code></pre>
+<p>While still in the <code>www</code> directory:</p>
+<pre><code>dpkg-scanpackages debian /dev/null | gzip -9c &gt; debian/Packages.gz</code></pre>
+<h3 id="start-node">Start Node</h3>
+<p>Now move out of <code>www</code>:</p>
+<pre><code>cd ..
+http-server ./www</code></pre>
+<p>When node runs, it will print out what the server address and port is, you will need this in the next step. Your repo should have the following packages and repository info:</p>
+<pre><code>www/
+  -- debian/
+      -- node-4.4.7_armv6l.deb
+      -- Packages.gz</code></pre>
+<p>Now obviously, as you add more packages, there will be more here.</p>
+<h3 id="update-aptsource">Update apt/source</h3>
+<p>Tell your system where it is:</p>
+<pre><code>sudo echo &quot;deb http://bender.local:8081 debian/&quot; &gt;&gt; /etc/apt/sources.list
+sudo update</code></pre>
+<p>Now a lot of stuff will spin by from node or from the update, but it should all be fine. We built a simple repository, not a complex with for different languages/etc. Now double check you can see it:</p>
+<pre><code>apt-cache showpkg nodejs
+Package: nodejs
+Versions:
+4.4.7 (/var/lib/apt/lists/bender.local:8081_debian_Packages) (/var/lib/dpkg/status)
+Description Language:
+                 File: /var/lib/apt/lists/bender.local:8081_debian_Packages
+                  MD5: 27f92553e61d941b7c6e5440bc637089
+
+0.10.29~dfsg-2 (/var/lib/apt/lists/mirrordirector.raspbian.org_raspbian_dists_jessie_main_binary-armhf_Packages)
+Description Language:
+                 File: /var/lib/apt/lists/mirrordirector.raspbian.org_raspbian_dists_jessie_main_binary-armhf_Packages
+                  MD5: e507fb472d7cdaceffc5b285a62d5c1b
+
+
+Reverse Depends:
+  nodered,nodejs 0.10
+  twitter-recess,nodejs
+  ruby-passenger,nodejs
+  ruby-execjs,nodejs
+  ...</code></pre>
+<h2 id="service">Service</h2>
+<p><code>sudo pico /etc/systemd/system/repo.service</code>:</p>
+<pre><code>[Service]
+ExecStart=/usr/local/bin/http-server /home/pi/www
+Restart=always
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=repository
+User=pi
+Group=pi
+Environment=NODE_ENV=production
+
+[Install]
+WantedBy=multi-user.target</code></pre>
+<p>Then do:</p>
+<pre><code>sudo systemctl enable repo.service
+sudo systemctl start repo.service</code></pre>
+<p>or perhaps easier to remember:</p>
+<pre><code>sudo service repo start
+service repo status</code></pre>
+<p>Now you can use <code>sudo systemctl start|stop|status repo.service</code> to start, stop, or find the current status of the server.</p>
+<p>You can change the port, by: <code>ExecStart=/usr/local/bin/http-server /home/pi/www -p 9000</code></p>
+<p>Double check things are working by launching a web browser and pointing it to: <a href="http://host:8081" class="uri">http://host:8081</a></p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="http://linuxconfig.org/easy-way-to-create-a-debian-package-and-local-package-repository" class="uri">http://linuxconfig.org/easy-way-to-create-a-debian-package-and-local-package-repository</a></li>
+<li><a href="http://askubuntu.com/questions/90764/how-do-i-create-a-deb-package-for-a-single-python-script" class="uri">http://askubuntu.com/questions/90764/how-do-i-create-a-deb-package-for-a-single-python-script</a></li>
+</ul>
+
+            
+          </div>
+
+        </div>
+    </body>
+
+    <div id="footer-wrapper">
+
+  <div class="logo"></div>
+
+  <div class="logo">
+    <a class="logo" href="http://github.com/walchko"><i class="fl-github fl-36"></i></a>
+    <a class="logo" href="http://stackoverflow.com/users/5374768/kevin"><i class="fl-stackoverflow fl-36"></i></a>
+    <a class="logo" href="http://raspberrypi.stackexchange.com/users/1677/kevin"><i class="fl-stackexchange fl-36"></i></a>
+    <a class="logo" href="https://www.npmjs.com/~kevin.walchko"><i class="fl-npm fl-36"></i></a>
+    <a class="logo" href="https://pypi.python.org/pypi"><i class="fl-python fl-36"></i></a>
+    <a class="logo" href="https://bitbucket.org/walchko/"><i class="fl-bitbucket fl-36"></i></a>
+  </div>
+
+  <div class="logo">
+    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+      <i class="cc cc-by-sa cc-lg"></i>
+    </a>
+  </div>
+
+  <div class="pure-u-1">
+    <a class="logo" href="https://github.com/walchko/pelican">&copy;&nbsp;2016&nbsp;Kevin J. Walchko</a>
+  </div>
+
+</div>
+
+
+</html>

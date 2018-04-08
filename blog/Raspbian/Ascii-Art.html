@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- <link rel='stylesheet' type='text/css' href='https://cdn.rawgit.com/MarsUniversity/ece387/master/website/pandoc.css'> -->
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+    	<link href="https://cdnjs.cloudflare.com/ajax/libs/cc-icons/1.2.1/css/cc-icons.min.css" rel="stylesheet">
+    	<link href="https://cdn.rawgit.com/walchko/font-linux/v0.7.2/assets/font-linux.css" rel="stylesheet">
+      <!-- <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous"> -->
+      <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro" rel="stylesheet">
+      <link href="https://walchko.github.io/site.css" rel="stylesheet" type="text/css" />
+      <!-- <link href="../../site.css" rel="stylesheet" type="text/css" /> -->
+    	<!-- <link href="https://walchko.github.io/pygments.css" rel="stylesheet" type="text/css" /> -->
+      <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [["$","$"],["\\(","\\)"]]
+          }
+        });
+      </script>
+
+	  <!-- code pulled from jupyter nbconvert for syntax coloring -->
+	  <style type="text/css">
+    .highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
+    </style>
+
+    </head>
+    <body>
+      <div id="outer-wrapper">
+        <div id="header-wrapper">
+  <div class="title xtralarge bold"><a href="https://walchko.github.io/index.html">Planet Express</a></div>
+  <div class="normal small"> Our crew is replaceable. Your package isn't. </div>
+
+  <div class="nav normal">
+    <a class="logo" href="https://walchko.github.io/index.html">Home</a>
+    <a class="logo" href="https://walchko.github.io/colophon.html">Colophon</a>
+    <a class="logo" href="https://walchko.github.io/about.html">About</a>
+    <a class="logo" href="https://walchko.github.io/topics.html">Topics</a>
+  </div>
+</div>
+
+
+          <div id="main">
+            
+            
+              <h1 id="ascii-art">Ascii Art</h1>
+<dl>
+<dt>date</dt>
+<dd><p>2017-01-07</p>
+</dd>
+<dt>summary</dt>
+<dd><p>Creating ascii art</p>
+</dd>
+</dl>
+<p>You can create ascii art from jpegs or text with the programs. The can be useful if you want some ascii art on your login prompt or whatever.:</p>
+<pre><code>jp2a --background=light -i --output=&#39;art.txt&#39; &lt;some_file.jpg&gt;
+figlet &#39;hello world&#39;</code></pre>
+<h2 id="install">Install</h2>
+<p>Use <code>brew</code> to install:</p>
+<pre><code>brew install jp2a figlet</code></pre>
+<h2 id="figlet"><code>figlet</code></h2>
+<pre><code>kevin@Logan ~ $ figlet hello world
+ _          _ _                            _     _ 
+| |__   ___| | | ___   __      _____  _ __| | __| |
+| &#39;_ \ / _ \ | |/ _ \  \ \ /\ / / _ \| &#39;__| |/ _` |
+| | | |  __/ | | (_) |  \ V  V / (_) | |  | | (_| |
+|_| |_|\___|_|_|\___/    \_/\_/ \___/|_|  |_|\__,_|</code></pre>
+<h2 id="jp2a"><code>jp2a</code></h2>
+<p>Using:</p>
+<pre><code>kevin@Logan github $ jp2a --help
+jp2a 1.0.6
+Copyright (C) 2006 Christian Stigen Larsen
+Distributed under the GNU General Public License (GPL) v2.
+
+Usage: jp2a [ options ] [ file(s) | URL(s) ]
+
+Convert files or URLs from JPEG format to ASCII.
+
+OPTIONS
+  -                 Read images from standard input.
+      --blue=N.N    Set RGB to grayscale conversion weight, default is 0.1145
+  -b, --border      Print a border around the output image.
+      --chars=...   Select character palette used to paint the image.
+                    Leftmost character corresponds to black pixel, right-
+                    most to white.  Minimum two characters must be specified.
+      --clear       Clears screen before drawing each output image.
+      --colors      Use ANSI colors in output.
+  -d, --debug       Print additional debug information.
+      --fill        When used with --color and/or --html, color each character&#39;s
+                    background color.
+  -x, --flipx       Flip image in X direction.
+  -y, --flipy       Flip image in Y direction.
+  -f, --term-fit    Use the largest image dimension that fits in your terminal
+                    display with correct aspect ratio.
+      --term-height Use terminal display height.
+      --term-width  Use terminal display width.
+  -z, --term-zoom   Use terminal display dimension for output.
+      --grayscale   Convert image to grayscale when using --html or --colors
+      --green=N.N   Set RGB to grayscale conversion weight, default is 0.5866
+      --height=N    Set output height, calculate width from aspect ratio.
+  -h, --help        Print program help.
+      --html        Produce strict XHTML 1.0 output.
+      --html-fill   Same as --fill (will be phased out)
+      --html-fontsize=N   Set fontsize to N pt, default is 4.
+      --html-no-bold      Do not use bold characters with HTML output
+      --html-raw    Output raw HTML codes, i.e. without the &lt;head&gt; section etc.
+      --html-title=...  Set HTML output title
+  -i, --invert      Invert output image.  Use if your display has a dark
+                    background.
+      --background=dark   These are just mnemonics whether to use --invert
+      --background=light  or not.  If your console has light characters on
+                    a dark background, use --background=dark.
+      --output=...  Write output to file.
+      --red=N.N     Set RGB to grayscale conversion weight, default 0.2989f.
+      --size=WxH    Set output width and height.
+  -v, --verbose     Verbose output.
+  -V, --version     Print program version.
+      --width=N     Set output width, calculate height from ratio.
+
+  The default mode is `jp2a --term-fit --background=dark&#39;.
+  See the man-page for jp2a for more detailed help text.
+
+Project homepage on http://jp2a.sf.net
+Report bugs to &lt;csl@sublevel3.org&gt;</code></pre>
+<p>There is a lot you can do with it. Example printed to terminal:</p>
+<pre><code>kevin@Logan pics $ jp2a --background=light  linux.jpg
+                                    .cx0XWMNX0d;
+                                 &#39;o0WMMMMMMMMMWWXx:.
+                               .kWMMMMMMMMMMMMXxOXWNx&#39;
+                              &#39;NMMMMMMMMMMMMMMXKXNWMMW;
+                              kMMMMMMMMMMMMMMMMMMMMMMMN,
+                             .XMMMMWWMMMMMMMMMWNNWMMMMMN.
+                             ,MMW0OOKXMMMMNOdloxOKWMMMMMo
+                             ,MWc.. &#39;OMMMX,  .. .kWMMMMMO
+                             ,M0&#39;Kkl ,MNNc .0Wk; .XMMMMMO
+                             .NX:NNK;,Okkc cMMW0  0MMMMMk
+                             .KMo;Ol;,..&#39;,&#39;,lxx, lMMMMMM0
+                              0WO:&#39;.............&#39;dWMMMMMW:
+                              kK:............&#39;,,&#39;cWMMWWMMK.
+                              oWx:,&#39;....&#39;&#39;,,,&#39;&#39;,;dWMMKkOXMd
+                              dMd:lc;,&#39;&#39;,&#39;&#39;,;,....xWMWKkOWW:
+                             ,NMl.&#39;:lcc:::;&#39;.      dMMMMMMMNc
+                            oWWk.  .&#39;;;,..          lWMMMMMMWx.
+                          ;XMN:       .              oMMMMMMMMN:
+                         oWMN;                       .XMMMMMMMMWx.
+                       ,KMMWd.                   .... ;WMMMMMMMMMX,
+                      lWMMMOc,.                ..&#39;,;;;.;NMWNWMMMMMWo
+                     lMWWM0&#39;                        ..,&#39;cWMWNNWMMMMMx
+                    ;NWNMX.                            ..:NMWNWWMMMMMO.
+                   ,NNNW0.                                lWNNWNXMMMMMk
+                   0WNM0.                                 .NMMMMKNMMMMMx
+                  oMWWM:                                   kMMMMNNMMMMMM:
+                 dWNNM0            .                       oMMMMWWMMMMMMO
+               .kMMXXMc            .                       lMMMMXWMMMMMMW.
+               dMMMNKN,            .                       lMMMNXMMMMMMMM&#39;
+               cN0OKXX;           ..                       lWNNXWWNNNWMMK
+               .&#39;...:xO:.          .                     ..dNWMMMMMMX0NX;
+             .........;0Nd.                            ....cWMMMMMMMMK;..
+           .&#39;,.........&#39;dNNk,                         .;..&#39;l0WMMMMWXx,...
+     ....&#39;,,&#39;............cNMMKl.                     .;c&#39;.&#39;;cokOOko:&#39;....
+     &#39;....................:KMMMWk.                   .;l,...&#39;,,;,,&#39;........
+     &#39;&#39;....................&#39;kWMMM:                   .lo:&#39;...................
+     .&#39;.....................&#39;o0dl.                  .xKo:&#39;......................
+     .&#39;.......................,,.                .:kNM0l;.......................
+     ..........................&#39;l;.        ..,cxKWMMMWxc,.....................
+     ..........................&#39;:OWX0OOO0KXWMMMMMMMMMNo:,...............&#39;...
+     .&#39;;;;,,,,&#39;&#39;&#39;.............&#39;,:xWMMMMMMMMMMMMMMMMMMXo:,&#39;.........&#39;,;,&#39;..
+      ..&#39;,,;::cccc:;,,&#39;&#39;&#39;&#39;&#39;&#39;&#39;;:clkKOxxxddddoooooddxkOOol:;,,,,,,;:c:;&#39;.....
+       .......&#39;&#39;,,;:cccccccccloc;&#39;..............&#39;&#39;&#39;,,,coollccclll:&#39;.......
+         ..........&#39;&#39;&#39;&#39;,;::::;&#39;........   ...........&#39;&#39;,;:::::;,........
+              ...................               ...................</code></pre>
+
+            
+          </div>
+
+        </div>
+    </body>
+
+    <div id="footer-wrapper">
+
+  <div class="logo"></div>
+
+  <div class="logo">
+    <a class="logo" href="http://github.com/walchko"><i class="fl-github fl-36"></i></a>
+    <a class="logo" href="http://stackoverflow.com/users/5374768/kevin"><i class="fl-stackoverflow fl-36"></i></a>
+    <a class="logo" href="http://raspberrypi.stackexchange.com/users/1677/kevin"><i class="fl-stackexchange fl-36"></i></a>
+    <a class="logo" href="https://www.npmjs.com/~kevin.walchko"><i class="fl-npm fl-36"></i></a>
+    <a class="logo" href="https://pypi.python.org/pypi"><i class="fl-python fl-36"></i></a>
+    <a class="logo" href="https://bitbucket.org/walchko/"><i class="fl-bitbucket fl-36"></i></a>
+  </div>
+
+  <div class="logo">
+    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+      <i class="cc cc-by-sa cc-lg"></i>
+    </a>
+  </div>
+
+  <div class="pure-u-1">
+    <a class="logo" href="https://github.com/walchko/pelican">&copy;&nbsp;2016&nbsp;Kevin J. Walchko</a>
+  </div>
+
+</div>
+
+
+</html>

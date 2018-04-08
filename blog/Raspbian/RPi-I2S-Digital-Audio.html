@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- <link rel='stylesheet' type='text/css' href='https://cdn.rawgit.com/MarsUniversity/ece387/master/website/pandoc.css'> -->
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+    	<link href="https://cdnjs.cloudflare.com/ajax/libs/cc-icons/1.2.1/css/cc-icons.min.css" rel="stylesheet">
+    	<link href="https://cdn.rawgit.com/walchko/font-linux/v0.7.2/assets/font-linux.css" rel="stylesheet">
+      <!-- <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous"> -->
+      <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro" rel="stylesheet">
+      <link href="https://walchko.github.io/site.css" rel="stylesheet" type="text/css" />
+      <!-- <link href="../../site.css" rel="stylesheet" type="text/css" /> -->
+    	<!-- <link href="https://walchko.github.io/pygments.css" rel="stylesheet" type="text/css" /> -->
+      <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [["$","$"],["\\(","\\)"]]
+          }
+        });
+      </script>
+
+	  <!-- code pulled from jupyter nbconvert for syntax coloring -->
+	  <style type="text/css">
+    .highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
+    </style>
+
+    </head>
+    <body>
+      <div id="outer-wrapper">
+        <div id="header-wrapper">
+  <div class="title xtralarge bold"><a href="https://walchko.github.io/index.html">Planet Express</a></div>
+  <div class="normal small"> Our crew is replaceable. Your package isn't. </div>
+
+  <div class="nav normal">
+    <a class="logo" href="https://walchko.github.io/index.html">Home</a>
+    <a class="logo" href="https://walchko.github.io/colophon.html">Colophon</a>
+    <a class="logo" href="https://walchko.github.io/about.html">About</a>
+    <a class="logo" href="https://walchko.github.io/topics.html">Topics</a>
+  </div>
+</div>
+
+
+          <div id="main">
+            
+            
+              <h1 id="i2s---digital-audio">I2S - Digital Audio</h1>
+<dl>
+<dt>date</dt>
+<dd><p>2016-07-26</p>
+</dd>
+<dt>modified</dt>
+<dd><p>2017-06-04</p>
+</dd>
+<dt>summary</dt>
+<dd><p>Setting up an RPi3/Raspbian-Jessie with digital audio and avoiding the noise from the Pi's analog output</p>
+</dd>
+</dl>
+<figure>
+<img src="https://cdn-learn.adafruit.com/assets/assets/000/032/618/medium800/adafruit_products_3006_kit_ORIG.jpg?1464029419" />
+</figure>
+<blockquote>
+<dl>
+<dt>align</dt>
+<dd><p>center</p>
+</dd>
+</dl>
+</blockquote>
+<h2 id="setup">Setup</h2>
+<p>Setting up I2S audio isn't too hard. I used a <a href="https://www.adafruit.com/products/3006">Adafruit i2s 3W amp (MAX98357A)</a>, to hook it up to my rpi3. Also the <code>i2s-mmap</code> seems to help with any popping noise.</p>
+<p>Edit <code>/boot/config.txt</code>:</p>
+<pre><code># dtparam=audio=off
+dtparam=i2s=on
+dtoverlay=hifhiberry-dac
+dtoverlay=i2s-mmap</code></pre>
+<p>Create/edit <code>/etc/asound.conf</code> to setup default audio:</p>
+<pre><code>pcm.hifiberry {
+  type hw card 0
+}
+
+pcm.!default {
+  type plug
+  slave.pcm &quot;dmixer&quot;
+}
+
+pcm.dmixer {
+  type dmix
+  ipc_key 1024
+  slave {
+    pcm &quot;hifiberry&quot;
+    channels 2
+  }
+}
+
+ctl.dmixer {
+  type hw
+  card 0
+}</code></pre>
+<p>Now you have to reboot so the system gets setup correctly (remember, these are boot parameter settings).</p>
+<p>Now connect the amp to the rpi where Vin is 5V:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Pin</th>
+<th>BCM</th>
+<th>Pi</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>DIN  </td>
+<td>21</td>
+<td>40</td>
+</tr>
+<tr class="even">
+<td>BCLK  </td>
+<td>18</td>
+<td>12</td>
+</tr>
+<tr class="odd">
+<td>LRCLK</td>
+<td>19</td>
+<td>35</td>
+</tr>
+</tbody>
+</table>
+<figure>
+<img src="https://cdn-learn.adafruit.com/assets/assets/000/032/643/medium800/adafruit_products_3006_top_demo_ORIG.jpg?1464037283" />
+</figure>
+<blockquote>
+<dl>
+<dt>align</dt>
+<dd><p>center</p>
+</dd>
+</dl>
+</blockquote>
+<p>Now, lots of instructions on the internet say to disable i2c, but you don't have too. The bottom part of my <code>/boot/config.txt</code> looks like this:</p>
+<pre><code># Enable audio (loads snd_bcm2835)
+#dtparam=audio=off
+start_x=1
+gpu_mem=16
+dtparam=i2c_arm=on
+dtparam=i2s=on
+enable_uart=0
+dtoverlay=hifiberry-dac
+dtoverlay=i2s-mmap</code></pre>
+<p>As you can see, I leave i2c on. Note the <code>enable_uart=0</code> is so I can use bluetooth. Apparently, the BT module is tied to the hardware serial port and the don't bother to tell people. You have to spend a lot of time to dig it up.</p>
+<h3 id="jack-server">Jack Server</h3>
+<p>Not sure you need this:</p>
+<pre><code>sudo apt-get --no-install-recommends install jackd2
+jackd -d alsa</code></pre>
+<p>I don't seem to use it.</p>
+<h3 id="issues">Issues</h3>
+<p>I still had lots of issues. installing <code>sudo apt-get install speech-dispatcher</code> seemed to help. I now had pulse audio and alsamixer working.</p>
+<p>If you get errors about unknown cards:</p>
+<pre><code>ALSA lib pcm.c:2239:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.rear
+ALSA lib pcm.c:2239:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.center_lfe
+ALSA lib pcm.c:2239:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.side</code></pre>
+<p>Edit <code>/usr/share/alsa/alsa.conf</code> and change the cards from <code>pcm.front cards.pcm.front</code> to <code>pcm.front cards.pcm.default</code>.</p>
+<h2 id="test">Test</h2>
+<p><a href="http://sox.sourceforge.net/">Sox</a> has some useful tools:</p>
+<pre><code>sudo apt-get install sox libsox2</code></pre>
+<p>Other useful ones might be: <code>libsox-fmt-all</code> and <code>libsox-dev</code>.</p>
+<p>You can list the devices ALSA see with:</p>
+<pre><code>pi@robot ~ $ aplay -l
+**** List of PLAYBACK Hardware Devices ****
+card 0: sndrpihifiberry [snd_rpi_hifiberry_dac], device 0: HifiBerry DAC HiFi pcm5102a-hifi-0 []
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0</code></pre>
+<p>So we see our I2S amp (snd_rpi_hifiberry_dac) listed there, so we are ready to test it:</p>
+<ol type="1">
+<li>Random static: <code>speaker-test -c2</code></li>
+<li>Wave file: <code>speaker-test -c2 --test=wav -w /usr/share/sounds/alsa/Front_Center.wav</code></li>
+<li>Tone: <code>play -n synth sin 1000 gain 1</code></li>
+<li><p>Audio test:</p>
+<pre><code>wget https://cdn.shopify.com/s/files/1/0062/6682/files/sample.wav
+aplay sample.wav</code></pre></li>
+<li><p>Text to speach:</p>
+<pre><code>sudo apt-get install espeak
+espeak &quot;hello world&quot;
+espeak “Hello World!” &gt; /dev/null</code></pre></li>
+</ol>
+<h3 id="check-file-types">Check File Types</h3>
+<p>Also, you can see what the file is:</p>
+<pre><code>pi@r2d2 tmp $ file sample.wav
+sample.wav: RIFF (little-endian) data, WAVE audio, Microsoft PCM, 8 bit, mono 11025 Hz</code></pre>
+<p>Or use `sox`:</p>
+<pre><code>pi@r2d2 tmp $ soxi sample.wav
+
+Input File     : &#39;sample.wav&#39;
+Channels       : 1
+Sample Rate    : 11025
+Precision      : 8-bit
+Duration       : 00:00:04.06 = 44800 samples ~ 304.762 CDDA sectors
+File Size      : 44.8k
+Bit Rate       : 88.3k
+Sample Encoding: 8-bit Unsigned Integer PCM</code></pre>
+<h2 id="alsa-mixer">Alsa Mixer</h2>
+<figure>
+<img src="pics/alsamixer.png" class="align-center" />
+</figure>
+<p>To see what you have access to:</p>
+<pre><code>pi@r2d2 ~ $ amixer
+Simple mixer control &#39;Master&#39;,0
+  Capabilities: pvolume pswitch pswitch-joined
+  Playback channels: Front Left - Front Right
+  Limits: Playback 0 - 65536
+  Mono:
+  Front Left: Playback 39344 [60%] [on]
+  Front Right: Playback 39344 [60%] [on]
+Simple mixer control &#39;Capture&#39;,0
+  Capabilities: cvolume cswitch cswitch-joined
+  Capture channels: Front Left - Front Right
+  Limits: Capture 0 - 65536
+  Front Left: Capture 65536 [100%] [on]
+  Front Right: Capture 65536 [100%] [on]
+
+pi@r2d2 ~ $ amixer controls
+numid=4,iface=MIXER,name=&#39;Master Playback Switch&#39;
+numid=3,iface=MIXER,name=&#39;Master Playback Volume&#39;
+numid=2,iface=MIXER,name=&#39;Capture Switch&#39;
+numid=1,iface=MIXER,name=&#39;Capture Volume&#39;</code></pre>
+<p>Now to make some changes:</p>
+<ul>
+<li>Get the current value: <code>amixer cget numid=3</code></li>
+<li>Set the current value: <code>amixer cset numid=3 50%</code></li>
+<li>Mute all sound (switch Master): <code>amixer cset numid=4 off</code></li>
+<li>Save changes to <code>/var/lib/alsa/asound.state</code>: <code>sudo alsactl store</code></li>
+<li>Reset system if you <a href="mailto:f@$k">f@$k</a> up: <code>sudo /etc/init.d/alsa-utils reset</code></li>
+</ul>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://learn.adafruit.com/adafruit-max98357-i2s-class-d-mono-amp?view=all">Adafruit tutorial 1</a></li>
+<li><a href="https://learn.adafruit.com/raspberry-pi-zero-npr-one-radio?view=all">Adafruit tutorial 2</a></li>
+<li><a href="https://www.raspberrypi.org/forums/viewtopic.php?t=97314">Raspberry Pi Forum discussion</a></li>
+<li><a href="http://learn.pimoroni.com/tutorial/phat/raspberry-pi-phat-dac-install">pimoroni</a></li>
+<li><a href="http://pinout.xyz/">Raspberry Pi pinout</a></li>
+<li><a href="http://blog.scphillips.com/posts/2013/01/sound-configuration-on-raspberry-pi-with-alsa/">Alsa mixer command line</a></li>
+<li><a href="https://www.raspberrypi.org/forums/viewtopic.php?f=28&amp;t=136974#">Fixing alsa issues with espeak</a></li>
+</ul>
+
+            
+          </div>
+
+        </div>
+    </body>
+
+    <div id="footer-wrapper">
+
+  <div class="logo"></div>
+
+  <div class="logo">
+    <a class="logo" href="http://github.com/walchko"><i class="fl-github fl-36"></i></a>
+    <a class="logo" href="http://stackoverflow.com/users/5374768/kevin"><i class="fl-stackoverflow fl-36"></i></a>
+    <a class="logo" href="http://raspberrypi.stackexchange.com/users/1677/kevin"><i class="fl-stackexchange fl-36"></i></a>
+    <a class="logo" href="https://www.npmjs.com/~kevin.walchko"><i class="fl-npm fl-36"></i></a>
+    <a class="logo" href="https://pypi.python.org/pypi"><i class="fl-python fl-36"></i></a>
+    <a class="logo" href="https://bitbucket.org/walchko/"><i class="fl-bitbucket fl-36"></i></a>
+  </div>
+
+  <div class="logo">
+    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+      <i class="cc cc-by-sa cc-lg"></i>
+    </a>
+  </div>
+
+  <div class="pure-u-1">
+    <a class="logo" href="https://github.com/walchko/pelican">&copy;&nbsp;2016&nbsp;Kevin J. Walchko</a>
+  </div>
+
+</div>
+
+
+</html>

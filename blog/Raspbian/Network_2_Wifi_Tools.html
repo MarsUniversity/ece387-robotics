@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- <link rel='stylesheet' type='text/css' href='https://cdn.rawgit.com/MarsUniversity/ece387/master/website/pandoc.css'> -->
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+    	<link href="https://cdnjs.cloudflare.com/ajax/libs/cc-icons/1.2.1/css/cc-icons.min.css" rel="stylesheet">
+    	<link href="https://cdn.rawgit.com/walchko/font-linux/v0.7.2/assets/font-linux.css" rel="stylesheet">
+      <!-- <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous"> -->
+      <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro" rel="stylesheet">
+      <link href="https://walchko.github.io/site.css" rel="stylesheet" type="text/css" />
+      <!-- <link href="../../site.css" rel="stylesheet" type="text/css" /> -->
+    	<!-- <link href="https://walchko.github.io/pygments.css" rel="stylesheet" type="text/css" /> -->
+      <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [["$","$"],["\\(","\\)"]]
+          }
+        });
+      </script>
+
+	  <!-- code pulled from jupyter nbconvert for syntax coloring -->
+	  <style type="text/css">
+    .highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
+    </style>
+
+    </head>
+    <body>
+      <div id="outer-wrapper">
+        <div id="header-wrapper">
+  <div class="title xtralarge bold"><a href="https://walchko.github.io/index.html">Planet Express</a></div>
+  <div class="normal small"> Our crew is replaceable. Your package isn't. </div>
+
+  <div class="nav normal">
+    <a class="logo" href="https://walchko.github.io/index.html">Home</a>
+    <a class="logo" href="https://walchko.github.io/colophon.html">Colophon</a>
+    <a class="logo" href="https://walchko.github.io/about.html">About</a>
+    <a class="logo" href="https://walchko.github.io/topics.html">Topics</a>
+  </div>
+</div>
+
+
+          <div id="main">
+            
+            
+              <h1 id="networking-2---wifi">Networking 2 - wifi</h1>
+<dl>
+<dt>date</dt>
+<dd><p>2017-10-09</p>
+</dd>
+<dt>summary</dt>
+<dd><p>WiFi Networking</p>
+</dd>
+</dl>
+<h2 id="adaptor-info">Adaptor Info</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1">$ <span class="ex">iw</span> dev</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="ex">phy</span>#1</a>
+<a class="sourceLine" id="cb1-3" data-line-number="3">    <span class="ex">Interface</span> wlan1</a>
+<a class="sourceLine" id="cb1-4" data-line-number="4">        <span class="ex">ifindex</span> 4</a>
+<a class="sourceLine" id="cb1-5" data-line-number="5">        <span class="ex">wdev</span> 0x100000001</a>
+<a class="sourceLine" id="cb1-6" data-line-number="6">        <span class="ex">addr</span> 28:c6:8e:56:a3:3f</a>
+<a class="sourceLine" id="cb1-7" data-line-number="7">        <span class="bu">type</span> managed</a>
+<a class="sourceLine" id="cb1-8" data-line-number="8"><span class="ex">phy</span>#0</a>
+<a class="sourceLine" id="cb1-9" data-line-number="9">    <span class="ex">Interface</span> wlan0</a>
+<a class="sourceLine" id="cb1-10" data-line-number="10">        <span class="ex">ifindex</span> 3</a>
+<a class="sourceLine" id="cb1-11" data-line-number="11">        <span class="ex">wdev</span> 0x1</a>
+<a class="sourceLine" id="cb1-12" data-line-number="12">        <span class="ex">addr</span> b8:27:eb:94:14:9a</a>
+<a class="sourceLine" id="cb1-13" data-line-number="13">        <span class="ex">ssid</span> knowhere</a>
+<a class="sourceLine" id="cb1-14" data-line-number="14">        <span class="bu">type</span> managed</a>
+<a class="sourceLine" id="cb1-15" data-line-number="15">        <span class="ex">channel</span> 11 (2462 MHz), <span class="ex">width</span>: 20 MHz, center1: 2462 MHz</a></code></pre></div>
+<h2 id="determine-connection-info">Determine Connection Info</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" data-line-number="1">$ <span class="ex">iw</span> wlan0 link</a>
+<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="ex">Connected</span> to f0:99:bf:0e:86:98 (on wlan0)</a>
+<a class="sourceLine" id="cb2-3" data-line-number="3">    <span class="ex">SSID</span>: knowhere</a>
+<a class="sourceLine" id="cb2-4" data-line-number="4">    <span class="ex">freq</span>: 2462</a>
+<a class="sourceLine" id="cb2-5" data-line-number="5">    <span class="ex">RX</span>: 4746300 bytes (25943 packets)</a>
+<a class="sourceLine" id="cb2-6" data-line-number="6">    <span class="ex">TX</span>: 212945 bytes (1263 packets)</a>
+<a class="sourceLine" id="cb2-7" data-line-number="7">    <span class="ex">signal</span>: -65 dBm</a>
+<a class="sourceLine" id="cb2-8" data-line-number="8">    <span class="ex">tx</span> bitrate: 65.0 MBit/s</a>
+<a class="sourceLine" id="cb2-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb2-10" data-line-number="10">    <span class="ex">bss</span> flags:  short-slot-time</a>
+<a class="sourceLine" id="cb2-11" data-line-number="11">    <span class="ex">dtim</span> period:    3</a>
+<a class="sourceLine" id="cb2-12" data-line-number="12">    <span class="ex">beacon</span> int: 100</a></code></pre></div>
+<h2 id="scan-for-access-points">Scan for Access Points</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" data-line-number="1">$ <span class="fu">sudo</span> iw wlan0 scan</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="ex">BSS</span> f0:99:bf:0e:86:98(on wlan0) <span class="ex">--</span> associated</a>
+<a class="sourceLine" id="cb3-3" data-line-number="3">    <span class="ex">TSF</span>: 0 usec (0d, 00:00:00)</a>
+<a class="sourceLine" id="cb3-4" data-line-number="4">    <span class="ex">freq</span>: 2462</a>
+<a class="sourceLine" id="cb3-5" data-line-number="5">    <span class="ex">beacon</span> interval: 100 TUs</a>
+<a class="sourceLine" id="cb3-6" data-line-number="6">    <span class="ex">capability</span>: ESS Privacy SpectrumMgmt ShortSlotTime RadioMeasure (0x1511)</a>
+<a class="sourceLine" id="cb3-7" data-line-number="7">    <span class="ex">signal</span>: -63.00 dBm</a>
+<a class="sourceLine" id="cb3-8" data-line-number="8">    <span class="fu">last</span> seen: 0 ms ago</a>
+<a class="sourceLine" id="cb3-9" data-line-number="9">    <span class="ex">SSID</span>: knowhere</a>
+<a class="sourceLine" id="cb3-10" data-line-number="10">    <span class="ex">Supported</span> rates: 1.0* 2.0* 5.5* 11.0* 18.0 24.0 36.0 54.0</a>
+<a class="sourceLine" id="cb3-11" data-line-number="11">    <span class="ex">DS</span> Parameter set: channel 11</a>
+<a class="sourceLine" id="cb3-12" data-line-number="12">    <span class="ex">TIM</span>: DTIM Count 2 DTIM Period 3 Bitmap Control 0x0 Bitmap[0] 0x0</a>
+<a class="sourceLine" id="cb3-13" data-line-number="13">    <span class="ex">Country</span>: US Environment: Indoor/Outdoor</a>
+<a class="sourceLine" id="cb3-14" data-line-number="14">        <span class="ex">Channels</span> [1 - 11] @ 30 dBm</a>
+<a class="sourceLine" id="cb3-15" data-line-number="15">    <span class="ex">Power</span> constraint: 0 dB</a>
+<a class="sourceLine" id="cb3-16" data-line-number="16">    <span class="ex">TPC</span> report: TX power: 20 dBm</a>
+<a class="sourceLine" id="cb3-17" data-line-number="17">    <span class="ex">ERP</span>: <span class="op">&lt;</span>no flags<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb3-18" data-line-number="18">    <span class="ex">RSN</span>:     * Version: 1</a>
+<a class="sourceLine" id="cb3-19" data-line-number="19">         <span class="ex">*</span> Group cipher: CCMP</a>
+<a class="sourceLine" id="cb3-20" data-line-number="20">         <span class="ex">*</span> Pairwise ciphers: CCMP</a>
+<a class="sourceLine" id="cb3-21" data-line-number="21">         <span class="ex">*</span> Authentication suites: PSK</a>
+<a class="sourceLine" id="cb3-22" data-line-number="22">         <span class="ex">*</span> Capabilities: 1-PTKSA-RC 1-GTKSA-RC (0x0000)</a>
+<a class="sourceLine" id="cb3-23" data-line-number="23">    <span class="ex">Extended</span> supported rates: 6.0 9.0 12.0 48.0</a>
+<a class="sourceLine" id="cb3-24" data-line-number="24">    <span class="ex">HT</span> capabilities:</a>
+<a class="sourceLine" id="cb3-25" data-line-number="25">        <span class="ex">Capabilities</span>: 0x19ad</a>
+<a class="sourceLine" id="cb3-26" data-line-number="26">            <span class="ex">RX</span> LDPC</a>
+<a class="sourceLine" id="cb3-27" data-line-number="27">            <span class="ex">HT20</span></a>
+<a class="sourceLine" id="cb3-28" data-line-number="28">            <span class="ex">SM</span> Power Save disabled</a>
+<a class="sourceLine" id="cb3-29" data-line-number="29">            <span class="ex">RX</span> HT20 SGI</a>
+<a class="sourceLine" id="cb3-30" data-line-number="30">            <span class="ex">TX</span> STBC</a>
+<a class="sourceLine" id="cb3-31" data-line-number="31">            <span class="ex">RX</span> STBC 1-stream</a>
+<a class="sourceLine" id="cb3-32" data-line-number="32">            <span class="ex">Max</span> AMSDU length: 7935 bytes</a>
+<a class="sourceLine" id="cb3-33" data-line-number="33">            <span class="ex">DSSS/CCK</span> HT40</a>
+<a class="sourceLine" id="cb3-34" data-line-number="34">        <span class="ex">Maximum</span> RX AMPDU length 65535 bytes (exponent: 0x003)</a>
+<a class="sourceLine" id="cb3-35" data-line-number="35">        <span class="ex">Minimum</span> RX AMPDU time spacing: 4 usec (0x05)</a>
+<a class="sourceLine" id="cb3-36" data-line-number="36">        <span class="ex">HT</span> RX MCS rate indexes supported: 0-23</a>
+<a class="sourceLine" id="cb3-37" data-line-number="37">        <span class="ex">HT</span> TX MCS rate indexes are undefined</a>
+<a class="sourceLine" id="cb3-38" data-line-number="38">    <span class="ex">HT</span> operation:</a>
+<a class="sourceLine" id="cb3-39" data-line-number="39">         <span class="ex">*</span> primary channel: 11</a>
+<a class="sourceLine" id="cb3-40" data-line-number="40">         <span class="ex">*</span> secondary channel offset: no secondary</a>
+<a class="sourceLine" id="cb3-41" data-line-number="41">         <span class="ex">*</span> STA channel width: 20 MHz</a>
+<a class="sourceLine" id="cb3-42" data-line-number="42">         <span class="ex">*</span> RIFS: 1</a>
+<a class="sourceLine" id="cb3-43" data-line-number="43">         <span class="ex">*</span> HT protection: no</a>
+<a class="sourceLine" id="cb3-44" data-line-number="44">         <span class="ex">*</span> non-GF present: 1</a>
+<a class="sourceLine" id="cb3-45" data-line-number="45">         <span class="ex">*</span> OBSS non-GF present: 0</a>
+<a class="sourceLine" id="cb3-46" data-line-number="46">         <span class="ex">*</span> dual beacon: 0</a>
+<a class="sourceLine" id="cb3-47" data-line-number="47">         <span class="ex">*</span> dual CTS protection: 0</a>
+<a class="sourceLine" id="cb3-48" data-line-number="48">         <span class="ex">*</span> STBC beacon: 0</a>
+<a class="sourceLine" id="cb3-49" data-line-number="49">         <span class="ex">*</span> L-SIG TXOP Prot: 0</a>
+<a class="sourceLine" id="cb3-50" data-line-number="50">         <span class="ex">*</span> PCO active: 0</a>
+<a class="sourceLine" id="cb3-51" data-line-number="51">         <span class="ex">*</span> PCO phase: 0</a>
+<a class="sourceLine" id="cb3-52" data-line-number="52">    <span class="ex">Extended</span> capabilities: 6</a>
+<a class="sourceLine" id="cb3-53" data-line-number="53">    <span class="ex">WMM</span>:     * Parameter version 1</a>
+<a class="sourceLine" id="cb3-54" data-line-number="54">         <span class="ex">*</span> u-APSD</a>
+<a class="sourceLine" id="cb3-55" data-line-number="55">         <span class="ex">*</span> BE: CW 15-1023, AIFSN 3</a>
+<a class="sourceLine" id="cb3-56" data-line-number="56">         <span class="ex">*</span> BK: CW 15-1023, AIFSN 7</a>
+<a class="sourceLine" id="cb3-57" data-line-number="57">         <span class="ex">*</span> VI: CW 7-15, AIFSN 2, TXOP 3008 usec</a>
+<a class="sourceLine" id="cb3-58" data-line-number="58">         <span class="ex">*</span> VO: CW 3-7, AIFSN 2, TXOP 1504 usec</a></code></pre></div>
+<h2 id="find-ssids">Find SSIDs</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" data-line-number="1">$ <span class="fu">sudo</span> iw wlan0 scan <span class="kw">|</span> <span class="fu">grep</span> SSID</a>
+<a class="sourceLine" id="cb4-2" data-line-number="2">    <span class="ex">SSID</span>: knowhere</a>
+<a class="sourceLine" id="cb4-3" data-line-number="3">    <span class="ex">SSID</span>: codybear14-2.4</a>
+<a class="sourceLine" id="cb4-4" data-line-number="4">    <span class="ex">SSID</span>: xfinitywifi</a>
+<a class="sourceLine" id="cb4-5" data-line-number="5">    <span class="ex">SSID</span>: xfinitywifi</a>
+<a class="sourceLine" id="cb4-6" data-line-number="6">    <span class="ex">SSID</span>: HOME-617F</a>
+<a class="sourceLine" id="cb4-7" data-line-number="7">    <span class="ex">SSID</span>: LLN_Bus_2</a>
+<a class="sourceLine" id="cb4-8" data-line-number="8">    <span class="ex">SSID</span>: Kamino</a>
+<a class="sourceLine" id="cb4-9" data-line-number="9">    <span class="ex">SSID</span>: Hoth</a>
+<a class="sourceLine" id="cb4-10" data-line-number="10">    <span class="ex">SSID</span>: DIRECT-roku-489-704C09</a>
+<a class="sourceLine" id="cb4-11" data-line-number="11">    <span class="ex">SSID</span>: MacStat Wi-Fi</a>
+<a class="sourceLine" id="cb4-12" data-line-number="12">    <span class="ex">SSID</span>: KwikStixII</a>
+<a class="sourceLine" id="cb4-13" data-line-number="13">    <span class="ex">SSID</span>: CastorFamily</a>
+<a class="sourceLine" id="cb4-14" data-line-number="14">    <span class="ex">SSID</span>: xfinitywifi</a>
+<a class="sourceLine" id="cb4-15" data-line-number="15">    <span class="ex">SSID</span>: xfinitywifi</a>
+<a class="sourceLine" id="cb4-16" data-line-number="16">    <span class="ex">SSID</span>: IDMCHmWkNet</a>
+<a class="sourceLine" id="cb4-17" data-line-number="17">    <span class="ex">Extended</span> capabilities: HT Information Exchange Supported, Extended Channel Switching, TFS, WNM-Sleep Mode, TIM Broadcast, BSS Transition, SSID List, 6</a>
+<a class="sourceLine" id="cb4-18" data-line-number="18">    <span class="ex">SSID</span>: HP-Print-AA-Photosmart 5520</a>
+<a class="sourceLine" id="cb4-19" data-line-number="19">    <span class="ex">SSID</span>: \x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00</a>
+<a class="sourceLine" id="cb4-20" data-line-number="20">    <span class="ex">SSID</span>: \x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00</a>
+<a class="sourceLine" id="cb4-21" data-line-number="21">    <span class="ex">SSID</span>: NETGEAR90</a>
+<a class="sourceLine" id="cb4-22" data-line-number="22">    <span class="ex">SSID</span>: xfinitywifi</a></code></pre></div>
+<h2 id="proc">Proc</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" data-line-number="1">$ <span class="fu">cat</span> /proc/net/wireless</a>
+<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="ex">Inter-</span><span class="kw">|</span> <span class="ex">sta-</span><span class="kw">|</span>   <span class="ex">Quality</span>        <span class="kw">|</span>   <span class="ex">Discarded</span> packets               <span class="kw">|</span> <span class="ex">Missed</span> <span class="kw">|</span> <span class="ex">WE</span></a>
+<a class="sourceLine" id="cb5-3" data-line-number="3"> <span class="ex">face</span> <span class="kw">|</span> <span class="ex">tus</span> <span class="kw">|</span> <span class="fu">link</span> level noise <span class="kw">|</span>  <span class="ex">nwid</span>  crypt   frag  retry   misc <span class="kw">|</span> <span class="ex">beacon</span> <span class="kw">|</span> <span class="ex">22</span></a>
+<a class="sourceLine" id="cb5-4" data-line-number="4"> <span class="ex">wlan0</span>: 0000   45.  -65.  -256        0      0      0     12      0        0</a></code></pre></div>
+<p>You can also automatically update it with:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="ex">watch</span> -n 1 cat /proc/net/wireless</a></code></pre></div>
+<p><code>watch</code> will update every second.</p>
+<h2 id="iwgetid"><code>iwgetid</code></h2>
+<p><code>iwgetid</code> command report ESSID, NWID or AP/Cell Address of wireless network. <code>iwgetid</code> is easier to integrate in various scripts.</p>
+<h2 id="wavemon">Wavemon</h2>
+<p>Install <code>wavemon</code> with: <code>sudo apt install wavemon</code></p>
+<p><img src="pics/wavemon.png" alt="image" class="align-center" width="500" /></p>
+
+            
+          </div>
+
+        </div>
+    </body>
+
+    <div id="footer-wrapper">
+
+  <div class="logo"></div>
+
+  <div class="logo">
+    <a class="logo" href="http://github.com/walchko"><i class="fl-github fl-36"></i></a>
+    <a class="logo" href="http://stackoverflow.com/users/5374768/kevin"><i class="fl-stackoverflow fl-36"></i></a>
+    <a class="logo" href="http://raspberrypi.stackexchange.com/users/1677/kevin"><i class="fl-stackexchange fl-36"></i></a>
+    <a class="logo" href="https://www.npmjs.com/~kevin.walchko"><i class="fl-npm fl-36"></i></a>
+    <a class="logo" href="https://pypi.python.org/pypi"><i class="fl-python fl-36"></i></a>
+    <a class="logo" href="https://bitbucket.org/walchko/"><i class="fl-bitbucket fl-36"></i></a>
+  </div>
+
+  <div class="logo">
+    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+      <i class="cc cc-by-sa cc-lg"></i>
+    </a>
+  </div>
+
+  <div class="pure-u-1">
+    <a class="logo" href="https://github.com/walchko/pelican">&copy;&nbsp;2016&nbsp;Kevin J. Walchko</a>
+  </div>
+
+</div>
+
+
+</html>

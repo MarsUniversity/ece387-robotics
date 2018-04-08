@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- <link rel='stylesheet' type='text/css' href='https://cdn.rawgit.com/MarsUniversity/ece387/master/website/pandoc.css'> -->
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+    	<link href="https://cdnjs.cloudflare.com/ajax/libs/cc-icons/1.2.1/css/cc-icons.min.css" rel="stylesheet">
+    	<link href="https://cdn.rawgit.com/walchko/font-linux/v0.7.2/assets/font-linux.css" rel="stylesheet">
+      <!-- <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous"> -->
+      <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro" rel="stylesheet">
+      <link href="https://walchko.github.io/site.css" rel="stylesheet" type="text/css" />
+      <!-- <link href="../../site.css" rel="stylesheet" type="text/css" /> -->
+    	<!-- <link href="https://walchko.github.io/pygments.css" rel="stylesheet" type="text/css" /> -->
+      <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [["$","$"],["\\(","\\)"]]
+          }
+        });
+      </script>
+
+	  <!-- code pulled from jupyter nbconvert for syntax coloring -->
+	  <style type="text/css">
+    .highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
+    </style>
+
+    </head>
+    <body>
+      <div id="outer-wrapper">
+        <div id="header-wrapper">
+  <div class="title xtralarge bold"><a href="https://walchko.github.io/index.html">Planet Express</a></div>
+  <div class="normal small"> Our crew is replaceable. Your package isn't. </div>
+
+  <div class="nav normal">
+    <a class="logo" href="https://walchko.github.io/index.html">Home</a>
+    <a class="logo" href="https://walchko.github.io/colophon.html">Colophon</a>
+    <a class="logo" href="https://walchko.github.io/about.html">About</a>
+    <a class="logo" href="https://walchko.github.io/topics.html">Topics</a>
+  </div>
+</div>
+
+
+          <div id="main">
+            
+            
+              <h1 id="binary-files">Binary Files</h1>
+<dl>
+<dt>date</dt>
+<dd><p>2017-06-29</p>
+</dd>
+<dt>summary</dt>
+<dd><p>Working with binary files on Linux</p>
+</dd>
+</dl>
+<h2 id="determine-arm-type">Determine ARM Type</h2>
+<p>Determine type of binary, in this case, ARMv6:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="ex">pi@starfire</span> ~ $ readelf -A /usr/local/lib/python2.7/dist-packages/cv2.so </a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="ex">Attribute</span> Section: aeabi</a>
+<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="ex">File</span> Attributes</a>
+<a class="sourceLine" id="cb1-4" data-line-number="4">  <span class="ex">Tag_CPU_name</span>: <span class="st">&quot;6&quot;</span></a>
+<a class="sourceLine" id="cb1-5" data-line-number="5">  <span class="ex">Tag_CPU_arch</span>: v6</a>
+<a class="sourceLine" id="cb1-6" data-line-number="6">  <span class="ex">Tag_ARM_ISA_use</span>: Yes</a>
+<a class="sourceLine" id="cb1-7" data-line-number="7">  <span class="ex">Tag_THUMB_ISA_use</span>: Thumb-1</a>
+<a class="sourceLine" id="cb1-8" data-line-number="8">  <span class="ex">Tag_FP_arch</span>: VFPv2</a>
+<a class="sourceLine" id="cb1-9" data-line-number="9">  <span class="ex">Tag_ABI_PCS_wchar_t</span>: 4</a>
+<a class="sourceLine" id="cb1-10" data-line-number="10">  <span class="ex">Tag_ABI_FP_denormal</span>: Needed</a>
+<a class="sourceLine" id="cb1-11" data-line-number="11">  <span class="ex">Tag_ABI_FP_exceptions</span>: Needed</a>
+<a class="sourceLine" id="cb1-12" data-line-number="12">  <span class="ex">Tag_ABI_FP_number_model</span>: IEEE 754</a>
+<a class="sourceLine" id="cb1-13" data-line-number="13">  <span class="ex">Tag_ABI_align_needed</span>: 8-byte</a>
+<a class="sourceLine" id="cb1-14" data-line-number="14">  <span class="ex">Tag_ABI_align_preserved</span>: 8-byte, except leaf SP</a>
+<a class="sourceLine" id="cb1-15" data-line-number="15">  <span class="ex">Tag_ABI_enum_size</span>: int</a>
+<a class="sourceLine" id="cb1-16" data-line-number="16">  <span class="ex">Tag_ABI_HardFP_use</span>: SP and DP</a>
+<a class="sourceLine" id="cb1-17" data-line-number="17">  <span class="ex">Tag_ABI_VFP_args</span>: VFP registers</a>
+<a class="sourceLine" id="cb1-18" data-line-number="18">  <span class="ex">Tag_CPU_unaligned_access</span>: v6</a>
+<a class="sourceLine" id="cb1-19" data-line-number="19">  <span class="ex">Tag_ABI_FP_16bit_format</span>: IEEE 754</a></code></pre></div>
+<h2 id="determine-needed-libraries">Determine needed Libraries</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="ex">pi@fry</span> opencv3 $ readelf -d /usr/lib/liblapack.so <span class="kw">|</span> <span class="fu">grep</span> NEEDED</a>
+<a class="sourceLine" id="cb2-2" data-line-number="2"> <span class="ex">0x00000001</span> (NEEDED)                     <span class="ex">Shared</span> library: [libblas.so.3]</a>
+<a class="sourceLine" id="cb2-3" data-line-number="3"> <span class="ex">0x00000001</span> (NEEDED)                     <span class="ex">Shared</span> library: [libatlas.so.3]</a>
+<a class="sourceLine" id="cb2-4" data-line-number="4"> <span class="ex">0x00000001</span> (NEEDED)                     <span class="ex">Shared</span> library: [libgfortran.so.3]</a>
+<a class="sourceLine" id="cb2-5" data-line-number="5"> <span class="ex">0x00000001</span> (NEEDED)                     <span class="ex">Shared</span> library: [libgcc_s.so.1]</a>
+<a class="sourceLine" id="cb2-6" data-line-number="6"> <span class="ex">0x00000001</span> (NEEDED)                     <span class="ex">Shared</span> library: [libpthread.so.0]</a>
+<a class="sourceLine" id="cb2-7" data-line-number="7"> <span class="ex">0x00000001</span> (NEEDED)                     <span class="ex">Shared</span> library: [libm.so.6]</a>
+<a class="sourceLine" id="cb2-8" data-line-number="8"> <span class="ex">0x00000001</span> (NEEDED)                     <span class="ex">Shared</span> library: [libc.so.6]</a>
+<a class="sourceLine" id="cb2-9" data-line-number="9"> <span class="ex">0x00000001</span> (NEEDED)                     <span class="ex">Shared</span> library: [ld-linux-armhf.so.3]</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="ex">pi@fry</span> ~ $ objdump -x /usr/lib/liblapack.so</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="ex">/usr/lib</span>/liblapack.so:     <span class="fu">file</span> format elf32-littlearm</a>
+<a class="sourceLine" id="cb3-4" data-line-number="4"><span class="ex">/usr/lib/liblapack.so</span></a>
+<a class="sourceLine" id="cb3-5" data-line-number="5"><span class="ex">architecture</span>: arm, flags 0x00000150:</a>
+<a class="sourceLine" id="cb3-6" data-line-number="6"><span class="ex">HAS_SYMS</span>, DYNAMIC, D_PAGED</a>
+<a class="sourceLine" id="cb3-7" data-line-number="7"><span class="ex">start</span> address 0x0001ea88</a>
+<a class="sourceLine" id="cb3-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb3-9" data-line-number="9"><span class="ex">Program</span> Header:</a>
+<a class="sourceLine" id="cb3-10" data-line-number="10">    <span class="ex">LOAD</span> off    0x00000000 vaddr 0x00000000 paddr 0x00000000 align 2**16</a>
+<a class="sourceLine" id="cb3-11" data-line-number="11">         <span class="ex">filesz</span> 0x004b6188 memsz 0x004b6188 flags r-x</a>
+<a class="sourceLine" id="cb3-12" data-line-number="12">    <span class="ex">LOAD</span> off    0x004b7000 vaddr 0x004c7000 paddr 0x004c7000 align 2**16</a>
+<a class="sourceLine" id="cb3-13" data-line-number="13">         <span class="ex">filesz</span> 0x00002e38 memsz 0x00002ef0 flags rw-</a>
+<a class="sourceLine" id="cb3-14" data-line-number="14"> <span class="ex">DYNAMIC</span> off    0x004b7000 vaddr 0x004c7000 paddr 0x004c7000 align 2**2</a>
+<a class="sourceLine" id="cb3-15" data-line-number="15">         <span class="ex">filesz</span> 0x000000f0 memsz 0x000000f0 flags rw-</a>
+<a class="sourceLine" id="cb3-16" data-line-number="16">   <span class="ex">STACK</span> off    0x00000000 vaddr 0x00000000 paddr 0x00000000 align 2**4</a>
+<a class="sourceLine" id="cb3-17" data-line-number="17">         <span class="ex">filesz</span> 0x00000000 memsz 0x00000000 flags rw-</a>
+<a class="sourceLine" id="cb3-18" data-line-number="18"></a>
+<a class="sourceLine" id="cb3-19" data-line-number="19"><span class="ex">Dynamic</span> Section:</a>
+<a class="sourceLine" id="cb3-20" data-line-number="20">  <span class="ex">NEEDED</span>               libblas.so.3</a>
+<a class="sourceLine" id="cb3-21" data-line-number="21">  <span class="ex">NEEDED</span>               libatlas.so.3</a>
+<a class="sourceLine" id="cb3-22" data-line-number="22">  <span class="ex">NEEDED</span>               libgfortran.so.3</a>
+<a class="sourceLine" id="cb3-23" data-line-number="23">  <span class="ex">NEEDED</span>               libgcc_s.so.1</a>
+<a class="sourceLine" id="cb3-24" data-line-number="24">  <span class="ex">NEEDED</span>               libpthread.so.0</a>
+<a class="sourceLine" id="cb3-25" data-line-number="25">  <span class="ex">NEEDED</span>               libm.so.6</a>
+<a class="sourceLine" id="cb3-26" data-line-number="26">  <span class="ex">NEEDED</span>               libc.so.6</a>
+<a class="sourceLine" id="cb3-27" data-line-number="27">  <span class="ex">NEEDED</span>               ld-linux-armhf.so.3</a>
+<a class="sourceLine" id="cb3-28" data-line-number="28">  <span class="ex">SONAME</span>               liblapack.so.3</a>
+<a class="sourceLine" id="cb3-29" data-line-number="29">  <span class="ex">HASH</span>                 0x000000b4</a>
+<a class="sourceLine" id="cb3-30" data-line-number="30">  <span class="ex">STRTAB</span>               0x0000e77c</a>
+<a class="sourceLine" id="cb3-31" data-line-number="31">  <span class="ex">SYMTAB</span>               0x0000488c</a>
+<a class="sourceLine" id="cb3-32" data-line-number="32">  <span class="ex">STRSZ</span>                0x00005c43</a>
+<a class="sourceLine" id="cb3-33" data-line-number="33">  <span class="ex">SYMENT</span>               0x00000010</a>
+<a class="sourceLine" id="cb3-34" data-line-number="34">  <span class="ex">PLTGOT</span>               0x004c70f0</a>
+<a class="sourceLine" id="cb3-35" data-line-number="35">  <span class="ex">PLTRELSZ</span>             0x00003a68</a>
+<a class="sourceLine" id="cb3-36" data-line-number="36">  <span class="ex">PLTREL</span>               0x00000011</a>
+<a class="sourceLine" id="cb3-37" data-line-number="37">  <span class="ex">JMPREL</span>               0x00015870</a>
+<a class="sourceLine" id="cb3-38" data-line-number="38">  <span class="ex">REL</span>                  0x00015860</a>
+<a class="sourceLine" id="cb3-39" data-line-number="39">  <span class="ex">RELSZ</span>                0x00000010</a>
+<a class="sourceLine" id="cb3-40" data-line-number="40">  <span class="ex">RELENT</span>               0x00000008</a>
+<a class="sourceLine" id="cb3-41" data-line-number="41">  <span class="ex">VERNEED</span>              0x000157a0</a>
+<a class="sourceLine" id="cb3-42" data-line-number="42">  <span class="ex">VERNEEDNUM</span>           0x00000005</a>
+<a class="sourceLine" id="cb3-43" data-line-number="43">  <span class="ex">VERSYM</span>               0x000143c0</a>
+<a class="sourceLine" id="cb3-44" data-line-number="44"></a>
+<a class="sourceLine" id="cb3-45" data-line-number="45"><span class="ex">Version</span> References:</a>
+<a class="sourceLine" id="cb3-46" data-line-number="46">  <span class="ex">required</span> from ld-linux-armhf.so.3:</a>
+<a class="sourceLine" id="cb3-47" data-line-number="47">    <span class="ex">0x0d696914</span> 0x00 08 GLIBC_2.4</a>
+<a class="sourceLine" id="cb3-48" data-line-number="48">  <span class="ex">required</span> from libgcc_s.so.1:</a>
+<a class="sourceLine" id="cb3-49" data-line-number="49">    <span class="ex">0x0b792655</span> 0x00 07 GCC_3.5</a>
+<a class="sourceLine" id="cb3-50" data-line-number="50">    <span class="ex">0x09275a60</span> 0x00 06 GCC_4.0.0</a>
+<a class="sourceLine" id="cb3-51" data-line-number="51">  <span class="ex">required</span> from libc.so.6:</a>
+<a class="sourceLine" id="cb3-52" data-line-number="52">    <span class="ex">0x0d696914</span> 0x00 04 GLIBC_2.4</a>
+<a class="sourceLine" id="cb3-53" data-line-number="53">  <span class="ex">required</span> from libm.so.6:</a>
+<a class="sourceLine" id="cb3-54" data-line-number="54">    <span class="ex">0x0d696914</span> 0x00 03 GLIBC_2.4</a>
+<a class="sourceLine" id="cb3-55" data-line-number="55">  <span class="ex">required</span> from libgfortran.so.3:</a>
+<a class="sourceLine" id="cb3-56" data-line-number="56">    <span class="ex">0x02f96580</span> 0x00 05 GFORTRAN_1.0</a>
+<a class="sourceLine" id="cb3-57" data-line-number="57">    <span class="ex">0x02f96584</span> 0x00 02 GFORTRAN_1.4</a>
+<a class="sourceLine" id="cb3-58" data-line-number="58"><span class="ex">private</span> flags = 5000402: [Version5 EABI] [hard-float ABI] [has entry point]</a>
+<a class="sourceLine" id="cb3-59" data-line-number="59"></a>
+<a class="sourceLine" id="cb3-60" data-line-number="60"><span class="ex">Sections</span>:</a>
+<a class="sourceLine" id="cb3-61" data-line-number="61"><span class="ex">Idx</span> Name          Size      VMA       LMA       File off  Algn</a>
+<a class="sourceLine" id="cb3-62" data-line-number="62">  <span class="ex">0</span> .hash         000047d8  000000b4  000000b4  000000b4  2**2</a>
+<a class="sourceLine" id="cb3-63" data-line-number="63">                  <span class="ex">CONTENTS</span>, ALLOC, LOAD, READONLY, DATA</a>
+<a class="sourceLine" id="cb3-64" data-line-number="64">  <span class="ex">1</span> .dynsym       00009ef0  0000488c  0000488c  0000488c  2**2</a>
+<a class="sourceLine" id="cb3-65" data-line-number="65">                  <span class="ex">CONTENTS</span>, ALLOC, LOAD, READONLY, DATA</a>
+<a class="sourceLine" id="cb3-66" data-line-number="66">  <span class="ex">2</span> .dynstr       00005c43  0000e77c  0000e77c  0000e77c  2**0</a>
+<a class="sourceLine" id="cb3-67" data-line-number="67">                  <span class="ex">CONTENTS</span>, ALLOC, LOAD, READONLY, DATA</a>
+<a class="sourceLine" id="cb3-68" data-line-number="68">  <span class="ex">3</span> .gnu.version  000013de  000143c0  000143c0  000143c0  2**1</a>
+<a class="sourceLine" id="cb3-69" data-line-number="69">                  <span class="ex">CONTENTS</span>, ALLOC, LOAD, READONLY, DATA</a>
+<a class="sourceLine" id="cb3-70" data-line-number="70">  <span class="ex">4</span> .gnu.version_r 000000c0  000157a0  000157a0  000157a0  2**2</a>
+<a class="sourceLine" id="cb3-71" data-line-number="71">                  <span class="ex">CONTENTS</span>, ALLOC, LOAD, READONLY, DATA</a>
+<a class="sourceLine" id="cb3-72" data-line-number="72">  <span class="ex">5</span> .rel.dyn      00000010  00015860  00015860  00015860  2**2</a>
+<a class="sourceLine" id="cb3-73" data-line-number="73">                  <span class="ex">CONTENTS</span>, ALLOC, LOAD, READONLY, DATA</a>
+<a class="sourceLine" id="cb3-74" data-line-number="74">  <span class="ex">6</span> .rel.plt      00003a68  00015870  00015870  00015870  2**2</a>
+<a class="sourceLine" id="cb3-75" data-line-number="75">                  <span class="ex">CONTENTS</span>, ALLOC, LOAD, READONLY, DATA</a>
+<a class="sourceLine" id="cb3-76" data-line-number="76">  <span class="ex">7</span> .plt          000057b0  000192d8  000192d8  000192d8  2**2</a>
+<a class="sourceLine" id="cb3-77" data-line-number="77">                  <span class="ex">CONTENTS</span>, ALLOC, LOAD, READONLY, CODE</a>
+<a class="sourceLine" id="cb3-78" data-line-number="78">  <span class="ex">8</span> .text         004829b8  0001ea88  0001ea88  0001ea88  2**3</a>
+<a class="sourceLine" id="cb3-79" data-line-number="79">                  <span class="ex">CONTENTS</span>, ALLOC, LOAD, READONLY, CODE</a>
+<a class="sourceLine" id="cb3-80" data-line-number="80">  <span class="ex">9</span> .rodata       00014d48  004a1440  004a1440  004a1440  2**3</a>
+<a class="sourceLine" id="cb3-81" data-line-number="81">                  <span class="ex">CONTENTS</span>, ALLOC, LOAD, READONLY, DATA</a>
+<a class="sourceLine" id="cb3-82" data-line-number="82"> <span class="ex">10</span> .dynamic      000000f0  004c7000  004c7000  004b7000  2**2</a>
+<a class="sourceLine" id="cb3-83" data-line-number="83">                  <span class="ex">CONTENTS</span>, ALLOC, LOAD, DATA</a>
+<a class="sourceLine" id="cb3-84" data-line-number="84"> <span class="ex">11</span> .got          00001d48  004c70f0  004c70f0  004b70f0  2**2</a>
+<a class="sourceLine" id="cb3-85" data-line-number="85">                  <span class="ex">CONTENTS</span>, ALLOC, LOAD, DATA</a>
+<a class="sourceLine" id="cb3-86" data-line-number="86"> <span class="ex">12</span> .data         00001000  004c8e38  004c8e38  004b8e38  2**2</a>
+<a class="sourceLine" id="cb3-87" data-line-number="87">                  <span class="ex">CONTENTS</span>, ALLOC, LOAD, DATA</a>
+<a class="sourceLine" id="cb3-88" data-line-number="88"> <span class="ex">13</span> .bss          000000b8  004c9e38  004c9e38  004b9e38  2**3</a>
+<a class="sourceLine" id="cb3-89" data-line-number="89">                  <span class="ex">ALLOC</span></a>
+<a class="sourceLine" id="cb3-90" data-line-number="90"> <span class="ex">14</span> .ARM.attributes 00000031  00000000  00000000  004b9e38  2**0</a>
+<a class="sourceLine" id="cb3-91" data-line-number="91">                  <span class="ex">CONTENTS</span>, READONLY</a>
+<a class="sourceLine" id="cb3-92" data-line-number="92"><span class="ex">SYMBOL</span> TABLE:</a>
+<a class="sourceLine" id="cb3-93" data-line-number="93"><span class="ex">no</span> symbols</a></code></pre></div>
+
+            
+          </div>
+
+        </div>
+    </body>
+
+    <div id="footer-wrapper">
+
+  <div class="logo"></div>
+
+  <div class="logo">
+    <a class="logo" href="http://github.com/walchko"><i class="fl-github fl-36"></i></a>
+    <a class="logo" href="http://stackoverflow.com/users/5374768/kevin"><i class="fl-stackoverflow fl-36"></i></a>
+    <a class="logo" href="http://raspberrypi.stackexchange.com/users/1677/kevin"><i class="fl-stackexchange fl-36"></i></a>
+    <a class="logo" href="https://www.npmjs.com/~kevin.walchko"><i class="fl-npm fl-36"></i></a>
+    <a class="logo" href="https://pypi.python.org/pypi"><i class="fl-python fl-36"></i></a>
+    <a class="logo" href="https://bitbucket.org/walchko/"><i class="fl-bitbucket fl-36"></i></a>
+  </div>
+
+  <div class="logo">
+    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+      <i class="cc cc-by-sa cc-lg"></i>
+    </a>
+  </div>
+
+  <div class="pure-u-1">
+    <a class="logo" href="https://github.com/walchko/pelican">&copy;&nbsp;2016&nbsp;Kevin J. Walchko</a>
+  </div>
+
+</div>
+
+
+</html>

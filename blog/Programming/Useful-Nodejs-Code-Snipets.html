@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- <link rel='stylesheet' type='text/css' href='https://cdn.rawgit.com/MarsUniversity/ece387/master/website/pandoc.css'> -->
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+    	<link href="https://cdnjs.cloudflare.com/ajax/libs/cc-icons/1.2.1/css/cc-icons.min.css" rel="stylesheet">
+    	<link href="https://cdn.rawgit.com/walchko/font-linux/v0.7.2/assets/font-linux.css" rel="stylesheet">
+      <!-- <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous"> -->
+      <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro" rel="stylesheet">
+      <link href="https://walchko.github.io/site.css" rel="stylesheet" type="text/css" />
+      <!-- <link href="../../site.css" rel="stylesheet" type="text/css" /> -->
+    	<!-- <link href="https://walchko.github.io/pygments.css" rel="stylesheet" type="text/css" /> -->
+      <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [["$","$"],["\\(","\\)"]]
+          }
+        });
+      </script>
+
+	  <!-- code pulled from jupyter nbconvert for syntax coloring -->
+	  <style type="text/css">
+    .highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
+    </style>
+
+    </head>
+    <body>
+      <div id="outer-wrapper">
+        <div id="header-wrapper">
+  <div class="title xtralarge bold"><a href="https://walchko.github.io/index.html">Planet Express</a></div>
+  <div class="normal small"> Our crew is replaceable. Your package isn't. </div>
+
+  <div class="nav normal">
+    <a class="logo" href="https://walchko.github.io/index.html">Home</a>
+    <a class="logo" href="https://walchko.github.io/colophon.html">Colophon</a>
+    <a class="logo" href="https://walchko.github.io/about.html">About</a>
+    <a class="logo" href="https://walchko.github.io/topics.html">Topics</a>
+  </div>
+</div>
+
+
+          <div id="main">
+            
+            
+              <h1 id="programming-node.js">Programming Node.js</h1>
+<dl>
+<dt>date</dt>
+<dd><p>2015-12-13</p>
+</dd>
+<dt>modified</dt>
+<dd><p>2017-05-21</p>
+</dd>
+<dt>summary</dt>
+<dd><p>Node.js/javascript snipets and useful libraries</p>
+</dd>
+</dl>
+<ul>
+<li><a href="static/nodejs-cheatsheet.js">JS Cheatsheet</a></li>
+</ul>
+<h2 id="libraries">Libraries</h2>
+<ul>
+<li><a href="http://momentjs.com/">Moments.js</a> : time/date manipulation (16.6k)</li>
+<li><a href="http://www.chartjs.org/">Chart.js</a> : scatter, pie, polar, bar, etc charts</li>
+<li><a href="https://purecss.io/">Purecss</a> : A set of small, responsive CSS modules that you can use in every web project. Maintained by yahoo.</li>
+<li><a href="https://github.com/FortAwesome/Font-Awesome">FortAwesome</a> :</li>
+<li><a href="https://mozilla.github.io/nunjucks/">Nunjucks [not that great]</a> : a templating engine very similar to python <a href="http://jinja.pocoo.org/">jinja2</a> (8k gzipped)</li>
+</ul>
+<h2 id="using-the-http-module">Using the http module</h2>
+<p>HTTP is one of the pillars behind the world wide web. HTTP describes the transfer of state between client an server. With HTTP, an embedded device can answer requests from other places in a network, or it can itself send updates or fetch instructions from a server.</p>
+<p>In Node.js, the simplest way to turn a device into a network application is with http. This module is part of the Node.js core library, and you find a nice overview here .</p>
+<p>Let’s start by creating a web server locally on your laptop. We then transfer the project later to an embedded device. We must first install the http module:</p>
+<pre><code>$ npm install --save http</code></pre>
+<p>Then, we setup a file server.js:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">var</span> http <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;http&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="kw">var</span> server <span class="op">=</span> <span class="va">http</span>.<span class="at">createServer</span>(<span class="kw">function</span> (req<span class="op">,</span> res) <span class="op">{</span></a>
+<a class="sourceLine" id="cb2-3" data-line-number="3">    <span class="va">res</span>.<span class="at">writeHead</span>(<span class="dv">200</span><span class="op">,</span> <span class="op">{</span><span class="st">&#39;Content-Type&#39;</span><span class="op">:</span> <span class="st">&#39;text/html&#39;</span><span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb2-4" data-line-number="4">    <span class="va">res</span>.<span class="at">end</span>(<span class="st">&#39;hello</span><span class="sc">\n</span><span class="st">&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb2-6" data-line-number="6"><span class="co">// start server at a port</span></a>
+<a class="sourceLine" id="cb2-7" data-line-number="7"><span class="kw">var</span> port <span class="op">=</span> <span class="dv">3000</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb2-8" data-line-number="8"><span class="va">server</span>.<span class="at">listen</span>(port)<span class="op">;</span></a>
+<a class="sourceLine" id="cb2-9" data-line-number="9"><span class="va">console</span>.<span class="at">log</span>(<span class="st">&#39;Starting server at port: &#39;</span> <span class="op">+</span> port)<span class="op">;</span></a></code></pre></div>
+<p>The first thing we do is creating a command createServer. Often it is a good idea to add some HTTP headers to inform the client about the type of payload. When the server receives an HTTP request, it says “hello” in the response The response object res is a data stream which we need to close with res.end() to transport a response.</p>
+<p>To see this in action, you can navigate your browser to localhost:3000, or send a request with curl:</p>
+<pre><code>$ curl localhost:3000
+hello</code></pre>
+<h2 id="live-reloading">Live Reloading</h2>
+<p>When developing a server, it can be nice to automatically reload the server process, when the file server.js has changed.</p>
+<p>A good tool to achieve this goal is with nodemon.</p>
+<p>Let’s install this next:</p>
+<pre><code>$ npm install nodemon</code></pre>
+<p>When you now run the server with:</p>
+<pre><code>$ nodemon server.js</code></pre>
+<p>You should see updates whenever you change the file server.js with an editor:</p>
+<pre><code>18 Aug 20:04:59 - [nodemon] v1.4.1
+18 Aug 20:04:59 - [nodemon] to restart at any time, enter `rs`
+18 Aug 20:04:59 - [nodemon] watching: *.*
+18 Aug 20:04:59 - [nodemon] starting `node server.js`
+18 Aug 20:07:17 - [nodemon] restarting due to changes...
+18 Aug 20:07:17 - [nodemon] starting `node server.js`</code></pre>
+<p>Once we have a basic server, that we can try on an embedded device, we have to copy the project to the device. Automatic Deployment</p>
+<p>Now that this works, let’s deploy this server to an embedded device such as an Edison or Raspberry Pi. The simplest way to copy an app to server is through scp, a remote copy based on ssh. Assuming a setup on a machine eddie, you can do this basically with:</p>
+<pre><code>$ scp * root@eddie:~
+root@eddie&#39;s password:
+server.js                            100%    0     0.0KB/s   00:00</code></pre>
+<p>Instead of scp, it is often nice to setup app deployment based on git. With git, you get version control out of the box. And git automatically compresses files for faster file transfer.</p>
+<p>First, let’s initialize git in our project with:</p>
+<pre><code>$ git init
+$ cat &gt; .gitignore
+node_modules/**/*
+$ git add .
+$ git commit -m &quot;init&quot;</code></pre>
+<p>The first lines make a local git repository. For Node.js projects, it is often good to skip the local packages in node_modules. This is why we create a . gitignore file. Last, we commit the everything into the project.</p>
+<p>To deploy via git, you first have to setup a so-called “bare” repository on the device. This bare repository can then be cloned and act as proxy for the active server.</p>
+<p>To do this, you login with:</p>
+<pre><code>$ ssh root@eddie
+$ mkdir -p git/http_server.git
+$ cd git/http_server.git
+$ git init --bare</code></pre>
+<p>With the first commands you create empty directories, the second command asks git to provide an empty shell for a repository. Next, let’s push your server from previously to this directory.</p>
+<p>For this, you do on your local machine:</p>
+<pre><code>$ git remote add eddie ssh://root@eddie:/home/root/git/http_server.git
+$ git push eddie master</code></pre>
+<p>Now, the repo on the device is ready to use. Let’s go to the remote device with:</p>
+<pre><code>$ ssh root@eddie</code></pre>
+<p>Now, we first clone the repo with:</p>
+<pre><code>$  git clone git/http_server.git</code></pre>
+<p>This new repo tracks the main branch. To see it in action, you can do:</p>
+<pre><code>$ node server.js</code></pre>
+<p>And request the URL from the server:</p>
+<pre><code>$ curl eddie:3000
+hello</code></pre>
+<p>The last step is to connect a “post-receive” hook to the repo. With this, you can trigger some script on the device, as soon as there are updates received. In a file git/http_server.git/hooks/post-receive you insert:</p>
+<pre><code>#!/bin/sh
+git --work-tree=/home/root/projects/simple_http \
+  --git-dir=/home/root/projects/git/simple_http.git checkout -f</code></pre>
+<p>Then, you make the script executable:</p>
+<pre><code>$ chmod u+x git/http_server.git/hooks/post-receive</code></pre>
+<p>If you now push to the repo on the Edison, you’ll automatically get an update in second directory, where you can run your server process.</p>
+<h2 id="handling-routes">Handling Routes</h2>
+<p>A request to a web server can take different paths, or routes. Commonly, we have many states that we want to offer, or to read back. We can implement routes with a simple if-then tree that parses the incoming request. Since this quickly gets more difficult, we can also use a module router from npm.</p>
+<h2 id="adding-a-router">Adding a router</h2>
+<p>Every http request is checked for tis path. This makes it necessary to define “routes” for HTTP requests.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb17-1" data-line-number="1"><span class="kw">var</span> server <span class="op">=</span> <span class="va">http</span>.<span class="at">createServer</span>(<span class="kw">function</span> (req<span class="op">,</span> res) <span class="op">{</span></a>
+<a class="sourceLine" id="cb17-2" data-line-number="2">  <span class="cf">if</span> (<span class="va">req</span>.<span class="at">url</span> <span class="op">==</span> <span class="st">&#39;/&#39;</span>) <span class="op">{</span></a>
+<a class="sourceLine" id="cb17-3" data-line-number="3">    <span class="va">res</span>.<span class="at">writeHead</span>(<span class="dv">200</span><span class="op">,</span> <span class="op">{</span><span class="st">&#39;Content-Type&#39;</span><span class="op">:</span> <span class="st">&#39;text/plain&#39;</span><span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb17-4" data-line-number="4">    <span class="va">res</span>.<span class="at">end</span>(<span class="st">&#39;switch state</span><span class="sc">\n</span><span class="st">&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb17-5" data-line-number="5">  <span class="op">}</span> <span class="cf">else</span> <span class="cf">if</span> (<span class="va">req</span>.<span class="at">url</span> <span class="op">==</span> <span class="st">&#39;/ON&#39;</span>) <span class="op">{</span></a>
+<a class="sourceLine" id="cb17-6" data-line-number="6">    <span class="va">res</span>.<span class="at">writeHead</span>(<span class="dv">200</span><span class="op">,</span> <span class="op">{</span><span class="st">&#39;Content-Type&#39;</span><span class="op">:</span> <span class="st">&#39;text/plain&#39;</span><span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb17-7" data-line-number="7">    <span class="va">res</span>.<span class="at">end</span>(<span class="st">&#39;on&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb17-8" data-line-number="8">  <span class="op">}</span> <span class="cf">else</span> <span class="cf">if</span> (<span class="va">req</span>.<span class="at">url</span> <span class="op">==</span> <span class="st">&#39;/OFF&#39;</span>) <span class="op">{</span></a>
+<a class="sourceLine" id="cb17-9" data-line-number="9">    <span class="va">res</span>.<span class="at">writeHead</span>(<span class="dv">200</span><span class="op">,</span> <span class="op">{</span><span class="st">&#39;Content-Type&#39;</span><span class="op">:</span> <span class="st">&#39;text/plain&#39;</span><span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb17-10" data-line-number="10">    <span class="va">res</span>.<span class="at">end</span>(<span class="st">&#39;off&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb17-11" data-line-number="11">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb17-12" data-line-number="12"><span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb17-13" data-line-number="13"><span class="kw">var</span> port <span class="op">=</span> <span class="dv">3000</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb17-14" data-line-number="14"><span class="va">console</span>.<span class="at">log</span>(<span class="st">&#39;Starting server at port: &#39;</span> <span class="op">+</span> port)<span class="op">;</span></a>
+<a class="sourceLine" id="cb17-15" data-line-number="15"><span class="va">server</span>.<span class="at">listen</span>(port)<span class="op">;</span></a></code></pre></div>
+<p>If the data path is the default route, an index HTML is served. If the path contains ON, we could switch a device ON. Otherwise, the server could switch a device off.</p>
+<h2 id="the-router-module">The router module</h2>
+<p>To manage routes on a server, it is easier to pull in a router module into your project. A simple approach is the following. We can include a router module with:</p>
+<pre><code>$ npm install --save router</code></pre>
+<p>This router handles incoming requests and a finalhandler module delivers a default response. We need to install a module for this too:</p>
+<pre><code>$ npm install --save finalhandler</code></pre>
+<p>Also, a logger can be helpful:</p>
+<pre><code>$ npm install --save morgan</code></pre>
+<p>Now, we can rewrite the simple web server from above as follows. First, we require the new modules and integrate the router:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb21-1" data-line-number="1"><span class="kw">var</span> fs <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;fs&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb21-2" data-line-number="2"><span class="kw">var</span> http <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;http&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb21-3" data-line-number="3"><span class="kw">var</span> finalhandler <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;finalhandler&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb21-4" data-line-number="4"><span class="kw">var</span> Router <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;router&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb21-5" data-line-number="5"><span class="kw">var</span> router <span class="op">=</span> <span class="at">Router</span>()<span class="op">;</span></a>
+<a class="sourceLine" id="cb21-6" data-line-number="6"><span class="va">router</span>.<span class="at">get</span>(<span class="st">&#39;/&#39;</span><span class="op">,</span> <span class="kw">function</span>(req<span class="op">,</span> res) <span class="op">{</span></a>
+<a class="sourceLine" id="cb21-7" data-line-number="7">    <span class="va">res</span>.<span class="at">writeHead</span>(<span class="dv">200</span><span class="op">,</span> <span class="op">{</span><span class="st">&#39;Content-Type&#39;</span><span class="op">:</span> <span class="st">&#39;text/html&#39;</span><span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb21-8" data-line-number="8">    <span class="va">res</span>.<span class="at">end</span>(<span class="st">&#39;Turn a device ON or OFF&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb21-9" data-line-number="9"><span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb21-10" data-line-number="10"><span class="va">router</span>.<span class="at">get</span>(<span class="st">&#39;/state&#39;</span><span class="op">,</span> <span class="kw">function</span>(req<span class="op">,</span>res) <span class="op">{</span></a>
+<a class="sourceLine" id="cb21-11" data-line-number="11">    <span class="va">res</span>.<span class="at">writeHead</span>(<span class="dv">200</span><span class="op">,</span> <span class="op">{</span><span class="st">&#39;Content-Type&#39;</span><span class="op">:</span> <span class="st">&#39;text/plain&#39;</span><span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb21-12" data-line-number="12">    <span class="va">res</span>.<span class="at">end</span>(state)<span class="op">;</span></a>
+<a class="sourceLine" id="cb21-13" data-line-number="13"><span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb21-14" data-line-number="14"><span class="co">// add API</span></a>
+<a class="sourceLine" id="cb21-15" data-line-number="15"><span class="kw">var</span> api <span class="op">=</span> <span class="at">Router</span>()<span class="op">;</span></a>
+<a class="sourceLine" id="cb21-16" data-line-number="16"><span class="va">api</span>.<span class="at">post</span>(<span class="st">&#39;/toggle/:state&#39;</span><span class="op">,</span> <span class="kw">function</span>(req<span class="op">,</span> res) <span class="op">{</span></a>
+<a class="sourceLine" id="cb21-17" data-line-number="17">  <span class="va">console</span>.<span class="at">log</span>(<span class="st">&#39;Set embedded state: &#39;</span> <span class="op">+</span> <span class="va">req</span>.<span class="va">params</span>.<span class="at">state</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb21-18" data-line-number="18">  <span class="va">res</span>.<span class="at">writeHead</span>(<span class="dv">200</span><span class="op">,</span> <span class="op">{</span><span class="st">&#39;Content-Type&#39;</span><span class="op">:</span> <span class="st">&#39;text/html&#39;</span><span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb21-19" data-line-number="19">  <span class="co">// --&gt; integrate hardware connection to come</span></a>
+<a class="sourceLine" id="cb21-20" data-line-number="20">  <span class="va">res</span>.<span class="at">end</span>(<span class="st">&#39;ok&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb21-21" data-line-number="21"><span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb21-22" data-line-number="22"><span class="va">router</span>.<span class="at">use</span>(<span class="st">&#39;/api&#39;</span><span class="op">,</span> api)<span class="op">;</span></a>
+<a class="sourceLine" id="cb21-23" data-line-number="23"><span class="va">http</span>.<span class="at">createServer</span>(<span class="kw">function</span> (req<span class="op">,</span> res) <span class="op">{</span></a>
+<a class="sourceLine" id="cb21-24" data-line-number="24">  <span class="at">router</span>(req<span class="op">,</span> res<span class="op">,</span> <span class="at">finalhandler</span>(req<span class="op">,</span> res))<span class="op">;</span></a>
+<a class="sourceLine" id="cb21-25" data-line-number="25"><span class="op">}</span>).<span class="at">listen</span>(port)<span class="op">;</span></a></code></pre></div>
+<p>As you can see, there is an additional route for API requests. We are going to examine how to set and change the hardware with an API in the next chapter.</p>
+<h2 id="driving-state-with-http">Driving state with HTTP</h2>
+<p>With curl, it is easily possible to drive state on the server from the command line. For example, to toggle the state of a LED with curl:</p>
+<pre><code>$ curl -X POST localhost:3474/api/toggle/ON</code></pre>
+<p>The same request can be done from the browser application. To call the API from a browser, if you go to the eddie:3000/state in your browser, you can see that the path has changed.</p>
+<p>This is a good preparation for building the user interface in the next chapter. Before doing that, let’s first explore an alternative to transfer of state with HTTP.</p>
+<h2 id="the-websocket-module">The Websocket module</h2>
+<p>Websockets are intensively used for building realtime web applications. They have two advantages over using HTTP:</p>
+<p>1. Websockets add less communication overhead to a network since it does not use headers for every communication request 2. With Websockets, you can listen for certain messages and push state directly to a client</p>
+<p>The examples with HTTP did not “automatically” update the state of an device. So, a user must fetch state “manually”. For many situations, we want to broadcast data from an embedded device. This is when pushing state with websockets becomes interesting.</p>
+<p>NOTE</p>
+<p>A number of Node modules for websockets exists. socket.io is popular too and offers a number of fallbacks when websockets are not available. Websockets is one possible transport for socket.io (others are flashsocket, htmlfile, xhr-polling and jsonp-polling)</p>
+<p>For now, we are going to use the ws module. Install the module with:</p>
+<pre><code>$ npm install --save ws</code></pre>
+<p>First, let’s take an Arduino with a serial link to a Node.js host. To push data from that device with websockets would look as follows:</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb24-1" data-line-number="1"><span class="kw">var</span> WebSocketServer <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;ws&#39;</span>).<span class="at">Server</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb24-2" data-line-number="2"><span class="kw">var</span> board <span class="op">=</span> <span class="kw">new</span> <span class="va">firmata</span>.<span class="at">Board</span>(modem<span class="op">,</span> <span class="kw">function</span>(err)<span class="op">{</span></a>
+<a class="sourceLine" id="cb24-3" data-line-number="3">    <span class="va">console</span>.<span class="at">log</span>(<span class="st">&#39;connected </span><span class="sc">\n</span><span class="st">&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb24-4" data-line-number="4">    <span class="va">board</span>.<span class="at">pinMode</span>(<span class="dv">13</span><span class="op">,</span> <span class="va">board</span>.<span class="va">MODES</span>.<span class="at">OUTPUT</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb24-5" data-line-number="5">    <span class="kw">var</span> wss <span class="op">=</span> <span class="kw">new</span> <span class="at">WebSocketServer</span>(<span class="op">{</span><span class="dt">server</span><span class="op">:</span> server<span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb24-6" data-line-number="6">    <span class="va">wss</span>.<span class="at">on</span>(<span class="st">&#39;connection&#39;</span><span class="op">,</span> <span class="kw">function</span> <span class="at">connection</span>(ws) <span class="op">{</span></a>
+<a class="sourceLine" id="cb24-7" data-line-number="7">        <span class="va">ws</span>.<span class="at">on</span>(<span class="st">&#39;message&#39;</span><span class="op">,</span> <span class="kw">function</span> <span class="at">incoming</span>(message) <span class="op">{</span></a>
+<a class="sourceLine" id="cb24-8" data-line-number="8">            <span class="va">console</span>.<span class="at">log</span>(<span class="st">&#39;received: %s&#39;</span><span class="op">,</span> message)<span class="op">;</span></a>
+<a class="sourceLine" id="cb24-9" data-line-number="9">        <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb24-10" data-line-number="10">        <span class="va">board</span>.<span class="at">digitalRead</span>(<span class="dv">1</span><span class="op">,</span> <span class="kw">function</span>(val<span class="op">,</span> err) <span class="op">{</span></a>
+<a class="sourceLine" id="cb24-11" data-line-number="11">            <span class="va">ws</span>.<span class="at">send</span>(<span class="st">&#39;{&quot;state&quot;: &#39;</span> <span class="op">+</span> val <span class="op">+</span> <span class="st">&#39;}&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb24-12" data-line-number="12">            <span class="va">console</span>.<span class="at">log</span>(val)<span class="op">;</span></a>
+<a class="sourceLine" id="cb24-13" data-line-number="13">        <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb24-14" data-line-number="14">    <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb24-15" data-line-number="15"><span class="op">}</span>)<span class="op">;</span></a></code></pre></div>
+<h2 id="running-code-at-specific-times">Running Code at Specific Times</h2>
+<p>Run code at set intervals:</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb25-1" data-line-number="1"><span class="kw">var</span> ONE_MINUTE <span class="op">=</span> <span class="dv">60</span> <span class="op">*</span> <span class="dv">1000</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb25-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb25-3" data-line-number="3"><span class="kw">function</span> <span class="at">showTime</span>() <span class="op">{</span></a>
+<a class="sourceLine" id="cb25-4" data-line-number="4">  <span class="va">console</span>.<span class="at">log</span>(<span class="kw">new</span> <span class="at">Date</span>())<span class="op">;</span></a>
+<a class="sourceLine" id="cb25-5" data-line-number="5"><span class="op">}</span></a>
+<a class="sourceLine" id="cb25-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb25-7" data-line-number="7"><span class="at">setInterval</span>(showTime<span class="op">,</span> ONE_MINUTE)<span class="op">;</span></a></code></pre></div>
+<h2 id="npm">npm</h2>
+<ul>
+<li><a href="https://www.npmjs.com/package/raspberry-pi-mjpeg-server">mjpeg server</a> : raspberry pi camera streamer</li>
+<li><a href="https://www.npmjs.com/package/raspi-ver">Raspberry pi version</a> : returns the version and other info for your RPi</li>
+<li><a href="https://www.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool/">Great info on how to use npm</a></li>
+</ul>
+
+            
+          </div>
+
+        </div>
+    </body>
+
+    <div id="footer-wrapper">
+
+  <div class="logo"></div>
+
+  <div class="logo">
+    <a class="logo" href="http://github.com/walchko"><i class="fl-github fl-36"></i></a>
+    <a class="logo" href="http://stackoverflow.com/users/5374768/kevin"><i class="fl-stackoverflow fl-36"></i></a>
+    <a class="logo" href="http://raspberrypi.stackexchange.com/users/1677/kevin"><i class="fl-stackexchange fl-36"></i></a>
+    <a class="logo" href="https://www.npmjs.com/~kevin.walchko"><i class="fl-npm fl-36"></i></a>
+    <a class="logo" href="https://pypi.python.org/pypi"><i class="fl-python fl-36"></i></a>
+    <a class="logo" href="https://bitbucket.org/walchko/"><i class="fl-bitbucket fl-36"></i></a>
+  </div>
+
+  <div class="logo">
+    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+      <i class="cc cc-by-sa cc-lg"></i>
+    </a>
+  </div>
+
+  <div class="pure-u-1">
+    <a class="logo" href="https://github.com/walchko/pelican">&copy;&nbsp;2016&nbsp;Kevin J. Walchko</a>
+  </div>
+
+</div>
+
+
+</html>
