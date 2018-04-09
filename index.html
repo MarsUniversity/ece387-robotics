@@ -1,209 +1,538 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <!-- <link rel='stylesheet' type='text/css' href='https://cdn.rawgit.com/MarsUniversity/ece387/master/website/pandoc.css'> -->
-      <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
-    	<link href="https://cdnjs.cloudflare.com/ajax/libs/cc-icons/1.2.1/css/cc-icons.min.css" rel="stylesheet">
-    	<link href="https://cdn.rawgit.com/walchko/font-linux/v0.7.2/assets/font-linux.css" rel="stylesheet">
-      <!-- <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous"> -->
-      <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro" rel="stylesheet">
-      <link href="https://walchko.github.io/site.css" rel="stylesheet" type="text/css" />
-      <!-- <link href="../../site.css" rel="stylesheet" type="text/css" /> -->
-    	<!-- <link href="https://walchko.github.io/pygments.css" rel="stylesheet" type="text/css" /> -->
-      <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-          tex2jax: {
-            inlineMath: [["$","$"],["\\(","\\)"]]
-          }
-        });
-      </script>
-
-	  <!-- code pulled from jupyter nbconvert for syntax coloring -->
-	  <style type="text/css">
-    .highlight .hll { background-color: #ffffcc }
-.highlight  { background: #f8f8f8; }
-.highlight .c { color: #408080; font-style: italic } /* Comment */
-.highlight .err { border: 1px solid #FF0000 } /* Error */
-.highlight .k { color: #008000; font-weight: bold } /* Keyword */
-.highlight .o { color: #666666 } /* Operator */
-.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
-.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
-.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
-.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
-.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
-.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
-.highlight .gd { color: #A00000 } /* Generic.Deleted */
-.highlight .ge { font-style: italic } /* Generic.Emph */
-.highlight .gr { color: #FF0000 } /* Generic.Error */
-.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
-.highlight .gi { color: #00A000 } /* Generic.Inserted */
-.highlight .go { color: #888888 } /* Generic.Output */
-.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
-.highlight .gs { font-weight: bold } /* Generic.Strong */
-.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
-.highlight .gt { color: #0044DD } /* Generic.Traceback */
-.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
-.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
-.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
-.highlight .kp { color: #008000 } /* Keyword.Pseudo */
-.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
-.highlight .kt { color: #B00040 } /* Keyword.Type */
-.highlight .m { color: #666666 } /* Literal.Number */
-.highlight .s { color: #BA2121 } /* Literal.String */
-.highlight .na { color: #7D9029 } /* Name.Attribute */
-.highlight .nb { color: #008000 } /* Name.Builtin */
-.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
-.highlight .no { color: #880000 } /* Name.Constant */
-.highlight .nd { color: #AA22FF } /* Name.Decorator */
-.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
-.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
-.highlight .nf { color: #0000FF } /* Name.Function */
-.highlight .nl { color: #A0A000 } /* Name.Label */
-.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
-.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
-.highlight .nv { color: #19177C } /* Name.Variable */
-.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
-.highlight .w { color: #bbbbbb } /* Text.Whitespace */
-.highlight .mb { color: #666666 } /* Literal.Number.Bin */
-.highlight .mf { color: #666666 } /* Literal.Number.Float */
-.highlight .mh { color: #666666 } /* Literal.Number.Hex */
-.highlight .mi { color: #666666 } /* Literal.Number.Integer */
-.highlight .mo { color: #666666 } /* Literal.Number.Oct */
-.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
-.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
-.highlight .sc { color: #BA2121 } /* Literal.String.Char */
-.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
-.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
-.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
-.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
-.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
-.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
-.highlight .sx { color: #008000 } /* Literal.String.Other */
-.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
-.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
-.highlight .ss { color: #19177C } /* Literal.String.Symbol */
-.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
-.highlight .fm { color: #0000FF } /* Name.Function.Magic */
-.highlight .vc { color: #19177C } /* Name.Variable.Class */
-.highlight .vg { color: #19177C } /* Name.Variable.Global */
-.highlight .vi { color: #19177C } /* Name.Variable.Instance */
-.highlight .vm { color: #19177C } /* Name.Variable.Magic */
-.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
-    </style>
-
-    </head>
-    <body>
-      <div id="outer-wrapper">
-        <div id="header-wrapper">
-  <div class="title xtralarge bold"><a href="https://walchko.github.io/index.html">Planet Express</a></div>
-  <div class="normal small"> Our crew is replaceable. Your package isn't. </div>
-
-  <div class="nav normal">
-    <a class="logo" href="https://walchko.github.io/index.html">Home</a>
-    <a class="logo" href="https://walchko.github.io/colophon.html">Colophon</a>
-    <a class="logo" href="https://walchko.github.io/about.html">About</a>
-    <a class="logo" href="https://walchko.github.io/topics.html">Topics</a>
-  </div>
-</div>
-
-
-          <div id="main">
-            
-            
-              <h1 id="major-kevin-walchko">Major Kevin Walchko</h1>
-<figure>
-<center>
-<img src="pics/Farnsworth.png"/>
-</center>
-<center>
-<img src="pics/space.png" style="width: 200px"/>
-</center>
-<center>
-<img src="pics/air_assault2.jpg" style="width: 100px"/>
-</center>
-<center>
-<img border="0" src="pics/rack.png" />
-</center>
-</figure>
-<h2 id="academics">Academics</h2>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>ECE 387: Intro to Robotic Systems</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="pandoc.css">
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  
+  
+  
+  
+  
+</head>
+<body>
+<header>
+<h1 class="title">ECE 387: Intro to Robotic Systems</h1>
+</header>
+<nav id="TOC">
 <ul>
-<li>2003 DOCTOR OF PHILOSOPHY, Mechanical Engineering, University of Florida [Funded through Fellowship from NASA Goddard Space Flight Center]</li>
-<li>2002 MASTERS IN SCIENCE, Electrical Engineering, University of Florida</li>
-<li>1999 MASTERS IN SCIENCE, Mechanical Engineering, University of Florida [Funded through Fellowship from NASA Goddard Space Flight Center]</li>
-<li>1997 BACHELOR OF SCIENCE, Mechanical Engineering, University of Florida</li>
+<li><a href="#spring-2018-syllabus"><a href="syllabus.pdf">Spring 2018 Syllabus</a></a><ul>
+<li><a href="#instructor">Instructor</a></li>
+<li><a href="#course-goals-and-objectives">Course Goals and Objectives</a></li>
+<li><a href="#prerequisite-course">Prerequisite Course</a></li>
+<li><a href="#course-materials-and-resources">Course Materials and Resources</a></li>
+<li><a href="#grades">Grades</a></li>
+<li><a href="#missing-class-and-the-late-policy">Missing Class and the Late Policy</a></li>
+<li><a href="#collaboration-and-documentation-policy">Collaboration and Documentation Policy</a></li>
+<li><a href="#labs-and-final-project">Labs and Final Project</a></li>
+</ul></li>
+<li><a href="#homeworklab-templates">Homework/Lab Templates</a></li>
+<li><a href="#references">References</a><ul>
+<li><a href="#readings">Readings</a></li>
+<li><a href="#installsetup-guides">Install/Setup Guides</a></li>
+<li><a href="#on-line-python-and-command-line-class">On-line Python and Command Line Class</a></li>
+<li><a href="#lynxmotion-arm-guide">Lynxmotion Arm Guide</a></li>
+<li><a href="#class-python-libraries">Class Python Libraries</a></li>
+<li><a href="#standford-python-class-introduction-to-scientific-python-cme-193">Standford Python Class: Introduction to Scientific Python, CME 193</a></li>
+<li><a href="#opencv-documentation">OpenCV Documentation</a></li>
+<li><a href="#cheat-sheets-and-references">Cheat Sheets and References</a></li>
+</ul></li>
 </ul>
-<h2 id="deployments">Deployments</h2>
+</nav>
+<table>
+<thead>
+<tr class="header">
+<th>Lsn</th>
+<th>Topic</th>
+<th>Reading</th>
+<th>Due</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td><a href="lsn1.pptx">Intro &amp; Overview</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td><a href="lsn2-linux.pptx">Linux Command Line</a></td>
+<td>Matlof Ch 1.0-1.9</td>
+<td>Install required software</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td><a href="http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_1_basics/lsn3/lsn3.ipynb">Python Intro</a> [<a href="lsn3.zip">download</a>]</td>
+<td></td>
+<td><a href="hw123.pdf">HW 1</a></td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td><a href="http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_1_basics/lsn4/lsn4.ipynb">Python Numpy, Sympy, Matplotlib</a> [<a href="lsn4.zip">download</a>]</td>
+<td>Matlof Ch 3</td>
+<td><a href="hw123.pdf">HW 2</a></td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td><a href="http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_1_basics/lsn5/lsn5.ipynb"><strong>Python Quiz</strong></a> [<a href="lsn5.zip">download</a>]</td>
+<td></td>
+<td><a href="hw123.pdf">HW 3</a></td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td><a href="lab1.pdf">Lab 1: linux and python</a></td>
+<td></td>
+<td>Lab1 EOC</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td><a href="http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_2_kinematics/lsn7/lsn7.ipynb">Kinematics: Intro</a> [<a href="lsn7.zip">download</a>]</td>
+<td>Craig Ch 3</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>2D Forward-Inv Kinematics</td>
+<td></td>
+<td><strong>Quiz 1</strong></td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>3D Inverse-Inv Kinematics</td>
+<td></td>
+<td><a href="hw4.pdf">HW4</a></td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td><a href="http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_2_kinematics/lsn10/lsn10.ipynb">Robot Arm Control</a> [<a href="lsn10.zip">download</a>]</td>
+<td>RC Servos</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>11</td>
+<td><a href="http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_3_vision/lsn11/lsn11.ipynb">OpenCV Introduction</a> [<a href="lsn11.zip">download</a>]</td>
+<td></td>
+<td><a href="hw5.pdf">HW5</a></td>
+</tr>
+<tr class="even">
+<td>12</td>
+<td><a href="lab2.pdf">Lab 2: Robot Arm</a></td>
+<td></td>
+<td><a href="lab2.pdf">Pre-Lab2</a></td>
+</tr>
+<tr class="odd">
+<td>13</td>
+<td><a href="lab2.pdf">Lab 2: Robot Arm</a></td>
+<td></td>
+<td>Lab2 EOC</td>
+</tr>
+<tr class="even">
+<td>14</td>
+<td><a href="http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_3_vision/lsn14/lsn14.ipynb">Filtering</a> [<a href="lsn14.zip">download</a>]</td>
+<td>Edge Detection</td>
+<td><a href="hw6.pdf">HW6</a></td>
+</tr>
+<tr class="odd">
+<td>15</td>
+<td><a href="http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_3_vision/lsn15/lsn15.ipynb">Feature Detection</a> [<a href="lsn15.zip">download</a>]</td>
+<td></td>
+<td><strong>Quiz 2</strong></td>
+</tr>
+<tr class="even">
+<td>16</td>
+<td><strong>GR 1</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>17</td>
+<td><a href="http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_3_vision/lsn17/lsn17.ipynb">Cameras and Calibration</a> [<a href="lsn17.zip">download</a>]</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>18</td>
+<td><a href="http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_3_vision/lsn18/lsn18.ipynb">Face Detection</a> [<a href="lsn18.zip">download</a>]</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>19</td>
+<td><a href="http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_3_vision/lsn19/lsn19.ipynb">Marker Detection</a> [<a href="lsn19.zip">download</a>]</td>
+<td>Wolf</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>20</td>
+<td><a href="http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_3_vision/lsn20/lsn20.ipynb">Color Detection</a> [<a href="lsn20.zip">download</a>]</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>21</td>
+<td><a href="http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_3_vision/lsn21/lsn21.ipynb">Change Detection</a> [<a href="lsn21.zip">download</a>]</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>22</td>
+<td><a href="http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_3_vision/lsn22/lsn22.ipynb">Tracking</a> [<a href="lsn22.zip">download</a>]</td>
+<td></td>
+<td><a href="hw7.pdf">HW7</a></td>
+</tr>
+<tr class="odd">
+<td>23</td>
+<td><a href="http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_3_vision/lsn23/lsn23.ipynb">Image Stitching</a> [<a href="lsn23.zip">download</a>]</td>
+<td></td>
+<td><strong>Quiz 3</strong></td>
+</tr>
+<tr class="even">
+<td>24</td>
+<td><a href="lab3.pdf">Lab 3: Detection and Tracking</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>25</td>
+<td><a href="lab3.pdf">Lab 3: Detection and Tracking</a></td>
+<td></td>
+<td>Lab3 EOC</td>
+</tr>
+<tr class="even">
+<td>26</td>
+<td><a href="http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_4_mobile_robotics/lsn26/lsn26.ipynb">Mobile Robotics</a> [<a href="lsn26.zip">download</a>]</td>
+<td>Siegwart Ch 3</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>27</td>
+<td><a href="http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_4_mobile_robotics/lsn27/lsn27.ipynb">Roomba Sensors</a> [<a href="lsn27.zip">download</a>]</td>
+<td>Siegwart Ch 4-4.1.71</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>28</td>
+<td><a href="http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_4_mobile_robotics/lsn28/lsn28.ipynb">Sensor Calibration</a> [<a href="lsn28.zip">download</a>]</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>29</td>
+<td><a href="http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_4_mobile_robotics/lsn29/lsn29.ipynb">Controls</a> [<a href="lsn29.zip">download</a>]</td>
+<td>Siegwart Ch 5</td>
+<td><a href="hw8.pdf">HW8</a></td>
+</tr>
+<tr class="even">
+<td>30</td>
+<td><a href="lab4.pdf">Lab 4: Roomba Control</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>31</td>
+<td><a href="lab4.pdf">Lab 4: Roomba Control</a></td>
+<td></td>
+<td>Lab4 EOC</td>
+</tr>
+<tr class="even">
+<td>32</td>
+<td><a href="http://nbviewer.jupyter.org/github/MarsUniversity/ece387/blob/master/website/block_4_mobile_robotics/lsn32/lsn32.ipynb">Path Planning</a> [<a href="lsn32.zip">download</a>]</td>
+<td>Law</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>33</td>
+<td>TBD</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>34</td>
+<td><a href="lab5.pdf">Lab 5: Roomba Sensors</a></td>
+<td></td>
+<td><a href="hw9.pdf">HW9</a></td>
+</tr>
+<tr class="odd">
+<td>35</td>
+<td><a href="lab5.pdf">Lab 5: Roomba Sensors</a></td>
+<td></td>
+<td>Lab5 EOC</td>
+</tr>
+<tr class="even">
+<td>36</td>
+<td><a href="final_project.pdf">Final Project</a></td>
+<td></td>
+<td><strong>Quiz 4</strong></td>
+</tr>
+<tr class="odd">
+<td>37</td>
+<td><strong>GR2</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>38</td>
+<td><a href="final_project.pdf">Final Project</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>39</td>
+<td><a href="final_project.pdf">Final Project</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>40</td>
+<td><a href="final_project.pdf">Final Project</a></td>
+<td></td>
+<td>Final Project EOC</td>
+</tr>
+</tbody>
+</table>
 <ul>
-<li>2013 ISAF Joint Command, CJ2, Kabul, Afghanistan</li>
-<li>2009 Defense Contract Management Agency-Southern Iraq, BIAP, Iraq</li>
+<li>Homeworks are at the beginning of class (BOC)</li>
+<li>Labs are due on the final day at the end of class (EOC)</li>
 </ul>
-<h2 id="career">Career</h2>
+<h1 id="spring-2018-syllabus"><a href="syllabus.pdf">Spring 2018 Syllabus</a></h1>
+<h2 id="instructor">Instructor</h2>
+<pre><code>Maj Kevin Walchko
+Fairchild 2F48
+kevin.walchko@usafa.edu</code></pre>
+<h2 id="course-goals-and-objectives">Course Goals and Objectives</h2>
+<p>Cadets shall:</p>
 <ul>
-<li>2016 Dean of Faculty, US Air Force Academy, Co Sprints, CO</li>
-<li>2014 Commandant of Cadets, US Air Force Academy, Co Springs, CO</li>
-<li>2010 National Reconnaissance Office, Chantilly, VA</li>
-<li>2006 Space Superiority Systems Wing, Los Angeles AFB</li>
-<li>2003 AFRL Space Vehicles Directorate, Kirtland AFB</li>
+<li>Apply common robotic skills using python and the linux command line</li>
+<li>Apply forward and inverse kinematic analysis manipulators and mobile robots</li>
+<li>Apply control methods to mobile robots so they can avoid obstacles and navigate</li>
+<li>Apply common techniques in modern image processing and computer vision</li>
 </ul>
-<h2 id="professional-schools">Professional Schools</h2>
+<h2 id="prerequisite-course">Prerequisite Course</h2>
 <ul>
-<li>2014 Air Command and Staff College, correspondence</li>
-<li>2010 Squadron Officer School, residence &amp; correspondence</li>
-<li>2004 Air and Space Basic Course, residence</li>
+<li>Familiarity with any programming language, such as Matlab or C/C++</li>
+<li>Understanding of high school trigonometry</li>
+<li>Understanding of simple matrix/vector operations</li>
 </ul>
-<h3 id="publications">Publications</h3>
+<h2 id="course-materials-and-resources">Course Materials and Resources</h2>
+<table>
+<tbody>
+<tr class="odd">
+<td>Course Text</td>
+<td>None, various PDFs are provided for reading</td>
+</tr>
+<tr class="even">
+<td>Web Page</td>
+<td><a href="https://marsuniversity.github.io/ece387/" class="uri">https://marsuniversity.github.io/ece387/</a></td>
+</tr>
+<tr class="odd">
+<td>Software</td>
+<td>Python 2.7</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>OpenCV 3.4.x</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Jupyter notebooks</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>GitBash</td>
+</tr>
+</tbody>
+</table>
+<h2 id="grades">Grades</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Grade</th>
+<th>Grade</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>90 &lt; A &lt; 100</td>
+<td>74 &lt; C+ &lt; 77</td>
+</tr>
+<tr class="even">
+<td>87 &lt; A- &lt; 90</td>
+<td>70 &lt; C &lt; 74</td>
+</tr>
+<tr class="odd">
+<td>84 &lt; B+ &lt; 87</td>
+<td>67 &lt; C- &lt; 70</td>
+</tr>
+<tr class="even">
+<td>80 &lt; B &lt; 84</td>
+<td>60 &lt; D &lt; 67</td>
+</tr>
+<tr class="odd">
+<td>77 &lt; B- &lt; 80</td>
+<td>0 &lt; F &lt; 60</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>Prog %</th>
+<th>Final %</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>HW</td>
+<td>10</td>
+<td>10</td>
+</tr>
+<tr class="even">
+<td>Quizzes</td>
+<td>10</td>
+<td>10</td>
+</tr>
+<tr class="odd">
+<td>GRs</td>
+<td>45</td>
+<td>30</td>
+</tr>
+<tr class="even">
+<td>Labs</td>
+<td>35</td>
+<td>30</td>
+</tr>
+<tr class="odd">
+<td>Final Project</td>
+<td></td>
+<td>20</td>
+</tr>
+</tbody>
+</table>
+<h2 id="missing-class-and-the-late-policy">Missing Class and the Late Policy</h2>
+<p>Inform your instructor of absences in advance via email. Please include the reason for the absence and any relevant SCA. Check the SCA to see if instructor permission is required and if it is, make the request prior to the absence. You will be given an Unexcused Absence in CAS if you fail to get permission.</p>
+<p>If you plan to miss a class, you <em>must</em> take any quiz or GR prior to your departure.</p>
+<p>Due to the limited time to conduct labs and the fact they are executed in groups, you can not miss both lab days unless you have a medical excuse due to unplanned illness. You can miss one lab day, but depending on situation (e.g., something you could have avoided), you may loose points for the lab.</p>
+<p>If you are expecting to miss class on the day an assignment is due, you shall turn in your assignment prior to your departure. Your instructor may grant a no-penalty turn-in extension for absences resulting from illness or other legitimate extenuating circumstances. Cadets shall coordinate late submittals in advance. The late policy for the Department of Electrical and Computer Engineering is as follows:</p>
+<table>
+<thead>
+<tr class="header">
+<th>How Late?</th>
+<th>Max Penalty</th>
+<th>Max Grade</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>&lt; 1 day</td>
+<td>25%</td>
+<td>75%</td>
+</tr>
+<tr class="even">
+<td>2 day</td>
+<td>50%</td>
+<td>50%</td>
+</tr>
+<tr class="odd">
+<td>3 day</td>
+<td>75%</td>
+<td>25%</td>
+</tr>
+<tr class="even">
+<td>&gt; 3 day</td>
+<td>100%</td>
+<td>0%</td>
+</tr>
+</tbody>
+</table>
+<h2 id="collaboration-and-documentation-policy">Collaboration and Documentation Policy</h2>
+<p>You may receive help from any DFEC faculty member on the homework. Do not work with other students in the class or who have taken the class previously. Document all help received on work submitted for grading IAW DF policies, or document <em>none</em> if your work was completely individual effort.</p>
+<h2 id="labs-and-final-project">Labs and Final Project</h2>
+<p>The labs are performed in groups of no more than 3 students. Each lab will build on the homework, in class lectures and readings. The purpose of the labs is to provide hands on experience with the topics discussed in the lectures. The final project will focus on the Roomba robot, controls, computer vision, and path planning.</p>
+<p>All team members will receive the same grade unless it is identified that all members did not equally help out. The offending member(s) will receive a scaled grade equal to the team grade time 0.75. If this happens more than once, then the offending individual will become a team of one.</p>
+<h1 id="homeworklab-templates">Homework/Lab Templates</h1>
 <ul>
-<li><a href="Publications/Optimal-geo-lasercom.pdf">Hindman, C., Engberg, B., Hunt, J., and Walchko, K., “Optimal GEO Lasercomm Terminal Field of View for LEO Link Support”;, SPIE Free-space Laser Communications Technologies XVIII, 2006.</a></li>
-<li><a href="Publications/unknown.pdf">Hindman, C., Walchko, K., and Spratley, C., “Point-ahead Tracking for Space to Air Laser Pointing”, MSS Active Electro-Optic Sensor Systems Conference, Columbia, MD, 2005.</a></li>
-<li><a href="Publications/AIAA-Reconfigurable-AUV.pdf">Grzywna, J., Walchko, K., and Nechyba, M., Subjugator: A Reconfigurable AUV, 2nd AIAA Systems, Technologies, and Operations Aerospace, Land, and Sea Conference and Workshop &amp; Exhibit, San Diego, CA, Sept 15-18, 2003.</a></li>
-<li><a href="Publications/walchko-PhD-ME.pdf">Walchko, K., “Robust Attitude Control with Disturbance Compensation,” Ph.D. Dissertation, University of Florida, Gainesville, FL, 2003.</a></li>
-<li><a href="Publications/walchko-INS-FCRAR-2003.pdf">Walchko, K., Nechyba, M., Schwartz, E., and Arroyo, A., “Embedded Low Cost Inertial Navigation System,” Florida Conference on Recent Advances in Robotics, FAU, Dania Beach, FL, May 8-9, 2003.</a></li>
-<li><a href="Publications/walchko-SM-FCRAR-2003.pdf">Walchko, K., Novick, D., and Nechyba, M., “Development of a Sliding Mode Control System with Extended Kalman Filter Estimation for Subjugator,” Florida Conference on Recent Advances in Robotics, FAU, Dania Beach, FL, May 8-9, 2003.</a></li>
-<li><a href="Publications/walchko-MS-EE.pdf">Walchko, K., “Low Cost Inertial Navigation,”, Masters Thesis, University of Florida, Gainesville, FL, August, 2002.</a></li>
-<li><a href="Publications/AUVSI-2002.pdf">Grzywna, J., Laine, J., Walchko, K., Dye, R., Jain, A., Ivano, N., Nechyba, M., Eric M. Schwartz, Arroyo, A., Subjugator 2002, 5th International Autonomous Underwater Vehicle Competition, San Diego, CA, July 31 Aug. 4, 2002.</a></li>
-<li><a href="Publications/walchko-nav-FCRAR.pdf">Walchko, K. and Mason, P., Inertial Navigation, Florida Conference on the Recent Advances in Robotics, Miami, FL, 23-24 May 2002.</a></li>
-<li><a href="Publications/subjugator-FCRAR.pdf">Grzywna, J., Laine, J., Walchko, K., Dye, R., Jain, A., Ivano, N., Nechyba, M., Eric M. Schwartz, Arroyo, A., Subjugator: The Development of an Autonomous Underwater Vehicle, Florida Conference on the Recent Advances in Robotics, Tallahassee, FL, 10-11 June 2001.</a></li>
-<li><a href="Publications/subjugator-sinkin-is-easy.pdf">Grzywna, J., Kanowitz, S., Laine, J., Nortman, S., Novick, D., Walchko, K.,Nechyba, M., Eric M. Schwartz, Arroyo, A., SubjuGator: Sinkin’ is Easy, AIAA Conference, Sep 2003.</a></li>
-<li><a href="Publications/walchko-GSRP.pdf">Walchko, K. and Mason, P., Development of a Fuzzy Sliding Mode Controller for Satellite Attitude Control, Graduate Student Research Project Report, Fall 2000.</a></li>
-<li><a href="Publications/mimo-fuzzy-FCRAR.pdf">Walchko, K., Mason, P., and Crane, C., A MIMO fuzzy Controller for Tracking: Robot Control, Florida Conference on the Recent Advances in Robotics, Gainesville, May 1999.</a></li>
-<li><a href="Publications/Optimal-geo-lasercom.pdf">Walchko, K. and Mason, P., Intelligent Attitude Control with Uncertainty and Disturbance Compensation, Flight Mechanics and Estimation Technology Symposium, NASA Goddard, May 1999.</a></li>
-<li><a href="Publications/walchko-MS-ME.pdf">Walchko, K., “Development of a Generic Fuzzy Logic MIMO Controller for Attitude Control,”, Masters Thesis, University of Florida, Gainesville, FL, April, 1999.</a></li>
-<li><a href="Publications/unknown.pdf">Petroff, N., Mason, P., and Walchko, K., “Numerical Stability Analysis of a Fuzzy Controller,” Artificial Neural Networks in Engineering, St. Louis, Ms, 1-4 Nov. 1998. (First Runner-Up for best paper).</a></li>
-<li><a href="Publications/unknown.pdf">Walchko, K. and Mason, P., “Development of a Generic Hybrid Fuzzy Controller, Artificial Neural Networks in Engineering, St. Louis, Ms, 1-4 Nov. 1998.</a></li>
+<li><a href="jupyter.ipynb">Jupyter Notebook</a></li>
+<li><a href="python.py">Python</a></li>
 </ul>
-
-            
-          </div>
-
-        </div>
-    </body>
-
-    <div id="footer-wrapper">
-
-  <div class="logo"></div>
-
-  <div class="logo">
-    <a class="logo" href="http://github.com/walchko"><i class="fl-github fl-36"></i></a>
-    <a class="logo" href="http://stackoverflow.com/users/5374768/kevin"><i class="fl-stackoverflow fl-36"></i></a>
-    <a class="logo" href="http://raspberrypi.stackexchange.com/users/1677/kevin"><i class="fl-stackexchange fl-36"></i></a>
-    <a class="logo" href="https://www.npmjs.com/~kevin.walchko"><i class="fl-npm fl-36"></i></a>
-    <a class="logo" href="https://pypi.python.org/pypi"><i class="fl-python fl-36"></i></a>
-    <a class="logo" href="https://bitbucket.org/walchko/"><i class="fl-bitbucket fl-36"></i></a>
-  </div>
-
-  <div class="logo">
-    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
-      <i class="cc cc-by-sa cc-lg"></i>
-    </a>
-  </div>
-
-  <div class="pure-u-1">
-    <a class="logo" href="https://github.com/walchko/pelican">&copy;&nbsp;2016&nbsp;Kevin J. Walchko</a>
-  </div>
-
-</div>
-
-
+<h1 id="references">References</h1>
+<h2 id="readings">Readings</h2>
+<ul>
+<li><a href="python-matlof.pdf">Matlof, “Fast Lane to Python”</a></li>
+<li><a href="Introduction-to-Robotics-Craig.pdf">Craig, “Introduction to Robotics”</a></li>
+<li><a href="hobby_servos.pdf">RC Servos</a></li>
+<li><a href="Edge_Detection.pdf">Edge Detection, 2nd half of pdf</a></li>
+<li><a href="siegwartRobotBook.pdf">Siegwart, “Introduction to Autonomous Mobile Robots”</a></li>
+<li><a href="ErrorCorrection.pdf">Wolf, “AN INTRODUCTION TO ERROR CORRECTING CODES”</a></li>
+<li><a href="KalmanFilter.pdf">Faragher, “Understanding the Basis of the Kalman Filter”</a></li>
+<li><a href="FloodFill.pdf">Law, “Quantitative Comparison of Flood Fill and Modified Flood Fill Algorithms”</a></li>
+</ul>
+<h2 id="installsetup-guides">Install/Setup Guides</h2>
+<ul>
+<li><a href="software_install.pdf"><strong>Required Software:</strong> Laptop software install for python, OpenCV, and MS Compiler</a></li>
+<li><a href="roomba_setup.pdf">Roomba Setup</a></li>
+<li><a href="samba.pdf">Interfacing Windoze and Linux file systems</a></li>
+<li><a href="access_point.pdf">Connecting to the Roomba via wifi</a></li>
+<li><a href="pandoc_setup.pdf">Pandoc setup for automating website/documentation generation</a></li>
+</ul>
+<h2 id="on-line-python-and-command-line-class">On-line Python and Command Line Class</h2>
+<ul>
+<li><a href="https://www.codeacademy.com">www.codeacademy.com</a></li>
+</ul>
+<h2 id="lynxmotion-arm-guide">Lynxmotion Arm Guide</h2>
+<ul>
+<li><a href="ssc-32u_guide.pdf">SSC-32u Servo motor controller</a></li>
+</ul>
+<h2 id="class-python-libraries">Class Python Libraries</h2>
+<ul>
+<li><a href="https://pypi.python.org/pypi/ar-markers">ar_markers</a>: detecting QR markers</li>
+<li><a href="https://pypi.python.org/pypi/nxp-imu">nxp_imu</a>: driver for NXP inertial measurement unit</li>
+<li><a href="https://pypi.python.org/pypi/pycreate2">pycreate2</a>: driver for iRobot Create 2</li>
+<li><a href="https://pypi.python.org/pypi/ins-nav">ins_nav</a>: algorithms for inertial navigation</li>
+<li><a href="https://pypi.python.org/pypi/opencvutils">opencvutils</a>: OpenCV functions</li>
+<li><a href="https://pypi.python.org/pypi/the-collector">the-collector</a>: saving live data for later</li>
+<li><a href="https://pypi.python.org/pypi/pyhexdump">pyhexdump</a>: reads binary files</li>
+</ul>
+<h2 id="standford-python-class-introduction-to-scientific-python-cme-193">Standford Python Class: Introduction to Scientific Python, CME 193</h2>
+<ul>
+<li><a href="python-1.pdf">Intro</a></li>
+<li><a href="python-2.pdf">Functions &amp; Testing</a></li>
+<li><a href="python-3.pdf">Data Structures</a></li>
+<li><a href="python-4.pdf">Object Oriented Programming</a></li>
+<li><a href="python-5.pdf">Numpy and Matplotlib</a></li>
+<li><a href="python-6.pdf">File I/O and Strings</a></li>
+<li><a href="python-7.pdf">Other Topics</a></li>
+</ul>
+<h2 id="opencv-documentation">OpenCV Documentation</h2>
+<ul>
+<li><a href="OpenCV-3-overview.pdf">OpenCV 3 Overview pdf</a></li>
+<li><a href="http://docs.opencv.org/trunk/index.html">OpenCV Documentation, all languages</a></li>
+<li><a href="http://docs.opencv.org/trunk/d6/d00/tutorial_py_root.html">OpenCV tutorials for python</a></li>
+<li><a href="https://github.com/opencv/opencv/tree/master/samples/python">OpenCV source code on github, python examples</a></li>
+</ul>
+<h2 id="cheat-sheets-and-references">Cheat Sheets and References</h2>
+<ul>
+<li><a href="command-line.pdf">Linux command line reference</a></li>
+<li><a href="markdown.pdf">Markdown</a></li>
+<li><a href="latex-symbols.pdf">LaTeX math symbols</a></li>
+<li><a href="python.pdf">Python and matplotlib (long)</a></li>
+<li><a href="python-qr.pdf">Python (short)</a></li>
+<li><a href="https://github.com/ehmatthes/pcc/tree/master/cheat_sheets">Python Crash Course</a></li>
+<li><a href="jupyter-1.pdf">Jupyter reference I</a></li>
+<li><a href="jupyter-2.pdf">Jupyter reference II</a></li>
+<li><a href="iRobot_Roomba_600_Open_Interface_Spec.pdf">iRobot Create 2 Open Interface Spec</a></li>
+</ul>
+</body>
 </html>
