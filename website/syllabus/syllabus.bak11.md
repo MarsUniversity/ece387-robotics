@@ -42,14 +42,14 @@ header-includes:
 | 30  | [Lab 4: Roomba Control](lab4.pdf)                     |                             | |
 | 31  | [Lab 4: Roomba Control](lab4.pdf)                     |                             | Lab4 EOC |
 | 32  | [Path Planning][32]  [[download](lsn32.zip)]          | Law                         | |
-| 33  | [Final Project](final_project.pdf)                    |                             | |
-| 34  | [Final Project](final_project.pdf)                    |                             | |
-| 35  | [Final Project](final_project.pdf)                    |                             | |
+| 33  | TBD                                                   |                             | |
+| 34  | [Lab 5: Roomba Sensors](lab5.pdf)                     |                             | [HW9](hw9.pdf)|
+| 35  | [Lab 5: Roomba Sensors](lab5.pdf)                     |                             | Lab5 EOC |
 | 36  | [Final Project](final_project.pdf)                    |                             | **Quiz 4** |
 | 37  | **GR2**                                               |                             | |
 | 38  | [Final Project](final_project.pdf)                    |                             | |
-| 39  | [Final Project](final_project.pdf)                    |                             | Bonus I|
-| 40  | [Final Project](final_project.pdf)                    |                             | Bonus II|
+| 39  | [Final Project](final_project.pdf)                    |                             | |
+| 40  | [Final Project](final_project.pdf)                    |                             | Final Project EOC|
 
 - Homeworks are at the beginning of class (BOC)
 - Labs are due on the final day at the end of class (EOC)
@@ -128,8 +128,8 @@ Cadets shall:
 | HW            | 10       | 10        |
 | Quizzes       | 10       | 10        |
 | GRs           | 45       | 30        |
-| Labs          | 35       | 25        |
-| Final Project |          | 25        |
+| Labs          | 35       | 30        |
+| Final Project |          | 20        |
 
 ## Missing Class and the Late Policy
 
